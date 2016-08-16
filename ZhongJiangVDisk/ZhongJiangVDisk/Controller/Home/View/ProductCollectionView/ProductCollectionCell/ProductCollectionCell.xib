@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ProductCollectionCell" reuseIdentifier="ProductCollectionCell" id="gTV-IL-0wX" customClass="ProductCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="197" height="101"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="197" height="101"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igd-aS-mO5">
+                        <rect key="frame" x="0.0" y="0.0" width="192" height="101"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-Uu-NDr">
+                                <rect key="frame" x="0.0" y="76" width="95.5" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="JGN-ng-lXZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="买涨">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="riseAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="K0L-HB-jAl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-LR-mr8">
+                                <rect key="frame" x="96" y="76" width="95.5" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="买跌">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="fallAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="s9V-Zc-M4y"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7If-fh-MXL">
+                                <rect key="frame" x="0.0" y="0.0" width="192" height="76"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.00元/手" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="knL-yh-VF4">
+                                        <rect key="frame" x="8" y="29" width="176" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="BMI-61-bOM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="波动盈亏:0.075元" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6R-fT-Oq8">
+                                        <rect key="frame" x="8" y="50" width="176" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中江银750G" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="PBw-Gc-9xW">
+                                        <rect key="frame" x="8" y="8" width="176" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="frf-xP-hCN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="10"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="j6R-fT-Oq8" firstAttribute="centerX" secondItem="knL-yh-VF4" secondAttribute="centerX" id="3dc-7l-S8o"/>
+                                    <constraint firstItem="j6R-fT-Oq8" firstAttribute="top" secondItem="knL-yh-VF4" secondAttribute="bottom" id="Dfh-Ct-Ilj"/>
+                                    <constraint firstItem="knL-yh-VF4" firstAttribute="width" secondItem="PBw-Gc-9xW" secondAttribute="width" id="E2i-5O-vSu"/>
+                                    <constraint firstAttribute="trailing" secondItem="PBw-Gc-9xW" secondAttribute="trailing" constant="8" id="KfT-Yh-MsO"/>
+                                    <constraint firstItem="PBw-Gc-9xW" firstAttribute="top" secondItem="7If-fh-MXL" secondAttribute="top" constant="8" id="LEh-wJ-cHO"/>
+                                    <constraint firstItem="j6R-fT-Oq8" firstAttribute="width" secondItem="knL-yh-VF4" secondAttribute="width" id="R7H-WV-t3i"/>
+                                    <constraint firstItem="knL-yh-VF4" firstAttribute="centerX" secondItem="PBw-Gc-9xW" secondAttribute="centerX" id="RLD-mQ-SPB"/>
+                                    <constraint firstItem="knL-yh-VF4" firstAttribute="top" secondItem="PBw-Gc-9xW" secondAttribute="bottom" id="meE-iz-VfT"/>
+                                    <constraint firstItem="PBw-Gc-9xW" firstAttribute="leading" secondItem="7If-fh-MXL" secondAttribute="leading" constant="8" id="ymz-s5-yfP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fZO-LR-mr8" firstAttribute="width" secondItem="MBw-Uu-NDr" secondAttribute="width" id="1wW-iA-qhL"/>
+                            <constraint firstItem="MBw-Uu-NDr" firstAttribute="leading" secondItem="igd-aS-mO5" secondAttribute="leading" id="5cc-cm-iwC"/>
+                            <constraint firstAttribute="bottom" secondItem="fZO-LR-mr8" secondAttribute="bottom" id="6d3-90-hro"/>
+                            <constraint firstItem="fZO-LR-mr8" firstAttribute="top" secondItem="7If-fh-MXL" secondAttribute="bottom" id="GGC-nY-Ux5"/>
+                            <constraint firstAttribute="trailing" secondItem="fZO-LR-mr8" secondAttribute="trailing" id="T5r-pd-jeK"/>
+                            <constraint firstAttribute="bottom" secondItem="MBw-Uu-NDr" secondAttribute="bottom" id="X6f-gd-unf"/>
+                            <constraint firstItem="7If-fh-MXL" firstAttribute="leading" secondItem="igd-aS-mO5" secondAttribute="leading" id="cGt-jZ-aZ8"/>
+                            <constraint firstAttribute="trailing" secondItem="7If-fh-MXL" secondAttribute="trailing" id="e3L-XN-kwd"/>
+                            <constraint firstItem="fZO-LR-mr8" firstAttribute="leading" secondItem="MBw-Uu-NDr" secondAttribute="trailing" id="laj-vt-T1U"/>
+                            <constraint firstItem="fZO-LR-mr8" firstAttribute="height" secondItem="MBw-Uu-NDr" secondAttribute="height" id="sjh-Hi-5Am"/>
+                            <constraint firstItem="7If-fh-MXL" firstAttribute="top" secondItem="igd-aS-mO5" secondAttribute="top" id="tDi-Xh-06a"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="igd-aS-mO5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Kil-Z3-4dh"/>
+                <constraint firstItem="igd-aS-mO5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Nxl-m7-X5x"/>
+                <constraint firstAttribute="trailing" secondItem="igd-aS-mO5" secondAttribute="trailing" constant="5" id="WNM-IQ-kcv"/>
+                <constraint firstAttribute="bottom" secondItem="igd-aS-mO5" secondAttribute="bottom" id="ln7-IM-2qu"/>
+            </constraints>
+            <size key="customSize" width="197" height="101"/>
+            <connections>
+                <outlet property="detail" destination="j6R-fT-Oq8" id="Ryk-b0-PQq"/>
+                <outlet property="fallButton" destination="fZO-LR-mr8" id="xyH-If-fDI"/>
+                <outlet property="mainView" destination="igd-aS-mO5" id="SHL-EG-zF1"/>
+                <outlet property="name" destination="PBw-Gc-9xW" id="fof-rg-eFb"/>
+                <outlet property="riseButton" destination="MBw-Uu-NDr" id="5lr-r3-Xye"/>
+                <outlet property="title" destination="knL-yh-VF4" id="Vbg-4W-mwd"/>
+            </connections>
+            <point key="canvasLocation" x="169.5" y="266.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

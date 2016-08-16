@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="SegmentView" id="iN0-l3-epB" customClass="SegmentView">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="84"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="vB4-Dw-pdq">
+                    <rect key="frame" x="0.0" y="4" width="110" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="zUQ-aa-vRm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="GIm-LJ-cv2">
+                    <rect key="frame" x="0.0" y="25" width="110" height="59"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gqx-ZP-bFL">
+                    <rect key="frame" x="0.0" y="82" width="110" height="2"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="BIA-nt-84b"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Gqx-ZP-bFL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1hv-iu-ZQm"/>
+                <constraint firstAttribute="bottom" secondItem="GIm-LJ-cv2" secondAttribute="bottom" id="6JS-sI-plG"/>
+                <constraint firstItem="vB4-Dw-pdq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="7oR-2Z-w4J"/>
+                <constraint firstItem="GIm-LJ-cv2" firstAttribute="top" secondItem="vB4-Dw-pdq" secondAttribute="bottom" id="Ljs-ok-b11"/>
+                <constraint firstItem="GIm-LJ-cv2" firstAttribute="top" secondItem="vB4-Dw-pdq" secondAttribute="bottom" id="Vet-CR-1J1"/>
+                <constraint firstAttribute="trailing" secondItem="vB4-Dw-pdq" secondAttribute="trailing" id="aA1-Eg-7gf"/>
+                <constraint firstItem="GIm-LJ-cv2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cf4-As-ebt"/>
+                <constraint firstAttribute="bottom" secondItem="Gqx-ZP-bFL" secondAttribute="bottom" id="eld-m6-2Zs"/>
+                <constraint firstItem="vB4-Dw-pdq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rVd-zF-ZZC"/>
+                <constraint firstAttribute="trailing" secondItem="Gqx-ZP-bFL" secondAttribute="trailing" id="w1y-nf-qK5"/>
+                <constraint firstAttribute="trailing" secondItem="GIm-LJ-cv2" secondAttribute="trailing" id="zny-dZ-aRN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottom" destination="Gqx-ZP-bFL" id="PKW-Ab-xU3"/>
+                <outlet property="record" destination="GIm-LJ-cv2" id="RFD-hi-EzW"/>
+                <outlet property="title" destination="vB4-Dw-pdq" id="hlB-g1-XrW"/>
+            </connections>
+            <point key="canvasLocation" x="125" y="207"/>
+        </view>
+    </objects>
+</document>

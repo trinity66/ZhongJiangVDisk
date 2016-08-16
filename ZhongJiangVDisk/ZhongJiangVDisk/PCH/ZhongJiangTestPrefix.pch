@@ -1,0 +1,104 @@
+//
+//  ZhongJiangVDiskPrefix.pch
+//  ZhongJiangVDisk
+//
+//  Created by liuxiaomin on 16/8/11.
+//  Copyright © 2016年 liuxiaomin. All rights reserved.
+//
+
+#ifndef ZhongJiangVDiskPrefix_pch
+#define ZhongJiangVDiskPrefix_pch
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* ZhongJiangVDiskPrefix_pch */
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kPersonalTopViewHeight 60
+#define kSegmentHeight 55
+#import "Core.h"
+#import "Core+Color.h"
+
+#import "BaseViewController.h"//基Controller
+#import "BaseTabBarController.h"
+#import "BaseNavigationController.h"
+#import "HomeController.h"//首页
+#import "PositionController.h"//持仓
+#import "PersonalController.h"//我的
+
+#import "PersonalTopView.h"//顶部视图
+#import "SegmentView.h"//单个产品视图
+#import "Segment.h"//产品总数展示视图
+
+#import "PositionCell.h"//持仓cell
+
+#import "InfosController.h"//公告
+
+#import "RechargeController.h"//充值
+#import "RechargeCell.h"//充值cell
+#import "RechargeHeadView.h"//充值-表头
+#import "RachargeFootView.h"//充值-表尾
+
+#import "WithdrawController.h"//提现
+
+#import "TextFieldCell.h"//标题：输入框
+#import "SecurityCodeView.h"//验证码
+
+#import "DealListController.h"//收支明细
+#import "DealCell.h"//收支明细cell
+
+#import "DealHistoryListController.h"//交易历史
+#import "DealHistoryHeadView.h"//交易历史sectionHeader
+#import "DealHistoryCell.h"//交易历史cell
+
+#import "QRCodeController.h"//二维码
+#import "QRCodeImage.h"//生成二维码
+
+#import "ApplyForBrokerController.h"//经纪人申请
+
+#import "ButtonView.h"//按钮视图
+#import "ChangeDealPswdController.h"//修改交易密码
+
+#import "InputDealPswdView.h"//输入交易密码
+#import "BuyView.h"//购买
+#import "SelectDataCell.h"//购买时选择数据view
+
+#import "ChartView.h"//首页分时图
+#import "ProductCollectionView.h"//首页底部collectionView
+#import "ProductCollectionCell.h"//首页底部collectionCell
+
+//分时图，k图
+#import "Area.h"
+
+#import "AxisX.h"
+#import "AxisY.h"
+
+#import "BaseLayer.h"
+#import "BBChartView.h"
+#import "BBChartUtils.h"
+#import "BBStockChart.h"
+#import "BBTheme.h"
+
+#import "Series.h"
+#import "BarSeries.h"
+#import "LineSeries.h"
+#import "StockSeries.h"
+
+//三方框架
+#import "HMSegmentedControl.h"
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
+#import "MJRefresh.h"
+
+
+
+
+
+
+
+
+
