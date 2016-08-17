@@ -42,12 +42,14 @@
     
 }
 - (IBAction)riseAction:(id)sender {
-    BuyView *buy = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
-    [buy showBuyView];
+    if (self.btnsActionBlock) {
+        self.btnsActionBlock(0);
+    }
 }
 - (IBAction)fallAction:(id)sender {
-    BuyView *buy = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
-    [buy showBuyView];
+    if (self.btnsActionBlock) {
+        self.btnsActionBlock(1);
+    }
 }
 
 @end

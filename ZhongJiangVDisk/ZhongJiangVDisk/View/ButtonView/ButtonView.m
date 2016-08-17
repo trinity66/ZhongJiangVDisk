@@ -8,6 +8,11 @@
 
 #import "ButtonView.h"
 
+
+@interface ButtonView ()
+@property (weak, nonatomic) IBOutlet UIButton *button;
+
+@end
 @implementation ButtonView
 
 /*
@@ -21,6 +26,15 @@
 {
     [super awakeFromNib];
     _button.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+}
+- (void)setBtnTitle:(NSString *)btnTitle
+{
+    [_button setTitle:btnTitle forState:UIControlStateNormal];
+}
+- (IBAction)buttonAction:(id)sender {
+    if (self.btnActionBlock) {
+        self.btnActionBlock();
+    }
 }
 
 @end

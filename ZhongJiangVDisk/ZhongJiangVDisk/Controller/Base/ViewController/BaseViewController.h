@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PersonalTopView.h"
 #import "Segment.h"
+
 @interface BaseViewController : UIViewController
 
 @property (nonatomic, strong) PersonalTopView *personalTopView;

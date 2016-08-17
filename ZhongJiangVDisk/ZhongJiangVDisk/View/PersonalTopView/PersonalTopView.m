@@ -23,8 +23,6 @@
 }
 - (IBAction)rechargeAction:(id)sender {
     [[Core shareCore] goRechargeVC];
-//     InputDealPswdView *put = [[NSBundle mainBundle] loadNibNamed:@"InputDealPswdView" owner:nil options:nil].lastObject;
-//    [put showInputDealPswdView];
 }
 - (void)setRechargeEnabled:(BOOL)enabled
 {

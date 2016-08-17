@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface RachargeFootView : UICollectionReusableView
-
+@property (nonatomic, copy) btnActionBlock btnActionBlock;
 @end

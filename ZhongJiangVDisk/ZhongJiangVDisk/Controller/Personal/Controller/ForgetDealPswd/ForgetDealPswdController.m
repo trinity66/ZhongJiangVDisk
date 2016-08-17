@@ -1,29 +1,28 @@
 //
-//  ChangeDealPswdController.m
+//  ForgetDealPswdController.m
 //  ZhongJiangVDisk
 //
-//  Created by liuxiaomin on 16/8/12.
+//  Created by shijian01 on 16/8/17.
 //  Copyright © 2016年 liuxiaomin. All rights reserved.
 //
 
-#import "ChangeDealPswdController.h"
+#import "ForgetDealPswdController.h"
 
-@interface ChangeDealPswdController ()
+@interface ForgetDealPswdController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
 @property (nonatomic, strong) NSArray *titles;
-@property (nonatomic, strong) ButtonView *foot;
+@property (nonatomic, strong) SecurityCodeView *foot;
 @end
 
-@implementation ChangeDealPswdController
+@implementation ForgetDealPswdController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _topTableViewY.constant = [self getTableViewY];
-    _titles = @[@"原交易密码：", @"新交易密码：", @"再次确认："];
+    _titles = @[@"手机号："];
     // Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -58,6 +57,7 @@
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
     }
+    cell.textField.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.00];
     cell.title.text = _titles[indexPath.row];
     return cell;
 }
@@ -65,13 +65,9 @@
 {
     if (indexPath.row == _titles.count - 1) {
         if (!_foot) {
-            _foot = [[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil].lastObject;
-            [_foot setBtnTitle:@"确定"];
+            _foot = [[NSBundle mainBundle] loadNibNamed:@"SecurityCodeView" owner:nil options:nil].lastObject;
             _tableView.tableFooterView = _foot;
-            __block ChangeDealPswdController* _self =self;
-            _foot.btnActionBlock = ^(){
-                [[Core shareCore] showAlertTitle:@"交易密码修改成功" timeCount:2 inView:_self.view];
-            };
+            [_foot.button setTitle:@"重置密码" forState:UIControlStateNormal];
         }
     }
 }

@@ -40,8 +40,15 @@
     }];
     
 }
+- (IBAction)forgetPswdBtnAction:(id)sender {
+    if (self.btnsActionBlock) {
+        self.btnsActionBlock(0);
+    }
+}
 - (IBAction)buttonAction:(id)sender {
-    [self removeInputDealPswdView];
+    if (self.btnsActionBlock) {
+        self.btnsActionBlock(1);
+    }
 }
 -(void)awakeFromNib
 {

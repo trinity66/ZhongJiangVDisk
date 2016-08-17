@@ -38,7 +38,11 @@
     [self setSomethingForCollectionView];
     _buttonView = [[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil].lastObject;
     _buttonView.frame = _btnSuperView.bounds;
-    [_buttonView.button setTitle:@"立即充值" forState:UIControlStateNormal];
+    [_buttonView setBtnTitle:@"立即充值"];
+    __block RechargeController* _self =self;
+    _buttonView.btnActionBlock = ^(){
+        [[Core shareCore] showAlertTitle:@"充值成功" timeCount:2 inView:_self.view];
+    };
     [_btnSuperView addSubview:_buttonView];
     // Do any additional setup after loading the view.
 }
@@ -54,8 +58,6 @@
     [_collectionView registerNib:[UINib nibWithNibName:@"RechargeCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"RechargeCell"];
     //注册表头
     [_collectionView registerNib:[UINib nibWithNibName:@"RechargeHeadView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"RechargeHeadView"];
-    //注册表尾
-//    [_collectionView registerNib:[UINib nibWithNibName:@"RachargeFootView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"RachargeFootView"];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -131,17 +133,6 @@
         }
         return headView;
     }
-//    else if (kind == UICollectionElementKindSectionFooter) {
-//        RachargeFootView *footView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"RachargeFootView" forIndexPath:indexPath];
-//        if (indexPath.section == 1)
-//        {
-//            footView.hidden = NO;
-//        }else
-//        {
-//            footView.hidden = YES;
-//        }
-//        return footView;
-//    }
     return nil;
 }
 /*

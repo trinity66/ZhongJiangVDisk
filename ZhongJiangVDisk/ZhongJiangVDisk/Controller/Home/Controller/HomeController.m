@@ -12,21 +12,48 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) ChartView *chartSuperView;
 @property (nonatomic, strong) ProductCollectionView *collectionSuperView;
-
+@property (nonatomic, strong) InputDealPswdView *put;
 
 
 @property (nonatomic, strong) LineSeries *line;
 @property (nonatomic, strong) StockSeries *stock;
 @end
-
+__weak HomeController *_self;
 @implementation HomeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _self = self;
+    _put = [[NSBundle mainBundle] loadNibNamed:@"InputDealPswdView" owner:nil options:nil].lastObject;
+    _put.btnsActionBlock = ^(NSInteger index) {
+        if (index == 0) {
+            [_self goForgetDealPswd];
+        }else
+        {
+            [_self putBtnAction];
+        }
+    };
     [self addSegmentWithUserEnabled:YES];
     [self set_scrollView];
     // Do any additional setup after loading the view.
+}
+- (void)goForgetDealPswd
+{
+    //忘记交易密码
+    [[Core shareCore] goForgetDealPswdVC];
+    [_put removeInputDealPswdView];
+}
+- (void)putBtnAction
+{
+    [_put removeInputDealPswdView];
+    _put = nil;
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (_put) {
+        [_put showInputDealPswdView];
+    }
 }
 #pragma mark 设置scrollView
 - (void)set_scrollView

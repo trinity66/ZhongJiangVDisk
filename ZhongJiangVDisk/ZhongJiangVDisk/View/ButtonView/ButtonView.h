@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface ButtonView : UIView
-@property (weak, nonatomic) IBOutlet UIButton *button;
+- (void)setBtnTitle:(NSString *)btnTitle;
+@property (nonatomic, copy) btnActionBlock btnActionBlock;
 
 @end

@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BuyView : UIView
-@property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UIButton *cancel;
+@property (nonatomic, copy) btnActionBlock btnActionBlock;
 - (void)showBuyView;
 - (void)removeBuyView;
 @end

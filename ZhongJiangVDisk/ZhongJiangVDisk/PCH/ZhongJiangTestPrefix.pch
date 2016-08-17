@@ -70,6 +70,7 @@
 #import "ChartView.h"//首页分时图
 #import "ProductCollectionView.h"//首页底部collectionView
 #import "ProductCollectionCell.h"//首页底部collectionCell
+#import "ForgetDealPswdController.h"//忘记密码
 
 //分时图，k图
 #import "Area.h"

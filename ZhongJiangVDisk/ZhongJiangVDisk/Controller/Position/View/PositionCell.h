@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PositionCell : UITableViewCell
+@property (nonatomic, copy)btnActionBlock btnActionBlock;
 - (void)setDetailWithNumber:(double)number isRise:(BOOL)isRise;
+
 @end

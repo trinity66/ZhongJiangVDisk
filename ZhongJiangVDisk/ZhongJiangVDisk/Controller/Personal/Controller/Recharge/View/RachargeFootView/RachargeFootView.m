@@ -19,5 +19,10 @@
     _button.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
     // Initialization code
 }
+- (IBAction)buttonAction:(id)sender {
+    if (self.btnActionBlock) {
+        self.btnActionBlock();
+    }
+}
 
 @end

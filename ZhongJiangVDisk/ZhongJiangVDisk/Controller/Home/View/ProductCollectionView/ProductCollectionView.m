@@ -9,7 +9,7 @@
 #import "ProductCollectionView.h"
 
 @interface ProductCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
-
+@property (nonatomic, strong) BuyView *buyView;
 @end
 @implementation ProductCollectionView
 
@@ -49,6 +49,23 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProductCollectionCell" forIndexPath:indexPath];
+    cell.btnsActionBlock = ^(NSInteger index) {
+        if (!_buyView) {
+            _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
+            __block BuyView *_buy = self.buyView;
+            _buyView.btnActionBlock = ^() {
+                [[Core shareCore] showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
+//                [_buy removeBuyView];
+            };
+        }
+        if (index == 0) {
+            _buyView.title.text = @"买涨";
+        }else
+        {
+            _buyView.title.text = @"买跌";
+        }
+        [_buyView showBuyView];
+    };
     if (indexPath.item % 2 == 0) {
         [cell setColorWithType:@"RED"];
     }else

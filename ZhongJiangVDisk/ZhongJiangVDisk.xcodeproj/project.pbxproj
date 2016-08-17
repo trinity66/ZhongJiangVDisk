@@ -82,6 +82,7 @@
 		5E1722E31D63008A003CA0AE /* SegmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722D01D63008A003CA0AE /* SegmentView.xib */; };
 		5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722D31D63008A003CA0AE /* TextFieldCell.m */; };
 		5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722D41D63008A003CA0AE /* TextFieldCell.xib */; };
+		5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722E81D64121B003CA0AE /* ForgetDealPswdController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +233,8 @@
 		5E1722D21D63008A003CA0AE /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
 		5E1722D31D63008A003CA0AE /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
 		5E1722D41D63008A003CA0AE /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		5E1722E71D64121B003CA0AE /* ForgetDealPswdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetDealPswdController.h; sourceTree = "<group>"; };
+		5E1722E81D64121B003CA0AE /* ForgetDealPswdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetDealPswdController.m; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -481,6 +484,7 @@
 		5E17220C1D630082003CA0AE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5E1722E61D641206003CA0AE /* ForgetDealPswd */,
 				5E17220D1D630082003CA0AE /* ApplyForBroker */,
 				5E1722101D630082003CA0AE /* ChangeDealPswd */,
 				5E1722131D630082003CA0AE /* DealHistoryList */,
@@ -952,6 +956,15 @@
 			path = TextFieldCell;
 			sourceTree = "<group>";
 		};
+		5E1722E61D641206003CA0AE /* ForgetDealPswd */ = {
+			isa = PBXGroup;
+			children = (
+				5E1722E71D64121B003CA0AE /* ForgetDealPswdController.h */,
+				5E1722E81D64121B003CA0AE /* ForgetDealPswdController.m */,
+			);
+			path = ForgetDealPswd;
+			sourceTree = "<group>";
+		};
 		794F7078CFCCD2419F25CE2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1175,6 +1188,7 @@
 				5E1722801D630082003CA0AE /* BaseViewController.m in Sources */,
 				5E17229A1D630082003CA0AE /* RechargeHeadView.m in Sources */,
 				5E1722D91D63008A003CA0AE /* SelectDataCell.m in Sources */,
+				5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */,
 				5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */,
 				5E1722D51D63008A003CA0AE /* ButtonView.m in Sources */,
 				5E17228D1D630082003CA0AE /* DealHistoryHeadView.m in Sources */,

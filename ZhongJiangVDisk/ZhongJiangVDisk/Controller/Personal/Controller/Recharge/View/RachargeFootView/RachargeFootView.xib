@@ -25,6 +25,9 @@
                             <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonAction:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="uMo-bh-nyW"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>

@@ -12,11 +12,12 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
 @end
-
+__weak PositionController *_positionSelf;
 @implementation PositionController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _positionSelf = self;
     [self addSegmentWithUserEnabled:NO];
     _topTableViewY.constant = [self getTableViewY];
     // Do any additional setup after loading the view.
@@ -59,6 +60,9 @@
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"PositionCell" owner:nil options:nil].lastObject;
     }
+    cell.btnActionBlock = ^() {
+        [[Core shareCore] showAlertTitle:@"平仓成功" timeCount:2 inView:_positionSelf.view];
+    };
     [cell setDetailWithNumber:0.00 isRise:YES];
     return cell;
 }

@@ -11,6 +11,9 @@
 @interface BuyView ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UIButton *cancel;
+
 @property (nonatomic, strong) NSArray *titles, *placeholders;
 @end
 @implementation BuyView
@@ -36,6 +39,11 @@
 }
 - (IBAction)cancelAction:(id)sender {
     [self removeBuyView];
+}
+- (IBAction)buttonAction:(id)sender {
+    if (self.btnActionBlock) {
+        self.btnActionBlock();
+    }
 }
 - (void)removeBuyView
 {

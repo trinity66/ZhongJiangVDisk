@@ -23,6 +23,11 @@
     _button.backgroundColor = color;
     // Initialization code
 }
+- (IBAction)buttonAction:(id)sender {
+    if (self.btnActionBlock) {
+        self.btnActionBlock();
+    }
+}
 - (void)setDetailWithNumber:(double)number isRise:(BOOL)isRise
 {
     UIColor *color;

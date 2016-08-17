@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface InputDealPswdView : UIView
+@property (nonatomic, copy)btnsActionBlock btnsActionBlock;
 - (void)showInputDealPswdView;
 - (void)removeInputDealPswdView;
 @end

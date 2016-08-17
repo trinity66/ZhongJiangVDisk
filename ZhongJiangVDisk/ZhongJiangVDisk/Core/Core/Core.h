@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+typedef void(^btnActionBlock)();
+typedef void(^btnsActionBlock)(NSInteger index);
 @interface Core : NSObject
 +(Core *)shareCore;
 - (void)goRechargeVC;
+- (void)goForgetDealPswdVC;
+- (void)showAlertTitle:(NSString *)title timeCount:(NSInteger)timeCount inView:(UIView *)view;
 @end
