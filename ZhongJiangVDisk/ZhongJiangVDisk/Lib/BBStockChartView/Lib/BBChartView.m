@@ -10,7 +10,8 @@
 #import "BarSeries.h"
 #import "StockSeries.h"
 #import "BBTheme.h"
-
+#define axisYwidth [BBTheme theme].axisYwidth
+#define axisXheight [BBTheme theme].axisXHeight
 @interface BBChartView(){
     
     float _currentScale;
@@ -129,7 +130,7 @@
 }
 
 - (void)prepareForDraw{
-    _toastView.frame = CGRectMake(self.frame.size.width / 2 - 50, 0, 100, 61.8);
+    _toastView.frame = CGRectMake(self.frame.size.width / 2 - axisYwidth, 0, 100, 61.8);
     _chartView.frame = CGRectMake(0, 0, self.frame.size.width * _currentScale, self.frame.size.height);
     CGFloat width = _chartView.layer.bounds.size.width;
     //    CGFloat height = self.layer.bounds.size.height;
@@ -248,8 +249,8 @@
         NSArray *ts = [touches allObjects];
         UITouch *touch = ts.firstObject;
         CGPoint point = [touch locationInView:self];
-        float x = point.x-50;
-        double itemWidth = (self.bounds.size.width-50)/(double)self.data.count;
+        float x = point.x-axisYwidth;
+        double itemWidth = (self.bounds.size.width-axisYwidth)/(double)self.data.count;
         NSInteger index = (NSInteger)x/itemWidth;
         CGFloat f = 0;
         if (index>0 && index < self.data.count) {
@@ -262,7 +263,7 @@
                 NSNumber *num = shujv;
                 f = [num doubleValue];
             }
-            float y = (self.bounds.size.height-30) - [_series.axisAttached heighForVal:f];
+            float y = (self.bounds.size.height-axisXheight) - [_series.axisAttached heighForVal:f];
             NSLog(@"%f,%f",y,x);
             CGFloat showWidth = 80, showHeight = 40, showX = 0, showY = showWidth/2.0;
             
@@ -285,22 +286,22 @@
                 _showView.layer.borderWidth = 1;
                 [self addSubview:_showView];
             }
-            showX = (x+50)-showWidth/2.0;
-            if (showX < showWidth/2.0 + 25) {
-                showX = x+50;
+            showX = (x+axisYwidth)-showWidth/2.0;
+            if (showX < showWidth/2.0 + axisYwidth/2.0) {
+                showX = x+axisYwidth;
             }
-            if (showX > self.bounds.size.width-25-showWidth/2.0) {
+            if (showX > self.bounds.size.width-axisYwidth/2.0-showWidth/2.0) {
                 showX = showX-showWidth/2.0;
             }
             showY = y;
-            CGFloat h = self.bounds.size.height-y-30;
+            CGFloat h = self.bounds.size.height-y-axisXheight;
             NSLog(@"%f",h);
             if (h<showHeight) {
                 showY = y-showHeight;
             }
             _showView.frame = CGRectMake(showX, showY, showWidth, showHeight);
-            _lineY.frame = CGRectMake(50 + x, 0, 1, self.bounds.size.height-30);
-            _circle.frame = CGRectMake(50 + x - 2, y-2, 4, 4);
+            _lineY.frame = CGRectMake(axisYwidth + x, 0, 0.5, self.bounds.size.height-axisXheight);
+            _circle.frame = CGRectMake(axisYwidth + x - 2, y-2, 4, 4);
         }
     }
 }

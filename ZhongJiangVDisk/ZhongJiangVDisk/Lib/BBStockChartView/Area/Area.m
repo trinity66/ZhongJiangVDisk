@@ -7,7 +7,7 @@
 //
 
 #import "Area.h"
-
+#import "BBTheme.h"
 @implementation Area
 -(instancetype)init{
     self = [super init];
@@ -16,8 +16,8 @@
         _leftAxis = [[AxisY alloc] init];
         _rightAxis = [[AxisY alloc] init];
         _bottomAxis = [[AxisX alloc] init];
-        _axisYwidth = 50;
-        _axisXheight = 30;
+        _axisYwidth = [BBTheme theme].axisYwidth;
+        _axisXheight = [BBTheme theme].axisXHeight;
         [self addSublayer:_leftAxis];
         [self addSublayer:_rightAxis];
         [self addSublayer:_bottomAxis];

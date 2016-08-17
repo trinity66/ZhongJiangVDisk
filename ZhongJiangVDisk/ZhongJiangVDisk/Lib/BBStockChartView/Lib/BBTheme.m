@@ -28,12 +28,16 @@ BBTheme* _defTheme = nil;
         _defTheme.xAxisFontSize = 10;
         _defTheme.yAxisFontSize = 10;
         _defTheme.backgroundColor = [UIColor whiteColor];
-        _defTheme.axisColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.78 alpha:1.00];
+        _defTheme.axisColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1.00];
         _defTheme.borderColor = [UIColor yellowColor];
-        _defTheme.defTextColor = [UIColor whiteColor];
+        _defTheme.defTextColor = [UIColor darkGrayColor];
         _defTheme.defLineColor = [UIColor yellowColor];
         _defTheme.defLineWidth = 1;
-        _defTheme.defLabelGap = 30;
+        _defTheme.defYLabelGap = 5;
+        _defTheme.defXLabelGap = 3;
+        _defTheme.axisYwidth = 50;
+        _defTheme.axisXHeight = 50;
+        
     }
     return _defTheme;
 }

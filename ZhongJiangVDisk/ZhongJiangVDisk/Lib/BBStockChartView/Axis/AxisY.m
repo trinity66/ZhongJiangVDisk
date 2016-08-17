@@ -84,20 +84,19 @@
     line.position = CGPointMake(self.bounds.size.width-2, 0);
     [self addSublayer:line];
     
-    CGFloat labelGap = [BBTheme theme].defLabelGap;
     
-    NSUInteger cnt = self.bounds.size.height / labelGap;
+    NSUInteger cnt = [BBTheme theme].defYLabelGap;
     CGFloat labelHei = [self sizeOfText:@"abc" andSize:[BBTheme theme].yAxisFontSize].height;
 
-    for (int i = 1; i < cnt; ++i) {
-        CGFloat curHei = i * labelGap;
-        CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(self.bounds.size.width-1.5-5, curHei) to:CGPointMake(self.bounds.size.width-2, curHei) withColor:[BBTheme theme].axisColor andWidth:1 animated:animated];
+    for (int i = 0; i < cnt; ++i) {
+        CGFloat curHei = self.bounds.size.height/(float)cnt*(float)i;
+        CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(self.bounds.size.width-1.5-5, curHei) to:CGPointMake(self.bounds.size.width-2, curHei) withColor:[BBTheme theme].axisColor andWidth:0.5 animated:animated];
         CGFloat val = [self valForHeigth:height-curHei];
         NSString* lab = [NSString stringWithFormat:@"%.3f", val];
         if (val > 1000) {
             lab = [NSString stringWithFormat:@"%.1f", val];
         }
-        CATextLayer* t = [BaseLayer layerOfText:lab withFont:@"Helvetica" fontSize:[BBTheme theme].yAxisFontSize andColor:[BBTheme theme].axisColor];
+        CATextLayer* t = [BaseLayer layerOfText:lab withFont:@"Helvetica" fontSize:[BBTheme theme].yAxisFontSize andColor:[BBTheme theme].defTextColor];
         t.alignmentMode = kCAAlignmentRight;
 
 //        NSLog(@"mark val:%.1f H:%f", [self valForHeigth:curHei], curHei);

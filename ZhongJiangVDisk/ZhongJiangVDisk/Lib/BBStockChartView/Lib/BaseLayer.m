@@ -27,7 +27,6 @@
     [linePath moveToPoint: from];
     [linePath addLineToPoint:to];
     line.path = linePath.CGPath;
-    line.fillColor = [UIColor redColor].CGColor;
     line.opacity = 1.0;
     line.strokeColor = color.CGColor;
     line.lineWidth = width;
@@ -43,6 +42,7 @@
         drawAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         [line addAnimation:drawAnimation forKey:@"drawCircleAnimation"];
     }
+    
     return line;
 }
 // TODO: when line series is thick, their joint part would leave a small black space, which should be filled

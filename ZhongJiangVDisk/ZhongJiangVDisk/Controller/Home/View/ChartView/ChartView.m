@@ -78,7 +78,6 @@
     NSString* ret = nil;
     
     // Too much labels would make them overlapping
-    if (idx % 15 == 0) {
         NSDate* curDate = [NSDate date];
         NSDate* date = nil;
         NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
@@ -89,7 +88,6 @@
         formatter.dateFormat =  @"MM/dd";;
         date = [calendar dateByAddingComponents:dateComponents toDate:curDate options:0];
         ret = [formatter stringFromDate:date];
-    }
     return ret;
     
 }

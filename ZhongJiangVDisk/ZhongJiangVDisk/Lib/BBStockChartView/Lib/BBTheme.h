@@ -34,6 +34,7 @@
 
 @property (nonatomic) UIColor* defTextColor;
 @property (nonatomic) UIColor* defLineColor;
-@property (nonatomic) float defLineWidth, defLabelGap;
+@property (nonatomic) float defLineWidth, axisYwidth, axisXHeight;
+@property (nonatomic) NSInteger defYLabelGap, defXLabelGap;
 +(BBTheme*) theme;
 @end
