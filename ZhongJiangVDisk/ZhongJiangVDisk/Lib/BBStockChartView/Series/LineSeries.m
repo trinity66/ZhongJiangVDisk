@@ -32,6 +32,15 @@
     float y1 = height - [self.axisAttached heighForVal:((NSNumber*)self.data[idx-1]).floatValue];
     float y2 = height - [self.axisAttached heighForVal:((NSNumber*)self.data[idx]).floatValue];
     CALayer* line = [BaseLayer layerOfLineFrom:CGPointMake((idx-1)*self.pointWidth, y1) to:CGPointMake(idx*self.pointWidth, y2) withColor:self.color andWidth:self.width animated:animated];
+    CGPoint p;
+    if (idx > 1) {
+        p = CGPointMake((idx-2)*self.pointWidth, self.width);
+    }else
+    {
+        p = CGPointMake(0, 0);
+    }
+    CALayer *back = [BaseLayer backOfLineFrom:CGPointMake((idx-1)*self.pointWidth, y1) to:CGPointMake(idx*self.pointWidth, y2)];
+    [self addSublayer:back];
     [self addSublayer:line];
 }
 

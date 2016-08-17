@@ -24,7 +24,7 @@
 + (CALayer *)layerOfLineFrom:(CGPoint)from to:(CGPoint)to withColor:(UIColor*)color andWidth:(CGFloat)width animated:(BOOL)animated {
     CAShapeLayer *line = [CAShapeLayer layer];
     UIBezierPath *linePath = [UIBezierPath bezierPath];
-    [linePath moveToPoint: from];
+    [linePath moveToPoint:from];
     [linePath addLineToPoint:to];
     line.path = linePath.CGPath;
     line.opacity = 1.0;
@@ -44,6 +44,27 @@
     }
     
     return line;
+}
++(CALayer *)backOfLineFrom:(CGPoint)from to:(CGPoint)to
+{
+    //绘制渐变色层
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame =CGRectMake(0, 0, 500, 400) ;// self.view.frame;
+    gradientLayer.colors = @[(__bridge id)[UIColor colorWithRed:0.79 green:0.59 blue:0.39 alpha:0.9].CGColor ,
+                             (__bridge id)[UIColor colorWithRed:0.79 green:0.59 blue:0.39 alpha:0.4].CGColor,
+                             (__bridge id)[UIColor colorWithRed:0.79 green:0.59 blue:0.39 alpha:0.1].CGColor];
+    gradientLayer.locations=@[@0.0,@0.4,@1.0];
+
+    UIBezierPath * path=[[UIBezierPath alloc] init];
+    [path moveToPoint:CGPointMake(from.x, from.y)];
+    [path addLineToPoint:CGPointMake(from.x, 166)];
+    [path addLineToPoint:CGPointMake(to.x, 166)];
+    [path addLineToPoint:to];
+    [path closePath];
+    CAShapeLayer *arc = [CAShapeLayer layer];
+    arc.path =path.CGPath;
+    gradientLayer.mask=arc;
+    return gradientLayer;
 }
 // TODO: when line series is thick, their joint part would leave a small black space, which should be filled
 //+ (CALayer *)layerOfConcatLineFrom:(CGPoint)from to:(CGPoint)to withColor:(UIColor*)color andWidth:(CGFloat)width{
