@@ -9,5 +9,5 @@
 #import "Core.h"
 
 @interface Core (Color)
-- (NSDictionary *)zhongJiangColors;
+- (void)initColors;
 @end

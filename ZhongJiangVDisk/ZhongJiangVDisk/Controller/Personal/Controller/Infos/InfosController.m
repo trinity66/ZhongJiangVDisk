@@ -52,10 +52,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
-        cell.textLabel.textColor = [[Core shareCore] zhongJiangColors][@"blackColor"];
+        cell.textLabel.textColor = [Core shareCore].blackColor;
         cell.textLabel.font = [UIFont systemFontOfSize:11];
         UIView *view = [UIView new];
-        view.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+        view.backgroundColor = [Core shareCore].lightMainColor;
         cell.selectedBackgroundView = view;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }

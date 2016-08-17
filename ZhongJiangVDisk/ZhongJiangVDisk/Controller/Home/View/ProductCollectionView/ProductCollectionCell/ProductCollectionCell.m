@@ -25,12 +25,12 @@
 }
 - (void)setColorWithType:(NSString *)type
 {
-    UIColor *color = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+    UIColor *color = [Core shareCore].lightMainColor;
     _title.textColor = color;
     _riseButton.layer.masksToBounds = YES;
     _fallButton.layer.masksToBounds = YES;
     if ([type isEqualToString:@"RED"]) {
-        color = [[Core shareCore] zhongJiangColors][@"riseColor"];
+        color = [Core shareCore].riseColor;
     }
     
     _mainView.layer.borderColor = color.CGColor;

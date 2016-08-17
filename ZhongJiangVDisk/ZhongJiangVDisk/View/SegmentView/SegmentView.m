@@ -19,9 +19,9 @@
 */
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightGrayColor"];
-    self.title.textColor = [[Core shareCore] zhongJiangColors][@"blackColor"];
-    self.bottom.backgroundColor = [[Core shareCore] zhongJiangColors][@"darkMainColor"];
+    self.backgroundColor = [Core shareCore].lightGrayColor;
+    self.title.textColor = [Core shareCore].blackColor;
+    self.bottom.backgroundColor = [Core shareCore].darkMainColor;
     _bottom.hidden = YES;
     // Initialization code
 }
@@ -31,11 +31,11 @@
     NSString *imageName;
     _title.text = title;
     if (isRise) {
-        color = [Core shareCore].zhongJiangColors[@"riseColor"];
+        color = [Core shareCore].riseColor;
         imageName = @"riseRed";
     }else
     {
-        color = [Core shareCore].zhongJiangColors[@"fallColor"];
+        color = [Core shareCore].fallColor;
         imageName = @"fallGreen";
     }
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.02f",number] attributes:@{

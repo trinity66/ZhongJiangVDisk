@@ -20,4 +20,14 @@
              @"darkMainColor":[UIColor colorWithRed:0.64 green:0.52 blue:0.38 alpha:1.00]
              };
 }
+- (void)initColors
+{
+    NSDictionary *dict = [self zhongJiangColors];
+    self.blackColor = dict[@"blackColor"];
+    self.lightGrayColor = dict[@"lightGrayColor"];
+    self.riseColor = dict[@"riseColor"];
+    self.fallColor = dict[@"fallColor"];
+    self.lightMainColor = dict[@"lightMainColor"];
+    self.darkMainColor = dict[@"darkMainColor"];
+}
 @end

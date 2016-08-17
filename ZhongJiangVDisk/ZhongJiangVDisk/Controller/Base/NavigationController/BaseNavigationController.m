@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIColor *color = [[Core shareCore] zhongJiangColors][@"darkMainColor"];
+    UIColor *color = [Core shareCore].darkMainColor;
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:color,NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
     [[UINavigationBar appearance] setTintColor:color];
     [[UINavigationBar appearance] setTitleTextAttributes:@{

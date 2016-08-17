@@ -25,7 +25,7 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    UIColor *color = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+    UIColor *color = [Core shareCore].lightMainColor;
     _codeButton.backgroundColor = color;
     _CIAButton.backgroundColor = color;
     _button.backgroundColor = color;

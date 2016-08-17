@@ -16,10 +16,10 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    self.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
-    UIColor *borderColor = [[Core shareCore] zhongJiangColors][@"lightGrayColor"];
+    self.backgroundColor = [Core shareCore].lightMainColor;
+    UIColor *borderColor = [Core shareCore].lightGrayColor;
     _imageView.layer.borderColor = borderColor.CGColor;
-    _recharge.backgroundColor = [[Core shareCore] zhongJiangColors][@"riseColor"];
+    _recharge.backgroundColor = [Core shareCore].riseColor;
 }
 - (IBAction)rechargeAction:(id)sender {
     [[Core shareCore] goRechargeVC];

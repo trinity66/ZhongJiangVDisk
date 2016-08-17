@@ -25,7 +25,7 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    _button.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+    _button.backgroundColor = [Core shareCore].lightMainColor;
 }
 - (void)setBtnTitle:(NSString *)btnTitle
 {

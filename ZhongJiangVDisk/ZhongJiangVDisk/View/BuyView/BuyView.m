@@ -60,7 +60,7 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    _button.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+    _button.backgroundColor = [Core shareCore].lightMainColor;
     _titles = @[@"止盈（％）", @"止损（％）", @"购买数量", @"预付款", @"合同总价值"];
     _placeholders = @[@"不设", @"不设", @"1", @"50", @"3174"];
 }

@@ -23,7 +23,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBar.tintColor = [[Core shareCore] zhongJiangColors][@"darkMainColor"];
+    self.tabBar.tintColor = [Core shareCore].darkMainColor;
     // Do any additional setup after loading the view.
 }
 

@@ -17,7 +17,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    UIColor *color = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+    UIColor *color = [Core shareCore].lightMainColor;
     _title.textColor = color;
     _detail.textColor = color;
     _button.backgroundColor = color;
@@ -34,12 +34,12 @@
     NSString *imageName;
     NSString *num;
     if (isRise) {
-        color = [Core shareCore].zhongJiangColors[@"riseColor"];
+        color = [Core shareCore].riseColor;
         imageName = @"riseRed";
         num = [NSString stringWithFormat:@"+%.02f",number];
     }else
     {
-        color = [Core shareCore].zhongJiangColors[@"fallColor"];
+        color = [Core shareCore].fallColor;
         imageName = @"fallGreen";
         num = [NSString stringWithFormat:@"-%.02f",number];
     }

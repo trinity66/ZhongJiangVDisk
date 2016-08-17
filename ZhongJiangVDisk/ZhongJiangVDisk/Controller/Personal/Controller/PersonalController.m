@@ -29,7 +29,7 @@
   @[@"帮助"]
   ];
     _topTableViewY.constant = [self getTableViewY];
-    _tableView.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightGrayColor"];
+    _tableView.backgroundColor = [Core shareCore].lightGrayColor;
     // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning {
@@ -64,7 +64,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [UIView new];
-    view.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightGrayColor"];
+    view.backgroundColor = [Core shareCore].lightGrayColor;
     return view;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,10 +72,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
-        cell.textLabel.textColor = [[Core shareCore] zhongJiangColors][@"blackColor"];
+        cell.textLabel.textColor = [Core shareCore].blackColor;
         cell.textLabel.font = [UIFont systemFontOfSize:11];
         UIView *view = [UIView new];
-        view.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+        view.backgroundColor = [Core shareCore].lightMainColor;
         cell.selectedBackgroundView = view;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }

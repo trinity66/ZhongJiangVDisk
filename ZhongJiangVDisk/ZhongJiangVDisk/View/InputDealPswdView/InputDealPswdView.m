@@ -53,7 +53,7 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    UIColor *color = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+    UIColor *color = [Core shareCore].lightMainColor;
     [_forgetPswdBtn setTitleColor:color forState:UIControlStateNormal];
     _button.backgroundColor = color;
 }

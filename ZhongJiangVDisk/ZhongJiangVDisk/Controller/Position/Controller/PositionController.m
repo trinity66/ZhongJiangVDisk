@@ -51,7 +51,7 @@ __weak PositionController *_positionSelf;
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [UIView new];
-    view.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightGrayColor"];
+    view.backgroundColor = [Core shareCore].lightGrayColor;
     return view;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

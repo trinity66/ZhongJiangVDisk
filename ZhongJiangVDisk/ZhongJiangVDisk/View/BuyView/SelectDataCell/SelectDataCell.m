@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    UIColor *color = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+    UIColor *color = [Core shareCore].lightMainColor;
     _addBtn.backgroundColor = color;
     _subtractBtn.backgroundColor = color;
     // Initialization code

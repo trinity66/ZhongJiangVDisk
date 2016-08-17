@@ -35,7 +35,7 @@
     if (_personalTopView == nil) {
        _personalTopView = [[NSBundle mainBundle] loadNibNamed:@"PersonalTopView" owner:nil options:nil].lastObject;
         _personalTopView.frame = CGRectMake(0, 0, kScreenWidth, kPersonalTopViewHeight+64);
-        _personalTopView.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+        _personalTopView.backgroundColor = [Core shareCore].lightMainColor;
         [self.view addSubview:_personalTopView];
     }
     

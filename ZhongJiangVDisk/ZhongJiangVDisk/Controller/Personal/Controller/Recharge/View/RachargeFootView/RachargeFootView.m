@@ -16,7 +16,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _button.backgroundColor = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
+    _button.backgroundColor = [Core shareCore].lightMainColor;
     // Initialization code
 }
 - (IBAction)buttonAction:(id)sender {

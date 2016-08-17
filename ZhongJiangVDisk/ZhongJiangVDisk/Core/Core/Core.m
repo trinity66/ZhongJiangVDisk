@@ -18,6 +18,7 @@
     });
     return core;
 }
+
 - (void)goRechargeVC
 {
     UIViewController *topVc = [UIApplication sharedApplication].keyWindow.rootViewController;
@@ -42,7 +43,7 @@
     hud.bezelView.layer.borderColor = hud.bezelView.color.CGColor;
     hud.label.text = title;
     hud.label.numberOfLines = 0;
-    hud.contentColor = [[Core shareCore] zhongJiangColors][@"darkMainColor"];
+    hud.contentColor = [Core shareCore].darkMainColor;
     hud.label.font = [UIFont systemFontOfSize:13];
     hud.mode = MBProgressHUDModeText;
     [hud hideAnimated:YES afterDelay:timeCount];

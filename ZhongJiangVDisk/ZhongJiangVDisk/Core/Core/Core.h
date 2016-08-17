@@ -15,4 +15,6 @@ typedef void(^btnsActionBlock)(NSInteger index);
 - (void)goRechargeVC;
 - (void)goForgetDealPswdVC;
 - (void)showAlertTitle:(NSString *)title timeCount:(NSInteger)timeCount inView:(UIView *)view;
+
+@property (nonatomic, strong)UIColor *blackColor, *lightGrayColor, *riseColor, *fallColor, *lightMainColor, *darkMainColor;
 @end

@@ -21,8 +21,8 @@ BBTheme* _defTheme = nil;
 +(BBTheme *)theme{
     if (!_defTheme) {
         _defTheme = [[BBTheme alloc] init];
-        _defTheme.riseColor = [[Core shareCore] zhongJiangColors][@"riseColor"];
-        _defTheme.fallColor = [[Core shareCore] zhongJiangColors][@"fallColor"];
+        _defTheme.riseColor = [Core shareCore].riseColor;
+        _defTheme.fallColor = [Core shareCore].fallColor;
         _defTheme.barFillColor = [UIColor greenColor];
         _defTheme.barBorderColor = [UIColor clearColor];
         _defTheme.xAxisFontSize = 10;

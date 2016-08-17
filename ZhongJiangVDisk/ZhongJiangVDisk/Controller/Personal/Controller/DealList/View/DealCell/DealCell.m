@@ -22,11 +22,11 @@
 }
 - (void)setAmountWithNumber:(double)number isRise:(BOOL)isRise
 {
-    UIColor *color = [[Core shareCore] zhongJiangColors][@"riseColor"];
+    UIColor *color = [Core shareCore].riseColor;
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:@"金额："];
     NSString *num = [NSString stringWithFormat:@"+%.02f",number];
     if (!isRise) {
-        color = [[Core shareCore] zhongJiangColors][@"fallColor"];
+        color = [Core shareCore].fallColor;
         num = [NSString stringWithFormat:@"-%.02f",number];
         _kind.text = @"类型：亏损";
     }else

@@ -103,7 +103,7 @@
                                    };
         NSDictionary *selected = @{
                                    NSFontAttributeName : [UIFont systemFontOfSize:14],
-                                   NSForegroundColorAttributeName : [[Core shareCore] zhongJiangColors][@"darkMainColor"],
+                                   NSForegroundColorAttributeName :[Core shareCore].darkMainColor,
                                    };
         _segmentC = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, -10, kScreenWidth, 35)];
         [_segmentSuper addSubview:_segmentC];
@@ -115,7 +115,7 @@
         _segmentC.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
         _segmentC.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
         _segmentC.backgroundColor = [UIColor clearColor];
-        _segmentC.selectionIndicatorColor = [[Core shareCore] zhongJiangColors][@"darkMainColor"];
+        _segmentC.selectionIndicatorColor = [Core shareCore].darkMainColor;
         _segmentC.sectionTitles = @[@"分时线", @"五分", @"十五分", @"三十分", @"一小时"];
         
     }
