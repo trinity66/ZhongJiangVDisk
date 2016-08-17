@@ -6,4 +6,6 @@ target 'ZhongJiangVDisk' do
 	pod 'MJRefresh'
 	pod 'HMSegmentedControl'
 	pod 'MBProgressHUD'
+    pod 'Pgyer'
+    pod 'PgyUpdate'
 end

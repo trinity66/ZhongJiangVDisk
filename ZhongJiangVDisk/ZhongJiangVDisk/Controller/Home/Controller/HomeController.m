@@ -68,7 +68,7 @@ __weak HomeController *_self;
     }
     if (!_chartSuperView) {
         _chartSuperView = [[NSBundle mainBundle] loadNibNamed:@"ChartView" owner:nil options:nil].lastObject;
-        _chartSuperView.frame = CGRectMake(0, 0, kScreenWidth, 300);
+        _chartSuperView.frame = CGRectMake(0, 0, kScreenWidth, 330);
         [_scrollView addSubview:_chartSuperView];
     }
     if (!_collectionSuperView) {

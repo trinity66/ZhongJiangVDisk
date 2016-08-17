@@ -41,9 +41,9 @@
                     <cells/>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="uTh-g0-4Ag"/>
-                            <exclude reference="Utz-Xr-VkW"/>
                             <exclude reference="3C4-cM-UmR"/>
+                            <exclude reference="Utz-Xr-VkW"/>
+                            <exclude reference="uTh-g0-4Ag"/>
                         </mask>
                     </variation>
                     <connections>

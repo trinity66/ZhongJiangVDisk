@@ -36,7 +36,7 @@ BBTheme* _defTheme = nil;
         _defTheme.defYLabelGap = 5;
         _defTheme.defXLabelGap = 3;
         _defTheme.axisYwidth = 50;
-        _defTheme.axisXHeight = 50;
+        _defTheme.axisXHeight = 30;
         
     }
     return _defTheme;

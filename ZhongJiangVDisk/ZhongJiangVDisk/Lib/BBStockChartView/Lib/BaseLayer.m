@@ -57,8 +57,8 @@
 
     UIBezierPath * path=[[UIBezierPath alloc] init];
     [path moveToPoint:CGPointMake(from.x, from.y)];
-    [path addLineToPoint:CGPointMake(from.x, 166)];
-    [path addLineToPoint:CGPointMake(to.x, 166)];
+    [path addLineToPoint:CGPointMake(from.x, 290-64-1)];
+    [path addLineToPoint:CGPointMake(to.x, 290-64-1)];
     [path addLineToPoint:to];
     [path closePath];
     CAShapeLayer *arc = [CAShapeLayer layer];

@@ -42,8 +42,9 @@
     [_chartView removeFromSuperview];
     _chartView = nil;
     if (!_chartView) {
-        _chartView = [[BBChartView alloc] initWithFrame:CGRectMake(0, 40, kScreenWidth-10, _chartViewSuper.frame.size.height-45)];
+        _chartView = [[BBChartView alloc] initWithFrame:CGRectMake(0, 36, kScreenWidth-10, _chartViewSuper.bounds.size.height-36)];
         _chartView.userInteractionEnabled = YES;
+        _chartView.backgroundColor = [UIColor blueColor];
         [self.chartViewSuper addSubview:_chartView];
         [BBTheme theme].barBorderColor = [UIColor clearColor];
         [BBTheme theme].xAxisFontSize = 11;
@@ -104,7 +105,7 @@
                                    NSFontAttributeName : [UIFont systemFontOfSize:14],
                                    NSForegroundColorAttributeName : [[Core shareCore] zhongJiangColors][@"darkMainColor"],
                                    };
-        _segmentC = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _segmentSuper.frame.size.height)];
+        _segmentC = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, -10, kScreenWidth, 35)];
         [_segmentSuper addSubview:_segmentC];
         _segmentC.selectionIndicatorHeight = 1.5;
         _segmentC.titleTextAttributes = defaults;
@@ -115,7 +116,7 @@
         _segmentC.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
         _segmentC.backgroundColor = [UIColor clearColor];
         _segmentC.selectionIndicatorColor = [[Core shareCore] zhongJiangColors][@"darkMainColor"];
-        _segmentC.sectionTitles = @[@"分时图", @"五分", @"十五分", @"三十分", @"一小时"];
+        _segmentC.sectionTitles = @[@"分时线", @"五分", @"十五分", @"三十分", @"一小时"];
         
     }
 }
