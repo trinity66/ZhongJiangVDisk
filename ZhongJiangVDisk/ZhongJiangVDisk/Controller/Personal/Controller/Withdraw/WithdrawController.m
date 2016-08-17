@@ -14,11 +14,12 @@
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) SecurityCodeView *foot;
 @end
-
+__weak WithdrawController *_withdrawSelf;
 @implementation WithdrawController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _withdrawSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"提现金额：", @"提现银行：", @"姓名：", @"银行账号：", @"交易密码："];
     // Do any additional setup after loading the view.
@@ -66,8 +67,24 @@
     if (indexPath.row == _titles.count - 1) {
         if (!_foot) {
             _foot = [[NSBundle mainBundle] loadNibNamed:@"SecurityCodeView" owner:nil options:nil].lastObject;
+            _foot.btnsActionBlock = ^(NSInteger index) {
+                NSString *title;
+                if (index == 0) {
+                    //验证码
+                    title = @"验证码发送成功";
+                    
+                }else if (index == 1) {
+                    //拨打电话
+                    title = @"已成功通过拨打电话方式告知验证码";
+                    
+                }else if (index == 2) {
+                    //确认按钮
+                    title = @"提现申请已提交";
+                }
+                [[Core shareCore] showAlertTitle:title timeCount:2 inView:_withdrawSelf.view];
+            };
             _tableView.tableFooterView = _foot;
-            [_foot.button setTitle:@"提交" forState:UIControlStateNormal];
+            [_foot setButtonTitle:@"提交"];
         }
     }
 }

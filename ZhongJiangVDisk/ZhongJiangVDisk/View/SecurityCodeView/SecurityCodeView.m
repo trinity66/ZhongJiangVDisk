@@ -8,6 +8,11 @@
 
 #import "SecurityCodeView.h"
 
+@interface SecurityCodeView ()
+@property (weak, nonatomic) IBOutlet UIButton *codeButton;
+@property (weak, nonatomic) IBOutlet UIButton *CIAButton;
+@property (weak, nonatomic) IBOutlet UIButton *button;
+@end
 @implementation SecurityCodeView
 
 /*
@@ -22,7 +27,26 @@
     [super awakeFromNib];
     UIColor *color = [[Core shareCore] zhongJiangColors][@"lightMainColor"];
     _codeButton.backgroundColor = color;
-    _phoneButton.backgroundColor = color;
+    _CIAButton.backgroundColor = color;
     _button.backgroundColor = color;
+}
+- (IBAction)codeButtonAction:(id)sender {
+    if (self.btnsActionBlock) {
+        self.btnsActionBlock(0);
+    }
+}
+- (IBAction)CIAButtonAction:(id)sender {
+    if (self.btnsActionBlock) {
+        self.btnsActionBlock(1);
+    }
+}
+- (IBAction)buttonAction:(id)sender {
+    if (self.btnsActionBlock) {
+        self.btnsActionBlock(2);
+    }
+}
+- (void)setButtonTitle:(NSString *)buttontitle
+{
+    [_button setTitle:buttontitle forState:UIControlStateNormal];
 }
 @end

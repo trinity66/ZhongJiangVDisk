@@ -10,8 +10,6 @@
 
 @interface SecurityCodeView : UIView
 @property (weak, nonatomic) IBOutlet UITextField *securityCodeTF;
-@property (weak, nonatomic) IBOutlet UIButton *codeButton;
-@property (weak, nonatomic) IBOutlet UIButton *phoneButton;
-@property (weak, nonatomic) IBOutlet UIButton *button;
-
+@property (nonatomic, copy) btnsActionBlock btnsActionBlock;
+- (void)setButtonTitle:(NSString *)buttontitle;
 @end

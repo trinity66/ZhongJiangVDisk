@@ -14,11 +14,12 @@
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) SecurityCodeView *foot;
 @end
-
+__weak ApplyForBrokerController *_applySelf;
 @implementation ApplyForBrokerController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _applySelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"经纪人名称：", @"登录密码：", @"经纪人手机：", @"机构编号："];
     // Do any additional setup after loading the view.
@@ -72,8 +73,24 @@
     if (indexPath.row == _titles.count - 1) {
         if (!_foot) {
             _foot = [[NSBundle mainBundle] loadNibNamed:@"SecurityCodeView" owner:nil options:nil].lastObject;
+            _foot.btnsActionBlock = ^(NSInteger index) {
+                NSString *title;
+                if (index == 0) {
+                    //验证码
+                    title = @"验证码发送成功";
+                    
+                }else if (index == 1) {
+                    //拨打电话
+                    title = @"已成功通过拨打电话方式告知验证码u 都是 v 不符合创办人分毫不差,";
+                    
+                }else if (index == 2) {
+                    //确认按钮
+                    title = @"经纪人申请已提交";
+                }
+                [[Core shareCore] showAlertTitle:title timeCount:2 inView:_applySelf.view];
+            };
             _tableView.tableFooterView = _foot;
-            [_foot.button setTitle:@"提交申请" forState:UIControlStateNormal];
+            [_foot setButtonTitle:@"提交申请"];
         }
     }
 }

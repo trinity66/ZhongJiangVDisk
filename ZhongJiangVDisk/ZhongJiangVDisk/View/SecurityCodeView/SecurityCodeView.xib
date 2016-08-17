@@ -46,6 +46,9 @@
                             <integer key="value" value="4"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="codeButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="5MS-tl-KYB"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUU-OM-Oak">
                     <rect key="frame" x="145" y="42" width="64" height="30"/>
@@ -58,6 +61,9 @@
                             <integer key="value" value="4"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="CIAButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="e8w-I6-d1f"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="以上两种方式二选一" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nad-Ds-cMK">
                     <rect key="frame" x="58" y="75" width="113" height="18"/>
@@ -93,6 +99,9 @@
                             <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="eX7-JS-Byd"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -132,9 +141,9 @@
                 </mask>
             </variation>
             <connections>
+                <outlet property="CIAButton" destination="PUU-OM-Oak" id="20t-iW-I1F"/>
                 <outlet property="button" destination="Zb6-8e-YRn" id="uri-Eb-rPQ"/>
                 <outlet property="codeButton" destination="GcP-TL-55E" id="8bw-13-rE3"/>
-                <outlet property="phoneButton" destination="PUU-OM-Oak" id="dhS-w2-plL"/>
                 <outlet property="securityCodeTF" destination="YtY-qL-Mjx" id="mcn-d8-xKB"/>
             </connections>
             <point key="canvasLocation" x="143.5" y="299"/>
