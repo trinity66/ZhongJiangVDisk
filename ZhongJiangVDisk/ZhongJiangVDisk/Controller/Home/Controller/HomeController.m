@@ -12,6 +12,7 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) ChartView *chartSuperView;
 @property (nonatomic, strong) ProductCollectionView *collectionSuperView;
+@property (nonatomic, strong) ProductTableView *productTableSuperView;
 @property (nonatomic, strong) InputDealPswdView *put;
 
 
@@ -73,13 +74,19 @@ __weak HomeController *_self;
         _chartSuperView.frame = CGRectMake(0, 0, kScreenWidth, 330);
         [_scrollView addSubview:_chartSuperView];
     }
-    if (!_collectionSuperView) {
-        _collectionSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductCollectionView" owner:nil options:nil].lastObject;
-        _collectionSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, kScreenWidth, 160);
-        [_scrollView addSubview:_collectionSuperView];
-        
+//    if (!_collectionSuperView) {
+//        _collectionSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductCollectionView" owner:nil options:nil].lastObject;
+//        _collectionSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, kScreenWidth, 160);
+//        [_scrollView addSubview:_collectionSuperView];
+//        _scrollView.contentSize = CGSizeMake(kScreenWidth, _chartSuperView.frame.size.height + _collectionSuperView.frame.size.height);
+//    }
+    if (!_productTableSuperView) {
+        _productTableSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductTableView" owner:nil options:nil].lastObject;
+        _productTableSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, kScreenWidth, 160);
+        [_scrollView addSubview:_productTableSuperView];
+        _scrollView.contentSize = CGSizeMake(kScreenWidth, _chartSuperView.frame.size.height + _productTableSuperView.frame.size.height);
     }
-    _scrollView.contentSize = CGSizeMake(kScreenWidth, _chartSuperView.frame.size.height + _collectionSuperView.frame.size.height);
+    
     
 }
 - (void)didReceiveMemoryWarning {

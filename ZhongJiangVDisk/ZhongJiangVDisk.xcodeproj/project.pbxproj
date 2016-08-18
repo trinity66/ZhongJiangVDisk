@@ -83,6 +83,10 @@
 		5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722F21D658877003CA0AE /* PersonalTopView.m */; };
 		5E1722F71D658CAA003CA0AE /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */; };
 		5E1722FA1D6599B7003CA0AE /* LTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722F91D6599B7003CA0AE /* LTextField.m */; };
+		5E1722FF1D65AB49003CA0AE /* ProductTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722FE1D65AB49003CA0AE /* ProductTableView.m */; };
+		5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723001D65AB52003CA0AE /* ProductTableView.xib */; };
+		5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */; };
+		5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +240,12 @@
 		5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTopView.xib; sourceTree = "<group>"; };
 		5E1722F81D6599B7003CA0AE /* LTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTextField.h; sourceTree = "<group>"; };
 		5E1722F91D6599B7003CA0AE /* LTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTextField.m; sourceTree = "<group>"; };
+		5E1722FD1D65AB49003CA0AE /* ProductTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableView.h; sourceTree = "<group>"; };
+		5E1722FE1D65AB49003CA0AE /* ProductTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableView.m; sourceTree = "<group>"; };
+		5E1723001D65AB52003CA0AE /* ProductTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableView.xib; sourceTree = "<group>"; };
+		5E1723021D65ACA5003CA0AE /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
+		5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
+		5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -964,6 +974,9 @@
 			isa = PBXGroup;
 			children = (
 				5E1722FC1D65AB15003CA0AE /* ProductTableViewCell */,
+				5E1722FD1D65AB49003CA0AE /* ProductTableView.h */,
+				5E1722FE1D65AB49003CA0AE /* ProductTableView.m */,
+				5E1723001D65AB52003CA0AE /* ProductTableView.xib */,
 			);
 			path = ProductTableView;
 			sourceTree = "<group>";
@@ -971,6 +984,9 @@
 		5E1722FC1D65AB15003CA0AE /* ProductTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				5E1723021D65ACA5003CA0AE /* ProductTableViewCell.h */,
+				5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */,
+				5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */,
 			);
 			path = ProductTableViewCell;
 			sourceTree = "<group>";
@@ -1093,6 +1109,7 @@
 				5E1722871D630082003CA0AE /* ProductCollectionView.xib in Resources */,
 				5E17227D1D630082003CA0AE /* Main.storyboard in Resources */,
 				5E17229F1D630082003CA0AE /* PositionCell.xib in Resources */,
+				5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */,
 				5E17228C1D630082003CA0AE /* DealHistoryCell.xib in Resources */,
 				5E17229B1D630082003CA0AE /* RechargeHeadView.xib in Resources */,
 				5E1722E01D63008A003CA0AE /* SecurityCodeView.xib in Resources */,
@@ -1102,6 +1119,7 @@
 				5E1722A21D630082003CA0AE /* Info.plist in Resources */,
 				5E1722911D630082003CA0AE /* DealCell.xib in Resources */,
 				5E1722DA1D63008A003CA0AE /* SelectDataCell.xib in Resources */,
+				5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */,
 				5E17227B1D630082003CA0AE /* Assets.xcassets in Resources */,
 				5E17227C1D630082003CA0AE /* LaunchScreen.storyboard in Resources */,
 				5E1722DC1D63008A003CA0AE /* InputDealPswdView.xib in Resources */,
@@ -1188,6 +1206,7 @@
 				5E1722951D630082003CA0AE /* RechargeController.m in Sources */,
 				5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */,
 				5E1722AD1D630082003CA0AE /* Series.m in Sources */,
+				5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */,
 				5E1722D71D63008A003CA0AE /* BuyView.m in Sources */,
 				5E1722AB1D630082003CA0AE /* BarSeries.m in Sources */,
 				5E1722A11D630082003CA0AE /* Core+Color.m in Sources */,
@@ -1205,6 +1224,7 @@
 				5E17228D1D630082003CA0AE /* DealHistoryHeadView.m in Sources */,
 				5E17227A1D630082003CA0AE /* AppDelegate.m in Sources */,
 				5E1722DB1D63008A003CA0AE /* InputDealPswdView.m in Sources */,
+				5E1722FF1D65AB49003CA0AE /* ProductTableView.m in Sources */,
 				5E1722FA1D6599B7003CA0AE /* LTextField.m in Sources */,
 				5E1722A51D630082003CA0AE /* AxisY.m in Sources */,
 				5E1722DF1D63008A003CA0AE /* SecurityCodeView.m in Sources */,

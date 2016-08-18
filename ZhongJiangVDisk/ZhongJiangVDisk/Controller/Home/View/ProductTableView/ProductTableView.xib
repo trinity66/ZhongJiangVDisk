@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductTableView">
+            <rect key="frame" x="0.0" y="0.0" width="265" height="152"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2R1-bk-tpb">
+                    <rect key="frame" x="0.0" y="0.0" width="265" height="152"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="cTF-ru-quX"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="6Gj-VB-zSr"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="2R1-bk-tpb" secondAttribute="trailing" id="8M4-Xh-JdC"/>
+                <constraint firstAttribute="bottom" secondItem="2R1-bk-tpb" secondAttribute="bottom" id="Hgh-Mx-eN4"/>
+                <constraint firstItem="2R1-bk-tpb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KBB-hj-9Q4"/>
+                <constraint firstItem="2R1-bk-tpb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eXl-fC-oiP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tableView" destination="2R1-bk-tpb" id="jmW-4j-Oe7"/>
+            </connections>
+            <point key="canvasLocation" x="278.5" y="-40"/>
+        </view>
+    </objects>
+</document>
