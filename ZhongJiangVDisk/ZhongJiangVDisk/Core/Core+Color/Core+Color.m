@@ -39,6 +39,9 @@
              
              @"cellTextColor":[UIColor colorWithRed:0.05 green:0.05 blue:0.05 alpha:1.0],
              @"topSegmentColor":[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0],
+             @"textFieldBorderColor":[UIColor lightGrayColor],
+             @"textFieldBackColor":[UIColor whiteColor],
+             @"textFieldSelectBackColor":[UIColor colorWithRed:0.84 green:0.72 blue:0.53 alpha:1.00],
              };
 }
 - (NSDictionary *)zhongHuiColors
@@ -46,7 +49,7 @@
     return @{
              @"riseColor":[UIColor colorWithRed:0.79 green:0.03 blue:0.08 alpha:1.00],
              @"fallColor":[UIColor colorWithRed:0.06 green:0.51 blue:0.07 alpha:1.00],
-             @"backgroundColor":[UIColor blackColor],
+             @"backgroundColor":[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0],
              @"detailBackColor":[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0],
              @"detailLightBackColor":[UIColor blackColor],
              
@@ -65,11 +68,14 @@
              @"selectedLineColor":[UIColor colorWithRed:0.88 green:0.73 blue:0.50 alpha:1.00],
              @"tabBarSelectTextColor":[UIColor whiteColor],
              @"tabBarTextColor":[UIColor lightGrayColor],
-             @"buttonBackColor":[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0],
+             @"buttonBackColor":[UIColor blackColor],
              @"personalTopColor":[UIColor blackColor],
              
              @"cellTextColor":[UIColor whiteColor],
              @"topSegmentColor":[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0],
+             @"textFieldBorderColor":[UIColor blackColor],
+             @"textFieldBackColor":[UIColor darkGrayColor],
+             @"textFieldSelectBackColor":[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0],
              };
 }
 - (void)initColors
@@ -101,5 +107,8 @@
     
     self.cellTextColor = dict[@"cellTextColor"];
     self.topSegmentColor = dict[@"topSegmentColor"];
+    self.textFieldBorderColor = dict[@"textFieldBorderColor"];
+    self.textFieldBackColor = dict[@"textFieldBackColor"];
+    self.textFieldSelectBackColor = dict[@"textFieldSelectBackColor"];
 }
 @end

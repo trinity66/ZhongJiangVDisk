@@ -24,8 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _topCollectionViewY.constant = [self getTableViewY];
+    self.view.backgroundColor = [[Core shareCore] backgroundColor];
+    _topCollectionViewY.constant = [self getTableViewY] -1;
+    _collectionView.backgroundColor = [Core shareCore].backgroundColor;
     [self.personalTopView setRechargeEnabled:NO];
     _titles = @[
   @[@"50", @"500", @"1000", @"5000", @"其他方式", @"10000"],
@@ -126,6 +127,7 @@
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if (kind == UICollectionElementKindSectionHeader) {
         RechargeHeadView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"RechargeHeadView" forIndexPath:indexPath];
+        headView.backgroundColor = [Core shareCore].backgroundColor;
         if (indexPath.section == 0) {
             headView.title.text = @"充值金额(最小充值50元)";
         }else

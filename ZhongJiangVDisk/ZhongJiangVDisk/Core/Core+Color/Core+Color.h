@@ -10,4 +10,5 @@
 
 @interface Core (Color)
 - (void)initColors;
+
 @end

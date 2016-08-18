@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SecurityCodeView : UIView
-@property (weak, nonatomic) IBOutlet UITextField *securityCodeTF;
+@property (weak, nonatomic) IBOutlet LTextField *securityCodeTF;
 @property (nonatomic, copy) btnsActionBlock btnsActionBlock;
 - (void)setButtonTitle:(NSString *)buttontitle;
 @end

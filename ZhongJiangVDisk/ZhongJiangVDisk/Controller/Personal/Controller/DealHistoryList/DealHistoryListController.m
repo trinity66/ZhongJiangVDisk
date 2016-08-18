@@ -21,6 +21,8 @@
     [super viewDidLoad];
     
     _topTableViewY.constant = [self getTableViewY];
+    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.separatorColor = [Core shareCore].detailLightBackColor;
     [self addHeadTableView];
     // Do any additional setup after loading the view.
 }
@@ -59,12 +61,14 @@
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"DealHistoryCell" owner:nil options:nil].lastObject;
     }
-    if (indexPath.row % 2 != 0) {
-        cell.backgroundColor = [UIColor whiteColor];
+    BOOL isRise = indexPath.row % 2;
+    if (isRise != 0) {
+        cell.backgroundColor = [Core shareCore].backgroundColor;
     }else
     {
-        cell.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.00];
+        cell.backgroundColor = [Core shareCore].detailBackColor;
     }
+    [cell setDetailWithNumber:indexPath.row + 1 isRise:isRise];
     return cell;
 }
 - (void)addHeadTableView

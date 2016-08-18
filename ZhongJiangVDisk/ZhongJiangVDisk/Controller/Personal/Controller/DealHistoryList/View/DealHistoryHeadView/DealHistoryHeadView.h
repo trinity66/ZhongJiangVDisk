@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DealHistoryHeadView : UIView
-@property (weak, nonatomic) IBOutlet UILabel *numberOne;
-@property (weak, nonatomic) IBOutlet UILabel *numberTwo;
-@property (weak, nonatomic) IBOutlet UILabel *numberThree;
-
+@property (weak, nonatomic) IBOutlet LTextField *tfOne;
+@property (weak, nonatomic) IBOutlet LTextField *tfTwo;
+@property (weak, nonatomic) IBOutlet LTextField *tfThree;
 @end

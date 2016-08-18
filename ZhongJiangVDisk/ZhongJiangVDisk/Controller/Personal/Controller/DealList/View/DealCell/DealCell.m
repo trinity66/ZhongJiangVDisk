@@ -9,9 +9,18 @@
 #import "DealCell.h"
 
 @implementation DealCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
+    UIColor *color = [Core shareCore].cellTextColor;
+    _idNumber.textColor = color;
+    _balance.textColor = color;
+    _kind.textColor = color;
+    
+    _product.textColor = color;
+    _amount.textColor = color;
+    _time.textColor = color;
+    
+    self.backgroundColor = [Core shareCore].backgroundColor;
     // Initialization code
 }
 
@@ -22,11 +31,11 @@
 }
 - (void)setAmountWithNumber:(double)number isRise:(BOOL)isRise
 {
-    UIColor *color = [Core shareCore].riseColor;
+    UIColor *color = [Core shareCore].riseTextColor;
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:@"金额："];
     NSString *num = [NSString stringWithFormat:@"+%.02f",number];
     if (!isRise) {
-        color = [Core shareCore].fallColor;
+        color = [Core shareCore].fallTextColor;
         num = [NSString stringWithFormat:@"-%.02f",number];
         _kind.text = @"类型：亏损";
     }else

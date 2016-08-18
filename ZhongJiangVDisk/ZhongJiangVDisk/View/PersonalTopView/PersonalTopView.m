@@ -16,7 +16,6 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    self.frame = CGRectMake(0, 0, kScreenWidth, kPersonalTopViewHeight);
     self.backgroundColor = [Core shareCore].personalTopColor;
     UIColor *borderColor = [Core shareCore].detailBackColor;
     _imageView.layer.borderColor = borderColor.CGColor;

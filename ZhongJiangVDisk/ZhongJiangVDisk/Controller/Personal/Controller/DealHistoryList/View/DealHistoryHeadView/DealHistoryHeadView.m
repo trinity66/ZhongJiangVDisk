@@ -8,6 +8,12 @@
 
 #import "DealHistoryHeadView.h"
 
+@interface DealHistoryHeadView ()
+@property (weak, nonatomic) IBOutlet UILabel *titleOne;
+@property (weak, nonatomic) IBOutlet UILabel *titleTwo;
+@property (weak, nonatomic) IBOutlet UILabel *titleThree;
+
+@end
 @implementation DealHistoryHeadView
 
 /*
@@ -20,9 +26,16 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    UIColor *color = [UIColor lightGrayColor];
-    _numberOne.layer.borderColor = color.CGColor;
-    _numberTwo.layer.borderColor = color.CGColor;
-    _numberThree.layer.borderColor = color.CGColor;
+    self.backgroundColor = [Core shareCore].backgroundColor;
+    UIColor *color = [Core shareCore].cellTextColor;
+    _titleOne.textColor = color;
+    _titleTwo.textColor = color;
+    _titleThree.textColor = color;
+    _tfOne.textColor = color;
+    _tfTwo.textColor = color;
+    _tfThree.textColor = color;
+    _tfOne.enabled = NO;
+    _tfTwo.enabled = NO;
+    _tfOne.enabled = NO;
 }
 @end

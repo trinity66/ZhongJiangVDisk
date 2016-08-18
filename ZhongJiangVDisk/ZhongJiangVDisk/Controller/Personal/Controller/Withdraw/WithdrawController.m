@@ -23,6 +23,7 @@ __weak WithdrawController *_withdrawSelf;
     _withdrawSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"提现金额：", @"提现银行：", @"姓名：", @"银行账号：", @"交易密码："];
+    _tableView.backgroundColor = [Core shareCore].backgroundColor;
     // Do any additional setup after loading the view.
 }
 

@@ -72,6 +72,7 @@
 #import "ForgetDealPswdController.h"//忘记密码
 
 #import "LButton.h"//基础button
+#import "LTextField.h"
 
 //分时图，k图
 #import "Area.h"

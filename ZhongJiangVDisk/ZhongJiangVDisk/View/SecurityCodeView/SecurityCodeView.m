@@ -30,6 +30,7 @@
     _codeButton.backgroundColor = color;
     _CIAButton.backgroundColor = color;
     _button.backgroundColor = color;
+    self.backgroundColor = [Core shareCore].backgroundColor;
 }
 - (IBAction)codeButtonAction:(id)sender {
     if (self.btnsActionBlock) {

@@ -82,6 +82,7 @@
 		5E1722F01D6552CF003CA0AE /* LButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722EF1D6552CF003CA0AE /* LButton.m */; };
 		5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722F21D658877003CA0AE /* PersonalTopView.m */; };
 		5E1722F71D658CAA003CA0AE /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */; };
+		5E1722FA1D6599B7003CA0AE /* LTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722F91D6599B7003CA0AE /* LTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +234,8 @@
 		5E1722F11D658877003CA0AE /* PersonalTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTopView.h; sourceTree = "<group>"; };
 		5E1722F21D658877003CA0AE /* PersonalTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTopView.m; sourceTree = "<group>"; };
 		5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTopView.xib; sourceTree = "<group>"; };
+		5E1722F81D6599B7003CA0AE /* LTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTextField.h; sourceTree = "<group>"; };
+		5E1722F91D6599B7003CA0AE /* LTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTextField.m; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -432,6 +435,7 @@
 		5E1721FE1D630082003CA0AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5E1722FB1D65AB15003CA0AE /* ProductTableView */,
 				5E1721FF1D630082003CA0AE /* ChartView */,
 				5E1722031D630082003CA0AE /* ProductCollectionView */,
 			);
@@ -858,6 +862,8 @@
 				5E1722D11D63008A003CA0AE /* TextFieldCell */,
 				5E1722EE1D6552CF003CA0AE /* LButton.h */,
 				5E1722EF1D6552CF003CA0AE /* LButton.m */,
+				5E1722F81D6599B7003CA0AE /* LTextField.h */,
+				5E1722F91D6599B7003CA0AE /* LTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -952,6 +958,21 @@
 				5E1722E81D64121B003CA0AE /* ForgetDealPswdController.m */,
 			);
 			path = ForgetDealPswd;
+			sourceTree = "<group>";
+		};
+		5E1722FB1D65AB15003CA0AE /* ProductTableView */ = {
+			isa = PBXGroup;
+			children = (
+				5E1722FC1D65AB15003CA0AE /* ProductTableViewCell */,
+			);
+			path = ProductTableView;
+			sourceTree = "<group>";
+		};
+		5E1722FC1D65AB15003CA0AE /* ProductTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductTableViewCell;
 			sourceTree = "<group>";
 		};
 		794F7078CFCCD2419F25CE2D /* Frameworks */ = {
@@ -1184,6 +1205,7 @@
 				5E17228D1D630082003CA0AE /* DealHistoryHeadView.m in Sources */,
 				5E17227A1D630082003CA0AE /* AppDelegate.m in Sources */,
 				5E1722DB1D63008A003CA0AE /* InputDealPswdView.m in Sources */,
+				5E1722FA1D6599B7003CA0AE /* LTextField.m in Sources */,
 				5E1722A51D630082003CA0AE /* AxisY.m in Sources */,
 				5E1722DF1D63008A003CA0AE /* SecurityCodeView.m in Sources */,
 				5E1722AE1D630082003CA0AE /* StockSeries.m in Sources */,

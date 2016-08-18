@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LTextField.h"
 @interface RechargeCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet LTextField *textField;
 - (void)cellIsSelected:(BOOL)selected enabled:(BOOL)enabled;
 @end

@@ -13,7 +13,7 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="131" height="43"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7FR-OD-gYl">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7FR-OD-gYl" customClass="LTextField">
                         <rect key="frame" x="0.0" y="0.0" width="131" height="35"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <textInputTraits key="textInputTraits"/>
@@ -37,7 +37,7 @@
             </constraints>
             <size key="customSize" width="131" height="43"/>
             <connections>
-                <outlet property="textField" destination="7FR-OD-gYl" id="aWx-Kd-pEP"/>
+                <outlet property="textField" destination="7FR-OD-gYl" id="8IM-7K-Hc8"/>
             </connections>
             <point key="canvasLocation" x="172.5" y="237.5"/>
         </collectionViewCell>

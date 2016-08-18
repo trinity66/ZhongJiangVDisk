@@ -20,5 +20,5 @@ typedef void(^btnsActionBlock)(NSInteger index);
 @property (nonatomic, strong)UIColor *labelTextColor, *buttonTitleColor, *positionCellTextColor, *detailLightBackColor, *detailBackColor;
 @property (nonatomic, strong)UIColor *chartLineColor, *chartYTextColor, *chartXTextColor, *chartLinesColor, *chartBackColor;
 @property (nonatomic, strong)UIColor *selectedLineColor, *tabBarSelectTextColor, *tabBarTextColor, *buttonBackColor, *personalTopColor;
-@property (nonatomic, strong)UIColor *cellTextColor, *topSegmentColor;
+@property (nonatomic, strong)UIColor *cellTextColor, *topSegmentColor, *textFieldBorderColor, *textFieldBackColor, *textFieldSelectBackColor;
 @end

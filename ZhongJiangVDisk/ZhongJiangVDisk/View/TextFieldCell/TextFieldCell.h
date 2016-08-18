@@ -10,6 +10,7 @@
 
 @interface TextFieldCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet LTextField *textField;
+
 
 @end

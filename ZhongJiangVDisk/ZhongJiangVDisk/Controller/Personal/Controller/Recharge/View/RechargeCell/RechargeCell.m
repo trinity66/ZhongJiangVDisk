@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.backgroundColor = [UIColor clearColor];
     
     // Initialization code
 }
@@ -19,23 +20,15 @@
 {
     if (enabled) {
         _textField.enabled = YES;
-        _textField.backgroundColor = [UIColor whiteColor];
-        _textField.textColor = [Core shareCore].labelTextColor;
-        UIColor *color = [Core shareCore].selectedLineColor;
-        _textField.layer.borderColor = color.CGColor;
+        [_textField setEnabledColor];
     }else
     { 
         _textField.enabled = NO;
         if (selected) {
-            UIColor *color = [Core shareCore].selectedLineColor;
-            _textField.backgroundColor = color;
-            _textField.textColor = [UIColor whiteColor];
-            _textField.layer.borderColor = color.CGColor;
+            [_textField setSelectedColor];
         }else
         {
-            _textField.backgroundColor = [UIColor whiteColor];
-            _textField.textColor = [Core shareCore].labelTextColor;
-            _textField.layer.borderColor = [UIColor lightGrayColor].CGColor;
+            [_textField setDefalutColor];
         }
     }
 }

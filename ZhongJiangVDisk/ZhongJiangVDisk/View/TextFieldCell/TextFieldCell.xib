@@ -26,12 +26,12 @@
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbf-L0-4MD">
                         <rect key="frame" x="109" y="0.0" width="1" height="43.5"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="Cr8-NT-Z5i"/>
                         </constraints>
                     </view>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sep-Fc-JTM">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sep-Fc-JTM" customClass="LTextField">
                         <rect key="frame" x="118" y="6" width="181.5" height="37.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="BUz-6m-Psv"/>
@@ -59,7 +59,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="textField" destination="sep-Fc-JTM" id="moz-is-sBo"/>
+                <outlet property="textField" destination="sep-Fc-JTM" id="1uI-Ch-ChH"/>
                 <outlet property="title" destination="pf6-B6-dvu" id="qva-aj-izc"/>
             </connections>
         </tableViewCell>

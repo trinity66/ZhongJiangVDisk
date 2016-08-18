@@ -41,6 +41,7 @@
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kPersonalTopViewHeight)];
         _personalTopView = [[NSBundle mainBundle] loadNibNamed:@"PersonalTopView" owner:nil options:nil].lastObject;
         _personalTopView.frame = view.bounds;
+        view.backgroundColor = [Core shareCore].personalTopColor;
         [view addSubview:_personalTopView];
         [self.view addSubview:view];
     }

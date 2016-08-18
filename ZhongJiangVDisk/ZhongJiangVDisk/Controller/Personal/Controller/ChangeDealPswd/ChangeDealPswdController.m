@@ -22,6 +22,7 @@
     
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"原交易密码：", @"新交易密码：", @"再次确认："];
+    _tableView.backgroundColor = [Core shareCore].backgroundColor;
     // Do any additional setup after loading the view.
 }
 

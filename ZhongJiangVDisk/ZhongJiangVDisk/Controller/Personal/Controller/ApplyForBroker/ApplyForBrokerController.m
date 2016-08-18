@@ -23,6 +23,7 @@ __weak ApplyForBrokerController *_applySelf;
     _applySelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"经纪人名称：", @"登录密码：", @"经纪人手机：", @"机构编号："];
+    _tableView.backgroundColor = [Core shareCore].backgroundColor;
     // Do any additional setup after loading the view.
 }
 
@@ -59,12 +60,6 @@ __weak ApplyForBrokerController *_applySelf;
     TextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
-    }
-    if (indexPath.row == 2) {
-        cell.textField.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.00];
-    }else
-    {
-        cell.textField.backgroundColor = [UIColor whiteColor];
     }
     cell.title.text = _titles[indexPath.row];
     return cell;

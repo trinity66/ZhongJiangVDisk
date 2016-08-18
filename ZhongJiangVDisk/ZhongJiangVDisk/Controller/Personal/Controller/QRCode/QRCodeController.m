@@ -28,6 +28,7 @@
                                                       iconWidth:0];
     
     _imageView.image = qrcodeImage;
+    _imageView.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -12,7 +12,25 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    UIColor *color = [Core shareCore].cellTextColor;
+    _title.textColor = color;
+    _time.textColor = color;
+    _detail.textColor = color;
+    _money.textColor = color;
     // Initialization code
+}
+- (void)setDetailWithNumber:(NSInteger)num isRise:(BOOL)isRise
+{
+    NSMutableAttributedString *str1 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%ld手 ",(long)num]];
+    NSMutableAttributedString *str2;
+    if (isRise) {
+        str2 = [[NSMutableAttributedString alloc] initWithString:@"买涨" attributes:@{NSForegroundColorAttributeName:[Core shareCore].riseTextColor}];
+    }else
+    {
+        str2 = [[NSMutableAttributedString alloc] initWithString:@"买跌" attributes:@{NSForegroundColorAttributeName:[Core shareCore].fallTextColor}];
+    }
+    [str1 appendAttributedString:str2];
+    _detail.attributedText = str1;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

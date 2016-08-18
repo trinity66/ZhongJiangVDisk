@@ -20,6 +20,8 @@
     [super viewDidLoad];
     
     _topTableViewY.constant = [self getTableViewY];
+    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.separatorColor = [Core shareCore].detailLightBackColor;
     // Do any additional setup after loading the view.
 }
 
@@ -59,11 +61,11 @@
     }
     BOOL isRise = YES;
     if (indexPath.row % 2 == 0) {
-        cell.backgroundColor = [UIColor whiteColor];
+        cell.backgroundColor = [Core shareCore].backgroundColor;
         isRise = NO;
     }else
     {
-        cell.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.00];
+        cell.backgroundColor = [Core shareCore].detailBackColor;
     }
     [cell setAmountWithNumber:4.8 isRise:isRise];
     return cell;
