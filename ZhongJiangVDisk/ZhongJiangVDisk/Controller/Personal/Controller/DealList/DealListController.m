@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _topTableViewY.constant = [self getTableViewY];
     // Do any additional setup after loading the view.
 }

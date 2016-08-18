@@ -16,20 +16,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igd-aS-mO5">
                         <rect key="frame" x="0.0" y="0.0" width="192" height="101"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-Uu-NDr">
-                                <rect key="frame" x="0.0" y="76" width="95.5" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="JGN-ng-lXZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="买涨">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="riseAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="K0L-HB-jAl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-LR-mr8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-LR-mr8" customClass="LButton">
                                 <rect key="frame" x="96" y="76" width="95.5" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="买跌">
@@ -94,6 +81,19 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-Uu-NDr" customClass="LButton">
+                                <rect key="frame" x="0.0" y="76" width="95.5" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="JGN-ng-lXZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="买涨">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="riseAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="K0L-HB-jAl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -130,10 +130,10 @@
             <size key="customSize" width="197" height="101"/>
             <connections>
                 <outlet property="detail" destination="j6R-fT-Oq8" id="Ryk-b0-PQq"/>
-                <outlet property="fallButton" destination="fZO-LR-mr8" id="xyH-If-fDI"/>
+                <outlet property="fallButton" destination="fZO-LR-mr8" id="A00-TS-Udl"/>
                 <outlet property="mainView" destination="igd-aS-mO5" id="SHL-EG-zF1"/>
                 <outlet property="name" destination="PBw-Gc-9xW" id="fof-rg-eFb"/>
-                <outlet property="riseButton" destination="MBw-Uu-NDr" id="5lr-r3-Xye"/>
+                <outlet property="riseButton" destination="MBw-Uu-NDr" id="tDT-w0-yaG"/>
                 <outlet property="title" destination="knL-yh-VF4" id="Vbg-4W-mwd"/>
             </connections>
             <point key="canvasLocation" x="169.5" y="266.5"/>

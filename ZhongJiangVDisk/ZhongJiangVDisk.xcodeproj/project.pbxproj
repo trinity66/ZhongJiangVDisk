@@ -39,8 +39,6 @@
 		5E1722931D630082003CA0AE /* PersonalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E17222D1D630082003CA0AE /* PersonalController.m */; };
 		5E1722941D630082003CA0AE /* QRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722301D630082003CA0AE /* QRCodeController.m */; };
 		5E1722951D630082003CA0AE /* RechargeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722341D630082003CA0AE /* RechargeController.m */; };
-		5E1722961D630082003CA0AE /* RachargeFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722391D630082003CA0AE /* RachargeFootView.m */; };
-		5E1722971D630082003CA0AE /* RachargeFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E17223A1D630082003CA0AE /* RachargeFootView.xib */; };
 		5E1722981D630082003CA0AE /* RechargeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E17223D1D630082003CA0AE /* RechargeCell.m */; };
 		5E1722991D630082003CA0AE /* RechargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E17223E1D630082003CA0AE /* RechargeCell.xib */; };
 		5E17229A1D630082003CA0AE /* RechargeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722411D630082003CA0AE /* RechargeHeadView.m */; };
@@ -73,8 +71,6 @@
 		5E1722DA1D63008A003CA0AE /* SelectDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722BE1D63008A003CA0AE /* SelectDataCell.xib */; };
 		5E1722DB1D63008A003CA0AE /* InputDealPswdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722C11D63008A003CA0AE /* InputDealPswdView.m */; };
 		5E1722DC1D63008A003CA0AE /* InputDealPswdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722C21D63008A003CA0AE /* InputDealPswdView.xib */; };
-		5E1722DD1D63008A003CA0AE /* PersonalTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722C51D63008A003CA0AE /* PersonalTopView.m */; };
-		5E1722DE1D63008A003CA0AE /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722C61D63008A003CA0AE /* PersonalTopView.xib */; };
 		5E1722DF1D63008A003CA0AE /* SecurityCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722C91D63008A003CA0AE /* SecurityCodeView.m */; };
 		5E1722E01D63008A003CA0AE /* SecurityCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722CA1D63008A003CA0AE /* SecurityCodeView.xib */; };
 		5E1722E11D63008A003CA0AE /* Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722CD1D63008A003CA0AE /* Segment.m */; };
@@ -83,6 +79,9 @@
 		5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722D31D63008A003CA0AE /* TextFieldCell.m */; };
 		5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722D41D63008A003CA0AE /* TextFieldCell.xib */; };
 		5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722E81D64121B003CA0AE /* ForgetDealPswdController.m */; };
+		5E1722F01D6552CF003CA0AE /* LButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722EF1D6552CF003CA0AE /* LButton.m */; };
+		5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722F21D658877003CA0AE /* PersonalTopView.m */; };
+		5E1722F71D658CAA003CA0AE /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,9 +158,6 @@
 		5E1722301D630082003CA0AE /* QRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeController.m; sourceTree = "<group>"; };
 		5E1722331D630082003CA0AE /* RechargeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeController.h; sourceTree = "<group>"; };
 		5E1722341D630082003CA0AE /* RechargeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeController.m; sourceTree = "<group>"; };
-		5E1722381D630082003CA0AE /* RachargeFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RachargeFootView.h; sourceTree = "<group>"; };
-		5E1722391D630082003CA0AE /* RachargeFootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RachargeFootView.m; sourceTree = "<group>"; };
-		5E17223A1D630082003CA0AE /* RachargeFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RachargeFootView.xib; sourceTree = "<group>"; };
 		5E17223C1D630082003CA0AE /* RechargeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RechargeCell.h; sourceTree = "<group>"; };
 		5E17223D1D630082003CA0AE /* RechargeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RechargeCell.m; sourceTree = "<group>"; };
 		5E17223E1D630082003CA0AE /* RechargeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RechargeCell.xib; sourceTree = "<group>"; };
@@ -219,9 +215,6 @@
 		5E1722C01D63008A003CA0AE /* InputDealPswdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputDealPswdView.h; sourceTree = "<group>"; };
 		5E1722C11D63008A003CA0AE /* InputDealPswdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputDealPswdView.m; sourceTree = "<group>"; };
 		5E1722C21D63008A003CA0AE /* InputDealPswdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputDealPswdView.xib; sourceTree = "<group>"; };
-		5E1722C41D63008A003CA0AE /* PersonalTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTopView.h; sourceTree = "<group>"; };
-		5E1722C51D63008A003CA0AE /* PersonalTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTopView.m; sourceTree = "<group>"; };
-		5E1722C61D63008A003CA0AE /* PersonalTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTopView.xib; sourceTree = "<group>"; };
 		5E1722C81D63008A003CA0AE /* SecurityCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityCodeView.h; sourceTree = "<group>"; };
 		5E1722C91D63008A003CA0AE /* SecurityCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityCodeView.m; sourceTree = "<group>"; };
 		5E1722CA1D63008A003CA0AE /* SecurityCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecurityCodeView.xib; sourceTree = "<group>"; };
@@ -235,6 +228,11 @@
 		5E1722D41D63008A003CA0AE /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		5E1722E71D64121B003CA0AE /* ForgetDealPswdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetDealPswdController.h; sourceTree = "<group>"; };
 		5E1722E81D64121B003CA0AE /* ForgetDealPswdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetDealPswdController.m; sourceTree = "<group>"; };
+		5E1722EE1D6552CF003CA0AE /* LButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LButton.h; sourceTree = "<group>"; };
+		5E1722EF1D6552CF003CA0AE /* LButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LButton.m; sourceTree = "<group>"; };
+		5E1722F11D658877003CA0AE /* PersonalTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTopView.h; sourceTree = "<group>"; };
+		5E1722F21D658877003CA0AE /* PersonalTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTopView.m; sourceTree = "<group>"; };
+		5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTopView.xib; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -647,21 +645,10 @@
 		5E1722361D630082003CA0AE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5E1722371D630082003CA0AE /* RachargeFootView */,
 				5E17223B1D630082003CA0AE /* RechargeCell */,
 				5E17223F1D630082003CA0AE /* RechargeHeadView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5E1722371D630082003CA0AE /* RachargeFootView */ = {
-			isa = PBXGroup;
-			children = (
-				5E1722381D630082003CA0AE /* RachargeFootView.h */,
-				5E1722391D630082003CA0AE /* RachargeFootView.m */,
-				5E17223A1D630082003CA0AE /* RachargeFootView.xib */,
-			);
-			path = RachargeFootView;
 			sourceTree = "<group>";
 		};
 		5E17223B1D630082003CA0AE /* RechargeCell */ = {
@@ -869,6 +856,8 @@
 				5E1722C71D63008A003CA0AE /* SecurityCodeView */,
 				5E1722CB1D63008A003CA0AE /* SegmentView */,
 				5E1722D11D63008A003CA0AE /* TextFieldCell */,
+				5E1722EE1D6552CF003CA0AE /* LButton.h */,
+				5E1722EF1D6552CF003CA0AE /* LButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -917,9 +906,9 @@
 		5E1722C31D63008A003CA0AE /* PersonalTopView */ = {
 			isa = PBXGroup;
 			children = (
-				5E1722C41D63008A003CA0AE /* PersonalTopView.h */,
-				5E1722C51D63008A003CA0AE /* PersonalTopView.m */,
-				5E1722C61D63008A003CA0AE /* PersonalTopView.xib */,
+				5E1722F11D658877003CA0AE /* PersonalTopView.h */,
+				5E1722F21D658877003CA0AE /* PersonalTopView.m */,
+				5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */,
 			);
 			path = PersonalTopView;
 			sourceTree = "<group>";
@@ -1096,10 +1085,9 @@
 				5E17227C1D630082003CA0AE /* LaunchScreen.storyboard in Resources */,
 				5E1722DC1D63008A003CA0AE /* InputDealPswdView.xib in Resources */,
 				5E17228E1D630082003CA0AE /* DealHistoryHeadView.xib in Resources */,
-				5E1722DE1D63008A003CA0AE /* PersonalTopView.xib in Resources */,
-				5E1722971D630082003CA0AE /* RachargeFootView.xib in Resources */,
 				5E1722851D630082003CA0AE /* ProductCollectionCell.xib in Resources */,
 				5E1722A61D630082003CA0AE /* data.json in Resources */,
+				5E1722F71D658CAA003CA0AE /* PersonalTopView.xib in Resources */,
 				5E1722D81D63008A003CA0AE /* BuyView.xib in Resources */,
 				5E1722E31D63008A003CA0AE /* SegmentView.xib in Resources */,
 				5E1722831D630082003CA0AE /* ChartView.xib in Resources */,
@@ -1177,6 +1165,7 @@
 			files = (
 				5E1722981D630082003CA0AE /* RechargeCell.m in Sources */,
 				5E1722951D630082003CA0AE /* RechargeController.m in Sources */,
+				5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */,
 				5E1722AD1D630082003CA0AE /* Series.m in Sources */,
 				5E1722D71D63008A003CA0AE /* BuyView.m in Sources */,
 				5E1722AB1D630082003CA0AE /* BarSeries.m in Sources */,
@@ -1206,7 +1195,6 @@
 				5E1722AC1D630082003CA0AE /* LineSeries.m in Sources */,
 				5E17228F1D630082003CA0AE /* DealListController.m in Sources */,
 				5E1722A01D630082003CA0AE /* Core.m in Sources */,
-				5E1722DD1D63008A003CA0AE /* PersonalTopView.m in Sources */,
 				5E1721B41D62FFD4003CA0AE /* main.m in Sources */,
 				5E1722921D630082003CA0AE /* InfosController.m in Sources */,
 				5E17229E1D630082003CA0AE /* PositionCell.m in Sources */,
@@ -1218,12 +1206,12 @@
 				5E17228B1D630082003CA0AE /* DealHistoryCell.m in Sources */,
 				5E1722A31D630082003CA0AE /* Area.m in Sources */,
 				5E1722931D630082003CA0AE /* PersonalController.m in Sources */,
+				5E1722F01D6552CF003CA0AE /* LButton.m in Sources */,
 				5E1722841D630082003CA0AE /* ProductCollectionCell.m in Sources */,
 				5E1722A81D630082003CA0AE /* BBChartUtils.m in Sources */,
 				5E1722A41D630082003CA0AE /* AxisX.m in Sources */,
 				5E1722861D630082003CA0AE /* ProductCollectionView.m in Sources */,
 				5E1722A71D630082003CA0AE /* BaseLayer.m in Sources */,
-				5E1722961D630082003CA0AE /* RachargeFootView.m in Sources */,
 				5E1722AA1D630082003CA0AE /* BBTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

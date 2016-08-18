@@ -31,40 +31,28 @@
                             <constraint firstAttribute="width" constant="1" id="gka-D2-GFr"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW7-qn-xFH">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW7-qn-xFH" customClass="LButton">
                         <rect key="frame" x="117" y="6" width="40" height="37"/>
-                        <color key="backgroundColor" red="0.88335546919999997" green="0.73859307029999999" blue="0.4843076804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="Qim-FM-uUy"/>
                         </constraints>
                         <state key="normal" title="－">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="4"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </button>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xN-6C-YNk">
                         <rect key="frame" x="165" y="6" width="87" height="37"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gI-tv-JFK">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gI-tv-JFK" customClass="LButton">
                         <rect key="frame" x="260" y="6" width="40" height="37"/>
-                        <color key="backgroundColor" red="0.88335546919999997" green="0.73859307029999999" blue="0.4843076804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="3H5-co-nTT"/>
                         </constraints>
                         <state key="normal" title="＋">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="4"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="3H5-co-nTT"/>
@@ -93,8 +81,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="addBtn" destination="0gI-tv-JFK" id="8T3-Se-vPa"/>
-                <outlet property="subtractBtn" destination="FW7-qn-xFH" id="7fb-uw-umI"/>
+                <outlet property="addBtn" destination="0gI-tv-JFK" id="QRL-w4-chQ"/>
+                <outlet property="subtractBtn" destination="FW7-qn-xFH" id="7kE-os-zTM"/>
                 <outlet property="textField" destination="9xN-6C-YNk" id="EgE-3Z-puf"/>
                 <outlet property="title" destination="qzI-Xk-iBj" id="zaC-va-JmU"/>
             </connections>

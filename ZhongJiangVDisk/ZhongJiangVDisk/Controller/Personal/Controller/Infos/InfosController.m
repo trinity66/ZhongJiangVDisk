@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _titles = @[@"8月12日中江数据日历", @"关于提现手续费调整通知", @"公告", @"关于数据恢复公告", @"关于白银，原油暂停建仓公告", @"关于调整交易时间的公告"];
     _topTableViewY.constant = [self getTableViewY];
     // Do any additional setup after loading the view.
@@ -52,10 +53,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
-        cell.textLabel.textColor = [Core shareCore].blackColor;
+        cell.textLabel.textColor = [Core shareCore].cellTextColor;
         cell.textLabel.font = [UIFont systemFontOfSize:11];
         UIView *view = [UIView new];
-        view.backgroundColor = [Core shareCore].lightMainColor;
+        view.backgroundColor = [Core shareCore].selectedLineColor;
         cell.selectedBackgroundView = view;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }

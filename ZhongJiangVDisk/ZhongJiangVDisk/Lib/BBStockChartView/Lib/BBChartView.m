@@ -148,7 +148,7 @@
     
 }
 - (void)drawAnimated:(BOOL)animated{
-    self.backgroundColor = [BBTheme theme].backgroundColor;
+    self.backgroundColor = [UIColor clearColor];
     [self prepareForDraw];
     for (Area* a in _areas) {
         [a drawAnimated:animated];
@@ -157,7 +157,7 @@
     //    self.layer.borderColor = [BBTheme defTheme].borderColor.CGColor;
 }
 - (void)redraw{
-    self.backgroundColor = [BBTheme theme].backgroundColor;
+    self.backgroundColor = [UIColor clearColor];
     [self prepareForDraw];
     for (Area* a in _areas) {
         [a redrawAnimated:NO];

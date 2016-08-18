@@ -43,9 +43,23 @@
     hud.bezelView.layer.borderColor = hud.bezelView.color.CGColor;
     hud.label.text = title;
     hud.label.numberOfLines = 0;
-    hud.contentColor = [Core shareCore].darkMainColor;
+    hud.contentColor = [Core shareCore].selectedLineColor;
     hud.label.font = [UIFont systemFontOfSize:13];
     hud.mode = MBProgressHUDModeText;
     [hud hideAnimated:YES afterDelay:timeCount];
+}
+- (UIImage *)image_with_color:(UIColor *)color
+{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 @end

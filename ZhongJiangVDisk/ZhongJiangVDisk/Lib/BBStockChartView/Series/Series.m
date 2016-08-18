@@ -26,7 +26,7 @@
     NSUInteger cnt = [BBTheme theme].defYLabelGap;
     for (int i = 0; i < cnt; i++) {
         CGFloat curHei = self.bounds.size.height/(float)cnt*(float)i;
-        CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(0, curHei) to:CGPointMake(self.bounds.size.width, curHei) withColor:[BBTheme theme].axisColor andWidth:0.5 animated:NO];
+        CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(0, curHei) to:CGPointMake(self.bounds.size.width, curHei) withColor:[Core shareCore].chartLinesColor andWidth:0.5 animated:NO];
         [self addSublayer:dash];
     }
     for (int i = 0; i < self.data.count; ++i) {

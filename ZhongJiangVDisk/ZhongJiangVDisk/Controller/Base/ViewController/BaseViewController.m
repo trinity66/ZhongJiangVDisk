@@ -13,10 +13,15 @@
 @end
 
 @implementation BaseViewController
-
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+//
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addPersonalTopView];
+    self.view.backgroundColor = [Core shareCore].backgroundColor;
     // Do any additional setup after loading the view.
 }
 - (CGFloat)getTableViewY
@@ -33,20 +38,19 @@
 - (void)addPersonalTopView
 {
     if (_personalTopView == nil) {
-       _personalTopView = [[NSBundle mainBundle] loadNibNamed:@"PersonalTopView" owner:nil options:nil].lastObject;
-        _personalTopView.frame = CGRectMake(0, 0, kScreenWidth, kPersonalTopViewHeight+64);
-        _personalTopView.backgroundColor = [Core shareCore].lightMainColor;
-        [self.view addSubview:_personalTopView];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kPersonalTopViewHeight)];
+        _personalTopView = [[NSBundle mainBundle] loadNibNamed:@"PersonalTopView" owner:nil options:nil].lastObject;
+        _personalTopView.frame = view.bounds;
+        [view addSubview:_personalTopView];
+        [self.view addSubview:view];
     }
-    
-    
 }
 - (void)addSegmentWithUserEnabled:(BOOL)userEnabled
 {
     if (_segment == nil) {
         CGFloat y = 0;
         if (_personalTopView != nil) {
-            y += kPersonalTopViewHeight;
+            y += _personalTopView.frame.size.height + _personalTopView.frame.origin.y;
         }
         _segment = [[Segment alloc] initWithFrame:CGRectMake(0, y, kScreenWidth, kSegmentHeight)];
         [_segment setUserInteractionEnabled:userEnabled];
@@ -60,10 +64,6 @@
     }
     
     
-}
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

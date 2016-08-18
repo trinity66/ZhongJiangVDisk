@@ -19,17 +19,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIs-gY-SzQ">
                     <rect key="frame" x="19" y="75" width="240" height="280"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxy-JY-IAt">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxy-JY-IAt" customClass="LButton">
                             <rect key="frame" x="10" y="240" width="220" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="确认">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="4"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="J23-T6-hgs"/>
                             </connections>
@@ -118,7 +113,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="button" destination="oxy-JY-IAt" id="K41-eu-dsR"/>
+                <outlet property="button" destination="oxy-JY-IAt" id="FsV-JZ-Isu"/>
                 <outlet property="cancel" destination="SGu-JJ-ccp" id="C54-e2-WyR"/>
                 <outlet property="mainView" destination="eIs-gY-SzQ" id="WwF-Ce-Isi"/>
                 <outlet property="tableView" destination="T3P-HX-CTT" id="J1y-A6-8X1"/>

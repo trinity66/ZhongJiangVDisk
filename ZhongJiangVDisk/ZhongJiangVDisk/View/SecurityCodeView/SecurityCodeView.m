@@ -9,9 +9,10 @@
 #import "SecurityCodeView.h"
 
 @interface SecurityCodeView ()
-@property (weak, nonatomic) IBOutlet UIButton *codeButton;
-@property (weak, nonatomic) IBOutlet UIButton *CIAButton;
-@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet LButton *codeButton;
+@property (weak, nonatomic) IBOutlet LButton *CIAButton;
+@property (weak, nonatomic) IBOutlet LButton *button;
+
 @end
 @implementation SecurityCodeView
 
@@ -25,7 +26,7 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    UIColor *color = [Core shareCore].lightMainColor;
+    UIColor *color = [Core shareCore].buttonBackColor;
     _codeButton.backgroundColor = color;
     _CIAButton.backgroundColor = color;
     _button.backgroundColor = color;

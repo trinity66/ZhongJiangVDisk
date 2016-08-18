@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _topCollectionViewY.constant = [self getTableViewY];
     [self.personalTopView setRechargeEnabled:NO];
     _titles = @[

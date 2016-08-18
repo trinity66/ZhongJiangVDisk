@@ -35,32 +35,22 @@
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-TL-55E">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-TL-55E" customClass="LButton">
                     <rect key="frame" x="145" y="6" width="64" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="短信验证">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="4"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="codeButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="5MS-tl-KYB"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUU-OM-Oak">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUU-OM-Oak" customClass="LButton">
                     <rect key="frame" x="145" y="42" width="64" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="CIA验证">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="4"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="CIAButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="e8w-I6-d1f"/>
                     </connections>
@@ -85,7 +75,7 @@
                     <color key="textColor" white="0.79619252870000001" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zb6-8e-YRn">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zb6-8e-YRn" customClass="LButton">
                     <rect key="frame" x="10" y="126" width="209" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="FvY-Dk-7vq"/>
@@ -94,11 +84,6 @@
                     <state key="normal" title="确认">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="eX7-JS-Byd"/>
                     </connections>
@@ -106,7 +91,6 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="JGO-Lr-YZM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="0y5-f0-D5A"/>
                 <constraint firstItem="o4v-6W-vE7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-50" id="25a-sP-Zey"/>
                 <constraint firstAttribute="trailing" secondItem="Zb6-8e-YRn" secondAttribute="trailing" constant="10" id="733-vQ-CfK"/>
                 <constraint firstItem="YtY-qL-Mjx" firstAttribute="leading" secondItem="o4v-6W-vE7" secondAttribute="trailing" constant="8" id="7Hu-G5-kGB"/>
@@ -119,7 +103,6 @@
                 <constraint firstItem="JGO-Lr-YZM" firstAttribute="centerX" secondItem="Nad-Ds-cMK" secondAttribute="centerX" id="I2W-te-qu7"/>
                 <constraint firstItem="Zb6-8e-YRn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="J27-oX-zIm"/>
                 <constraint firstItem="YtY-qL-Mjx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="JqW-Ae-fEP"/>
-                <constraint firstAttribute="trailing" secondItem="JGO-Lr-YZM" secondAttribute="trailing" constant="40" id="PDC-co-wNt"/>
                 <constraint firstItem="PUU-OM-Oak" firstAttribute="centerX" secondItem="GcP-TL-55E" secondAttribute="centerX" id="VkY-q3-FNM"/>
                 <constraint firstItem="GcP-TL-55E" firstAttribute="height" secondItem="YtY-qL-Mjx" secondAttribute="height" id="X1N-4t-oFO"/>
                 <constraint firstItem="GcP-TL-55E" firstAttribute="centerY" secondItem="YtY-qL-Mjx" secondAttribute="centerY" id="XbU-Pw-Dth"/>
@@ -134,16 +117,10 @@
                 <constraint firstItem="PUU-OM-Oak" firstAttribute="width" secondItem="GcP-TL-55E" secondAttribute="width" id="zzj-Lw-deD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="0y5-f0-D5A"/>
-                    <exclude reference="PDC-co-wNt"/>
-                </mask>
-            </variation>
             <connections>
-                <outlet property="CIAButton" destination="PUU-OM-Oak" id="20t-iW-I1F"/>
-                <outlet property="button" destination="Zb6-8e-YRn" id="uri-Eb-rPQ"/>
-                <outlet property="codeButton" destination="GcP-TL-55E" id="8bw-13-rE3"/>
+                <outlet property="CIAButton" destination="PUU-OM-Oak" id="yat-6D-PzX"/>
+                <outlet property="button" destination="Zb6-8e-YRn" id="BlN-wF-sAF"/>
+                <outlet property="codeButton" destination="GcP-TL-55E" id="RfT-WS-cCk"/>
                 <outlet property="securityCodeTF" destination="YtY-qL-Mjx" id="mcn-d8-xKB"/>
             </connections>
             <point key="canvasLocation" x="143.5" y="299"/>

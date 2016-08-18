@@ -23,6 +23,7 @@ __weak HomeController *_self;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _self = self;
     _put = [[NSBundle mainBundle] loadNibNamed:@"InputDealPswdView" owner:nil options:nil].lastObject;
     _put.btnsActionBlock = ^(NSInteger index) {
@@ -64,6 +65,7 @@ __weak HomeController *_self;
         _scrollView = [[UIScrollView alloc] initWithFrame: rect];
         _scrollView.scrollEnabled = YES;
         _scrollView.delegate = self;
+        _scrollView.backgroundColor = [Core shareCore].backgroundColor;
         [self.view addSubview:_scrollView];
     }
     if (!_chartSuperView) {

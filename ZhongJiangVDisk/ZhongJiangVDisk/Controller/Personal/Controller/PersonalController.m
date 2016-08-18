@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _titles =
     @[
   @[@"公告"],
@@ -28,8 +29,10 @@
   @[@"收支明细(2016－06-20前)", @"交易历史(2016-06-20前)"],
   @[@"帮助"]
   ];
+    [self addPersonalTopView];
     _topTableViewY.constant = [self getTableViewY];
-    _tableView.backgroundColor = [Core shareCore].lightGrayColor;
+    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.separatorColor = [Core shareCore].detailLightBackColor;
     // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning {
@@ -64,7 +67,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [UIView new];
-    view.backgroundColor = [Core shareCore].lightGrayColor;
+    view.backgroundColor = [Core shareCore].topSegmentColor;
     return view;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,10 +75,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
-        cell.textLabel.textColor = [Core shareCore].blackColor;
+        cell.backgroundColor = [Core shareCore].detailBackColor;
+        cell.textLabel.textColor = [Core shareCore].cellTextColor;
         cell.textLabel.font = [UIFont systemFontOfSize:11];
         UIView *view = [UIView new];
-        view.backgroundColor = [Core shareCore].lightMainColor;
+        view.backgroundColor = [Core shareCore].selectedLineColor;
         cell.selectedBackgroundView = view;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
@@ -116,6 +120,23 @@
                     break;
                 case 1:
                     identifier = @"ApplyForBrokerController";
+                    break;
+                case 2:
+                    identifier = @"ChangeDealPswdController";
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case 3:
+            switch (indexPath.row) {
+                case 0:
+                    [[Core shareCore] showAlertTitle:@"无收支明细" timeCount:2 inView:self.view];
+                    return;
+                    break;
+                case 1:
+                    [[Core shareCore] showAlertTitle:@"无收历史记录" timeCount:2 inView:self.view];
+                    return;
                     break;
                 case 2:
                     identifier = @"ChangeDealPswdController";

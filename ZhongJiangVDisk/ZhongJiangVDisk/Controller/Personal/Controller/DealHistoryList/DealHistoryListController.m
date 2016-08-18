@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _topTableViewY.constant = [self getTableViewY];
     [self addHeadTableView];
     // Do any additional setup after loading the view.

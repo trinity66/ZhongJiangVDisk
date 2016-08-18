@@ -15,6 +15,10 @@ typedef void(^btnsActionBlock)(NSInteger index);
 - (void)goRechargeVC;
 - (void)goForgetDealPswdVC;
 - (void)showAlertTitle:(NSString *)title timeCount:(NSInteger)timeCount inView:(UIView *)view;
-
-@property (nonatomic, strong)UIColor *blackColor, *lightGrayColor, *riseColor, *fallColor, *lightMainColor, *darkMainColor;
+- (UIImage *)image_with_color:(UIColor *)color;
+@property (nonatomic, strong)UIColor *riseColor, *fallColor, *backgroundColor, *riseTextColor, *fallTextColor;
+@property (nonatomic, strong)UIColor *labelTextColor, *buttonTitleColor, *positionCellTextColor, *detailLightBackColor, *detailBackColor;
+@property (nonatomic, strong)UIColor *chartLineColor, *chartYTextColor, *chartXTextColor, *chartLinesColor, *chartBackColor;
+@property (nonatomic, strong)UIColor *selectedLineColor, *tabBarSelectTextColor, *tabBarTextColor, *buttonBackColor, *personalTopColor;
+@property (nonatomic, strong)UIColor *cellTextColor, *topSegmentColor;
 @end

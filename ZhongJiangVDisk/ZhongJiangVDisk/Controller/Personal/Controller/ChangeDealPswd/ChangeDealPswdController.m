@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"原交易密码：", @"新交易密码：", @"再次确认："];
     // Do any additional setup after loading the view.

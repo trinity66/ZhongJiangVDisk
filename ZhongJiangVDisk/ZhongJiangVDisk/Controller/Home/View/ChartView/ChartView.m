@@ -27,6 +27,7 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    self.backgroundColor = [Core shareCore].detailBackColor;
     [self loadData];
     [self set_segmentC];
     [self set_chartView];
@@ -42,9 +43,9 @@
     [_chartView removeFromSuperview];
     _chartView = nil;
     if (!_chartView) {
+        _chartViewSuper.backgroundColor = [Core shareCore].detailBackColor;
         _chartView = [[BBChartView alloc] initWithFrame:CGRectMake(0, 36, kScreenWidth-10, _chartViewSuper.bounds.size.height-36)];
         _chartView.userInteractionEnabled = YES;
-        _chartView.backgroundColor = [UIColor blueColor];
         [self.chartViewSuper addSubview:_chartView];
         [BBTheme theme].barBorderColor = [UIColor clearColor];
         [BBTheme theme].xAxisFontSize = 11;
@@ -99,14 +100,15 @@
     if (_segmentC == nil) {
         NSDictionary *defaults = @{
                                    NSFontAttributeName : [UIFont systemFontOfSize:14],
-                                   NSForegroundColorAttributeName : [UIColor blackColor],
+                                   NSForegroundColorAttributeName : [Core shareCore].cellTextColor,
                                    };
         NSDictionary *selected = @{
                                    NSFontAttributeName : [UIFont systemFontOfSize:14],
-                                   NSForegroundColorAttributeName :[Core shareCore].darkMainColor,
+                                   NSForegroundColorAttributeName :[Core shareCore].selectedLineColor,
                                    };
         _segmentC = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, -10, kScreenWidth, 35)];
         [_segmentSuper addSubview:_segmentC];
+        _segmentSuper.backgroundColor = [Core shareCore].detailBackColor;
         _segmentC.selectionIndicatorHeight = 1.5;
         _segmentC.titleTextAttributes = defaults;
         _segmentC.selectedTitleTextAttributes = selected;
@@ -114,8 +116,8 @@
         
         _segmentC.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
         _segmentC.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
-        _segmentC.backgroundColor = [UIColor clearColor];
-        _segmentC.selectionIndicatorColor = [Core shareCore].darkMainColor;
+        _segmentC.backgroundColor = [Core shareCore].detailBackColor;
+        _segmentC.selectionIndicatorColor = [Core shareCore].selectedLineColor;
         _segmentC.sectionTitles = @[@"分时线", @"五分", @"十五分", @"三十分", @"一小时"];
         
     }

@@ -11,7 +11,7 @@
 @interface InputDealPswdView ()
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPswdBtn;
-@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet LButton *button;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
@@ -53,7 +53,7 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    UIColor *color = [Core shareCore].lightMainColor;
+    UIColor *color = [Core shareCore].buttonBackColor;
     [_forgetPswdBtn setTitleColor:color forState:UIControlStateNormal];
     _button.backgroundColor = color;
 }

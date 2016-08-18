@@ -11,7 +11,7 @@
 @interface BuyView ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *mainView;
-@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet LButton *button;
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
 
 @property (nonatomic, strong) NSArray *titles, *placeholders;
@@ -60,7 +60,7 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    _button.backgroundColor = [Core shareCore].lightMainColor;
+    _button.backgroundColor = [Core shareCore].buttonBackColor;
     _titles = @[@"止盈（％）", @"止损（％）", @"购买数量", @"预付款", @"合同总价值"];
     _placeholders = @[@"不设", @"不设", @"1", @"50", @"3174"];
 }

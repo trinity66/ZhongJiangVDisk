@@ -19,21 +19,21 @@
 
 @interface BBTheme : UIColor
 
-@property (nonatomic) UIColor* riseColor;
-@property (nonatomic) UIColor* fallColor;
+//@property (nonatomic) UIColor* riseColor;
+//@property (nonatomic) UIColor* fallColor;
 
 @property (nonatomic) UIColor* barFillColor;
 @property (nonatomic) UIColor* barBorderColor;
 
 @property (nonatomic) CGFloat xAxisFontSize;
 @property (nonatomic) CGFloat yAxisFontSize;
-@property (nonatomic) UIColor* axisColor;
+//@property (nonatomic) UIColor* axisColor;
 
-@property (nonatomic) UIColor* backgroundColor;
-@property (nonatomic) UIColor* borderColor;
+//@property (nonatomic) UIColor* backgroundColor;
+//@property (nonatomic) UIColor* borderColor;
 
-@property (nonatomic) UIColor* defTextColor;
-@property (nonatomic) UIColor* defLineColor;
+//@property (nonatomic) UIColor* defTextColor;
+//@property (nonatomic) UIColor* defLineColor;
 @property (nonatomic) float defLineWidth, axisYwidth, axisXHeight;
 @property (nonatomic) NSInteger defYLabelGap, defXLabelGap;
 +(BBTheme*) theme;

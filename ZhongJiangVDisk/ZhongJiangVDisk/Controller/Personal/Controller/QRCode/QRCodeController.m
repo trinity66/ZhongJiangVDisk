@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self addQRCodeImageView];
     // Do any additional setup after loading the view.
 }

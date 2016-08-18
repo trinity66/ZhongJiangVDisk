@@ -23,6 +23,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    self.backgroundColor = [Core shareCore].detailBackColor;
     //注册cell
     [_collectionView registerNib:[UINib nibWithNibName:@"ProductCollectionCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"ProductCollectionCell"];
 }

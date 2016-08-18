@@ -12,8 +12,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *detail;
-@property (weak, nonatomic) IBOutlet UIButton *riseButton;
-@property (weak, nonatomic) IBOutlet UIButton *fallButton;
+@property (weak, nonatomic) IBOutlet LButton *riseButton;
+@property (weak, nonatomic) IBOutlet LButton *fallButton;
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 
 @end
@@ -21,16 +21,17 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.backgroundColor = [Core shareCore].detailBackColor;
     // Initialization code
 }
 - (void)setColorWithType:(NSString *)type
 {
-    UIColor *color = [Core shareCore].lightMainColor;
+    UIColor *color = [Core shareCore].selectedLineColor;
     _title.textColor = color;
     _riseButton.layer.masksToBounds = YES;
     _fallButton.layer.masksToBounds = YES;
     if ([type isEqualToString:@"RED"]) {
-        color = [Core shareCore].riseColor;
+        color = [Core shareCore].riseTextColor;
     }
     
     _mainView.layer.borderColor = color.CGColor;

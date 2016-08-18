@@ -19,6 +19,7 @@ __weak ForgetDealPswdController *_forgetDealSelf;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _forgetDealSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"手机号："];

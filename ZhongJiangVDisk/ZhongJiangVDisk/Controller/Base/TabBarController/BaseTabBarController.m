@@ -23,7 +23,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBar.tintColor = [Core shareCore].darkMainColor;
+    self.tabBar.translucent = NO;
+    self.tabBar.tintColor = [Core shareCore].tabBarSelectTextColor;
+    self.tabBar.backgroundImage = [[Core shareCore] image_with_color:[Core shareCore].detailBackColor];
     // Do any additional setup after loading the view.
 }
 

@@ -32,17 +32,12 @@
                                 <constraint firstAttribute="height" constant="1" id="gfo-wN-xz6"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hoo-Lt-a3I">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hoo-Lt-a3I" customClass="LButton">
                             <rect key="frame" x="10" y="130" width="243" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="确认">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="4"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="UvV-Ks-np2"/>
                             </connections>
@@ -124,7 +119,7 @@
                 </mask>
             </variation>
             <connections>
-                <outlet property="button" destination="Hoo-Lt-a3I" id="Nzc-4q-GrW"/>
+                <outlet property="button" destination="Hoo-Lt-a3I" id="I6A-Qv-g2w"/>
                 <outlet property="forgetPswdBtn" destination="8VV-W8-vZ4" id="1yx-Ot-Z8y"/>
                 <outlet property="mainView" destination="595-QN-Xw4" id="ukm-L9-5gX"/>
                 <outlet property="textField" destination="1N9-eQ-nV8" id="HfN-4b-8bz"/>

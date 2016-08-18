@@ -12,12 +12,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    UIColor *color = [Core shareCore].lightMainColor;
+    UIColor *color = [Core shareCore].buttonBackColor;
     _addBtn.backgroundColor = color;
     _subtractBtn.backgroundColor = color;
     // Initialization code
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

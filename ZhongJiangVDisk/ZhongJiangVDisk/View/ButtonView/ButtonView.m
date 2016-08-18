@@ -10,7 +10,8 @@
 
 
 @interface ButtonView ()
-@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet LButton *button;
+
 
 @end
 @implementation ButtonView
@@ -25,7 +26,8 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    _button.backgroundColor = [Core shareCore].lightMainColor;
+    self.backgroundColor = [Core shareCore].backgroundColor;
+    _button.backgroundColor = [Core shareCore].buttonBackColor;
 }
 - (void)setBtnTitle:(NSString *)btnTitle
 {

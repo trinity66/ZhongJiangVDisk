@@ -19,6 +19,7 @@ __weak ApplyForBrokerController *_applySelf;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _applySelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"经纪人名称：", @"登录密码：", @"经纪人手机：", @"机构编号："];

@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="306" height="45"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0BT-jt-Xtw">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0BT-jt-Xtw" customClass="LButton">
                     <rect key="frame" x="10" y="8" width="286" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Oe7-LE-mKu"/>
@@ -20,13 +20,8 @@
                     <state key="normal" title="确认">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="4"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="cX5-5i-xsK"/>
+                        <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="i1q-15-kl6"/>
                     </connections>
                 </button>
             </subviews>
@@ -38,7 +33,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="button" destination="0BT-jt-Xtw" id="JI8-ve-8fT"/>
+                <outlet property="button" destination="0BT-jt-Xtw" id="jef-ad-fz7"/>
             </connections>
             <point key="canvasLocation" x="308" y="68.5"/>
         </view>

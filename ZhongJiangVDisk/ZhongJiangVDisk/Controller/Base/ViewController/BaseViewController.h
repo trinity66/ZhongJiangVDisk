@@ -16,4 +16,5 @@
 @property (nonatomic, strong) Segment *segment;
 - (void)addSegmentWithUserEnabled:(BOOL)userEnabled;
 - (CGFloat)getTableViewY;
+- (void)addPersonalTopView;
 @end

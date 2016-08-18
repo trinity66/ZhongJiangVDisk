@@ -11,16 +11,15 @@
 @interface PositionCell ()
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *detail;
-@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet LButton *button;
 @end
 @implementation PositionCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    UIColor *color = [Core shareCore].lightMainColor;
-    _title.textColor = color;
-    _detail.textColor = color;
-    _button.backgroundColor = color;
+    _title.textColor = [Core shareCore].positionCellTextColor;
+    _button.backgroundColor = [Core shareCore].buttonBackColor;
+    self.backgroundColor = [Core shareCore].detailBackColor;
     // Initialization code
 }
 - (IBAction)buttonAction:(id)sender {
@@ -34,12 +33,12 @@
     NSString *imageName;
     NSString *num;
     if (isRise) {
-        color = [Core shareCore].riseColor;
+        color = [Core shareCore].riseTextColor;
         imageName = @"riseRed";
         num = [NSString stringWithFormat:@"+%.02f",number];
     }else
     {
-        color = [Core shareCore].fallColor;
+        color = [Core shareCore].fallTextColor;
         imageName = @"fallGreen";
         num = [NSString stringWithFormat:@"-%.02f",number];
     }

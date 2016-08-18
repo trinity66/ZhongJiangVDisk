@@ -41,7 +41,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cq8-Xy-Zrl">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cq8-Xy-Zrl" customClass="LButton">
                         <rect key="frame" x="228" y="16" width="50" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="F8W-tm-m0G"/>
@@ -51,11 +51,6 @@
                         <state key="normal" title="一键平仓">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="4"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                         <connections>
                             <action selector="buttonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rde-6l-Tac"/>
                         </connections>
@@ -74,7 +69,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="button" destination="Cq8-Xy-Zrl" id="ZF7-Ya-soT"/>
+                <outlet property="button" destination="Cq8-Xy-Zrl" id="BGm-wP-VDl"/>
                 <outlet property="detail" destination="NwF-5j-sCb" id="KrW-pp-1pv"/>
                 <outlet property="title" destination="XC8-cr-q2H" id="ume-db-zZo"/>
             </connections>

@@ -9,17 +9,18 @@
 #import "PersonalTopView.h"
 
 @interface PersonalTopView ()
-@property (weak, nonatomic) IBOutlet UIButton *recharge;
+@property (weak, nonatomic) IBOutlet LButton *recharge;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *trailing;
 @end
 @implementation PersonalTopView
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    self.backgroundColor = [Core shareCore].lightMainColor;
-    UIColor *borderColor = [Core shareCore].lightGrayColor;
+    self.frame = CGRectMake(0, 0, kScreenWidth, kPersonalTopViewHeight);
+    self.backgroundColor = [Core shareCore].personalTopColor;
+    UIColor *borderColor = [Core shareCore].detailBackColor;
     _imageView.layer.borderColor = borderColor.CGColor;
-    _recharge.backgroundColor = [Core shareCore].riseColor;
+    _recharge.backgroundColor = [Core shareCore].riseTextColor;
 }
 - (IBAction)rechargeAction:(id)sender {
     [[Core shareCore] goRechargeVC];

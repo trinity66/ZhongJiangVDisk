@@ -17,7 +17,10 @@ __weak PositionController *_positionSelf;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _positionSelf = self;
+    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.separatorColor = [Core shareCore].backgroundColor;
     [self addSegmentWithUserEnabled:NO];
     _topTableViewY.constant = [self getTableViewY];
     // Do any additional setup after loading the view.
@@ -47,12 +50,6 @@ __weak PositionController *_positionSelf;
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 0.0000001;
-}
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *view = [UIView new];
-    view.backgroundColor = [Core shareCore].lightGrayColor;
-    return view;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

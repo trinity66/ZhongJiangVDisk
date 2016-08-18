@@ -41,7 +41,6 @@
 #import "RechargeController.h"//充值
 #import "RechargeCell.h"//充值cell
 #import "RechargeHeadView.h"//充值-表头
-#import "RachargeFootView.h"//充值-表尾
 
 #import "WithdrawController.h"//提现
 
@@ -71,6 +70,8 @@
 #import "ProductCollectionView.h"//首页底部collectionView
 #import "ProductCollectionCell.h"//首页底部collectionCell
 #import "ForgetDealPswdController.h"//忘记密码
+
+#import "LButton.h"//基础button
 
 //分时图，k图
 #import "Area.h"

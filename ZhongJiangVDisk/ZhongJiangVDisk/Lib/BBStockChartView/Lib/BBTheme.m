@@ -21,17 +21,15 @@ BBTheme* _defTheme = nil;
 +(BBTheme *)theme{
     if (!_defTheme) {
         _defTheme = [[BBTheme alloc] init];
-        _defTheme.riseColor = [Core shareCore].riseColor;
-        _defTheme.fallColor = [Core shareCore].fallColor;
         _defTheme.barFillColor = [UIColor greenColor];
         _defTheme.barBorderColor = [UIColor clearColor];
         _defTheme.xAxisFontSize = 10;
         _defTheme.yAxisFontSize = 10;
-        _defTheme.backgroundColor = [UIColor whiteColor];
-        _defTheme.axisColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1.00];
-        _defTheme.borderColor = [UIColor yellowColor];
-        _defTheme.defTextColor = [UIColor darkGrayColor];
-        _defTheme.defLineColor = [UIColor yellowColor];
+//        _defTheme.backgroundColor = [UIColor whiteColor];
+//        _defTheme.axisColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1.00];
+//        _defTheme.borderColor = [UIColor yellowColor];
+//        _defTheme.defTextColor = [UIColor darkGrayColor];
+//        _defTheme.defLineColor = [UIColor yellowColor];
         _defTheme.defLineWidth = 1;
         _defTheme.defYLabelGap = 5;
         _defTheme.defXLabelGap = 3;
