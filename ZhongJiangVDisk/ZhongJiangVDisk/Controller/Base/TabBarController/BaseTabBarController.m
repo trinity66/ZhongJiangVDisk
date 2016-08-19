@@ -16,9 +16,11 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    static int i = 0;
     for (UITabBarItem *item in self.tabBar.items) {
         item.image = [item.image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         item.selectedImage = [item.selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        i +=1;
     }
 }
 - (void)viewDidLoad {

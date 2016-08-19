@@ -36,7 +36,6 @@
     
     _mainView.layer.borderColor = color.CGColor;
     _mainView.backgroundColor = color;
-    
     CALayer* line = [BaseLayer layerOfLineFrom:CGPointZero to:CGPointMake(-20, 30) withColor:[UIColor whiteColor] andWidth:0.6 animated:NO];
     line.position = CGPointMake((self.bounds.size.width-15)/2.0 + 10, self.bounds.size.height-_riseButton.bounds.size.height);
     [self.layer addSublayer:line];

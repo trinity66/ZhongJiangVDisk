@@ -24,7 +24,6 @@ __weak HomeController *_self;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _self = self;
     _put = [[NSBundle mainBundle] loadNibNamed:@"InputDealPswdView" owner:nil options:nil].lastObject;
     _put.btnsActionBlock = ^(NSInteger index) {

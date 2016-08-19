@@ -31,8 +31,6 @@
             text = [NSString stringWithFormat:@"%d", i+1];
         }
         if (text && text.length > 0) {
-//            text = [text substringToIndex:5];
-//            NSLog(@"Draw x: %d", i);
             CATextLayer* label = [BaseLayer layerOfText:text withFont:@"HelveticaNeue" fontSize:[BBTheme theme].xAxisFontSize andColor:[Core shareCore].chartXTextColor];
             CGFloat w = [BBChartUtils textBoundsForFont:text andSize:[BBTheme theme].xAxisFontSize text:text].width;
             if (i == self.idxNum || idxWidth*i+idxWidth/2+w > width) {

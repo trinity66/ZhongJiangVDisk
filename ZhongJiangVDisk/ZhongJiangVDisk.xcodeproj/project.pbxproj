@@ -88,6 +88,10 @@
 		5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */; };
 		5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */; };
 		5E1723081D66AC28003CA0AE /* VDiskTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723071D66AC28003CA0AE /* VDiskTypes.json */; };
+		5E1723131D66E090003CA0AE /* StockChartDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723111D66E090003CA0AE /* StockChartDataView.m */; };
+		5E1723141D66E090003CA0AE /* StockChartDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723121D66E090003CA0AE /* StockChartDataView.xib */; };
+		5E1723181D66E0BA003CA0AE /* LineChartDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723171D66E0BA003CA0AE /* LineChartDataView.m */; };
+		5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +252,12 @@
 		5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		5E1723071D66AC28003CA0AE /* VDiskTypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VDiskTypes.json; sourceTree = "<group>"; };
+		5E1723101D66E090003CA0AE /* StockChartDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockChartDataView.h; sourceTree = "<group>"; };
+		5E1723111D66E090003CA0AE /* StockChartDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockChartDataView.m; sourceTree = "<group>"; };
+		5E1723121D66E090003CA0AE /* StockChartDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockChartDataView.xib; sourceTree = "<group>"; };
+		5E1723161D66E0BA003CA0AE /* LineChartDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartDataView.h; sourceTree = "<group>"; };
+		5E1723171D66E0BA003CA0AE /* LineChartDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartDataView.m; sourceTree = "<group>"; };
+		5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChartDataView.xib; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -457,6 +467,8 @@
 		5E1721FF1D630082003CA0AE /* ChartView */ = {
 			isa = PBXGroup;
 			children = (
+				5E1723151D66E0B1003CA0AE /* LineChartDataView */,
+				5E17230F1D66E090003CA0AE /* StockChartDataView */,
 				5E1722001D630082003CA0AE /* ChartView.h */,
 				5E1722011D630082003CA0AE /* ChartView.m */,
 				5E1722021D630082003CA0AE /* ChartView.xib */,
@@ -994,6 +1006,26 @@
 			path = ProductTableViewCell;
 			sourceTree = "<group>";
 		};
+		5E17230F1D66E090003CA0AE /* StockChartDataView */ = {
+			isa = PBXGroup;
+			children = (
+				5E1723101D66E090003CA0AE /* StockChartDataView.h */,
+				5E1723111D66E090003CA0AE /* StockChartDataView.m */,
+				5E1723121D66E090003CA0AE /* StockChartDataView.xib */,
+			);
+			path = StockChartDataView;
+			sourceTree = "<group>";
+		};
+		5E1723151D66E0B1003CA0AE /* LineChartDataView */ = {
+			isa = PBXGroup;
+			children = (
+				5E1723161D66E0BA003CA0AE /* LineChartDataView.h */,
+				5E1723171D66E0BA003CA0AE /* LineChartDataView.m */,
+				5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */,
+			);
+			path = LineChartDataView;
+			sourceTree = "<group>";
+		};
 		794F7078CFCCD2419F25CE2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1117,6 +1149,7 @@
 				5E17229B1D630082003CA0AE /* RechargeHeadView.xib in Resources */,
 				5E1723081D66AC28003CA0AE /* VDiskTypes.json in Resources */,
 				5E1722E01D63008A003CA0AE /* SecurityCodeView.xib in Resources */,
+				5E1723141D66E090003CA0AE /* StockChartDataView.xib in Resources */,
 				5E1722991D630082003CA0AE /* RechargeCell.xib in Resources */,
 				5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */,
 				5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */,
@@ -1133,6 +1166,7 @@
 				5E1722F71D658CAA003CA0AE /* PersonalTopView.xib in Resources */,
 				5E1722D81D63008A003CA0AE /* BuyView.xib in Resources */,
 				5E1722E31D63008A003CA0AE /* SegmentView.xib in Resources */,
+				5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */,
 				5E1722831D630082003CA0AE /* ChartView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1216,6 +1250,7 @@
 				5E1722A11D630082003CA0AE /* Core+Color.m in Sources */,
 				5E1722941D630082003CA0AE /* QRCodeController.m in Sources */,
 				5E17227F1D630082003CA0AE /* BaseTabBarController.m in Sources */,
+				5E1723131D66E090003CA0AE /* StockChartDataView.m in Sources */,
 				5E1722881D630082003CA0AE /* ApplyForBrokerController.m in Sources */,
 				5E17229C1D630082003CA0AE /* WithdrawController.m in Sources */,
 				5E1722AF1D630082003CA0AE /* QRCodeImage.m in Sources */,
@@ -1242,6 +1277,7 @@
 				5E17228F1D630082003CA0AE /* DealListController.m in Sources */,
 				5E1722A01D630082003CA0AE /* Core.m in Sources */,
 				5E1721B41D62FFD4003CA0AE /* main.m in Sources */,
+				5E1723181D66E0BA003CA0AE /* LineChartDataView.m in Sources */,
 				5E1722921D630082003CA0AE /* InfosController.m in Sources */,
 				5E17229E1D630082003CA0AE /* PositionCell.m in Sources */,
 				5E1722811D630082003CA0AE /* HomeController.m in Sources */,

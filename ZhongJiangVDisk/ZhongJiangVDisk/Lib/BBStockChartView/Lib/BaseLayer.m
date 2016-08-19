@@ -57,10 +57,6 @@
 
     UIBezierPath * path=[[UIBezierPath alloc] init];
     [path moveToPoint:CGPointMake(from.x, from.y)];
-//    if (index % 2 == 0) {
-//        float y = to.y < from.y ? from.y : to.y;
-//        [path addLineToPoint:CGPointMake(to.x,y)];
-//    }
     [path addLineToPoint:to];
     [path addLineToPoint:CGPointMake(to.x, 290-64-1)];
     [path addLineToPoint:CGPointMake(from.x, 290-64-1)];
@@ -86,7 +82,6 @@
 
 
 + (CATextLayer *)layerOfText:(NSString *)text withFont:(NSString*)font fontSize:(CGFloat)fontSize andColor:(UIColor *)color{
-//    UIFont* f = [UIFont fontWithName:font size:fontSize];
     CATextLayer *ret = [[CATextLayer alloc] init];
     ret.string = text;
     ret.font = (__bridge CFTypeRef)(font);

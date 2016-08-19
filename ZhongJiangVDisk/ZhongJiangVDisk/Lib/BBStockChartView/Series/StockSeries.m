@@ -50,9 +50,6 @@
         }
     }
     CGFloat height = self.bounds.size.height;
-//    CGFloat width = self.bounds.size.width;
-    
-    
     CGFloat x = idx * self.pointWidth + self.pointWidth / 2;
     CGFloat y1 = height - [self.axisAttached heighForVal:point.high];
     CGFloat y2 = height - [self.axisAttached heighForVal:point.low];

@@ -77,6 +77,9 @@
 #import "LButton.h"//基础button
 #import "LTextField.h"
 
+#import "LineChartDataView.h"
+#import "StockChartDataView.h"
+
 //分时图，k图
 #import "Area.h"
 

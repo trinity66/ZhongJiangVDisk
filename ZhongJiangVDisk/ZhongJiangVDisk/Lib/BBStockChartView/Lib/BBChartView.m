@@ -24,10 +24,15 @@
     UIView* _chartView;
     UIView* _toastView;
     UILabel* _toastLabel;
+    float showWidth, showHeight, showX, showY;
+    BOOL showAnimationed;
     
 }
 @property (nonatomic, strong)Series *series;
-@property (nonatomic, strong) UIView *showView, *circle, *lineY;
+@property (nonatomic, strong) UIView *circle, *lineY;
+@property (nonatomic, strong) LineChartDataView *lineDataView;
+@property (nonatomic, strong) StockChartDataView *stockDataView;
+
 
 - (void) redraw;
 @end
@@ -121,11 +126,6 @@
         if (!_data) {
             _data = [NSMutableArray arrayWithArray:_series.data];
         }
-//        for (NSNumber *f in series.data) {
-//            CGFloat height = self.bounds.size.height;
-//            float y = height - [series.axisAttached heighForVal:((NSNumber*)f).floatValue];
-//            [_data addObject:[NSNumber numberWithFloat:y]];
-//        }
     }
 }
 
@@ -253,60 +253,85 @@
         double itemWidth = self.series.pointWidth;
         NSInteger index = (NSInteger)x/itemWidth;
         x = itemWidth*index;
+        if (!_lineY) {
+            _lineY = [[UIView alloc] init];
+            _lineY.backgroundColor = [UIColor lightGrayColor];
+            [self addSubview:_lineY];
+        }
+        if (!_circle) {
+            _circle = [[UIView alloc] init];
+            _circle.backgroundColor = [Core shareCore].selectedLineColor;
+            _circle.layer.cornerRadius = 2;
+            [self addSubview:_circle];
+        }
+        showAnimationed = YES;
         CGFloat f = 0;
-        if (index>0 && index < self.data.count) {
+        if (index>=0 && index < self.data.count) {
             id shujv = self.data[index];
             if ([shujv isKindOfClass:[StockSeriesPoint class]]) {
                 StockSeriesPoint *p =shujv;
                 f = p.high;
+                if (!_stockDataView) {
+                    showWidth = 140;
+                    showHeight = 60;
+                    showAnimationed = NO;
+                    _stockDataView = [[NSBundle mainBundle] loadNibNamed:@"StockChartDataView" owner:nil options:nil].lastObject;
+                    [_stockDataView setTime:@"未知" open:p.open close:p.close high:p.high low:p.low];
+                    [self addSubview:_stockDataView];
+                }
+                x += itemWidth/2.0;
             }else
             {
                 NSNumber *num = shujv;
                 f = [num doubleValue];
+                if (!_lineDataView) {
+                    _lineDataView = [[NSBundle mainBundle] loadNibNamed:@"LineChartDataView" owner:nil options:nil].lastObject;
+                    showWidth = 76;
+                    showHeight = 40;
+                    showAnimationed = NO;
+                    [_lineDataView setTime:@"未知" data:f];
+                    
+                    [self addSubview:_lineDataView];
+                }
             }
             CGFloat height = self.series.bounds.size.height;
-            float y = height - [self.series.axisAttached heighForVal:((NSNumber*)self.data[index]).floatValue];
-//            float y = (self.bounds.size.height-axisXheight) - [_series.axisAttached heighForVal:f];
-            NSLog(@"%f,%f",y,x);
-            CGFloat showWidth = 80, showHeight = 40, showX = 0, showY = showWidth/2.0;
-            
-            if (!_lineY) {
-                _lineY = [[UIView alloc] init];
-                _lineY.backgroundColor = [UIColor lightGrayColor];
-                [self addSubview:_lineY];
-            }
-            if (!_circle) {
-                _circle = [[UIView alloc] init];
-                _circle.backgroundColor = [UIColor brownColor];
-                _circle.layer.cornerRadius = 2;
-                [self addSubview:_circle];
-            }
-            if (!_showView) {
-                _showView = [[UIView alloc] init];
-                _showView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.8];
-                _showView.layer.cornerRadius = 2;
-                _showView.layer.borderColor = [UIColor brownColor].CGColor;
-                _showView.layer.borderWidth = 1;
-                [self addSubview:_showView];
-            }
+            float y = height - [self.series.axisAttached heighForVal:f];
             showX = (x+axisYwidth)-showWidth/2.0;
-            if (showX < showWidth/2.0 + axisYwidth/2.0) {
+            if (showX < axisYwidth) {
                 showX = x+axisYwidth;
             }
-            if (showX > self.bounds.size.width-axisYwidth/2.0-showWidth/2.0) {
+            if (showX > self.bounds.size.width-axisYwidth-showWidth/2.0) {
                 showX = showX-showWidth/2.0;
             }
-            showY = y;
-            CGFloat h = self.bounds.size.height-y-axisXheight;
-            NSLog(@"%f",h);
-            if (h<showHeight) {
-                showY = y-showHeight;
+            if (y > showHeight) {
+                showY = y - showHeight;
+            }else
+            {
+                showY = y;
             }
-            _showView.frame = CGRectMake(showX, showY, showWidth, showHeight);
+            CGRect frame = CGRectMake(showX, showY, showWidth, showHeight);
+            if (_lineDataView) {
+                [self updateView:_lineDataView frame:frame];
+            }else
+            {
+                [self updateView:_stockDataView frame:frame];
+            }
             _lineY.frame = CGRectMake(axisYwidth + x, 0, 0.5, self.bounds.size.height-axisXheight);
             _circle.frame = CGRectMake(axisYwidth + x - 2, y-2, 4, 4);
         }
     }
+}
+- (void)updateView:(UIView *)view frame:(CGRect)frame
+{
+    if (showAnimationed) {
+        [UIView animateWithDuration:0.2 animations:^{
+            view.frame = frame;
+        }];
+    }else
+    {
+        view.frame = frame;
+    }
+    
 }
 
 @end

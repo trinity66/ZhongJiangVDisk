@@ -362,11 +362,11 @@
             </objects>
             <point key="canvasLocation" x="940" y="1662"/>
         </scene>
-        <!--首页-->
+        <!--Base Navigation Controller-->
         <scene sceneID="FkO-M2-Crg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v3g-Eh-EGs" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="skK-mu-rTS"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="skK-mu-rTS"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IKG-do-4ZO">
@@ -382,11 +382,11 @@
             </objects>
             <point key="canvasLocation" x="-739" y="416"/>
         </scene>
-        <!--持仓-->
+        <!--Base Navigation Controller-->
         <scene sceneID="DH9-a3-74n">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gHy-kD-Jmy" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="持仓" id="3ym-e1-x2e"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="3ym-e1-x2e"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HEW-D3-Edj">
@@ -402,11 +402,11 @@
             </objects>
             <point key="canvasLocation" x="-399" y="416"/>
         </scene>
-        <!--我的-->
+        <!--Base Navigation Controller-->
         <scene sceneID="Z5Z-UV-0Xh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xjq-UE-3el" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="Ez3-3r-oyX"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Ez3-3r-oyX"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="v4b-BU-2hs">

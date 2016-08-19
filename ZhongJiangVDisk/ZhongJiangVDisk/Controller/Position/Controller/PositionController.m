@@ -17,7 +17,6 @@ __weak PositionController *_positionSelf;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _positionSelf = self;
     _tableView.backgroundColor = [Core shareCore].backgroundColor;
     _tableView.separatorColor = [Core shareCore].backgroundColor;

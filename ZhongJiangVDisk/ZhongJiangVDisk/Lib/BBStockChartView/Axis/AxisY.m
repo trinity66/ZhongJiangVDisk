@@ -83,8 +83,6 @@
     CALayer* line = [BaseLayer layerOfLineFrom:CGPointZero to:CGPointMake(0, self.designHight+1) withColor:[Core shareCore].chartLineColor andWidth:1.5 animated:NO];
     line.position = CGPointMake(self.bounds.size.width-2, 0);
     [self addSublayer:line];
-    
-    
     NSUInteger cnt = [BBTheme theme].defYLabelGap;
     CGFloat labelHei = [self sizeOfText:@"abc" andSize:[BBTheme theme].yAxisFontSize].height;
 
