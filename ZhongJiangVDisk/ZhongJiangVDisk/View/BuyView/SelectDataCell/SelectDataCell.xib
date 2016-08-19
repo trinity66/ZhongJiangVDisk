@@ -39,8 +39,11 @@
                         <state key="normal" title="－">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="subAction:" destination="U9l-gr-oGZ" eventType="touchUpInside" id="fXc-9o-7r7"/>
+                        </connections>
                     </button>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xN-6C-YNk">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9xN-6C-YNk" customClass="LTextField">
                         <rect key="frame" x="165" y="6" width="87" height="37"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
@@ -58,6 +61,9 @@
                                 <exclude reference="3H5-co-nTT"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <action selector="addAction:" destination="U9l-gr-oGZ" eventType="touchUpInside" id="6tl-cV-O4T"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -83,7 +89,7 @@
             <connections>
                 <outlet property="addBtn" destination="0gI-tv-JFK" id="QRL-w4-chQ"/>
                 <outlet property="subtractBtn" destination="FW7-qn-xFH" id="7kE-os-zTM"/>
-                <outlet property="textField" destination="9xN-6C-YNk" id="EgE-3Z-puf"/>
+                <outlet property="textField" destination="9xN-6C-YNk" id="MUH-df-EWx"/>
                 <outlet property="title" destination="qzI-Xk-iBj" id="zaC-va-JmU"/>
             </connections>
         </tableViewCell>

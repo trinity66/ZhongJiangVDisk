@@ -10,9 +10,8 @@
 #import "LButton.h"
 @interface SelectDataCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet LButton *subtractBtn;
-@property (weak, nonatomic) IBOutlet LButton *addBtn;
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet LTextField *textField;
+@property (nonatomic, copy) btnsActionBlock btnsActionBlock;
 
 
 @end
