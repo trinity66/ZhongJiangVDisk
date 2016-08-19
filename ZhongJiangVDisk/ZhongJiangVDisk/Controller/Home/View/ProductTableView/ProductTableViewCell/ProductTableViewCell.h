@@ -10,4 +10,5 @@
 
 @interface ProductTableViewCell : UITableViewCell
 - (void)setTitleWithTitle:(NSString *)title detail:(NSString *)detail;
+@property (nonatomic, copy) btnsActionBlock btnsActionBlock;
 @end

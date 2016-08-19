@@ -13,8 +13,10 @@
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet LButton *button;
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
-
+@property (weak, nonatomic) IBOutlet UIView *lTwo;
+@property (weak, nonatomic) IBOutlet UIView *lOne;
 @property (nonatomic, strong) NSArray *titles, *placeholders;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lHeight;
 @end
 @implementation BuyView
 
@@ -60,9 +62,15 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    _lHeight.constant = 0.5;
     _button.backgroundColor = [Core shareCore].buttonBackColor;
     _titles = @[@"止盈（％）", @"止损（％）", @"购买数量", @"预付款", @"合同总价值"];
     _placeholders = @[@"不设", @"不设", @"1", @"50", @"3174"];
+    _title.textColor = [Core shareCore].cellTextColor;
+    _mainView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _lOne.backgroundColor = [Core shareCore].detailLightBackColor;
+    _lTwo.backgroundColor = [Core shareCore].detailLightBackColor;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

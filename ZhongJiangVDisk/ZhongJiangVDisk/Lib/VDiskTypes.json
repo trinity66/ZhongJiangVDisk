@@ -31,6 +31,7 @@
         "textFieldBorderColor":[0.80, 0.80, 0.80, 1.00],
         "textFieldBackColor":[1.00, 1.00, 1.00, 1.00],
         "textFieldSelectBackColor":[0.84, 0.72, 0.53, 1.00],
+        "buttonBorderColor":[0.84, 0.72, 0.53, 1.00],
         
     },
     "VDiskTypeZhongHui":
@@ -64,6 +65,7 @@
         "textFieldBorderColor":[0.00, 0.00, 0.00, 1.00],
         "textFieldBackColor":[0.60, 0.60, 0.60, 1.00],
         "textFieldSelectBackColor":[0.3, 0.3, 0.3, 1.00],
+        "buttonBorderColor":[0.37, 0.37, 0.37, 1.00],
     },
 }
 

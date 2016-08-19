@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIView *lOne;
 @property (weak, nonatomic) IBOutlet UIView *lTwo;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lHeight;
 
 
 @end
@@ -57,6 +58,7 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    _lHeight.constant = 0.5;
     [_forgetPswdBtn setTitleColor:[Core shareCore].selectedLineColor forState:UIControlStateNormal];
     _button.backgroundColor = [Core shareCore].buttonBackColor;
     _mainView.backgroundColor = [Core shareCore].backgroundColor;

@@ -15,6 +15,8 @@
     UIColor *color = [Core shareCore].buttonBackColor;
     _addBtn.backgroundColor = color;
     _subtractBtn.backgroundColor = color;
+    self.backgroundColor = [Core shareCore].backgroundColor;
+    _title.textColor = [Core shareCore].cellTextColor;
     // Initialization code
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

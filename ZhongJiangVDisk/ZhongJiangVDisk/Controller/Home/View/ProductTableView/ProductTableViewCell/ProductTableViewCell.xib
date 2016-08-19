@@ -25,6 +25,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="买涨"/>
+                                <connections>
+                                    <action selector="riseAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wNa-EL-DLs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgZ-5M-7nv">
                                 <rect key="frame" x="254" y="0.0" width="50" height="39.5"/>
@@ -38,6 +41,9 @@
                                         <exclude reference="SAL-oh-otN"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="fallAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kNl-iq-5UY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3i-AL-xSf">
                                 <rect key="frame" x="55" y="2" width="194" height="21"/>

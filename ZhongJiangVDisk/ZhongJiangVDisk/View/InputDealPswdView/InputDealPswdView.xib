@@ -28,9 +28,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rML-Al-SMc">
                             <rect key="frame" x="0.0" y="119" width="263" height="1"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="gfo-wN-xz6"/>
-                            </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hoo-Lt-a3I" customClass="LButton">
                             <rect key="frame" x="10" y="130" width="243" height="30"/>
@@ -57,11 +54,11 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VV-W8-vZ4">
-                            <rect key="frame" x="193" y="79" width="60" height="35"/>
+                            <rect key="frame" x="188" y="79" width="65" height="35"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="60" id="bOU-5w-cYt"/>
+                                <constraint firstAttribute="width" constant="65" id="bOU-5w-cYt"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <state key="normal" title="忘记交易密码"/>
                             <connections>
                                 <action selector="forgetPswdBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="SH0-jO-pBP"/>
@@ -84,6 +81,7 @@
                         <constraint firstAttribute="trailing" secondItem="0u0-k0-4NC" secondAttribute="trailing" id="dC9-ET-1wN"/>
                         <constraint firstItem="8VV-W8-vZ4" firstAttribute="top" secondItem="1N9-eQ-nV8" secondAttribute="bottom" id="def-iZ-5c0"/>
                         <constraint firstItem="0u0-k0-4NC" firstAttribute="top" secondItem="77K-ab-yd3" secondAttribute="bottom" constant="8" id="dnG-sS-ccD"/>
+                        <constraint firstItem="rML-Al-SMc" firstAttribute="height" secondItem="0u0-k0-4NC" secondAttribute="height" id="eQ6-qZ-fIP"/>
                         <constraint firstAttribute="trailing" secondItem="rML-Al-SMc" secondAttribute="trailing" id="eiU-RQ-B4X"/>
                         <constraint firstItem="Hoo-Lt-a3I" firstAttribute="top" secondItem="rML-Al-SMc" secondAttribute="bottom" constant="10" id="gFn-Kg-ohH"/>
                         <constraint firstItem="rML-Al-SMc" firstAttribute="top" secondItem="8VV-W8-vZ4" secondAttribute="bottom" constant="5" id="gy3-QZ-iIv"/>
@@ -121,6 +119,7 @@
             <connections>
                 <outlet property="button" destination="Hoo-Lt-a3I" id="I6A-Qv-g2w"/>
                 <outlet property="forgetPswdBtn" destination="8VV-W8-vZ4" id="1yx-Ot-Z8y"/>
+                <outlet property="lHeight" destination="RMP-RX-Q9M" id="6wA-2H-cql"/>
                 <outlet property="lOne" destination="0u0-k0-4NC" id="ESX-wE-8Vf"/>
                 <outlet property="lTwo" destination="rML-Al-SMc" id="E8b-0d-zr1"/>
                 <outlet property="mainView" destination="595-QN-Xw4" id="ukm-L9-5gX"/>

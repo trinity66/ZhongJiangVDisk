@@ -37,6 +37,16 @@
     [str1 appendAttributedString:str2];
     _title.attributedText = str1;
 }
+- (IBAction)riseAction:(id)sender {
+    if (self.btnsActionBlock) {
+        self.btnsActionBlock(0);
+    }
+}
+- (IBAction)fallAction:(id)sender {
+    if (self.btnsActionBlock) {
+        self.btnsActionBlock(1);
+    }
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

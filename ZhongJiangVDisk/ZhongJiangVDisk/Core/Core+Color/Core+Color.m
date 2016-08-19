@@ -111,6 +111,7 @@
     self.textFieldBorderColor = [self colorWithArray:dict[@"textFieldBorderColor"]];
     self.textFieldBackColor = [self colorWithArray:dict[@"textFieldBackColor"]];
     self.textFieldSelectBackColor = [self colorWithArray:dict[@"textFieldSelectBackColor"]];
+    self.buttonBorderColor = [self colorWithArray:dict[@"buttonBorderColor"]];
 }
 - (UIColor *)colorWithArray:(NSArray *)array
 {

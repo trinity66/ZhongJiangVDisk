@@ -11,6 +11,7 @@
 @interface ProductCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) BuyView *buyView;
 @end
+__weak ProductCollectionView *productCollectionSelf;
 @implementation ProductCollectionView
 
 /*
@@ -23,6 +24,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    productCollectionSelf = self;
     self.backgroundColor = [Core shareCore].detailBackColor;
     //注册cell
     [_collectionView registerNib:[UINib nibWithNibName:@"ProductCollectionCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"ProductCollectionCell"];
@@ -51,21 +53,7 @@
 {
     ProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProductCollectionCell" forIndexPath:indexPath];
     cell.btnsActionBlock = ^(NSInteger index) {
-        if (!_buyView) {
-            _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
-            __block BuyView *_buy = self.buyView;
-            _buyView.btnActionBlock = ^() {
-                [[Core shareCore] showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
-//                [_buy removeBuyView];
-            };
-        }
-        if (index == 0) {
-            _buyView.title.text = @"买涨";
-        }else
-        {
-            _buyView.title.text = @"买跌";
-        }
-        [_buyView showBuyView];
+        [productCollectionSelf candleBuyViewWithIndex:index indexpath:indexPath];
     };
     if (indexPath.item % 2 == 0) {
         [cell setColorWithType:@"RED"];
@@ -74,6 +62,23 @@
         [cell setColorWithType:@"BROWN"];
     }
     return cell;
+}
+- (void)candleBuyViewWithIndex:(NSInteger)index indexpath:(NSIndexPath *)indexPath
+{
+    if (!_buyView) {
+        _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
+        __block BuyView *_buy = self.buyView;
+        _buyView.btnActionBlock = ^() {
+            [[Core shareCore] showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
+        };
+    }
+    if (index == 0) {
+        _buyView.title.text = @"买涨";
+    }else
+    {
+        _buyView.title.text = @"买跌";
+    }
+    [_buyView showBuyView];
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {

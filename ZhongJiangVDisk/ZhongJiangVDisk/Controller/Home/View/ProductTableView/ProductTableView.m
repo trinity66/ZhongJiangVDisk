@@ -9,12 +9,14 @@
 #import "ProductTableView.h"
 
 @interface ProductTableView ()<UITableViewDelegate, UITableViewDataSource>
-
+@property (nonatomic, strong) BuyView *buyView;
 @end
+__weak ProductTableView *productTabelSelf;
 @implementation ProductTableView
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    productTabelSelf = self;
     _tableView.backgroundColor = [Core shareCore].backgroundColor;
 }
 /*
@@ -51,7 +53,27 @@
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ProductTableViewCell" owner:nil options:nil].lastObject;
         [cell setTitleWithTitle:@"中汇银100G" detail:@" 波动盈亏：0.10元"];
+        cell.btnsActionBlock = ^(NSInteger index) {
+            [productTabelSelf candleBuyViewWithIndex:index indexpath:indexPath];
+        };
     }
     return cell;
+}
+- (void)candleBuyViewWithIndex:(NSInteger)index indexpath:(NSIndexPath *)indexPath
+{
+    if (!_buyView) {
+        _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
+        __block BuyView *_buy = self.buyView;
+        _buyView.btnActionBlock = ^() {
+            [[Core shareCore] showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
+        };
+    }
+    if (index == 0) {
+        _buyView.title.text = @"买涨";
+    }else
+    {
+        _buyView.title.text = @"买跌";
+    }
+    [_buyView showBuyView];
 }
 @end

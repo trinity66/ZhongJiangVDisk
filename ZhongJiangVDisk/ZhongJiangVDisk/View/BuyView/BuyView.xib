@@ -42,6 +42,11 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="XAh-Ab-TJM"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="XAh-Ab-TJM"/>
+                                </mask>
+                            </variation>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中江银750G 买涨 手续费:6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="y92-2c-e2g">
                             <rect key="frame" x="10" y="10" width="200" height="20"/>
@@ -59,10 +64,10 @@
                                 <action selector="cancelAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="gwM-YX-V6X"/>
                             </connections>
                         </button>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T3P-HX-CTT">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T3P-HX-CTT">
                             <rect key="frame" x="0.0" y="41" width="210" height="180"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <connections>
                                 <outlet property="dataSource" destination="iN0-l3-epB" id="Hnz-Ka-gIC"/>
                                 <outlet property="delegate" destination="iN0-l3-epB" id="BDK-Ad-ehh"/>
@@ -81,6 +86,7 @@
                         <constraint firstAttribute="trailing" secondItem="oxy-JY-IAt" secondAttribute="trailing" constant="10" id="GWf-fj-vLy"/>
                         <constraint firstItem="uJC-Jz-Vsq" firstAttribute="top" secondItem="eIs-gY-SzQ" secondAttribute="top" constant="40" id="LGj-Wg-tK1"/>
                         <constraint firstAttribute="trailing" secondItem="T3P-HX-CTT" secondAttribute="trailing" constant="30" id="Nb2-hT-Wmy"/>
+                        <constraint firstItem="Ge1-Sc-q2w" firstAttribute="height" secondItem="uJC-Jz-Vsq" secondAttribute="height" id="Q4q-Uo-lN4"/>
                         <constraint firstAttribute="bottom" secondItem="oxy-JY-IAt" secondAttribute="bottom" constant="10" id="QHF-bj-XFu"/>
                         <constraint firstItem="oxy-JY-IAt" firstAttribute="leading" secondItem="eIs-gY-SzQ" secondAttribute="leading" constant="10" id="RSc-ev-yUx"/>
                         <constraint firstItem="T3P-HX-CTT" firstAttribute="top" secondItem="uJC-Jz-Vsq" secondAttribute="bottom" id="TWC-F3-6ch"/>
@@ -115,6 +121,9 @@
             <connections>
                 <outlet property="button" destination="oxy-JY-IAt" id="FsV-JZ-Isu"/>
                 <outlet property="cancel" destination="SGu-JJ-ccp" id="C54-e2-WyR"/>
+                <outlet property="lHeight" destination="3lx-ON-aUQ" id="ZYe-lG-RIj"/>
+                <outlet property="lOne" destination="uJC-Jz-Vsq" id="bI6-0L-Vbg"/>
+                <outlet property="lTwo" destination="Ge1-Sc-q2w" id="aQZ-wA-I29"/>
                 <outlet property="mainView" destination="eIs-gY-SzQ" id="WwF-Ce-Isi"/>
                 <outlet property="tableView" destination="T3P-HX-CTT" id="J1y-A6-8X1"/>
                 <outlet property="title" destination="y92-2c-e2g" id="son-wF-97W"/>

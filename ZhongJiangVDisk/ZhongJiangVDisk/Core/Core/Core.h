@@ -29,6 +29,7 @@ typedef void(^btnsActionBlock)(NSInteger index);
 @property (nonatomic, strong)UIColor *chartLineColor, *chartYTextColor, *chartXTextColor, *chartLinesColor, *chartBackColor;
 @property (nonatomic, strong)UIColor *selectedLineColor, *tabBarSelectTextColor, *tabBarTextColor, *buttonBackColor, *personalTopColor;
 @property (nonatomic, strong)UIColor *cellTextColor, *topSegmentColor, *textFieldBorderColor, *textFieldBackColor, *textFieldSelectBackColor;
+@property (nonatomic, strong)UIColor *buttonBorderColor;
 
 //初始化视图类型
 @property (nonatomic, assign)VDiskType VDiskType;
