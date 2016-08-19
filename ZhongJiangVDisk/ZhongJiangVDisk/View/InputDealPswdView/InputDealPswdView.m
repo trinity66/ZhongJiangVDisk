@@ -12,7 +12,11 @@
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPswdBtn;
 @property (weak, nonatomic) IBOutlet LButton *button;
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet LTextField *textField;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIView *lOne;
+@property (weak, nonatomic) IBOutlet UIView *lTwo;
+
 
 @end
 @implementation InputDealPswdView
@@ -53,9 +57,12 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    UIColor *color = [Core shareCore].buttonBackColor;
-    [_forgetPswdBtn setTitleColor:color forState:UIControlStateNormal];
-    _button.backgroundColor = color;
+    [_forgetPswdBtn setTitleColor:[Core shareCore].selectedLineColor forState:UIControlStateNormal];
+    _button.backgroundColor = [Core shareCore].buttonBackColor;
+    _mainView.backgroundColor = [Core shareCore].backgroundColor;
+    _title.textColor = [Core shareCore].cellTextColor;
+    _lOne.backgroundColor = [Core shareCore].detailLightBackColor;
+    _lTwo.backgroundColor = [Core shareCore].detailLightBackColor;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

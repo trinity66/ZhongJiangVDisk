@@ -87,6 +87,7 @@
 		5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723001D65AB52003CA0AE /* ProductTableView.xib */; };
 		5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */; };
 		5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */; };
+		5E1723081D66AC28003CA0AE /* VDiskTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723071D66AC28003CA0AE /* VDiskTypes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +247,7 @@
 		5E1723021D65ACA5003CA0AE /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		5E1723071D66AC28003CA0AE /* VDiskTypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VDiskTypes.json; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -774,6 +776,7 @@
 		5E1722591D630082003CA0AE /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				5E1723071D66AC28003CA0AE /* VDiskTypes.json */,
 				5E17225A1D630082003CA0AE /* BBStockChartView */,
 				5E1722771D630082003CA0AE /* QRCodeImage-生成二维码 */,
 			);
@@ -1112,6 +1115,7 @@
 				5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */,
 				5E17228C1D630082003CA0AE /* DealHistoryCell.xib in Resources */,
 				5E17229B1D630082003CA0AE /* RechargeHeadView.xib in Resources */,
+				5E1723081D66AC28003CA0AE /* VDiskTypes.json in Resources */,
 				5E1722E01D63008A003CA0AE /* SecurityCodeView.xib in Resources */,
 				5E1722991D630082003CA0AE /* RechargeCell.xib in Resources */,
 				5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */,

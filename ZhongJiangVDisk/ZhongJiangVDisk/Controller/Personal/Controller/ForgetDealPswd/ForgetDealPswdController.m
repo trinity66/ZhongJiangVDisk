@@ -23,6 +23,7 @@ __weak ForgetDealPswdController *_forgetDealSelf;
     _forgetDealSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"手机号："];
+    _tableView.backgroundColor = [Core shareCore].backgroundColor;
     // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning {
@@ -59,7 +60,6 @@ __weak ForgetDealPswdController *_forgetDealSelf;
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
     }
-    cell.textField.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.00];
     cell.title.text = _titles[indexPath.row];
     return cell;
 }

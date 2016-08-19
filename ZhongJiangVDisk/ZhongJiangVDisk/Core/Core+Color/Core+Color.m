@@ -78,37 +78,53 @@
              @"textFieldSelectBackColor":[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0],
              };
 }
-- (void)initColors
+- (void)initColorsWithModelkey:(NSString *)key
 {
-    NSDictionary *dict = [self zhongHuiColors];
-    self.riseColor = dict[@"riseColor"];
-    self.fallColor = dict[@"fallColor"];
-    self.backgroundColor = dict[@"backgroundColor"];
-    self.detailBackColor = dict[@"detailBackColor"];
-    self.detailLightBackColor = dict[@"detailLightBackColor"];
     
-    self.riseTextColor = dict[@"riseTextColor"];
-    self.fallTextColor = dict[@"fallTextColor"];
-    self.labelTextColor = dict[@"labelTextColor"];
-    self.buttonTitleColor = dict[@"buttonTitleColor"];
-    self.positionCellTextColor = dict[@"positionCellTextColor"];
+    NSDictionary *dict = [self colorsDictionary][key];
+    self.riseColor = [self colorWithArray:dict[@"riseColor"]];
+    self.fallColor = [self colorWithArray:dict[@"fallColor"]];
+    self.backgroundColor = [self colorWithArray:dict[@"backgroundColor"]];
+    self.detailBackColor = [self colorWithArray:dict[@"detailBackColor"]];
+    self.detailLightBackColor = [self colorWithArray:dict[@"detailLightBackColor"]];
     
-    self.chartLineColor = dict[@"chartLineColor"];
-    self.chartLinesColor = dict[@"chartLinesColor"];
-    self.chartYTextColor = dict[@"chartYTextColor"];
-    self.chartXTextColor = dict[@"chartXTextColor"];
-    self.chartBackColor = dict[@"chartBackColor"];
+    self.riseTextColor = [self colorWithArray:dict[@"riseTextColor"]];
+    self.fallTextColor = [self colorWithArray:dict[@"fallTextColor"]];
+    self.labelTextColor = [self colorWithArray:dict[@"labelTextColor"]];
+    self.buttonTitleColor = [self colorWithArray:dict[@"buttonTitleColor"]];
+    self.positionCellTextColor = [self colorWithArray:dict[@"positionCellTextColor"]];
     
-    self.selectedLineColor = dict[@"selectedLineColor"];
-    self.tabBarSelectTextColor = dict[@"tabBarSelectTextColor"];
-    self.tabBarTextColor = dict[@"tabBarTextColor"];
-    self.buttonBackColor = dict[@"buttonBackColor"];
-    self.personalTopColor = dict[@"personalTopColor"];
+    self.chartLineColor = [self colorWithArray:dict[@"chartLineColor"]];
+    self.chartLinesColor = [self colorWithArray:dict[@"chartLinesColor"]];
+    self.chartYTextColor = [self colorWithArray:dict[@"chartYTextColor"]];
+    self.chartXTextColor = [self colorWithArray:dict[@"chartXTextColor"]];
+    self.chartBackColor = [self colorWithArray:dict[@"chartBackColor"]];
     
-    self.cellTextColor = dict[@"cellTextColor"];
-    self.topSegmentColor = dict[@"topSegmentColor"];
-    self.textFieldBorderColor = dict[@"textFieldBorderColor"];
-    self.textFieldBackColor = dict[@"textFieldBackColor"];
-    self.textFieldSelectBackColor = dict[@"textFieldSelectBackColor"];
+    self.selectedLineColor = [self colorWithArray:dict[@"selectedLineColor"]];
+    self.tabBarSelectTextColor = [self colorWithArray:dict[@"tabBarSelectTextColor"]];
+    self.tabBarTextColor = [self colorWithArray:dict[@"tabBarTextColor"]];
+    self.buttonBackColor = [self colorWithArray:dict[@"buttonBackColor"]];
+    self.personalTopColor = [self colorWithArray:dict[@"personalTopColor"]];
+    
+    self.cellTextColor = [self colorWithArray:dict[@"cellTextColor"]];
+    self.topSegmentColor = [self colorWithArray:dict[@"topSegmentColor"]];
+    self.textFieldBorderColor = [self colorWithArray:dict[@"textFieldBorderColor"]];
+    self.textFieldBackColor = [self colorWithArray:dict[@"textFieldBackColor"]];
+    self.textFieldSelectBackColor = [self colorWithArray:dict[@"textFieldSelectBackColor"]];
+}
+- (UIColor *)colorWithArray:(NSArray *)array
+{
+    CGFloat R = [array[0] floatValue];
+    CGFloat G = [array[1] floatValue];
+    CGFloat B = [array[2] floatValue];
+    CGFloat alpha = [array[3] floatValue];
+    return [UIColor colorWithRed:R green:G blue:B alpha:alpha];
+}
+- (NSDictionary *)colorsDictionary
+{
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"VDiskTypes" ofType:@"json"]];
+    NSError* err = nil;
+    NSDictionary *dictionary = (NSDictionary*)[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&err];
+    return dictionary;
 }
 @end

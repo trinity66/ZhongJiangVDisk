@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[Core shareCore] initColors];
+    [Core shareCore].VDiskType = VDiskTypeZhongHui;
     return YES;
 }
 

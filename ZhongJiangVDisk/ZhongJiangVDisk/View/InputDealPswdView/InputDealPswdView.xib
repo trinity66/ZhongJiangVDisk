@@ -48,7 +48,7 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1N9-eQ-nV8">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1N9-eQ-nV8" customClass="LTextField">
                             <rect key="frame" x="10" y="49" width="243" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="A6i-iA-RpO"/>
@@ -121,8 +121,11 @@
             <connections>
                 <outlet property="button" destination="Hoo-Lt-a3I" id="I6A-Qv-g2w"/>
                 <outlet property="forgetPswdBtn" destination="8VV-W8-vZ4" id="1yx-Ot-Z8y"/>
+                <outlet property="lOne" destination="0u0-k0-4NC" id="ESX-wE-8Vf"/>
+                <outlet property="lTwo" destination="rML-Al-SMc" id="E8b-0d-zr1"/>
                 <outlet property="mainView" destination="595-QN-Xw4" id="ukm-L9-5gX"/>
-                <outlet property="textField" destination="1N9-eQ-nV8" id="HfN-4b-8bz"/>
+                <outlet property="textField" destination="1N9-eQ-nV8" id="Tvp-bw-VMM"/>
+                <outlet property="title" destination="77K-ab-yd3" id="lFN-dO-08B"/>
             </connections>
             <point key="canvasLocation" x="176.5" y="327"/>
         </view>

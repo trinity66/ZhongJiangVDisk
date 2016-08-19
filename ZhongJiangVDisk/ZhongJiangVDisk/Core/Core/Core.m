@@ -62,4 +62,14 @@
     
     return image;
 }
+-(void)setVDiskType:(VDiskType)VDiskType
+{
+    _VDiskType = VDiskType;
+    if (_VDiskType == VDiskTypeZhongJiang) {
+        [self initColorsWithModelkey:@"VDiskTypeZhongJiang"];
+    }
+    if (_VDiskType == VDiskTypeZhongHui) {
+        [self initColorsWithModelkey:@"VDiskTypeZhongHui"];
+    }
+}
 @end

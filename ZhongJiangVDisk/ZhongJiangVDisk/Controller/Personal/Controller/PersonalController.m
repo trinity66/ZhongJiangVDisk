@@ -20,13 +20,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSArray *ary;
+    if ([Core shareCore].VDiskType == VDiskTypeZhongJiang) {
+        ary = @[@"收支明细(2016－06-20前)", @"交易历史(2016-06-20前)"];
+    }else
+    {
+        ary = @[];
+    }
     _titles =
     @[
   @[@"公告"],
   @[@"充值", @"提现", @"收支明细", @"交易历史"],
   @[@"我的二维码", @"经纪人申请", @"修改交易密码"],
-  @[@"收支明细(2016－06-20前)", @"交易历史(2016-06-20前)"],
+  ary,
   @[@"帮助"]
   ];
     [self addPersonalTopView];
@@ -62,7 +68,11 @@
     if (section == 0) {
         return 10;
     }
-    return 20;
+    NSArray *list = _titles[section];
+    if (list.count > 0) {
+       return 20;
+    }
+    return 0.0000001;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
