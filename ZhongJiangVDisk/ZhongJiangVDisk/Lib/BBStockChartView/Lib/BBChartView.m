@@ -250,8 +250,9 @@
         UITouch *touch = ts.firstObject;
         CGPoint point = [touch locationInView:self];
         float x = point.x-axisYwidth;
-        double itemWidth = (self.bounds.size.width-axisYwidth)/(double)self.data.count;
+        double itemWidth = self.series.pointWidth;
         NSInteger index = (NSInteger)x/itemWidth;
+        x = itemWidth*index;
         CGFloat f = 0;
         if (index>0 && index < self.data.count) {
             id shujv = self.data[index];
@@ -263,7 +264,9 @@
                 NSNumber *num = shujv;
                 f = [num doubleValue];
             }
-            float y = (self.bounds.size.height-axisXheight) - [_series.axisAttached heighForVal:f];
+            CGFloat height = self.series.bounds.size.height;
+            float y = height - [self.series.axisAttached heighForVal:((NSNumber*)self.data[index]).floatValue];
+//            float y = (self.bounds.size.height-axisXheight) - [_series.axisAttached heighForVal:f];
             NSLog(@"%f,%f",y,x);
             CGFloat showWidth = 80, showHeight = 40, showX = 0, showY = showWidth/2.0;
             

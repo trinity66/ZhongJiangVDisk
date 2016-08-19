@@ -32,16 +32,19 @@
     float y1 = height - [self.axisAttached heighForVal:((NSNumber*)self.data[idx-1]).floatValue];
     float y2 = height - [self.axisAttached heighForVal:((NSNumber*)self.data[idx]).floatValue];
     CALayer* line = [BaseLayer layerOfLineFrom:CGPointMake((idx-1)*self.pointWidth, y1) to:CGPointMake(idx*self.pointWidth, y2) withColor:self.color andWidth:self.width animated:animated];
-    CGPoint p;
-    if (idx > 1) {
-        p = CGPointMake((idx-2)*self.pointWidth, self.width);
-    }else
-    {
-        p = CGPointMake(0, 0);
-    }
-    CALayer *back = [BaseLayer backOfLineFrom:CGPointMake((idx-1)*self.pointWidth, y1) to:CGPointMake(idx*self.pointWidth, y2)];
+    CALayer *back = [BaseLayer backOfLineFrom:CGPointMake((float)(idx-1)*self.pointWidth, y1) to:CGPointMake(idx*self.pointWidth, y2)];
     [self addSublayer:back];
     [self addSublayer:line];
+}
+- (void)addBackLayer
+{
+    CAGradientLayer *layer = [[CAGradientLayer alloc] init];
+    layer.bounds = self.bounds;
+    layer.frame = self.bounds;
+    layer.colors = @[(__bridge id)[UIColor colorWithRed:0.79 green:0.59 blue:0.39 alpha:1.00].CGColor, (__bridge id)[UIColor colorWithRed:0.88 green:0.73 blue:0.50 alpha:0.90].CGColor, (__bridge id)[UIColor colorWithRed:0.88 green:0.73 blue:0.50 alpha:0.3].CGColor];
+    layer.startPoint = CGPointMake(1, 0);
+    layer.endPoint = CGPointMake(1, 1);
+    [self addSublayer:layer];
 }
 
 - (void)prepareForDraw{

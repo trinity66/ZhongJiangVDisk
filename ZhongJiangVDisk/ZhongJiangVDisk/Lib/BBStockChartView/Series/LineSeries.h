@@ -12,4 +12,5 @@
 
 @property (nonatomic, strong) UIColor* color;
 @property (nonatomic) float width;
+- (void)addBackLayer;
 @end

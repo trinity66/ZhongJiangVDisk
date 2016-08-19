@@ -90,7 +90,7 @@
 
     for (int i = 0; i < cnt; ++i) {
         CGFloat curHei = self.bounds.size.height/(float)cnt*(float)i;
-        CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(self.bounds.size.width-1.5-5, curHei) to:CGPointMake(self.bounds.size.width-2, curHei) withColor:[Core shareCore].chartLinesColor andWidth:0.5 animated:animated];
+        CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(self.bounds.size.width-1.5-5, curHei) to:CGPointMake(self.bounds.size.width-2, curHei) withColor:[Core shareCore].chartLineColor andWidth:0.5 animated:animated];
         CGFloat val = [self valForHeigth:height-curHei];
         NSString* lab = [NSString stringWithFormat:@"%.3f", val];
         if (val > 1000) {

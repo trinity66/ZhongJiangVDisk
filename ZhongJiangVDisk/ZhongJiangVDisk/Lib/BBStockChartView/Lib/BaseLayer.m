@@ -53,13 +53,17 @@
     gradientLayer.colors = @[(__bridge id)[UIColor colorWithRed:0.79 green:0.59 blue:0.39 alpha:0.9].CGColor ,
                              (__bridge id)[UIColor colorWithRed:0.79 green:0.59 blue:0.39 alpha:0.4].CGColor,
                              (__bridge id)[UIColor colorWithRed:0.79 green:0.59 blue:0.39 alpha:0.1].CGColor];
-    gradientLayer.locations=@[@0.0,@0.4,@1.0];
+    gradientLayer.locations=@[@0.0,@0.5,@1.0];
 
     UIBezierPath * path=[[UIBezierPath alloc] init];
     [path moveToPoint:CGPointMake(from.x, from.y)];
-    [path addLineToPoint:CGPointMake(from.x, 290-64-1)];
-    [path addLineToPoint:CGPointMake(to.x, 290-64-1)];
+//    if (index % 2 == 0) {
+//        float y = to.y < from.y ? from.y : to.y;
+//        [path addLineToPoint:CGPointMake(to.x,y)];
+//    }
     [path addLineToPoint:to];
+    [path addLineToPoint:CGPointMake(to.x, 290-64-1)];
+    [path addLineToPoint:CGPointMake(from.x, 290-64-1)];
     [path closePath];
     CAShapeLayer *arc = [CAShapeLayer layer];
     arc.path =path.CGPath;

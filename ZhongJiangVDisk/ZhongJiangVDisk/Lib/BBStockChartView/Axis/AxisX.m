@@ -46,7 +46,7 @@
             }
             label.position = CGPointMake(idxWidth*i + idxWidth /2.0 + [BBTheme theme].axisYwidth/2.0, 5);
             [self addSublayer:label];
-            CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(idxWidth/2.0+[BBTheme theme].axisYwidth/2.0, 0) to:CGPointMake(idxWidth/2+[BBTheme theme].axisYwidth/2.0, 5) withColor:[Core shareCore].chartLineColor andWidth:1 animated:animated];
+            CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(idxWidth/2.0+[BBTheme theme].axisYwidth/2.0, 0) to:CGPointMake(idxWidth/2+[BBTheme theme].axisYwidth/2.0, 5) withColor:[Core shareCore].chartLineColor andWidth:0.5 animated:animated];
             dash.anchorPoint = CGPointZero;
             dash.position = CGPointMake(idxWidth*i, 1);
             [self addSublayer:dash];
