@@ -13,24 +13,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.backgroundColor = [UIColor clearColor];
-    
+    _textField.enabled = NO;
+    _textField.textAlignment = NSTextAlignmentCenter;
     // Initialization code
 }
-- (void)cellIsSelected:(BOOL)selected enabled:(BOOL)enabled
-{
-    if (enabled) {
-        _textField.enabled = YES;
-        [_textField setEnabledColor];
-    }else
-    { 
-        _textField.enabled = NO;
-        if (selected) {
-            [_textField setSelectedColor];
-        }else
-        {
-            [_textField setDefalutColor];
-        }
-    }
-}
+
 
 @end

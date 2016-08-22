@@ -8,7 +8,7 @@
 
 #import "InputDealPswdView.h"
 
-@interface InputDealPswdView ()
+@interface InputDealPswdView ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPswdBtn;
 @property (weak, nonatomic) IBOutlet LButton *button;
@@ -32,9 +32,11 @@
         _mainView.alpha = 1.0;
         _mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
     }];
+    [_textField becomeFirstResponder];
 }
 - (void)removeInputDealPswdView
 {
+    [self resignTextFieldFirstResponder];
     _mainView.alpha = 1.0;
     _mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
     [UIView animateWithDuration:0.3 animations:^{
@@ -46,11 +48,13 @@
     
 }
 - (IBAction)forgetPswdBtnAction:(id)sender {
+    [self resignTextFieldFirstResponder];
     if (self.btnsActionBlock) {
         self.btnsActionBlock(0);
     }
 }
 - (IBAction)buttonAction:(id)sender {
+    [self resignTextFieldFirstResponder];
     if (self.btnsActionBlock) {
         self.btnsActionBlock(1);
     }
@@ -66,10 +70,32 @@
     [_forgetPswdBtn setTitleColor:[Core shareCore].selectedLineColor forState:UIControlStateNormal];
     _button.backgroundColor = [Core shareCore].buttonBackColor;
     _mainView.backgroundColor = [Core shareCore].backgroundColor;
+    _mainView.layer.borderColor = [Core shareCore].buttonBorderColor.CGColor;
     _title.textColor = [Core shareCore].cellTextColor;
     _lOne.backgroundColor = [Core shareCore].detailLightBackColor;
     _lTwo.backgroundColor = [Core shareCore].detailLightBackColor;
+    _textField.delegate = self;
+    _textField.returnKeyType = UIReturnKeyDone;
+    
 }
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [_textField startLayerColor];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self resignTextFieldFirstResponder];
+    return YES;
+}
+- (void)resignTextFieldFirstResponder
+{
+    [_textField resignFirstResponder];
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [_textField setDefalutColor];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

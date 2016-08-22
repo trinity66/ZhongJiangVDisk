@@ -11,6 +11,6 @@
 @interface BuyView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (nonatomic, copy) btnActionBlock btnActionBlock;
-- (void)showBuyView;
-- (void)removeBuyView;
+- (void)showBuyViewAnimated:(BOOL)animated;
+- (void)removeBuyViewAnimated:(BOOL)animated;
 @end

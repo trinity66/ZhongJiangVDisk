@@ -33,41 +33,54 @@ __weak BuyView *buySelf;
     // Drawing code
 }
 */
-- (void)showBuyView
+- (void)showBuyViewAnimated:(BOOL)animated
 {
     self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:self];
-    _mainView.alpha = 0.0;
-    _mainView.transform = CGAffineTransformMakeScale(0.1, 0.1);
-    [UIView animateWithDuration:0.3 animations:^{
-        _mainView.alpha = 1.0;
-        _mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
-    }];
+    if (animated) {
+        _mainView.alpha = 0.0;
+        _mainView.transform = CGAffineTransformMakeScale(0.1, 0.1);
+        [UIView animateWithDuration:0.3 animations:^{
+            _mainView.alpha = 1.0;
+            _mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        }];
+    }
+    
 }
 - (IBAction)cancelAction:(id)sender {
-    [self removeBuyView];
+    [self removeBuyViewAnimated:NO];
 }
 - (IBAction)buttonAction:(id)sender {
     if (self.btnActionBlock) {
         self.btnActionBlock();
     }
 }
-- (void)removeBuyView
+- (void)removeBuyViewAnimated:(BOOL)animated
 {
-    _mainView.alpha = 1.0;
-    _mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
-    [UIView animateWithDuration:0.3 animations:^{
-        _mainView.alpha = 0.0;
-        _mainView.transform = CGAffineTransformMakeScale(0.1, 0.1);
-    } completion:^(BOOL finished) {
+    if (animated) {
+        _mainView.alpha = 1.0;
+        _mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        [UIView animateWithDuration:0.3 animations:^{
+            _mainView.alpha = 0.0;
+            _mainView.transform = CGAffineTransformMakeScale(0.1, 0.1);
+        } completion:^(BOOL finished) {
+            [self removeFromSuperview];
+        }];
+    }else
+    {
         [self removeFromSuperview];
-    }];
+    }
+    
     
 }
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    [self setSomeControl];
+}
+- (void)setSomeControl
+{
     buySelf = self;
     _lHeight.constant = 0.5;
     _button.backgroundColor = [Core shareCore].buttonBackColor;
@@ -89,9 +102,10 @@ __weak BuyView *buySelf;
     }
     _currentProfitIndex = 0;
     _currentLossIndex = 0;
-    _currentCountIndex = 1;
+    _currentCountIndex = 0;
     _title.textColor = [Core shareCore].cellTextColor;
     _mainView.backgroundColor = [Core shareCore].backgroundColor;
+    _mainView.layer.borderColor = [Core shareCore].buttonBorderColor.CGColor;
     _tableView.backgroundColor = [Core shareCore].backgroundColor;
     _lOne.backgroundColor = [Core shareCore].detailLightBackColor;
     _lTwo.backgroundColor = [Core shareCore].detailLightBackColor;

@@ -8,11 +8,12 @@
 
 #import "WithdrawController.h"
 
-@interface WithdrawController ()<UITableViewDelegate, UITableViewDataSource>
+@interface WithdrawController ()<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) SecurityCodeView *foot;
+@property (nonatomic, strong) LTextField *moneyTF, *bankTF, *nameTF, *bankNumberTF,*dealPswdTF, *codeTF;
 @end
 __weak WithdrawController *_withdrawSelf;
 @implementation WithdrawController
@@ -61,6 +62,26 @@ __weak WithdrawController *_withdrawSelf;
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
     }
+    cell.textField.delegate = self;
+    switch (indexPath.row) {
+        case 0:
+            _moneyTF = cell.textField;
+            break;
+        case 1:
+            _bankTF = cell.textField;
+            break;
+        case 2:
+            _nameTF = cell.textField;
+            break;
+        case 3:
+            _bankNumberTF = cell.textField;
+            break;
+        case 4:
+            _dealPswdTF = cell.textField;
+            break;
+        default:
+            break;
+    }
     cell.title.text = _titles[indexPath.row];
     return cell;
 }
@@ -69,7 +90,10 @@ __weak WithdrawController *_withdrawSelf;
     if (indexPath.row == _titles.count - 1) {
         if (!_foot) {
             _foot = [[NSBundle mainBundle] loadNibNamed:@"SecurityCodeView" owner:nil options:nil].lastObject;
+            _codeTF = _foot.securityCodeTF;
+            _codeTF.delegate = self;
             _foot.btnsActionBlock = ^(NSInteger index) {
+                [_withdrawSelf textFieldResignFirstResponder];
                 NSString *title;
                 if (index == 0) {
                     //验证码
@@ -90,7 +114,30 @@ __weak WithdrawController *_withdrawSelf;
         }
     }
 }
-
+//textField delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    LTextField *tf = (LTextField *)textField;
+    [tf setEnabledColor];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    LTextField *tf = (LTextField *)textField;
+    [tf setDefalutColor];
+}
+- (void)textFieldResignFirstResponder
+{
+    NSArray *ary = @[_moneyTF, _bankTF, _nameTF, _bankNumberTF,_dealPswdTF, _codeTF];
+    for (LTextField *tf in ary) {
+        [tf resignFirstResponder];
+    }
+    
+}
 
 /*
 #pragma mark - Navigation

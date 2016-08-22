@@ -74,6 +74,6 @@ __weak ProductTableView *productTabelSelf;
     {
         _buyView.title.text = @"买跌";
     }
-    [_buyView showBuyView];
+    [_buyView showBuyViewAnimated:NO];
 }
 @end

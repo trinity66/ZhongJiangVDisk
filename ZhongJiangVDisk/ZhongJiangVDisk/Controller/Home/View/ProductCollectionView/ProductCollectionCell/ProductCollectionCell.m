@@ -28,8 +28,6 @@
 {
     UIColor *color = [Core shareCore].selectedLineColor;
     _title.textColor = color;
-    _riseButton.layer.masksToBounds = YES;
-    _fallButton.layer.masksToBounds = YES;
     if ([type isEqualToString:@"RED"]) {
         color = [Core shareCore].riseTextColor;
     }

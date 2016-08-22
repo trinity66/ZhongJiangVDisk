@@ -8,18 +8,19 @@
 
 #import "ChangeDealPswdController.h"
 
-@interface ChangeDealPswdController ()
+@interface ChangeDealPswdController ()<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) ButtonView *foot;
+@property (nonatomic, strong) LTextField *pswdTFOld, *pswdTFNew, *pswdTFNewAgain;
 @end
-
+__weak ChangeDealPswdController *changeDealSelf;
 @implementation ChangeDealPswdController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    changeDealSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"原交易密码：", @"新交易密码：", @"再次确认："];
     _tableView.backgroundColor = [Core shareCore].backgroundColor;
@@ -60,6 +61,20 @@
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
     }
+    switch (indexPath.row) {
+        case 0:
+            _pswdTFOld = cell.textField;
+            break;
+        case 1:
+            _pswdTFNew = cell.textField;
+            break;
+        case 2:
+            _pswdTFNewAgain = cell.textField;
+            break;
+        default:
+            break;
+    }
+    cell.textField.delegate = self;
     cell.title.text = _titles[indexPath.row];
     return cell;
 }
@@ -72,10 +87,35 @@
             _tableView.tableFooterView = _foot;
             __block ChangeDealPswdController* _self =self;
             _foot.btnActionBlock = ^(){
+                [changeDealSelf textFieldResignFirstResponder];
                 [[Core shareCore] showAlertTitle:@"交易密码修改成功" timeCount:2 inView:_self.view];
             };
         }
     }
+}
+//textField delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    LTextField *tf = (LTextField *)textField;
+    [tf setEnabledColor];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    LTextField *tf = (LTextField *)textField;
+    [tf setDefalutColor];
+}
+- (void)textFieldResignFirstResponder
+{
+    NSArray *ary = @[_pswdTFOld, _pswdTFNew, _pswdTFNewAgain];
+    for (LTextField *tf in ary) {
+        [tf resignFirstResponder];
+    }
+    
 }
 /*
 #pragma mark - Navigation

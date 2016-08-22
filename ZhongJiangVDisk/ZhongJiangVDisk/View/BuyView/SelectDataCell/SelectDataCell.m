@@ -30,6 +30,7 @@
     UIFont *font = [UIFont systemFontOfSize:kCellLabelFont];
     _title.font = font;
     _textField.font = font;
+    _textField.enabled = NO;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

@@ -78,7 +78,7 @@ __weak ProductCollectionView *productCollectionSelf;
     {
         _buyView.title.text = @"买跌";
     }
-    [_buyView showBuyView];
+    [_buyView showBuyViewAnimated:NO];
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {

@@ -8,11 +8,12 @@
 
 #import "ApplyForBrokerController.h"
 
-@interface ApplyForBrokerController ()<UITableViewDelegate, UITableViewDataSource>
+@interface ApplyForBrokerController ()<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) SecurityCodeView *foot;
+@property (nonatomic, strong) LTextField *brokerTF, *loginPswdTF, *phoneTF, *numberTF, *codeTF;
 @end
 __weak ApplyForBrokerController *_applySelf;
 @implementation ApplyForBrokerController
@@ -61,6 +62,23 @@ __weak ApplyForBrokerController *_applySelf;
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
     }
+    cell.textField.delegate = self;
+    switch (indexPath.row) {
+        case 0:
+            _brokerTF = cell.textField;
+            break;
+        case 1:
+            _loginPswdTF = cell.textField;
+            break;
+        case 2:
+            _phoneTF = cell.textField;
+            break;
+        case 3:
+            _numberTF = cell.textField;
+            break;
+        default:
+            break;
+    }
     cell.title.text = _titles[indexPath.row];
     return cell;
 }
@@ -69,7 +87,10 @@ __weak ApplyForBrokerController *_applySelf;
     if (indexPath.row == _titles.count - 1) {
         if (!_foot) {
             _foot = [[NSBundle mainBundle] loadNibNamed:@"SecurityCodeView" owner:nil options:nil].lastObject;
+            _codeTF = _foot.securityCodeTF;
+            _codeTF.delegate = self;
             _foot.btnsActionBlock = ^(NSInteger index) {
+                [_applySelf textFieldResignFirstResponder];
                 NSString *title;
                 if (index == 0) {
                     //验证码
@@ -77,7 +98,7 @@ __weak ApplyForBrokerController *_applySelf;
                     
                 }else if (index == 1) {
                     //拨打电话
-                    title = @"已成功通过拨打电话方式告知验证码u 都是 v 不符合创办人分毫不差,";
+                    title = @"已成功通过拨打电话方式告知验证码";
                     
                 }else if (index == 2) {
                     //确认按钮
@@ -89,6 +110,30 @@ __weak ApplyForBrokerController *_applySelf;
             [_foot setButtonTitle:@"提交申请"];
         }
     }
+}
+//textField delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    LTextField *tf = (LTextField *)textField;
+    [tf setEnabledColor];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    LTextField *tf = (LTextField *)textField;
+    [tf setDefalutColor];
+}
+- (void)textFieldResignFirstResponder
+{
+    NSArray *ary = @[_brokerTF, _loginPswdTF, _phoneTF, _numberTF, _codeTF];
+    for (LTextField *tf in ary) {
+        [tf resignFirstResponder];
+    }
+    
 }
 /*
 #pragma mark - Navigation

@@ -12,4 +12,6 @@
 - (void)setDefalutColor;
 - (void)setEnabledColor;
 - (void)setSelectedColor;
+- (void)startLayerColor;
+- (void)finishLayerColor;
 @end

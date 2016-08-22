@@ -23,9 +23,8 @@
     self.layer.borderWidth = 1;
     self.layer.cornerRadius = 5;
     self.font = [UIFont systemFontOfSize:kCellLabelFont];
-    self.textColor = [Core shareCore].cellTextColor;
-    self.layer.borderColor = [Core shareCore].textFieldBorderColor.CGColor;
-    self.backgroundColor = [Core shareCore].textFieldBackColor;
+    self.returnKeyType = UIReturnKeyDone;
+    [self setDefalutColor];
 }
 - (void)setDefalutColor
 {
@@ -36,13 +35,23 @@
 - (void)setEnabledColor
 {
     self.textColor = [Core shareCore].cellTextColor;
+    self.tintColor = [Core shareCore].cellTextColor;
     self.layer.borderColor = [Core shareCore].selectedLineColor.CGColor;
     self.backgroundColor = [Core shareCore].textFieldBackColor;
 }
 - (void)setSelectedColor
 {
     self.textColor = [Core shareCore].labelTextColor;
+    self.tintColor = [Core shareCore].labelTextColor;
     self.layer.borderColor = [Core shareCore].selectedLineColor.CGColor;
     self.backgroundColor = [Core shareCore].textFieldSelectBackColor;
+}
+- (void)startLayerColor
+{
+    self.layer.borderColor = [Core shareCore].selectedLineColor.CGColor;
+}
+- (void)finishLayerColor
+{
+    self.layer.borderColor = [Core shareCore].textFieldBackColor.CGColor;
 }
 @end

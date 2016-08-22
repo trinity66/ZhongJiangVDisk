@@ -8,7 +8,7 @@
 
 #import "RechargeController.h"
 #define minSpace 40
-@interface RechargeController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface RechargeController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topCollectionViewY;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *btnSuperView;
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) ButtonView * buttonView;
+@property (nonatomic, strong) LTextField *inputTF;
 
 @end
 
@@ -29,7 +30,7 @@
     _collectionView.backgroundColor = [Core shareCore].backgroundColor;
     [self.personalTopView setRechargeEnabled:NO];
     _titles = @[
-  @[@"50", @"500", @"1000", @"5000", @"其他方式", @"10000"],
+  @[@"50", @"500", @"1000", @"5000", @"", @"10000"],
   @[@"银联充值", @"微信充值"]
   ];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(clickCancelButton)];
@@ -91,36 +92,63 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RechargeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RechargeCell" forIndexPath:indexPath];
-    BOOL isSelected = NO, isEnabled = NO;
-    if (indexPath.section == 0 && indexPath.row == _selectMoneyIndex) {
-        isSelected = YES;
-    }else
-    if (indexPath.section == 1 && indexPath.row == _selectWayIndex) {
-        isSelected = YES;
-    }
-    if (indexPath.row == 5) {
-        if (_selectMoneyIndex == 4 || _selectMoneyIndex == 5) {
-            isEnabled = YES;
+    NSString *str = _titles[indexPath.section][indexPath.row];
+    cell.textField.text = str.length > 0 ? str : @"其他";
+    if (indexPath.section == 0) {
+        //充值金额
+        //可输入金额
+        if (indexPath.item == 5) {
+            _inputTF = cell.textField;
+            _inputTF.delegate = self;
+            _inputTF.textAlignment = NSTextAlignmentLeft;
+            _inputTF.returnKeyType = UIReturnKeyDone;
         }
-        cell.textField.textAlignment = NSTextAlignmentLeft;
-    }else
-    {
-        cell.textField.textAlignment = NSTextAlignmentCenter;
+        if (indexPath.item == _selectMoneyIndex) {
+            [cell.textField setSelectedColor];
+        }
+    }else if (indexPath.section == 1) {
+       //充值方式
+        if (indexPath.item == _selectWayIndex) {
+            [cell.textField setSelectedColor];
+        }
     }
-    cell.textField.text = _titles[indexPath.section][indexPath.row];
-    [cell cellIsSelected:isSelected enabled:isEnabled];
     return cell;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    [self textFieldResignFirstResponder];
+    NSInteger beforeIndexpathItem, nowIndexPathItem;
+    nowIndexPathItem = indexPath.item;
     if (indexPath.section == 0) {
+        beforeIndexpathItem = _selectMoneyIndex;
         _selectMoneyIndex = indexPath.row;
+        if (indexPath.item < 4) {
+            _inputTF.text = _titles[indexPath.section][indexPath.item];
+            [_inputTF setDefalutColor];
+        }else
+        {
+            if (indexPath.item == 4) {
+                _inputTF.text = @"";
+            }
+            _inputTF.enabled = YES;
+            [_inputTF becomeFirstResponder];
+            [_inputTF setSelectedColor];
+            nowIndexPathItem = 4;
+            _selectMoneyIndex = 4;
+        }
     }else
     {
+        beforeIndexpathItem = _selectWayIndex;
         _selectWayIndex = indexPath.row;
     }
-    [collectionView reloadData];
+    RechargeCell *nowCell = (RechargeCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:nowIndexPathItem inSection:indexPath.section]];
+     RechargeCell *beforeCell= (RechargeCell *)[collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:beforeIndexpathItem inSection:indexPath.section]];
+    if (beforeCell != nowCell) {
+        [beforeCell.textField setDefalutColor];
+        [nowCell.textField setSelectedColor];
+    }
+    
 }
 
 ////添加表头
@@ -137,6 +165,21 @@
         return headView;
     }
     return nil;
+}
+//textField delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self textFieldResignFirstResponder];
+    return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [_inputTF setDefalutColor];
+    _inputTF.enabled = NO;
+}
+- (void)textFieldResignFirstResponder
+{
+    [_inputTF resignFirstResponder];
 }
 /*
 #pragma mark - Navigation
