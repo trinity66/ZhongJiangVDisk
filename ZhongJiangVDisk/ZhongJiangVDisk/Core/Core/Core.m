@@ -18,6 +18,26 @@
     });
     return core;
 }
+- (void)setIsLogin:(BOOL)isLogin
+{
+    if (isLogin) {
+        [kLConfig set_object_for_key:@"isLogin" value:@"1"];
+    }else
+    {
+        [kLConfig set_object_for_key:@"isLogin" value:@"0"];
+    }
+}
+- (BOOL)isLogin
+{
+    NSInteger l = [[kLConfig object_value_with_key:@"isLogin"] integerValue];
+    if (l) {
+        return YES;
+    }else
+    {
+        return NO;
+    }
+}
+
 
 - (void)goRechargeVC
 {
@@ -35,6 +55,15 @@
     BaseNavigationController *homeNav = topVc.viewControllers.firstObject;
     [homeNav pushViewController:vc animated:YES];
 }
+- (void)goRegisterVC
+{
+    UIViewController *topVc = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RegisterController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterController"];
+    BaseNavigationController *rechargeNvc = [[BaseNavigationController alloc] initWithRootViewController:vc];
+    [topVc presentViewController:rechargeNvc animated:NO completion:nil];
+}
+
 - (void)showAlertTitle:(NSString *)title timeCount:(NSInteger)timeCount inView:(UIView *)view
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];

@@ -422,6 +422,45 @@
             </objects>
             <point key="canvasLocation" x="-42" y="416"/>
         </scene>
+        <!--注册-->
+        <scene sceneID="ac1-rd-vOi">
+            <objects>
+                <viewController storyboardIdentifier="RegisterController" title="注册" id="w8k-wS-ERk" customClass="RegisterController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xu9-Wj-z9k"/>
+                        <viewControllerLayoutGuide type="bottom" id="w0n-LO-Mkr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jtB-qC-OXK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YxH-dn-eHu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="w8k-wS-ERk" id="DHf-X2-gam"/>
+                                    <outlet property="delegate" destination="w8k-wS-ERk" id="amx-Ge-buS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YxH-dn-eHu" secondAttribute="trailing" id="74q-7P-pXx"/>
+                            <constraint firstItem="w0n-LO-Mkr" firstAttribute="top" secondItem="YxH-dn-eHu" secondAttribute="bottom" id="B0Q-9a-T6I"/>
+                            <constraint firstItem="YxH-dn-eHu" firstAttribute="top" secondItem="jtB-qC-OXK" secondAttribute="topMargin" id="R2v-XI-Lfx"/>
+                            <constraint firstItem="YxH-dn-eHu" firstAttribute="leading" secondItem="jtB-qC-OXK" secondAttribute="leading" id="gWN-NY-a40"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="YxH-dn-eHu" id="Wds-99-7I8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zda-SL-DUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="315" y="422"/>
+        </scene>
         <!--交易历史-->
         <scene sceneID="dP1-sn-hJm">
             <objects>

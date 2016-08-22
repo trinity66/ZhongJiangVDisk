@@ -50,19 +50,6 @@
 		5E1722A01D630082003CA0AE /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722541D630082003CA0AE /* Core.m */; };
 		5E1722A11D630082003CA0AE /* Core+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722571D630082003CA0AE /* Core+Color.m */; };
 		5E1722A21D630082003CA0AE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722581D630082003CA0AE /* Info.plist */; };
-		5E1722A31D630082003CA0AE /* Area.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E17225D1D630082003CA0AE /* Area.m */; };
-		5E1722A41D630082003CA0AE /* AxisX.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722601D630082003CA0AE /* AxisX.m */; };
-		5E1722A51D630082003CA0AE /* AxisY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722621D630082003CA0AE /* AxisY.m */; };
-		5E1722A61D630082003CA0AE /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722631D630082003CA0AE /* data.json */; };
-		5E1722A71D630082003CA0AE /* BaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722661D630082003CA0AE /* BaseLayer.m */; };
-		5E1722A81D630082003CA0AE /* BBChartUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722681D630082003CA0AE /* BBChartUtils.m */; };
-		5E1722A91D630082003CA0AE /* BBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E17226A1D630082003CA0AE /* BBChartView.m */; };
-		5E1722AA1D630082003CA0AE /* BBTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E17226D1D630082003CA0AE /* BBTheme.m */; };
-		5E1722AB1D630082003CA0AE /* BarSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722701D630082003CA0AE /* BarSeries.m */; };
-		5E1722AC1D630082003CA0AE /* LineSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722721D630082003CA0AE /* LineSeries.m */; };
-		5E1722AD1D630082003CA0AE /* Series.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722741D630082003CA0AE /* Series.m */; };
-		5E1722AE1D630082003CA0AE /* StockSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722761D630082003CA0AE /* StockSeries.m */; };
-		5E1722AF1D630082003CA0AE /* QRCodeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722791D630082003CA0AE /* QRCodeImage.m */; };
 		5E1722D51D63008A003CA0AE /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722B51D63008A003CA0AE /* ButtonView.m */; };
 		5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722B61D63008A003CA0AE /* ButtonView.xib */; };
 		5E1722D71D63008A003CA0AE /* BuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722B91D63008A003CA0AE /* BuyView.m */; };
@@ -79,19 +66,41 @@
 		5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722D31D63008A003CA0AE /* TextFieldCell.m */; };
 		5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722D41D63008A003CA0AE /* TextFieldCell.xib */; };
 		5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722E81D64121B003CA0AE /* ForgetDealPswdController.m */; };
-		5E1722F01D6552CF003CA0AE /* LButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722EF1D6552CF003CA0AE /* LButton.m */; };
 		5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722F21D658877003CA0AE /* PersonalTopView.m */; };
 		5E1722F71D658CAA003CA0AE /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */; };
-		5E1722FA1D6599B7003CA0AE /* LTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722F91D6599B7003CA0AE /* LTextField.m */; };
 		5E1722FF1D65AB49003CA0AE /* ProductTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722FE1D65AB49003CA0AE /* ProductTableView.m */; };
 		5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723001D65AB52003CA0AE /* ProductTableView.xib */; };
 		5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */; };
 		5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */; };
-		5E1723081D66AC28003CA0AE /* VDiskTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723071D66AC28003CA0AE /* VDiskTypes.json */; };
 		5E1723131D66E090003CA0AE /* StockChartDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723111D66E090003CA0AE /* StockChartDataView.m */; };
 		5E1723141D66E090003CA0AE /* StockChartDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723121D66E090003CA0AE /* StockChartDataView.xib */; };
 		5E1723181D66E0BA003CA0AE /* LineChartDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723171D66E0BA003CA0AE /* LineChartDataView.m */; };
 		5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */; };
+		5EAF82381D6AE3C100239CB5 /* LButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82341D6AE3C100239CB5 /* LButton.m */; };
+		5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82371D6AE3C100239CB5 /* LTextField.m */; };
+		5EAF823B1D6AE4BE00239CB5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */; };
+		5EAF824A1D6AEE9F00239CB5 /* RegisterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82481D6AEE9F00239CB5 /* RegisterButtonView.m */; };
+		5EAF824B1D6AEE9F00239CB5 /* RegisterButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82491D6AEE9F00239CB5 /* RegisterButtonView.xib */; };
+		5EAF824F1D6AEEC800239CB5 /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF824E1D6AEEC800239CB5 /* RegisterController.m */; };
+		5EAF82791D6AF51200239CB5 /* Area.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82541D6AF51200239CB5 /* Area.m */; };
+		5EAF827A1D6AF51200239CB5 /* AxisX.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82571D6AF51200239CB5 /* AxisX.m */; };
+		5EAF827B1D6AF51200239CB5 /* AxisY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82591D6AF51200239CB5 /* AxisY.m */; };
+		5EAF827C1D6AF51200239CB5 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF825A1D6AF51200239CB5 /* data.json */; };
+		5EAF827D1D6AF51200239CB5 /* BaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF825D1D6AF51200239CB5 /* BaseLayer.m */; };
+		5EAF827E1D6AF51200239CB5 /* BBChartUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF825F1D6AF51200239CB5 /* BBChartUtils.m */; };
+		5EAF827F1D6AF51200239CB5 /* BBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82611D6AF51200239CB5 /* BBChartView.m */; };
+		5EAF82801D6AF51200239CB5 /* BBTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82641D6AF51200239CB5 /* BBTheme.m */; };
+		5EAF82811D6AF51200239CB5 /* BarSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82671D6AF51200239CB5 /* BarSeries.m */; };
+		5EAF82821D6AF51200239CB5 /* LineSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82691D6AF51200239CB5 /* LineSeries.m */; };
+		5EAF82831D6AF51200239CB5 /* Series.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF826B1D6AF51200239CB5 /* Series.m */; };
+		5EAF82841D6AF51200239CB5 /* StockSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF826D1D6AF51200239CB5 /* StockSeries.m */; };
+		5EAF82851D6AF51200239CB5 /* ScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82701D6AF51200239CB5 /* ScanQRCodeController.m */; };
+		5EAF82861D6AF51200239CB5 /* 扫描框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82711D6AF51200239CB5 /* 扫描框@2x.png */; };
+		5EAF82871D6AF51200239CB5 /* 扫描线@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82721D6AF51200239CB5 /* 扫描线@2x.png */; };
+		5EAF82881D6AF51200239CB5 /* 白色返回_想去@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82731D6AF51200239CB5 /* 白色返回_想去@2x.png */; };
+		5EAF82891D6AF51200239CB5 /* QRCodeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82761D6AF51200239CB5 /* QRCodeImage.m */; };
+		5EAF828A1D6AF51200239CB5 /* VDiskTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82771D6AF51200239CB5 /* VDiskTypes.json */; };
+		5EAF828E1D6AF54600239CB5 /* LConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF828D1D6AF54600239CB5 /* LConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,32 +195,6 @@
 		5E1722561D630082003CA0AE /* Core+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core+Color.h"; sourceTree = "<group>"; };
 		5E1722571D630082003CA0AE /* Core+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Core+Color.m"; sourceTree = "<group>"; };
 		5E1722581D630082003CA0AE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E17225C1D630082003CA0AE /* Area.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Area.h; sourceTree = "<group>"; };
-		5E17225D1D630082003CA0AE /* Area.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Area.m; sourceTree = "<group>"; };
-		5E17225F1D630082003CA0AE /* AxisX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisX.h; sourceTree = "<group>"; };
-		5E1722601D630082003CA0AE /* AxisX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisX.m; sourceTree = "<group>"; };
-		5E1722611D630082003CA0AE /* AxisY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisY.h; sourceTree = "<group>"; };
-		5E1722621D630082003CA0AE /* AxisY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisY.m; sourceTree = "<group>"; };
-		5E1722631D630082003CA0AE /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		5E1722651D630082003CA0AE /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
-		5E1722661D630082003CA0AE /* BaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLayer.m; sourceTree = "<group>"; };
-		5E1722671D630082003CA0AE /* BBChartUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChartUtils.h; sourceTree = "<group>"; };
-		5E1722681D630082003CA0AE /* BBChartUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChartUtils.m; sourceTree = "<group>"; };
-		5E1722691D630082003CA0AE /* BBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChartView.h; sourceTree = "<group>"; };
-		5E17226A1D630082003CA0AE /* BBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChartView.m; sourceTree = "<group>"; };
-		5E17226B1D630082003CA0AE /* BBStockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBStockChart.h; sourceTree = "<group>"; };
-		5E17226C1D630082003CA0AE /* BBTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTheme.h; sourceTree = "<group>"; };
-		5E17226D1D630082003CA0AE /* BBTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTheme.m; sourceTree = "<group>"; };
-		5E17226F1D630082003CA0AE /* BarSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarSeries.h; sourceTree = "<group>"; };
-		5E1722701D630082003CA0AE /* BarSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarSeries.m; sourceTree = "<group>"; };
-		5E1722711D630082003CA0AE /* LineSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSeries.h; sourceTree = "<group>"; };
-		5E1722721D630082003CA0AE /* LineSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineSeries.m; sourceTree = "<group>"; };
-		5E1722731D630082003CA0AE /* Series.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Series.h; sourceTree = "<group>"; };
-		5E1722741D630082003CA0AE /* Series.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Series.m; sourceTree = "<group>"; };
-		5E1722751D630082003CA0AE /* StockSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockSeries.h; sourceTree = "<group>"; };
-		5E1722761D630082003CA0AE /* StockSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockSeries.m; sourceTree = "<group>"; };
-		5E1722781D630082003CA0AE /* QRCodeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeImage.h; sourceTree = "<group>"; };
-		5E1722791D630082003CA0AE /* QRCodeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeImage.m; sourceTree = "<group>"; };
 		5E1722B11D63008A003CA0AE /* ZhongJiangTestPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZhongJiangTestPrefix.pch; sourceTree = "<group>"; };
 		5E1722B41D63008A003CA0AE /* ButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
 		5E1722B51D63008A003CA0AE /* ButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
@@ -238,26 +221,65 @@
 		5E1722D41D63008A003CA0AE /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		5E1722E71D64121B003CA0AE /* ForgetDealPswdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetDealPswdController.h; sourceTree = "<group>"; };
 		5E1722E81D64121B003CA0AE /* ForgetDealPswdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetDealPswdController.m; sourceTree = "<group>"; };
-		5E1722EE1D6552CF003CA0AE /* LButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LButton.h; sourceTree = "<group>"; };
-		5E1722EF1D6552CF003CA0AE /* LButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LButton.m; sourceTree = "<group>"; };
 		5E1722F11D658877003CA0AE /* PersonalTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTopView.h; sourceTree = "<group>"; };
 		5E1722F21D658877003CA0AE /* PersonalTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTopView.m; sourceTree = "<group>"; };
 		5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTopView.xib; sourceTree = "<group>"; };
-		5E1722F81D6599B7003CA0AE /* LTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTextField.h; sourceTree = "<group>"; };
-		5E1722F91D6599B7003CA0AE /* LTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTextField.m; sourceTree = "<group>"; };
 		5E1722FD1D65AB49003CA0AE /* ProductTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableView.h; sourceTree = "<group>"; };
 		5E1722FE1D65AB49003CA0AE /* ProductTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableView.m; sourceTree = "<group>"; };
 		5E1723001D65AB52003CA0AE /* ProductTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableView.xib; sourceTree = "<group>"; };
 		5E1723021D65ACA5003CA0AE /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
-		5E1723071D66AC28003CA0AE /* VDiskTypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VDiskTypes.json; sourceTree = "<group>"; };
 		5E1723101D66E090003CA0AE /* StockChartDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockChartDataView.h; sourceTree = "<group>"; };
 		5E1723111D66E090003CA0AE /* StockChartDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockChartDataView.m; sourceTree = "<group>"; };
 		5E1723121D66E090003CA0AE /* StockChartDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockChartDataView.xib; sourceTree = "<group>"; };
 		5E1723161D66E0BA003CA0AE /* LineChartDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartDataView.h; sourceTree = "<group>"; };
 		5E1723171D66E0BA003CA0AE /* LineChartDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartDataView.m; sourceTree = "<group>"; };
 		5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChartDataView.xib; sourceTree = "<group>"; };
+		5EAF82331D6AE3C100239CB5 /* LButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LButton.h; sourceTree = "<group>"; };
+		5EAF82341D6AE3C100239CB5 /* LButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LButton.m; sourceTree = "<group>"; };
+		5EAF82361D6AE3C100239CB5 /* LTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTextField.h; sourceTree = "<group>"; };
+		5EAF82371D6AE3C100239CB5 /* LTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTextField.m; sourceTree = "<group>"; };
+		5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5EAF82471D6AEE9F00239CB5 /* RegisterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterButtonView.h; sourceTree = "<group>"; };
+		5EAF82481D6AEE9F00239CB5 /* RegisterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterButtonView.m; sourceTree = "<group>"; };
+		5EAF82491D6AEE9F00239CB5 /* RegisterButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterButtonView.xib; sourceTree = "<group>"; };
+		5EAF824D1D6AEEC800239CB5 /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
+		5EAF824E1D6AEEC800239CB5 /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
+		5EAF82531D6AF51200239CB5 /* Area.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Area.h; sourceTree = "<group>"; };
+		5EAF82541D6AF51200239CB5 /* Area.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Area.m; sourceTree = "<group>"; };
+		5EAF82561D6AF51200239CB5 /* AxisX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisX.h; sourceTree = "<group>"; };
+		5EAF82571D6AF51200239CB5 /* AxisX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisX.m; sourceTree = "<group>"; };
+		5EAF82581D6AF51200239CB5 /* AxisY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisY.h; sourceTree = "<group>"; };
+		5EAF82591D6AF51200239CB5 /* AxisY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisY.m; sourceTree = "<group>"; };
+		5EAF825A1D6AF51200239CB5 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		5EAF825C1D6AF51200239CB5 /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
+		5EAF825D1D6AF51200239CB5 /* BaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLayer.m; sourceTree = "<group>"; };
+		5EAF825E1D6AF51200239CB5 /* BBChartUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChartUtils.h; sourceTree = "<group>"; };
+		5EAF825F1D6AF51200239CB5 /* BBChartUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChartUtils.m; sourceTree = "<group>"; };
+		5EAF82601D6AF51200239CB5 /* BBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChartView.h; sourceTree = "<group>"; };
+		5EAF82611D6AF51200239CB5 /* BBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChartView.m; sourceTree = "<group>"; };
+		5EAF82621D6AF51200239CB5 /* BBStockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBStockChart.h; sourceTree = "<group>"; };
+		5EAF82631D6AF51200239CB5 /* BBTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTheme.h; sourceTree = "<group>"; };
+		5EAF82641D6AF51200239CB5 /* BBTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTheme.m; sourceTree = "<group>"; };
+		5EAF82661D6AF51200239CB5 /* BarSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarSeries.h; sourceTree = "<group>"; };
+		5EAF82671D6AF51200239CB5 /* BarSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarSeries.m; sourceTree = "<group>"; };
+		5EAF82681D6AF51200239CB5 /* LineSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSeries.h; sourceTree = "<group>"; };
+		5EAF82691D6AF51200239CB5 /* LineSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineSeries.m; sourceTree = "<group>"; };
+		5EAF826A1D6AF51200239CB5 /* Series.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Series.h; sourceTree = "<group>"; };
+		5EAF826B1D6AF51200239CB5 /* Series.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Series.m; sourceTree = "<group>"; };
+		5EAF826C1D6AF51200239CB5 /* StockSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockSeries.h; sourceTree = "<group>"; };
+		5EAF826D1D6AF51200239CB5 /* StockSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockSeries.m; sourceTree = "<group>"; };
+		5EAF826F1D6AF51200239CB5 /* ScanQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeController.h; sourceTree = "<group>"; };
+		5EAF82701D6AF51200239CB5 /* ScanQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeController.m; sourceTree = "<group>"; };
+		5EAF82711D6AF51200239CB5 /* 扫描框@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫描框@2x.png"; sourceTree = "<group>"; };
+		5EAF82721D6AF51200239CB5 /* 扫描线@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫描线@2x.png"; sourceTree = "<group>"; };
+		5EAF82731D6AF51200239CB5 /* 白色返回_想去@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "白色返回_想去@2x.png"; sourceTree = "<group>"; };
+		5EAF82751D6AF51200239CB5 /* QRCodeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeImage.h; sourceTree = "<group>"; };
+		5EAF82761D6AF51200239CB5 /* QRCodeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeImage.m; sourceTree = "<group>"; };
+		5EAF82771D6AF51200239CB5 /* VDiskTypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VDiskTypes.json; sourceTree = "<group>"; };
+		5EAF828C1D6AF54600239CB5 /* LConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LConfig.h; sourceTree = "<group>"; };
+		5EAF828D1D6AF54600239CB5 /* LConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LConfig.m; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -267,6 +289,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EAF823B1D6AE4BE00239CB5 /* AVFoundation.framework in Frameworks */,
 				59426E86B20513BFE4F7A7CC /* Pods_ZhongJiangVDisk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,15 +345,16 @@
 		5E1721B11D62FFD4003CA0AE /* ZhongJiangVDisk */ = {
 			isa = PBXGroup;
 			children = (
-				5E1722B01D63008A003CA0AE /* PCH */,
+				5EAF82781D6AF51200239CB5 /* LLibs */,
+				5E1721EE1D630082003CA0AE /* Controller */,
+				5E1722511D630082003CA0AE /* Core */,
 				5E1722B21D63008A003CA0AE /* View */,
+				5EAF82501D6AF51200239CB5 /* Libs */,
+				5E1722B01D63008A003CA0AE /* PCH */,
 				5E1721E51D630082003CA0AE /* AppDelegate */,
 				5E1721E81D630082003CA0AE /* Assets.xcassets */,
 				5E1721E91D630082003CA0AE /* Base.lproj */,
-				5E1721EE1D630082003CA0AE /* Controller */,
-				5E1722511D630082003CA0AE /* Core */,
 				5E1722581D630082003CA0AE /* Info.plist */,
-				5E1722591D630082003CA0AE /* Lib */,
 				5E1721B21D62FFD4003CA0AE /* Supporting Files */,
 			);
 			path = ZhongJiangVDisk;
@@ -383,6 +407,7 @@
 		5E1721EE1D630082003CA0AE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5EAF824C1D6AEEC800239CB5 /* Register */,
 				5E1721EF1D630082003CA0AE /* Base */,
 				5E1721F91D630082003CA0AE /* Home */,
 				5E17220B1D630082003CA0AE /* Personal */,
@@ -785,88 +810,6 @@
 			path = "Core+Color";
 			sourceTree = "<group>";
 		};
-		5E1722591D630082003CA0AE /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				5E1723071D66AC28003CA0AE /* VDiskTypes.json */,
-				5E17225A1D630082003CA0AE /* BBStockChartView */,
-				5E1722771D630082003CA0AE /* QRCodeImage-生成二维码 */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		5E17225A1D630082003CA0AE /* BBStockChartView */ = {
-			isa = PBXGroup;
-			children = (
-				5E17225B1D630082003CA0AE /* Area */,
-				5E17225E1D630082003CA0AE /* Axis */,
-				5E1722631D630082003CA0AE /* data.json */,
-				5E1722641D630082003CA0AE /* Lib */,
-				5E17226E1D630082003CA0AE /* Series */,
-			);
-			path = BBStockChartView;
-			sourceTree = "<group>";
-		};
-		5E17225B1D630082003CA0AE /* Area */ = {
-			isa = PBXGroup;
-			children = (
-				5E17225C1D630082003CA0AE /* Area.h */,
-				5E17225D1D630082003CA0AE /* Area.m */,
-			);
-			path = Area;
-			sourceTree = "<group>";
-		};
-		5E17225E1D630082003CA0AE /* Axis */ = {
-			isa = PBXGroup;
-			children = (
-				5E17225F1D630082003CA0AE /* AxisX.h */,
-				5E1722601D630082003CA0AE /* AxisX.m */,
-				5E1722611D630082003CA0AE /* AxisY.h */,
-				5E1722621D630082003CA0AE /* AxisY.m */,
-			);
-			path = Axis;
-			sourceTree = "<group>";
-		};
-		5E1722641D630082003CA0AE /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				5E1722651D630082003CA0AE /* BaseLayer.h */,
-				5E1722661D630082003CA0AE /* BaseLayer.m */,
-				5E1722671D630082003CA0AE /* BBChartUtils.h */,
-				5E1722681D630082003CA0AE /* BBChartUtils.m */,
-				5E1722691D630082003CA0AE /* BBChartView.h */,
-				5E17226A1D630082003CA0AE /* BBChartView.m */,
-				5E17226B1D630082003CA0AE /* BBStockChart.h */,
-				5E17226C1D630082003CA0AE /* BBTheme.h */,
-				5E17226D1D630082003CA0AE /* BBTheme.m */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		5E17226E1D630082003CA0AE /* Series */ = {
-			isa = PBXGroup;
-			children = (
-				5E17226F1D630082003CA0AE /* BarSeries.h */,
-				5E1722701D630082003CA0AE /* BarSeries.m */,
-				5E1722711D630082003CA0AE /* LineSeries.h */,
-				5E1722721D630082003CA0AE /* LineSeries.m */,
-				5E1722731D630082003CA0AE /* Series.h */,
-				5E1722741D630082003CA0AE /* Series.m */,
-				5E1722751D630082003CA0AE /* StockSeries.h */,
-				5E1722761D630082003CA0AE /* StockSeries.m */,
-			);
-			path = Series;
-			sourceTree = "<group>";
-		};
-		5E1722771D630082003CA0AE /* QRCodeImage-生成二维码 */ = {
-			isa = PBXGroup;
-			children = (
-				5E1722781D630082003CA0AE /* QRCodeImage.h */,
-				5E1722791D630082003CA0AE /* QRCodeImage.m */,
-			);
-			path = "QRCodeImage-生成二维码";
-			sourceTree = "<group>";
-		};
 		5E1722B01D63008A003CA0AE /* PCH */ = {
 			isa = PBXGroup;
 			children = (
@@ -878,6 +821,9 @@
 		5E1722B21D63008A003CA0AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5EAF82461D6AEE9F00239CB5 /* RegisterButtonView */,
+				5EAF82321D6AE3C100239CB5 /* LButton */,
+				5EAF82351D6AE3C100239CB5 /* LTextField */,
 				5E1722B31D63008A003CA0AE /* ButtonView */,
 				5E1722B71D63008A003CA0AE /* BuyView */,
 				5E1722BF1D63008A003CA0AE /* InputDealPswdView */,
@@ -885,10 +831,6 @@
 				5E1722C71D63008A003CA0AE /* SecurityCodeView */,
 				5E1722CB1D63008A003CA0AE /* SegmentView */,
 				5E1722D11D63008A003CA0AE /* TextFieldCell */,
-				5E1722EE1D6552CF003CA0AE /* LButton.h */,
-				5E1722EF1D6552CF003CA0AE /* LButton.m */,
-				5E1722F81D6599B7003CA0AE /* LTextField.h */,
-				5E1722F91D6599B7003CA0AE /* LTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1026,9 +968,159 @@
 			path = LineChartDataView;
 			sourceTree = "<group>";
 		};
+		5EAF82321D6AE3C100239CB5 /* LButton */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF82331D6AE3C100239CB5 /* LButton.h */,
+				5EAF82341D6AE3C100239CB5 /* LButton.m */,
+			);
+			path = LButton;
+			sourceTree = "<group>";
+		};
+		5EAF82351D6AE3C100239CB5 /* LTextField */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF82361D6AE3C100239CB5 /* LTextField.h */,
+				5EAF82371D6AE3C100239CB5 /* LTextField.m */,
+			);
+			path = LTextField;
+			sourceTree = "<group>";
+		};
+		5EAF82461D6AEE9F00239CB5 /* RegisterButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF82471D6AEE9F00239CB5 /* RegisterButtonView.h */,
+				5EAF82481D6AEE9F00239CB5 /* RegisterButtonView.m */,
+				5EAF82491D6AEE9F00239CB5 /* RegisterButtonView.xib */,
+			);
+			path = RegisterButtonView;
+			sourceTree = "<group>";
+		};
+		5EAF824C1D6AEEC800239CB5 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF824D1D6AEEC800239CB5 /* RegisterController.h */,
+				5EAF824E1D6AEEC800239CB5 /* RegisterController.m */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		5EAF82501D6AF51200239CB5 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF82511D6AF51200239CB5 /* BBStockChartView */,
+				5EAF826E1D6AF51200239CB5 /* QRcode */,
+				5EAF82741D6AF51200239CB5 /* QRCodeImage-生成二维码 */,
+				5EAF82771D6AF51200239CB5 /* VDiskTypes.json */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		5EAF82511D6AF51200239CB5 /* BBStockChartView */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF82521D6AF51200239CB5 /* Area */,
+				5EAF82551D6AF51200239CB5 /* Axis */,
+				5EAF825A1D6AF51200239CB5 /* data.json */,
+				5EAF825B1D6AF51200239CB5 /* Lib */,
+				5EAF82651D6AF51200239CB5 /* Series */,
+			);
+			path = BBStockChartView;
+			sourceTree = "<group>";
+		};
+		5EAF82521D6AF51200239CB5 /* Area */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF82531D6AF51200239CB5 /* Area.h */,
+				5EAF82541D6AF51200239CB5 /* Area.m */,
+			);
+			path = Area;
+			sourceTree = "<group>";
+		};
+		5EAF82551D6AF51200239CB5 /* Axis */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF82561D6AF51200239CB5 /* AxisX.h */,
+				5EAF82571D6AF51200239CB5 /* AxisX.m */,
+				5EAF82581D6AF51200239CB5 /* AxisY.h */,
+				5EAF82591D6AF51200239CB5 /* AxisY.m */,
+			);
+			path = Axis;
+			sourceTree = "<group>";
+		};
+		5EAF825B1D6AF51200239CB5 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF825C1D6AF51200239CB5 /* BaseLayer.h */,
+				5EAF825D1D6AF51200239CB5 /* BaseLayer.m */,
+				5EAF825E1D6AF51200239CB5 /* BBChartUtils.h */,
+				5EAF825F1D6AF51200239CB5 /* BBChartUtils.m */,
+				5EAF82601D6AF51200239CB5 /* BBChartView.h */,
+				5EAF82611D6AF51200239CB5 /* BBChartView.m */,
+				5EAF82621D6AF51200239CB5 /* BBStockChart.h */,
+				5EAF82631D6AF51200239CB5 /* BBTheme.h */,
+				5EAF82641D6AF51200239CB5 /* BBTheme.m */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		5EAF82651D6AF51200239CB5 /* Series */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF82661D6AF51200239CB5 /* BarSeries.h */,
+				5EAF82671D6AF51200239CB5 /* BarSeries.m */,
+				5EAF82681D6AF51200239CB5 /* LineSeries.h */,
+				5EAF82691D6AF51200239CB5 /* LineSeries.m */,
+				5EAF826A1D6AF51200239CB5 /* Series.h */,
+				5EAF826B1D6AF51200239CB5 /* Series.m */,
+				5EAF826C1D6AF51200239CB5 /* StockSeries.h */,
+				5EAF826D1D6AF51200239CB5 /* StockSeries.m */,
+			);
+			path = Series;
+			sourceTree = "<group>";
+		};
+		5EAF826E1D6AF51200239CB5 /* QRcode */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF826F1D6AF51200239CB5 /* ScanQRCodeController.h */,
+				5EAF82701D6AF51200239CB5 /* ScanQRCodeController.m */,
+				5EAF82711D6AF51200239CB5 /* 扫描框@2x.png */,
+				5EAF82721D6AF51200239CB5 /* 扫描线@2x.png */,
+				5EAF82731D6AF51200239CB5 /* 白色返回_想去@2x.png */,
+			);
+			path = QRcode;
+			sourceTree = "<group>";
+		};
+		5EAF82741D6AF51200239CB5 /* QRCodeImage-生成二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF82751D6AF51200239CB5 /* QRCodeImage.h */,
+				5EAF82761D6AF51200239CB5 /* QRCodeImage.m */,
+			);
+			path = "QRCodeImage-生成二维码";
+			sourceTree = "<group>";
+		};
+		5EAF82781D6AF51200239CB5 /* LLibs */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF828B1D6AF54600239CB5 /* LConfig */,
+			);
+			path = LLibs;
+			sourceTree = "<group>";
+		};
+		5EAF828B1D6AF54600239CB5 /* LConfig */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF828C1D6AF54600239CB5 /* LConfig.h */,
+				5EAF828D1D6AF54600239CB5 /* LConfig.m */,
+			);
+			path = LConfig;
+			sourceTree = "<group>";
+		};
 		794F7078CFCCD2419F25CE2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */,
 				80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */,
 			);
 			name = Frameworks;
@@ -1143,27 +1235,31 @@
 			files = (
 				5E1722871D630082003CA0AE /* ProductCollectionView.xib in Resources */,
 				5E17227D1D630082003CA0AE /* Main.storyboard in Resources */,
+				5EAF82871D6AF51200239CB5 /* 扫描线@2x.png in Resources */,
+				5EAF82881D6AF51200239CB5 /* 白色返回_想去@2x.png in Resources */,
 				5E17229F1D630082003CA0AE /* PositionCell.xib in Resources */,
 				5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */,
 				5E17228C1D630082003CA0AE /* DealHistoryCell.xib in Resources */,
 				5E17229B1D630082003CA0AE /* RechargeHeadView.xib in Resources */,
-				5E1723081D66AC28003CA0AE /* VDiskTypes.json in Resources */,
 				5E1722E01D63008A003CA0AE /* SecurityCodeView.xib in Resources */,
 				5E1723141D66E090003CA0AE /* StockChartDataView.xib in Resources */,
+				5EAF828A1D6AF51200239CB5 /* VDiskTypes.json in Resources */,
 				5E1722991D630082003CA0AE /* RechargeCell.xib in Resources */,
 				5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */,
 				5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */,
+				5EAF824B1D6AEE9F00239CB5 /* RegisterButtonView.xib in Resources */,
 				5E1722A21D630082003CA0AE /* Info.plist in Resources */,
 				5E1722911D630082003CA0AE /* DealCell.xib in Resources */,
 				5E1722DA1D63008A003CA0AE /* SelectDataCell.xib in Resources */,
 				5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */,
+				5EAF827C1D6AF51200239CB5 /* data.json in Resources */,
 				5E17227B1D630082003CA0AE /* Assets.xcassets in Resources */,
 				5E17227C1D630082003CA0AE /* LaunchScreen.storyboard in Resources */,
 				5E1722DC1D63008A003CA0AE /* InputDealPswdView.xib in Resources */,
 				5E17228E1D630082003CA0AE /* DealHistoryHeadView.xib in Resources */,
 				5E1722851D630082003CA0AE /* ProductCollectionCell.xib in Resources */,
-				5E1722A61D630082003CA0AE /* data.json in Resources */,
 				5E1722F71D658CAA003CA0AE /* PersonalTopView.xib in Resources */,
+				5EAF82861D6AF51200239CB5 /* 扫描框@2x.png in Resources */,
 				5E1722D81D63008A003CA0AE /* BuyView.xib in Resources */,
 				5E1722E31D63008A003CA0AE /* SegmentView.xib in Resources */,
 				5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */,
@@ -1240,61 +1336,65 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EAF827E1D6AF51200239CB5 /* BBChartUtils.m in Sources */,
+				5EAF827B1D6AF51200239CB5 /* AxisY.m in Sources */,
 				5E1722981D630082003CA0AE /* RechargeCell.m in Sources */,
 				5E1722951D630082003CA0AE /* RechargeController.m in Sources */,
+				5EAF82791D6AF51200239CB5 /* Area.m in Sources */,
+				5EAF824F1D6AEEC800239CB5 /* RegisterController.m in Sources */,
 				5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */,
-				5E1722AD1D630082003CA0AE /* Series.m in Sources */,
+				5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */,
 				5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */,
 				5E1722D71D63008A003CA0AE /* BuyView.m in Sources */,
-				5E1722AB1D630082003CA0AE /* BarSeries.m in Sources */,
 				5E1722A11D630082003CA0AE /* Core+Color.m in Sources */,
 				5E1722941D630082003CA0AE /* QRCodeController.m in Sources */,
+				5EAF827A1D6AF51200239CB5 /* AxisX.m in Sources */,
 				5E17227F1D630082003CA0AE /* BaseTabBarController.m in Sources */,
 				5E1723131D66E090003CA0AE /* StockChartDataView.m in Sources */,
 				5E1722881D630082003CA0AE /* ApplyForBrokerController.m in Sources */,
 				5E17229C1D630082003CA0AE /* WithdrawController.m in Sources */,
-				5E1722AF1D630082003CA0AE /* QRCodeImage.m in Sources */,
 				5E1722801D630082003CA0AE /* BaseViewController.m in Sources */,
 				5E17229A1D630082003CA0AE /* RechargeHeadView.m in Sources */,
 				5E1722D91D63008A003CA0AE /* SelectDataCell.m in Sources */,
 				5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */,
+				5EAF827D1D6AF51200239CB5 /* BaseLayer.m in Sources */,
+				5EAF824A1D6AEE9F00239CB5 /* RegisterButtonView.m in Sources */,
 				5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */,
 				5E1722D51D63008A003CA0AE /* ButtonView.m in Sources */,
 				5E17228D1D630082003CA0AE /* DealHistoryHeadView.m in Sources */,
+				5EAF828E1D6AF54600239CB5 /* LConfig.m in Sources */,
 				5E17227A1D630082003CA0AE /* AppDelegate.m in Sources */,
 				5E1722DB1D63008A003CA0AE /* InputDealPswdView.m in Sources */,
+				5EAF82381D6AE3C100239CB5 /* LButton.m in Sources */,
 				5E1722FF1D65AB49003CA0AE /* ProductTableView.m in Sources */,
-				5E1722FA1D6599B7003CA0AE /* LTextField.m in Sources */,
-				5E1722A51D630082003CA0AE /* AxisY.m in Sources */,
 				5E1722DF1D63008A003CA0AE /* SecurityCodeView.m in Sources */,
-				5E1722AE1D630082003CA0AE /* StockSeries.m in Sources */,
+				5EAF82841D6AF51200239CB5 /* StockSeries.m in Sources */,
 				5E1722821D630082003CA0AE /* ChartView.m in Sources */,
 				5E1722E21D63008A003CA0AE /* SegmentView.m in Sources */,
-				5E1722A91D630082003CA0AE /* BBChartView.m in Sources */,
 				5E1722891D630082003CA0AE /* ChangeDealPswdController.m in Sources */,
 				5E17228A1D630082003CA0AE /* DealHistoryListController.m in Sources */,
-				5E1722AC1D630082003CA0AE /* LineSeries.m in Sources */,
 				5E17228F1D630082003CA0AE /* DealListController.m in Sources */,
 				5E1722A01D630082003CA0AE /* Core.m in Sources */,
+				5EAF82831D6AF51200239CB5 /* Series.m in Sources */,
 				5E1721B41D62FFD4003CA0AE /* main.m in Sources */,
 				5E1723181D66E0BA003CA0AE /* LineChartDataView.m in Sources */,
 				5E1722921D630082003CA0AE /* InfosController.m in Sources */,
+				5EAF82821D6AF51200239CB5 /* LineSeries.m in Sources */,
 				5E17229E1D630082003CA0AE /* PositionCell.m in Sources */,
 				5E1722811D630082003CA0AE /* HomeController.m in Sources */,
 				5E17229D1D630082003CA0AE /* PositionController.m in Sources */,
+				5EAF82811D6AF51200239CB5 /* BarSeries.m in Sources */,
+				5EAF82801D6AF51200239CB5 /* BBTheme.m in Sources */,
 				5E1722E11D63008A003CA0AE /* Segment.m in Sources */,
 				5E1722901D630082003CA0AE /* DealCell.m in Sources */,
 				5E17227E1D630082003CA0AE /* BaseNavigationController.m in Sources */,
 				5E17228B1D630082003CA0AE /* DealHistoryCell.m in Sources */,
-				5E1722A31D630082003CA0AE /* Area.m in Sources */,
+				5EAF827F1D6AF51200239CB5 /* BBChartView.m in Sources */,
+				5EAF82851D6AF51200239CB5 /* ScanQRCodeController.m in Sources */,
 				5E1722931D630082003CA0AE /* PersonalController.m in Sources */,
-				5E1722F01D6552CF003CA0AE /* LButton.m in Sources */,
 				5E1722841D630082003CA0AE /* ProductCollectionCell.m in Sources */,
-				5E1722A81D630082003CA0AE /* BBChartUtils.m in Sources */,
-				5E1722A41D630082003CA0AE /* AxisX.m in Sources */,
 				5E1722861D630082003CA0AE /* ProductCollectionView.m in Sources */,
-				5E1722A71D630082003CA0AE /* BaseLayer.m in Sources */,
-				5E1722AA1D630082003CA0AE /* BBTheme.m in Sources */,
+				5EAF82891D6AF51200239CB5 /* QRCodeImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

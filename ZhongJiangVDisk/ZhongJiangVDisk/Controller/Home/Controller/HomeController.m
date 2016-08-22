@@ -25,15 +25,18 @@ __weak HomeController *_self;
 - (void)viewDidLoad {
     [super viewDidLoad];
     _self = self;
-    _put = [[NSBundle mainBundle] loadNibNamed:@"InputDealPswdView" owner:nil options:nil].lastObject;
-    _put.btnsActionBlock = ^(NSInteger index) {
-        if (index == 0) {
-            [_self goForgetDealPswd];
-        }else
-        {
-            [_self putBtnAction];
-        }
-    };
+    if ([Core shareCore].isLogin) {
+        _put = [[NSBundle mainBundle] loadNibNamed:@"InputDealPswdView" owner:nil options:nil].lastObject;
+        _put.btnsActionBlock = ^(NSInteger index) {
+            if (index == 0) {
+                [_self goForgetDealPswd];
+            }else
+            {
+                [_self putBtnAction];
+            }
+        };
+    }
+
     [self addSegmentWithUserEnabled:YES];
     [self set_scrollView];
     // Do any additional setup after loading the view.

@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证码：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yp4-Md-KOd">
-                    <rect key="frame" x="20" y="10" width="44" height="21"/>
+                    <rect key="frame" x="8" y="10" width="56" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Nrm-fF-Tdh"/>
                     </constraints>
@@ -109,7 +109,7 @@
                 <constraint firstItem="GcP-TL-55E" firstAttribute="centerY" secondItem="YtY-qL-Mjx" secondAttribute="centerY" id="XbU-Pw-Dth"/>
                 <constraint firstItem="PUU-OM-Oak" firstAttribute="height" secondItem="GcP-TL-55E" secondAttribute="height" id="ZfQ-vm-4to"/>
                 <constraint firstItem="o4v-6W-vE7" firstAttribute="leading" secondItem="Yp4-Md-KOd" secondAttribute="trailing" id="b9Y-SG-SsX"/>
-                <constraint firstItem="Yp4-Md-KOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ele-Kj-q6n"/>
+                <constraint firstItem="Yp4-Md-KOd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ele-Kj-q6n"/>
                 <constraint firstItem="PUU-OM-Oak" firstAttribute="top" secondItem="GcP-TL-55E" secondAttribute="bottom" constant="6" id="rLm-wt-WP7"/>
                 <constraint firstAttribute="bottom" secondItem="o4v-6W-vE7" secondAttribute="bottom" id="v2Z-Nt-dmM"/>
                 <constraint firstItem="o4v-6W-vE7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vMZ-qQ-RuA"/>
@@ -130,7 +130,7 @@
                 <outlet property="codeLabel" destination="Yp4-Md-KOd" id="XH8-s9-fC6"/>
                 <outlet property="securityCodeTF" destination="YtY-qL-Mjx" id="uTB-4O-M8L"/>
             </connections>
-            <point key="canvasLocation" x="143.5" y="299"/>
+            <point key="canvasLocation" x="136.5" y="302"/>
         </view>
     </objects>
 </document>

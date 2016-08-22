@@ -12,8 +12,6 @@
 @property (strong, nonatomic) NSArray *titles;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
-
-
 @end
 
 @implementation PersonalController

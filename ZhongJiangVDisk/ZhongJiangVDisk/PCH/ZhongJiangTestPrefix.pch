@@ -84,6 +84,11 @@
 
 #import "LineChartDataView.h"
 #import "StockChartDataView.h"
+#import "ScanQRCodeController.h"
+
+#import "RegisterButtonView.h"//注册底部Button
+#import "RegisterController.h"//注册控制器
+#import "LConfig.h"
 
 //分时图，k图
 #import "Area.h"
