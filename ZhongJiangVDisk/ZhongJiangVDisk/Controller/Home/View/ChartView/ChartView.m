@@ -99,11 +99,11 @@
     
     if (_segmentC == nil) {
         NSDictionary *defaults = @{
-                                   NSFontAttributeName : [UIFont systemFontOfSize:14],
+                                   NSFontAttributeName : [UIFont systemFontOfSize:kCellLabelFont-2],
                                    NSForegroundColorAttributeName : [Core shareCore].cellTextColor,
                                    };
         NSDictionary *selected = @{
-                                   NSFontAttributeName : [UIFont systemFontOfSize:14],
+                                   NSFontAttributeName : [UIFont systemFontOfSize:kCellLabelFont-2],
                                    NSForegroundColorAttributeName :[Core shareCore].selectedLineColor,
                                    };
         _segmentC = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, -10, kScreenWidth, 35)];

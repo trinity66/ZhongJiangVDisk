@@ -44,7 +44,7 @@
     hud.label.text = title;
     hud.label.numberOfLines = 0;
     hud.contentColor = [Core shareCore].selectedLineColor;
-    hud.label.font = [UIFont systemFontOfSize:13];
+    hud.label.font = [UIFont systemFontOfSize:kCellLabelFont-2];
     hud.mode = MBProgressHUDModeText;
     [hud hideAnimated:YES afterDelay:timeCount];
 }

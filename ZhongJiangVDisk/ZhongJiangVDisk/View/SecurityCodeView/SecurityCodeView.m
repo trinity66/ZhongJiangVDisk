@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet LButton *codeButton;
 @property (weak, nonatomic) IBOutlet LButton *CIAButton;
 @property (weak, nonatomic) IBOutlet LButton *button;
+@property (weak, nonatomic) IBOutlet UILabel *codeLabel;
 
 @end
 @implementation SecurityCodeView
@@ -26,10 +27,16 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    [self setSomeControl];
+}
+- (void)setSomeControl
+{
     UIColor *color = [Core shareCore].buttonBackColor;
     _codeButton.backgroundColor = color;
     _CIAButton.backgroundColor = color;
     _button.backgroundColor = color;
+    _codeLabel.textColor = [Core shareCore].cellTextColor;
+    _codeLabel.font = [UIFont systemFontOfSize:kCellLabelFont];
     self.backgroundColor = [Core shareCore].backgroundColor;
 }
 - (IBAction)codeButtonAction:(id)sender {

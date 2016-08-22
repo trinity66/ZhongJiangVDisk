@@ -20,6 +20,11 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kPersonalTopViewHeight 60
 #define kSegmentHeight 55
+#define kTableViewCellHegiht 40
+#define kTableViewHeadHegiht 5
+#define kTableViewFootHeight 0.0000001
+#define kCellLabelFont 15
+
 #import "Core.h"
 #import "Core+Color.h"
 

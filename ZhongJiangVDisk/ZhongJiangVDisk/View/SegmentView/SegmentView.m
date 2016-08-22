@@ -19,11 +19,18 @@
 */
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self setSomeControl];
+    // Initialization code
+}
+- (void)setSomeControl
+{
     self.backgroundColor = [Core shareCore].topSegmentColor;
     self.title.textColor = [Core shareCore].cellTextColor;
     self.bottom.backgroundColor = [Core shareCore].selectedLineColor;
     _bottom.hidden = YES;
-    // Initialization code
+    _title.font = [UIFont systemFontOfSize:kCellLabelFont-4];
+    _record.font = [UIFont systemFontOfSize:kCellLabelFont];
+    
 }
 - (void)setDataWithTitle:(NSString *)title Number:(double)number isRise:(BOOL)isRise
 {

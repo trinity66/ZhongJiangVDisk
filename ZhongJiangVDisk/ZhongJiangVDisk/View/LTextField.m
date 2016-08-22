@@ -22,6 +22,7 @@
     [super awakeFromNib];
     self.layer.borderWidth = 1;
     self.layer.cornerRadius = 5;
+    self.font = [UIFont systemFontOfSize:kCellLabelFont];
     self.textColor = [Core shareCore].cellTextColor;
     self.layer.borderColor = [Core shareCore].textFieldBorderColor.CGColor;
     self.backgroundColor = [Core shareCore].textFieldBackColor;

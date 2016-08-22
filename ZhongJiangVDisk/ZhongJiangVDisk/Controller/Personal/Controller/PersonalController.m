@@ -57,11 +57,11 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 35;
+    return kTableViewCellHegiht;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 0.0000001;
+    return kTableViewFootHeight;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -72,7 +72,7 @@
     if (list.count > 0) {
        return 20;
     }
-    return 0.0000001;
+    return kTableViewFootHeight;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
@@ -87,7 +87,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
         cell.backgroundColor = [Core shareCore].detailBackColor;
         cell.textLabel.textColor = [Core shareCore].cellTextColor;
-        cell.textLabel.font = [UIFont systemFontOfSize:11];
+        cell.textLabel.font = [UIFont systemFontOfSize:kCellLabelFont];
         UIView *view = [UIView new];
         view.backgroundColor = [Core shareCore].selectedLineColor;
         cell.selectedBackgroundView = view;

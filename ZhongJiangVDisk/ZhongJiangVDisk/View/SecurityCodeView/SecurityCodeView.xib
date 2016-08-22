@@ -77,9 +77,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zb6-8e-YRn" customClass="LButton">
-                    <rect key="frame" x="10" y="126" width="209" height="30"/>
+                    <rect key="frame" x="10" y="126" width="209" height="35"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="FvY-Dk-7vq"/>
+                        <constraint firstAttribute="height" constant="35" id="FvY-Dk-7vq"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="确认">
@@ -127,6 +127,7 @@
                 <outlet property="CIAButton" destination="PUU-OM-Oak" id="yat-6D-PzX"/>
                 <outlet property="button" destination="Zb6-8e-YRn" id="BlN-wF-sAF"/>
                 <outlet property="codeButton" destination="GcP-TL-55E" id="RfT-WS-cCk"/>
+                <outlet property="codeLabel" destination="Yp4-Md-KOd" id="XH8-s9-fC6"/>
                 <outlet property="securityCodeTF" destination="YtY-qL-Mjx" id="uTB-4O-M8L"/>
             </connections>
             <point key="canvasLocation" x="143.5" y="299"/>

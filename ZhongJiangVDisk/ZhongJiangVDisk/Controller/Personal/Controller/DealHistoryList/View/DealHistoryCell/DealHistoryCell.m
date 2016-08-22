@@ -12,12 +12,21 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self setSomeControl];
+    // Initialization code
+}
+- (void)setSomeControl
+{
     UIColor *color = [Core shareCore].cellTextColor;
     _title.textColor = color;
     _time.textColor = color;
     _detail.textColor = color;
     _money.textColor = color;
-    // Initialization code
+    UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-4];
+    _title.font = font;
+    _time.font = font;
+    _detail.font = font;
+    _money.font = font;
 }
 - (void)setDetailWithNumber:(NSInteger)num isRise:(BOOL)isRise
 {

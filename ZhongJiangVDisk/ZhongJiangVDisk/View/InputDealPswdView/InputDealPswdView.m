@@ -58,6 +58,10 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    [self setSomeControl];
+}
+- (void)setSomeControl
+{
     _lHeight.constant = 0.5;
     [_forgetPswdBtn setTitleColor:[Core shareCore].selectedLineColor forState:UIControlStateNormal];
     _button.backgroundColor = [Core shareCore].buttonBackColor;

@@ -17,10 +17,16 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self setSomeControl];
+    // Initialization code
+}
+- (void)setSomeControl
+{
     _title.textColor = [Core shareCore].positionCellTextColor;
     _button.backgroundColor = [Core shareCore].buttonBackColor;
     self.backgroundColor = [Core shareCore].detailBackColor;
-    // Initialization code
+    _title.font = [UIFont systemFontOfSize:kCellLabelFont+2];
+    _detail.font = [UIFont systemFontOfSize:kCellLabelFont-4];
 }
 - (IBAction)buttonAction:(id)sender {
     if (self.btnActionBlock) {

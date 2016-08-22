@@ -11,17 +11,26 @@
 @implementation DealCell
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self setSomeControl];
+    // Initialization code
+}
+- (void)setSomeControl
+{
     UIColor *color = [Core shareCore].cellTextColor;
     _idNumber.textColor = color;
     _balance.textColor = color;
     _kind.textColor = color;
-    
     _product.textColor = color;
     _amount.textColor = color;
     _time.textColor = color;
-    
     self.backgroundColor = [Core shareCore].backgroundColor;
-    // Initialization code
+    UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-5];
+    _idNumber.font = font;
+    _balance.font = font;
+    _kind.font = font;
+    _product.font = font;
+    _amount.font = font;
+    _time.font = font;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -16,17 +16,24 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self setSomeControl];
+    // Initialization code
+}
+- (void)setSomeControl
+{
     UIColor *color = [Core shareCore].buttonBackColor;
     _addBtn.backgroundColor = color;
     _subtractBtn.backgroundColor = color;
     self.backgroundColor = [Core shareCore].backgroundColor;
     _title.textColor = [Core shareCore].cellTextColor;
     _textField.enabled = NO;
-    // Initialization code
+    UIFont *font = [UIFont systemFontOfSize:kCellLabelFont];
+    _title.font = font;
+    _textField.font = font;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

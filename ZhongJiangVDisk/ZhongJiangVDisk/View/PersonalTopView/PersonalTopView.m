@@ -16,10 +16,14 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    [self setSomeControl];
+}
+- (void)setSomeControl
+{
     self.backgroundColor = [Core shareCore].personalTopColor;
-    UIColor *borderColor = [Core shareCore].detailBackColor;
-    _imageView.layer.borderColor = borderColor.CGColor;
+    _imageView.layer.borderColor = [Core shareCore].detailBackColor.CGColor;
     _recharge.backgroundColor = [Core shareCore].riseTextColor;
+    _balance.font = [UIFont systemFontOfSize:kCellLabelFont-4];
 }
 - (IBAction)rechargeAction:(id)sender {
     [[Core shareCore] goRechargeVC];

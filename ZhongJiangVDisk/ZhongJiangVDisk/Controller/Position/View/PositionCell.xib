@@ -23,17 +23,17 @@
                             <constraint firstAttribute="width" secondItem="6aO-1b-B3g" secondAttribute="height" id="Dcc-fQ-gPW"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日盈亏(元)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC8-cr-q2H">
-                        <rect key="frame" x="38" y="17" width="86" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="今日盈亏(元)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="XC8-cr-q2H">
+                        <rect key="frame" x="38" y="17" width="94" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="86" id="15x-ay-uCb"/>
+                            <constraint firstAttribute="width" constant="94" id="15x-ay-uCb"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="NwF-5j-sCb">
-                        <rect key="frame" x="124" y="15" width="104" height="21"/>
+                        <rect key="frame" x="132" y="15" width="91" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="5ME-RA-FXX"/>
                         </constraints>
@@ -42,10 +42,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cq8-Xy-Zrl" customClass="LButton">
-                        <rect key="frame" x="228" y="16" width="50" height="20"/>
+                        <rect key="frame" x="223" y="13.5" width="55" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="F8W-tm-m0G"/>
-                            <constraint firstAttribute="width" constant="50" id="GHD-Nj-OCq"/>
+                            <constraint firstAttribute="height" constant="25" id="F8W-tm-m0G"/>
+                            <constraint firstAttribute="width" constant="55" id="GHD-Nj-OCq"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <state key="normal" title="一键平仓">

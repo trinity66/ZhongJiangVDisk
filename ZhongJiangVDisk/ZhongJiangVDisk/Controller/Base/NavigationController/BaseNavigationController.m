@@ -17,11 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIColor *color = [Core shareCore].tabBarSelectTextColor;
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:color,NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:color,NSFontAttributeName:[UIFont systemFontOfSize:kCellLabelFont-2]} forState:UIControlStateNormal];
     [[UINavigationBar appearance] setTintColor:color];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            NSForegroundColorAttributeName:color,
-                                                           NSFontAttributeName:[UIFont systemFontOfSize:16]}];
+                                                           NSFontAttributeName:[UIFont systemFontOfSize:kCellLabelFont]}];
     
     [[UINavigationBar appearance] setTintColor:color];
     [[UINavigationBar appearance] setBackgroundImage:[[Core shareCore] image_with_color:[Core shareCore].detailBackColor] forBarMetrics:UIBarMetricsDefault];
