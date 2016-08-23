@@ -31,13 +31,13 @@
 }
 - (void)setSomeControl
 {
-    UIColor *color = [Core shareCore].buttonBackColor;
+    UIColor *color = LCoreCurrent.buttonBackColor;
     _codeButton.backgroundColor = color;
     _CIAButton.backgroundColor = color;
     _button.backgroundColor = color;
-    _codeLabel.textColor = [Core shareCore].cellTextColor;
+    _codeLabel.textColor = LCoreCurrent.cellTextColor;
     _codeLabel.font = [UIFont systemFontOfSize:kCellLabelFont];
-    self.backgroundColor = [Core shareCore].backgroundColor;
+    self.backgroundColor = LCoreCurrent.backgroundColor;
 }
 - (IBAction)codeButtonAction:(id)sender {
     if (self.btnsActionBlock) {

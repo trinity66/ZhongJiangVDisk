@@ -24,9 +24,9 @@
 }
 - (void)setSomeControl
 {
-    self.backgroundColor = [Core shareCore].topSegmentColor;
-    self.title.textColor = [Core shareCore].cellTextColor;
-    self.bottom.backgroundColor = [Core shareCore].selectedLineColor;
+    self.backgroundColor = LCoreCurrent.topSegmentColor;
+    self.title.textColor = LCoreCurrent.cellTextColor;
+    self.bottom.backgroundColor = LCoreCurrent.selectedLineColor;
     _bottom.hidden = YES;
     _title.font = [UIFont systemFontOfSize:kCellLabelFont-4];
     _record.font = [UIFont systemFontOfSize:kCellLabelFont];
@@ -38,11 +38,11 @@
     NSString *imageName;
     _title.text = title;
     if (isRise) {
-        color = [Core shareCore].riseTextColor;
+        color = LCoreCurrent.riseTextColor;
         imageName = @"riseRed";
     }else
     {
-        color = [Core shareCore].fallTextColor;
+        color = LCoreCurrent.fallTextColor;
         imageName = @"fallGreen";
     }
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.02f",number] attributes:@{

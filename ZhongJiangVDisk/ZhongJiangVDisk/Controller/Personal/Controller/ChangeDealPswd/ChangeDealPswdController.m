@@ -23,7 +23,7 @@ __weak ChangeDealPswdController *changeDealSelf;
     changeDealSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"原交易密码：", @"新交易密码：", @"再次确认："];
-    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
 
@@ -88,7 +88,7 @@ __weak ChangeDealPswdController *changeDealSelf;
             __block ChangeDealPswdController* _self =self;
             _foot.btnActionBlock = ^(){
                 [changeDealSelf textFieldResignFirstResponder];
-                [[Core shareCore] showAlertTitle:@"交易密码修改成功" timeCount:2 inView:_self.view];
+                [LCoreCurrent showAlertTitle:@"交易密码修改成功" timeCount:2 inView:_self.view];
             };
         }
     }

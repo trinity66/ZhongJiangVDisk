@@ -28,30 +28,30 @@
 }
 - (void)setDefalutColor
 {
-    self.textColor = [Core shareCore].cellTextColor;
-    self.layer.borderColor = [Core shareCore].textFieldBorderColor.CGColor;
-    self.backgroundColor = [Core shareCore].textFieldBackColor;
+    self.textColor = LCoreCurrent.cellTextColor;
+    self.layer.borderColor = LCoreCurrent.textFieldBorderColor.CGColor;
+    self.backgroundColor = LCoreCurrent.textFieldBackColor;
 }
 - (void)setEnabledColor
 {
-    self.textColor = [Core shareCore].cellTextColor;
-    self.tintColor = [Core shareCore].cellTextColor;
-    self.layer.borderColor = [Core shareCore].selectedLineColor.CGColor;
-    self.backgroundColor = [Core shareCore].textFieldBackColor;
+    self.textColor = LCoreCurrent.cellTextColor;
+    self.tintColor = LCoreCurrent.cellTextColor;
+    self.layer.borderColor = LCoreCurrent.selectedLineColor.CGColor;
+    self.backgroundColor = LCoreCurrent.textFieldBackColor;
 }
 - (void)setSelectedColor
 {
-    self.textColor = [Core shareCore].labelTextColor;
-    self.tintColor = [Core shareCore].labelTextColor;
-    self.layer.borderColor = [Core shareCore].selectedLineColor.CGColor;
-    self.backgroundColor = [Core shareCore].textFieldSelectBackColor;
+    self.textColor = LCoreCurrent.labelTextColor;
+    self.tintColor = LCoreCurrent.labelTextColor;
+    self.layer.borderColor = LCoreCurrent.selectedLineColor.CGColor;
+    self.backgroundColor = LCoreCurrent.textFieldSelectBackColor;
 }
 - (void)startLayerColor
 {
-    self.layer.borderColor = [Core shareCore].selectedLineColor.CGColor;
+    self.layer.borderColor = LCoreCurrent.selectedLineColor.CGColor;
 }
 - (void)finishLayerColor
 {
-    self.layer.borderColor = [Core shareCore].textFieldBackColor.CGColor;
+    self.layer.borderColor = LCoreCurrent.textFieldBackColor.CGColor;
 }
 @end

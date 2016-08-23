@@ -67,13 +67,13 @@
 - (void)setSomeControl
 {
     _lHeight.constant = 0.5;
-    [_forgetPswdBtn setTitleColor:[Core shareCore].selectedLineColor forState:UIControlStateNormal];
-    _button.backgroundColor = [Core shareCore].buttonBackColor;
-    _mainView.backgroundColor = [Core shareCore].backgroundColor;
-    _mainView.layer.borderColor = [Core shareCore].buttonBorderColor.CGColor;
-    _title.textColor = [Core shareCore].cellTextColor;
-    _lOne.backgroundColor = [Core shareCore].detailLightBackColor;
-    _lTwo.backgroundColor = [Core shareCore].detailLightBackColor;
+    [_forgetPswdBtn setTitleColor:LCoreCurrent.selectedLineColor forState:UIControlStateNormal];
+    _button.backgroundColor = LCoreCurrent.buttonBackColor;
+    _mainView.backgroundColor = LCoreCurrent.backgroundColor;
+    _mainView.layer.borderColor = LCoreCurrent.buttonBorderColor.CGColor;
+    _title.textColor = LCoreCurrent.cellTextColor;
+    _lOne.backgroundColor = LCoreCurrent.detailLightBackColor;
+    _lTwo.backgroundColor = LCoreCurrent.detailLightBackColor;
     _textField.delegate = self;
     _textField.returnKeyType = UIReturnKeyDone;
     

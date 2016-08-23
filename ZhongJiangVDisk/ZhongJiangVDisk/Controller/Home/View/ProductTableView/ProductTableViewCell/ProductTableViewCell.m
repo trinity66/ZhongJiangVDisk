@@ -26,17 +26,17 @@
 }
 - (void)setSomeControl
 {
-    _mainView.backgroundColor = [Core shareCore].backgroundColor;
-    _riseButton.backgroundColor = [Core shareCore].riseTextColor;
-    _fallButton.backgroundColor = [Core shareCore].fallTextColor;
+    _mainView.backgroundColor = LCoreCurrent.backgroundColor;
+    _riseButton.backgroundColor = LCoreCurrent.riseTextColor;
+    _fallButton.backgroundColor = LCoreCurrent.fallTextColor;
     UIFont *font = [UIFont systemFontOfSize:kCellLabelFont];
     _riseButton.titleLabel.font = font;
     _fallButton.titleLabel.font = font;
-    [_riseButton setTitleColor:[Core shareCore].buttonTitleColor forState:UIControlStateNormal];
-    [_fallButton setTitleColor:[Core shareCore].buttonTitleColor forState:UIControlStateNormal];
+    [_riseButton setTitleColor:LCoreCurrent.buttonTitleColor forState:UIControlStateNormal];
+    [_fallButton setTitleColor:LCoreCurrent.buttonTitleColor forState:UIControlStateNormal];
     
-    _title.textColor = [Core shareCore].labelTextColor;
-    _detail.textColor = [Core shareCore].selectedLineColor;
+    _title.textColor = LCoreCurrent.labelTextColor;
+    _detail.textColor = LCoreCurrent.selectedLineColor;
     _detail.font = [UIFont systemFontOfSize:kCellLabelFont-4];
 }
 - (void)setTitleWithTitle:(NSString *)title detail:(NSString *)detail

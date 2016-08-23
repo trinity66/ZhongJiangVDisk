@@ -20,13 +20,13 @@
 }
 - (void)setSomeControl
 {
-    self.backgroundColor = [Core shareCore].personalTopColor;
-    _imageView.layer.borderColor = [Core shareCore].detailBackColor.CGColor;
-    _recharge.backgroundColor = [Core shareCore].riseTextColor;
+    self.backgroundColor = LCoreCurrent.personalTopColor;
+    _imageView.layer.borderColor = LCoreCurrent.detailBackColor.CGColor;
+    _recharge.backgroundColor = LCoreCurrent.riseTextColor;
     _balance.font = [UIFont systemFontOfSize:kCellLabelFont-4];
 }
 - (IBAction)rechargeAction:(id)sender {
-    [[Core shareCore] goRechargeVC];
+    [LCoreCurrent goRechargeVC];
 }
 - (void)setRechargeEnabled:(BOOL)enabled
 {

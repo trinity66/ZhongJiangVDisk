@@ -15,7 +15,7 @@
 - (void)drawAnimated:(BOOL)animated{
     CGFloat height = self.bounds.size.height;
     CGFloat width = self.bounds.size.width;
-    CALayer* line = [BaseLayer layerOfLineFrom:CGPointZero to:CGPointMake(width+2, 0) withColor:[Core shareCore].chartLineColor andWidth:1 animated:NO];
+    CALayer* line = [BaseLayer layerOfLineFrom:CGPointZero to:CGPointMake(width+2, 0) withColor:LCoreCurrent.chartLineColor andWidth:1 animated:NO];
     line.position = CGPointMake(-2, 1);
     line.anchorPoint = CGPointZero;
     [self addSublayer:line];
@@ -31,7 +31,7 @@
             text = [NSString stringWithFormat:@"%d", i+1];
         }
         if (text && text.length > 0) {
-            CATextLayer* label = [BaseLayer layerOfText:text withFont:@"HelveticaNeue" fontSize:[BBTheme theme].xAxisFontSize andColor:[Core shareCore].chartXTextColor];
+            CATextLayer* label = [BaseLayer layerOfText:text withFont:@"HelveticaNeue" fontSize:[BBTheme theme].xAxisFontSize andColor:LCoreCurrent.chartXTextColor];
             CGFloat w = [BBChartUtils textBoundsForFont:text andSize:[BBTheme theme].xAxisFontSize text:text].width;
             if (i == self.idxNum || idxWidth*i+idxWidth/2+w > width) {
                 label.alignmentMode = kCAAlignmentRight;
@@ -44,7 +44,7 @@
             }
             label.position = CGPointMake(idxWidth*i + idxWidth /2.0 + [BBTheme theme].axisYwidth/2.0, 5);
             [self addSublayer:label];
-            CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(idxWidth/2.0+[BBTheme theme].axisYwidth/2.0, 0) to:CGPointMake(idxWidth/2+[BBTheme theme].axisYwidth/2.0, 5) withColor:[Core shareCore].chartLineColor andWidth:0.5 animated:animated];
+            CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(idxWidth/2.0+[BBTheme theme].axisYwidth/2.0, 0) to:CGPointMake(idxWidth/2+[BBTheme theme].axisYwidth/2.0, 5) withColor:LCoreCurrent.chartLineColor andWidth:0.5 animated:animated];
             dash.anchorPoint = CGPointZero;
             dash.position = CGPointMake(idxWidth*i, 1);
             [self addSublayer:dash];

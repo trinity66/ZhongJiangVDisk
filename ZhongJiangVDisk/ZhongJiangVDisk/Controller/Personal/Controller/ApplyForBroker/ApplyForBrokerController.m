@@ -24,7 +24,7 @@ __weak ApplyForBrokerController *_applySelf;
     _applySelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"经纪人名称：", @"登录密码：", @"经纪人手机：", @"机构编号："];
-    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
 
@@ -104,7 +104,7 @@ __weak ApplyForBrokerController *_applySelf;
                     //确认按钮
                     title = @"经纪人申请已提交";
                 }
-                [[Core shareCore] showAlertTitle:title timeCount:2 inView:_applySelf.view];
+                [LCoreCurrent showAlertTitle:title timeCount:2 inView:_applySelf.view];
             };
             _tableView.tableFooterView = _foot;
             [_foot setButtonTitle:@"提交申请"];

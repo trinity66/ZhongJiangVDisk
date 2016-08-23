@@ -80,7 +80,7 @@
 -(void)drawAnimated:(BOOL)animated{
     CGFloat width = self.bounds.size.width;
     CGFloat height = self.bounds.size.height;
-    CALayer* line = [BaseLayer layerOfLineFrom:CGPointZero to:CGPointMake(0, self.designHight+1) withColor:[Core shareCore].chartLineColor andWidth:1.5 animated:NO];
+    CALayer* line = [BaseLayer layerOfLineFrom:CGPointZero to:CGPointMake(0, self.designHight+1) withColor:LCoreCurrent.chartLineColor andWidth:1.5 animated:NO];
     line.position = CGPointMake(self.bounds.size.width-2, 0);
     [self addSublayer:line];
     NSUInteger cnt = [BBTheme theme].defYLabelGap;
@@ -88,13 +88,13 @@
 
     for (int i = 0; i < cnt; ++i) {
         CGFloat curHei = self.bounds.size.height/(float)cnt*(float)i;
-        CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(self.bounds.size.width-1.5-5, curHei) to:CGPointMake(self.bounds.size.width-2, curHei) withColor:[Core shareCore].chartLineColor andWidth:0.5 animated:animated];
+        CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(self.bounds.size.width-1.5-5, curHei) to:CGPointMake(self.bounds.size.width-2, curHei) withColor:LCoreCurrent.chartLineColor andWidth:0.5 animated:animated];
         CGFloat val = [self valForHeigth:height-curHei];
         NSString* lab = [NSString stringWithFormat:@"%.3f", val];
         if (val > 1000) {
             lab = [NSString stringWithFormat:@"%.1f", val];
         }
-        CATextLayer* t = [BaseLayer layerOfText:lab withFont:@"Helvetica" fontSize:[BBTheme theme].yAxisFontSize andColor:[Core shareCore].chartYTextColor];
+        CATextLayer* t = [BaseLayer layerOfText:lab withFont:@"Helvetica" fontSize:[BBTheme theme].yAxisFontSize andColor:LCoreCurrent.chartYTextColor];
         t.alignmentMode = kCAAlignmentRight;
 
 //        NSLog(@"mark val:%.1f H:%f", [self valForHeigth:curHei], curHei);

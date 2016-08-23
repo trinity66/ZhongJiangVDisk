@@ -11,12 +11,13 @@
 
 #import "ScanQRCodeController.h"
 #import <AVFoundation/AVFoundation.h>
-
+__weak ScanQRCodeController *scanQRSelf;
 @interface ScanQRCodeController ()<AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate>
 {
     AVCaptureSession * session;//输入输出的中间桥梁
     int line_tag;
     UIView *highlightView;
+    DisabledView *disabledView;
 }
 
 @end
@@ -30,7 +31,9 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+    scanQRSelf = self;
     [self instanceDevice];
+    
 }
 
 /**
@@ -39,6 +42,20 @@
  *  配置相机属性
  */
 - (void)instanceDevice{
+    // 判断是否可以获取相机
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        NSString *mediaType = AVMediaTypeVideo;
+        AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+        if(authStatus == AVAuthorizationStatusDenied){
+            NSString *title = @"相机权限受限,请在iPhone的\"设置->隐私->相机\"选项中,允许本应用访问您的相机,授权后请点击“重试”按钮";
+            [self addDisabledViewWithTitle:title];
+            return;
+        }
+    } else {
+        NSString *title = @"获取相机失败,请查看手机相机是否可用,确认可用后请点击“重试”按钮";
+        [self addDisabledViewWithTitle:title];
+        return;
+    }
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     line_tag = 1872637;
     //获取摄像设备
@@ -90,7 +107,30 @@
     //开始捕获
     [session startRunning];
 }
-
+/**
+ *  @author Whde
+ *
+ *  相机无法获取
+ *
+ *  @param title  提示语
+ */
+- (void)addDisabledViewWithTitle:(NSString *)title
+{
+    if (!disabledView) {
+        disabledView = [[NSBundle mainBundle] loadNibNamed:@"DisabledView" owner:nil options:nil].lastObject;
+        disabledView.frame = self.view.bounds;
+        disabledView.btnActionBlock = ^(){
+            [scanQRSelf removeDisabledView];
+            [scanQRSelf instanceDevice];
+        };
+    }
+    disabledView.alert.text = title;
+    [self.view addSubview:disabledView];
+}
+- (void)removeDisabledView
+{
+    [disabledView removeFromSuperview];
+}
 /**
  *  @author Whde
  *
@@ -133,7 +173,7 @@
         NSString *data = metadataObject.stringValue;
         if (_didReceiveBlock) {
             _didReceiveBlock(data);
-            [self selfRemoveFromSuperview];
+//            [self selfRemoveFromSuperview];
         } else {
             if (IS_VAILABLE_IOS8) {
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"扫码" message:data preferredStyle:UIAlertControllerStyleAlert];
@@ -222,14 +262,12 @@
     [self.view addSubview:msg];
     
     
-    
-    CGRect leftFrame;
-    leftFrame = CGRectMake(-2, 10, 60, 64);
-    UIButton *leftButton= [UIButton buttonWithType:UIButtonTypeCustom];
-    leftButton.frame =leftFrame;
-    [leftButton addTarget:self action:@selector(dismissOverlayView:) forControlEvents:UIControlEventTouchUpInside];
-    [leftButton setImage:[UIImage imageNamed:@"白色返回_想去"] forState:UIControlStateNormal];
-    [self.view addSubview:leftButton];
+    UILabel *topLabel = [[UILabel alloc] initWithFrame:CGRectMake((kScreenWidth-200)/2.0, 60, 200, 20)];
+    topLabel.text = @"请扫描经纪人二维码";
+    topLabel.textAlignment = NSTextAlignmentCenter;
+    topLabel.textColor = [UIColor whiteColor];
+    topLabel.font = [UIFont systemFontOfSize:kCellLabelFont];
+    [self.view addSubview:topLabel];
 }
 
 /**
@@ -298,8 +336,8 @@
 }
 
 /*!
- *  <#Description#>
- *  @param didReceiveBlock <#didReceiveBlock description#>
+ *
+ *  @param didReceiveBlock 
  */
 - (void)setDidReceiveBlock:(QRCodeDidReceiveBlock)didReceiveBlock {
     _didReceiveBlock = [didReceiveBlock copy];

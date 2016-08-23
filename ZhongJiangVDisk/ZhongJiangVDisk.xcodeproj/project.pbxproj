@@ -101,6 +101,8 @@
 		5EAF82891D6AF51200239CB5 /* QRCodeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82761D6AF51200239CB5 /* QRCodeImage.m */; };
 		5EAF828A1D6AF51200239CB5 /* VDiskTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82771D6AF51200239CB5 /* VDiskTypes.json */; };
 		5EAF828E1D6AF54600239CB5 /* LConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF828D1D6AF54600239CB5 /* LConfig.m */; };
+		5EAF82911D6BDEBD00239CB5 /* DisabledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82901D6BDEBD00239CB5 /* DisabledView.m */; };
+		5EAF82931D6BDEC700239CB5 /* DisabledView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82921D6BDEC700239CB5 /* DisabledView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -280,6 +282,9 @@
 		5EAF82771D6AF51200239CB5 /* VDiskTypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VDiskTypes.json; sourceTree = "<group>"; };
 		5EAF828C1D6AF54600239CB5 /* LConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LConfig.h; sourceTree = "<group>"; };
 		5EAF828D1D6AF54600239CB5 /* LConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LConfig.m; sourceTree = "<group>"; };
+		5EAF828F1D6BDEBD00239CB5 /* DisabledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisabledView.h; sourceTree = "<group>"; };
+		5EAF82901D6BDEBD00239CB5 /* DisabledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisabledView.m; sourceTree = "<group>"; };
+		5EAF82921D6BDEC700239CB5 /* DisabledView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisabledView.xib; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1087,6 +1092,9 @@
 				5EAF82711D6AF51200239CB5 /* 扫描框@2x.png */,
 				5EAF82721D6AF51200239CB5 /* 扫描线@2x.png */,
 				5EAF82731D6AF51200239CB5 /* 白色返回_想去@2x.png */,
+				5EAF828F1D6BDEBD00239CB5 /* DisabledView.h */,
+				5EAF82901D6BDEBD00239CB5 /* DisabledView.m */,
+				5EAF82921D6BDEC700239CB5 /* DisabledView.xib */,
 			);
 			path = QRcode;
 			sourceTree = "<group>";
@@ -1253,6 +1261,7 @@
 				5E1722DA1D63008A003CA0AE /* SelectDataCell.xib in Resources */,
 				5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */,
 				5EAF827C1D6AF51200239CB5 /* data.json in Resources */,
+				5EAF82931D6BDEC700239CB5 /* DisabledView.xib in Resources */,
 				5E17227B1D630082003CA0AE /* Assets.xcassets in Resources */,
 				5E17227C1D630082003CA0AE /* LaunchScreen.storyboard in Resources */,
 				5E1722DC1D63008A003CA0AE /* InputDealPswdView.xib in Resources */,
@@ -1344,6 +1353,7 @@
 				5EAF824F1D6AEEC800239CB5 /* RegisterController.m in Sources */,
 				5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */,
 				5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */,
+				5EAF82911D6BDEBD00239CB5 /* DisabledView.m in Sources */,
 				5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */,
 				5E1722D71D63008A003CA0AE /* BuyView.m in Sources */,
 				5E1722A11D630082003CA0AE /* Core+Color.m in Sources */,

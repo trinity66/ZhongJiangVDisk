@@ -21,7 +21,7 @@ __weak RegisterController *registerSelf;
     [super viewDidLoad];
     registerSelf = self;
     _titles = @[@"交易密码：", @"真实姓名：", @"身份证号码：", @"手机号码："];
-    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -98,10 +98,10 @@ __weak RegisterController *registerSelf;
                 }else if (index == 3) {
                     //注册
                     title = @"注册成功";
-                    [Core shareCore].isLogin = YES;
+                    LCoreCurrent.isLogin = YES;
                     [registerSelf dismissViewControllerAnimated:YES completion:nil];
                 }
-                [[Core shareCore] showAlertTitle:title timeCount:2 inView:registerSelf.view];
+                [LCoreCurrent showAlertTitle:title timeCount:2 inView:registerSelf.view];
             };
             _tableView.tableFooterView = _foot;
         }

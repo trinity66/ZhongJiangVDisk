@@ -21,15 +21,15 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.backgroundColor = [Core shareCore].detailBackColor;
+    self.backgroundColor = LCoreCurrent.detailBackColor;
     // Initialization code
 }
 - (void)setColorWithType:(NSString *)type
 {
-    UIColor *color = [Core shareCore].selectedLineColor;
+    UIColor *color = LCoreCurrent.selectedLineColor;
     _title.textColor = color;
     if ([type isEqualToString:@"RED"]) {
-        color = [Core shareCore].riseTextColor;
+        color = LCoreCurrent.riseTextColor;
     }
     
     _mainView.layer.borderColor = color.CGColor;

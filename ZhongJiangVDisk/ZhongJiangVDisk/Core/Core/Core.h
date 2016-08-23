@@ -5,9 +5,11 @@
 //  Created by liuxiaomin on 16/8/11.
 //  Copyright © 2016年 liuxiaomin. All rights reserved.
 //
+#define LCoreCurrent [Core current]
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
 typedef NS_ENUM(NSUInteger, VDiskType) {
     VDiskTypeZhongJiang = 0,
     VDiskTypeZhongHui,
@@ -17,7 +19,7 @@ typedef NS_ENUM(NSUInteger, VDiskType) {
 typedef void(^btnActionBlock)();
 typedef void(^btnsActionBlock)(NSInteger index);
 @interface Core : NSObject
-+(Core *)shareCore;
++(Core *)current;
 - (void)goRechargeVC;
 - (void)goForgetDealPswdVC;
 - (void)goRegisterVC;

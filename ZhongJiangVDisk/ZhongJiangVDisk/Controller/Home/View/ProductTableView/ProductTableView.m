@@ -17,7 +17,7 @@ __weak ProductTableView *productTabelSelf;
 {
     [super awakeFromNib];
     productTabelSelf = self;
-    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
 }
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -65,7 +65,7 @@ __weak ProductTableView *productTabelSelf;
         _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
         __block BuyView *_buy = self.buyView;
         _buyView.btnActionBlock = ^() {
-            [[Core shareCore] showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
+            [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
         };
     }
     if (index == 0) {

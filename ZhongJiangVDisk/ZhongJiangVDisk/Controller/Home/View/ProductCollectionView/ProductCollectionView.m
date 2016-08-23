@@ -25,7 +25,7 @@ __weak ProductCollectionView *productCollectionSelf;
 {
     [super awakeFromNib];
     productCollectionSelf = self;
-    self.backgroundColor = [Core shareCore].detailBackColor;
+    self.backgroundColor = LCoreCurrent.detailBackColor;
     //注册cell
     [_collectionView registerNib:[UINib nibWithNibName:@"ProductCollectionCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"ProductCollectionCell"];
 }
@@ -69,7 +69,7 @@ __weak ProductCollectionView *productCollectionSelf;
         _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
         __block BuyView *_buy = self.buyView;
         _buyView.btnActionBlock = ^() {
-            [[Core shareCore] showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
+            [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
         };
     }
     if (index == 0) {

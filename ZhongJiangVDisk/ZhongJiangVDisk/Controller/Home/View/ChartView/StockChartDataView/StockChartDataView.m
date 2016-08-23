@@ -28,7 +28,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.layer.borderColor = [Core shareCore].fallColor.CGColor;
+    self.layer.borderColor = LCoreCurrent.fallColor.CGColor;
 }
 - (void)setTime:(NSString *)time open:(double)open close:(double)close high:(double)high low:(double)low
 {

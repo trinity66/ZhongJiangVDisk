@@ -84,7 +84,8 @@
 
 #import "LineChartDataView.h"
 #import "StockChartDataView.h"
-#import "ScanQRCodeController.h"
+#import "ScanQRCodeController.h"//扫描
+#import "DisabledView.h"//相机不可用的提示
 
 #import "RegisterButtonView.h"//注册底部Button
 #import "RegisterController.h"//注册控制器

@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIColor *color = [Core shareCore].tabBarSelectTextColor;
+    UIColor *color = LCoreCurrent.tabBarSelectTextColor;
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:color,NSFontAttributeName:[UIFont systemFontOfSize:kCellLabelFont-2]} forState:UIControlStateNormal];
     [[UINavigationBar appearance] setTintColor:color];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
@@ -24,7 +24,7 @@
                                                            NSFontAttributeName:[UIFont systemFontOfSize:kCellLabelFont]}];
     
     [[UINavigationBar appearance] setTintColor:color];
-    [[UINavigationBar appearance] setBackgroundImage:[[Core shareCore] image_with_color:[Core shareCore].detailBackColor] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[LCoreCurrent image_with_color:LCoreCurrent.detailBackColor] forBarMetrics:UIBarMetricsDefault];
     self.interactivePopGestureRecognizer.delegate = self;
     self.navigationBar.translucent = NO;
     // Do any additional setup after loading the view.

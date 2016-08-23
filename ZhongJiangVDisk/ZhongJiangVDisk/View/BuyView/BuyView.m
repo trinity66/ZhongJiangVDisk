@@ -83,7 +83,7 @@ __weak BuyView *buySelf;
 {
     buySelf = self;
     _lHeight.constant = 0.5;
-    _button.backgroundColor = [Core shareCore].buttonBackColor;
+    _button.backgroundColor = LCoreCurrent.buttonBackColor;
     _titles = @[@"止盈（％）", @"止损（％）", @"购买数量", @"预付款", @"合同总价值"];
     _maxProfit = 60;
     _maxLoss = 60;
@@ -103,12 +103,12 @@ __weak BuyView *buySelf;
     _currentProfitIndex = 0;
     _currentLossIndex = 0;
     _currentCountIndex = 0;
-    _title.textColor = [Core shareCore].cellTextColor;
-    _mainView.backgroundColor = [Core shareCore].backgroundColor;
-    _mainView.layer.borderColor = [Core shareCore].buttonBorderColor.CGColor;
-    _tableView.backgroundColor = [Core shareCore].backgroundColor;
-    _lOne.backgroundColor = [Core shareCore].detailLightBackColor;
-    _lTwo.backgroundColor = [Core shareCore].detailLightBackColor;
+    _title.textColor = LCoreCurrent.cellTextColor;
+    _mainView.backgroundColor = LCoreCurrent.backgroundColor;
+    _mainView.layer.borderColor = LCoreCurrent.buttonBorderColor.CGColor;
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
+    _lOne.backgroundColor = LCoreCurrent.detailLightBackColor;
+    _lTwo.backgroundColor = LCoreCurrent.detailLightBackColor;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

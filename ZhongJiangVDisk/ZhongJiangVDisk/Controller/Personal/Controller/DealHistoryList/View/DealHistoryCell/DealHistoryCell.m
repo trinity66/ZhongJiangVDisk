@@ -17,7 +17,7 @@
 }
 - (void)setSomeControl
 {
-    UIColor *color = [Core shareCore].cellTextColor;
+    UIColor *color = LCoreCurrent.cellTextColor;
     _title.textColor = color;
     _time.textColor = color;
     _detail.textColor = color;
@@ -33,10 +33,10 @@
     NSMutableAttributedString *str1 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%ld手 ",(long)num]];
     NSMutableAttributedString *str2;
     if (isRise) {
-        str2 = [[NSMutableAttributedString alloc] initWithString:@"买涨" attributes:@{NSForegroundColorAttributeName:[Core shareCore].riseTextColor}];
+        str2 = [[NSMutableAttributedString alloc] initWithString:@"买涨" attributes:@{NSForegroundColorAttributeName:LCoreCurrent.riseTextColor}];
     }else
     {
-        str2 = [[NSMutableAttributedString alloc] initWithString:@"买跌" attributes:@{NSForegroundColorAttributeName:[Core shareCore].fallTextColor}];
+        str2 = [[NSMutableAttributedString alloc] initWithString:@"买跌" attributes:@{NSForegroundColorAttributeName:LCoreCurrent.fallTextColor}];
     }
     [str1 appendAttributedString:str2];
     _detail.attributedText = str1;

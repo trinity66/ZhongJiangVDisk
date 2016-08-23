@@ -260,7 +260,7 @@
         }
         if (!_circle) {
             _circle = [[UIView alloc] init];
-            _circle.backgroundColor = [Core shareCore].selectedLineColor;
+            _circle.backgroundColor = LCoreCurrent.selectedLineColor;
             _circle.layer.cornerRadius = 2;
             [self addSubview:_circle];
         }

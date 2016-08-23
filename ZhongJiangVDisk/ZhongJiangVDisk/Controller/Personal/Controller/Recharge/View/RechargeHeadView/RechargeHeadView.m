@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _title.textColor = [Core shareCore].cellTextColor;
+    _title.textColor = LCoreCurrent.cellTextColor;
     // Initialization code
 }
 

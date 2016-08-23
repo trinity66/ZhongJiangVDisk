@@ -16,14 +16,14 @@
 }
 - (void)setSomeControl
 {
-    UIColor *color = [Core shareCore].cellTextColor;
+    UIColor *color = LCoreCurrent.cellTextColor;
     _idNumber.textColor = color;
     _balance.textColor = color;
     _kind.textColor = color;
     _product.textColor = color;
     _amount.textColor = color;
     _time.textColor = color;
-    self.backgroundColor = [Core shareCore].backgroundColor;
+    self.backgroundColor = LCoreCurrent.backgroundColor;
     UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-5];
     _idNumber.font = font;
     _balance.font = font;
@@ -40,11 +40,11 @@
 }
 - (void)setAmountWithNumber:(double)number isRise:(BOOL)isRise
 {
-    UIColor *color = [Core shareCore].riseTextColor;
+    UIColor *color = LCoreCurrent.riseTextColor;
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:@"金额："];
     NSString *num = [NSString stringWithFormat:@"+%.02f",number];
     if (!isRise) {
-        color = [Core shareCore].fallTextColor;
+        color = LCoreCurrent.fallTextColor;
         num = [NSString stringWithFormat:@"-%.02f",number];
         _kind.text = @"类型：亏损";
     }else

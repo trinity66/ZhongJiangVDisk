@@ -17,9 +17,9 @@
 }
 - (void)setSomeControl
 {
-    _title.textColor = [Core shareCore].cellTextColor;
+    _title.textColor = LCoreCurrent.cellTextColor;
     _title.font = [UIFont systemFontOfSize:kCellLabelFont];
-    self.backgroundColor = [Core shareCore].backgroundColor;
+    self.backgroundColor = LCoreCurrent.backgroundColor;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

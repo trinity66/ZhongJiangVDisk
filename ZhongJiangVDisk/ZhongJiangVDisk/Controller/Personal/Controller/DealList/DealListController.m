@@ -20,8 +20,8 @@
     [super viewDidLoad];
     
     _topTableViewY.constant = [self getTableViewY];
-    _tableView.backgroundColor = [Core shareCore].backgroundColor;
-    _tableView.separatorColor = [Core shareCore].detailLightBackColor;
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
+    _tableView.separatorColor = LCoreCurrent.detailLightBackColor;
     // Do any additional setup after loading the view.
 }
 
@@ -61,11 +61,11 @@
     }
     BOOL isRise = YES;
     if (indexPath.row % 2 == 0) {
-        cell.backgroundColor = [Core shareCore].backgroundColor;
+        cell.backgroundColor = LCoreCurrent.backgroundColor;
         isRise = NO;
     }else
     {
-        cell.backgroundColor = [Core shareCore].detailBackColor;
+        cell.backgroundColor = LCoreCurrent.detailBackColor;
     }
     [cell setAmountWithNumber:4.8 isRise:isRise];
     return cell;

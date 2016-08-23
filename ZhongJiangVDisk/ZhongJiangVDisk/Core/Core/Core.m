@@ -8,8 +8,9 @@
 
 #import "Core.h"
 #import "MBProgressHUD.h"
+
 @implementation Core
-+(Core *)shareCore
++(Core *)current
 {
     static Core *core = nil;
     static dispatch_once_t onceToken;
@@ -21,15 +22,15 @@
 - (void)setIsLogin:(BOOL)isLogin
 {
     if (isLogin) {
-        [kLConfig set_object_for_key:@"isLogin" value:@"1"];
+        [LConfigCurrent set_object_for_key:@"isLogin" value:@"1"];
     }else
     {
-        [kLConfig set_object_for_key:@"isLogin" value:@"0"];
+        [LConfigCurrent set_object_for_key:@"isLogin" value:@"0"];
     }
 }
 - (BOOL)isLogin
 {
-    NSInteger l = [[kLConfig object_value_with_key:@"isLogin"] integerValue];
+    NSInteger l = [[LConfigCurrent object_value_with_key:@"isLogin"] integerValue];
     if (l) {
         return YES;
     }else
@@ -72,7 +73,7 @@
     hud.bezelView.layer.borderColor = hud.bezelView.color.CGColor;
     hud.label.text = title;
     hud.label.numberOfLines = 0;
-    hud.contentColor = [Core shareCore].selectedLineColor;
+    hud.contentColor = LCoreCurrent.selectedLineColor;
     hud.label.font = [UIFont systemFontOfSize:kCellLabelFont-2];
     hud.mode = MBProgressHUDModeText;
     [hud hideAnimated:YES afterDelay:timeCount];

@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addPersonalTopView];
-    self.view.backgroundColor = [Core shareCore].backgroundColor;
+    self.view.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
 - (CGFloat)getTableViewY
@@ -41,7 +41,7 @@
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kPersonalTopViewHeight)];
         _personalTopView = [[NSBundle mainBundle] loadNibNamed:@"PersonalTopView" owner:nil options:nil].lastObject;
         _personalTopView.frame = view.bounds;
-        view.backgroundColor = [Core shareCore].personalTopColor;
+        view.backgroundColor = LCoreCurrent.personalTopColor;
         [view addSubview:_personalTopView];
         [self.view addSubview:view];
     }

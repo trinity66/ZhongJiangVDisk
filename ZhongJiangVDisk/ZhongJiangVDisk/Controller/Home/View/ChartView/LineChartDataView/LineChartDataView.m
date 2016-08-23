@@ -25,7 +25,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.layer.borderColor = [Core shareCore].selectedLineColor.CGColor;
+    self.layer.borderColor = LCoreCurrent.selectedLineColor.CGColor;
 }
 - (void)setTime:(NSString *)time data:(double)data
 {

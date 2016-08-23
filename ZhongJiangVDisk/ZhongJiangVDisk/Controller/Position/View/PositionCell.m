@@ -22,9 +22,9 @@
 }
 - (void)setSomeControl
 {
-    _title.textColor = [Core shareCore].positionCellTextColor;
-    _button.backgroundColor = [Core shareCore].buttonBackColor;
-    self.backgroundColor = [Core shareCore].detailBackColor;
+    _title.textColor = LCoreCurrent.positionCellTextColor;
+    _button.backgroundColor = LCoreCurrent.buttonBackColor;
+    self.backgroundColor = LCoreCurrent.detailBackColor;
     _title.font = [UIFont systemFontOfSize:kCellLabelFont+2];
     _detail.font = [UIFont systemFontOfSize:kCellLabelFont-4];
 }
@@ -39,12 +39,12 @@
     NSString *imageName;
     NSString *num;
     if (isRise) {
-        color = [Core shareCore].riseTextColor;
+        color = LCoreCurrent.riseTextColor;
         imageName = @"riseRed";
         num = [NSString stringWithFormat:@"+%.02f",number];
     }else
     {
-        color = [Core shareCore].fallTextColor;
+        color = LCoreCurrent.fallTextColor;
         imageName = @"fallGreen";
         num = [NSString stringWithFormat:@"-%.02f",number];
     }

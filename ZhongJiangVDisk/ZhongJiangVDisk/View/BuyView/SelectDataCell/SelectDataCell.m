@@ -21,11 +21,11 @@
 }
 - (void)setSomeControl
 {
-    UIColor *color = [Core shareCore].buttonBackColor;
+    UIColor *color = LCoreCurrent.buttonBackColor;
     _addBtn.backgroundColor = color;
     _subtractBtn.backgroundColor = color;
-    self.backgroundColor = [Core shareCore].backgroundColor;
-    _title.textColor = [Core shareCore].cellTextColor;
+    self.backgroundColor = LCoreCurrent.backgroundColor;
+    _title.textColor = LCoreCurrent.cellTextColor;
     _textField.enabled = NO;
     UIFont *font = [UIFont systemFontOfSize:kCellLabelFont];
     _title.font = font;

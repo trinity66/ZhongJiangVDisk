@@ -5,7 +5,7 @@
 //  Created by renpan on 16/3/17.
 //  Copyright © 2016年 HangZhouShangFu. All rights reserved.
 //
-
+#define LConfigCurrent     [LConfig current]
 #import <Foundation/Foundation.h>
 
 
@@ -17,4 +17,3 @@
 - (id)object_value_with_key:(NSString*)key;
 - (BOOL)remove_item_with_key:(NSString*)key;
 @end
-#define kLConfig     [LConfig current]

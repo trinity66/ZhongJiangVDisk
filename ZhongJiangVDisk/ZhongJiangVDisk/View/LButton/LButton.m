@@ -22,7 +22,7 @@
     [super awakeFromNib];
     self.layer.cornerRadius = 5;
     self.layer.borderWidth = 1.0;
-    self.layer.borderColor = [Core shareCore].buttonBorderColor.CGColor;
-    [self setTitleColor:[Core shareCore].buttonTitleColor forState:UIControlStateNormal];
+    self.layer.borderColor = LCoreCurrent.buttonBorderColor.CGColor;
+    [self setTitleColor:LCoreCurrent.buttonTitleColor forState:UIControlStateNormal];
 }
 @end

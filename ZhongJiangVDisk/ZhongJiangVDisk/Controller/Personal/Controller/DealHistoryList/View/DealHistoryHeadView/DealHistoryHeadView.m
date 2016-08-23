@@ -26,8 +26,8 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.backgroundColor = [Core shareCore].backgroundColor;
-    UIColor *color = [Core shareCore].cellTextColor;
+    self.backgroundColor = LCoreCurrent.backgroundColor;
+    UIColor *color = LCoreCurrent.cellTextColor;
     _titleOne.textColor = color;
     _titleTwo.textColor = color;
     _titleThree.textColor = color;

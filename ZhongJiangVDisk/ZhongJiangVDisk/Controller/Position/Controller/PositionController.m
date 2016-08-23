@@ -18,8 +18,8 @@ __weak PositionController *_positionSelf;
 - (void)viewDidLoad {
     [super viewDidLoad];
     _positionSelf = self;
-    _tableView.backgroundColor = [Core shareCore].backgroundColor;
-    _tableView.separatorColor = [Core shareCore].backgroundColor;
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
+    _tableView.separatorColor = LCoreCurrent.backgroundColor;
     [self addSegmentWithUserEnabled:NO];
     _topTableViewY.constant = [self getTableViewY];
     // Do any additional setup after loading the view.
@@ -57,7 +57,7 @@ __weak PositionController *_positionSelf;
         cell = [[NSBundle mainBundle] loadNibNamed:@"PositionCell" owner:nil options:nil].lastObject;
     }
     cell.btnActionBlock = ^() {
-        [[Core shareCore] showAlertTitle:@"平仓成功" timeCount:2 inView:_positionSelf.view];
+        [LCoreCurrent showAlertTitle:@"平仓成功" timeCount:2 inView:_positionSelf.view];
     };
     [cell setDetailWithNumber:0.00 isRise:YES];
     return cell;

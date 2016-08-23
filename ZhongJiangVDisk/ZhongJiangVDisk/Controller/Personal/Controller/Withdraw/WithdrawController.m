@@ -24,7 +24,7 @@ __weak WithdrawController *_withdrawSelf;
     _withdrawSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"提现金额：", @"提现银行：", @"姓名：", @"银行账号：", @"交易密码："];
-    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
 
@@ -107,7 +107,7 @@ __weak WithdrawController *_withdrawSelf;
                     //确认按钮
                     title = @"提现申请已提交";
                 }
-                [[Core shareCore] showAlertTitle:title timeCount:2 inView:_withdrawSelf.view];
+                [LCoreCurrent showAlertTitle:title timeCount:2 inView:_withdrawSelf.view];
             };
             _tableView.tableFooterView = _foot;
             [_foot setButtonTitle:@"提交"];

@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSArray *ary;
-    if ([Core shareCore].VDiskType == VDiskTypeZhongJiang) {
+    if (LCoreCurrent.VDiskType == VDiskTypeZhongJiang) {
         ary = @[@"收支明细(2016－06-20前)", @"交易历史(2016-06-20前)"];
     }else
     {
@@ -35,8 +35,8 @@
   ];
     [self addPersonalTopView];
     _topTableViewY.constant = [self getTableViewY];
-    _tableView.backgroundColor = [Core shareCore].backgroundColor;
-    _tableView.separatorColor = [Core shareCore].detailLightBackColor;
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
+    _tableView.separatorColor = LCoreCurrent.detailLightBackColor;
     // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning {
@@ -75,7 +75,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [UIView new];
-    view.backgroundColor = [Core shareCore].topSegmentColor;
+    view.backgroundColor = LCoreCurrent.topSegmentColor;
     return view;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,11 +83,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
-        cell.backgroundColor = [Core shareCore].detailBackColor;
-        cell.textLabel.textColor = [Core shareCore].cellTextColor;
+        cell.backgroundColor = LCoreCurrent.detailBackColor;
+        cell.textLabel.textColor = LCoreCurrent.cellTextColor;
         cell.textLabel.font = [UIFont systemFontOfSize:kCellLabelFont];
         UIView *view = [UIView new];
-        view.backgroundColor = [Core shareCore].selectedLineColor;
+        view.backgroundColor = LCoreCurrent.selectedLineColor;
         cell.selectedBackgroundView = view;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
@@ -105,7 +105,7 @@
         case 1:
             switch (indexPath.row) {
                 case 0:
-                    [[Core shareCore] goRechargeVC];
+                    [LCoreCurrent goRechargeVC];
                     return;
                     break;
                 case 1:
@@ -139,11 +139,11 @@
         case 3:
             switch (indexPath.row) {
                 case 0:
-                    [[Core shareCore] showAlertTitle:@"无收支明细" timeCount:2 inView:self.view];
+                    [LCoreCurrent showAlertTitle:@"无收支明细" timeCount:2 inView:self.view];
                     return;
                     break;
                 case 1:
-                    [[Core shareCore] showAlertTitle:@"无收历史记录" timeCount:2 inView:self.view];
+                    [LCoreCurrent showAlertTitle:@"无收历史记录" timeCount:2 inView:self.view];
                     return;
                     break;
                 case 2:

@@ -14,7 +14,7 @@
     self = [super init];
     if (self) {
         self.width = [BBTheme theme].defLineWidth;
-        self.color = [Core shareCore].chartLineColor;
+        self.color = LCoreCurrent.chartLineColor;
     }
     return self;
 }

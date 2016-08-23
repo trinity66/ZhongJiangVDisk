@@ -25,9 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [[Core shareCore] backgroundColor];
+    self.view.backgroundColor = [LCoreCurrent backgroundColor];
     _topCollectionViewY.constant = [self getTableViewY] -1;
-    _collectionView.backgroundColor = [Core shareCore].backgroundColor;
+    _collectionView.backgroundColor = LCoreCurrent.backgroundColor;
     [self.personalTopView setRechargeEnabled:NO];
     _titles = @[
   @[@"50", @"500", @"1000", @"5000", @"", @"10000"],
@@ -44,7 +44,7 @@
     [_buttonView setBtnTitle:@"立即充值"];
     __block RechargeController* _self =self;
     _buttonView.btnActionBlock = ^(){
-        [[Core shareCore] showAlertTitle:@"充值成功" timeCount:2 inView:_self.view];
+        [LCoreCurrent showAlertTitle:@"充值成功" timeCount:2 inView:_self.view];
     };
     [_btnSuperView addSubview:_buttonView];
     // Do any additional setup after loading the view.
@@ -155,7 +155,7 @@
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if (kind == UICollectionElementKindSectionHeader) {
         RechargeHeadView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"RechargeHeadView" forIndexPath:indexPath];
-        headView.backgroundColor = [Core shareCore].backgroundColor;
+        headView.backgroundColor = LCoreCurrent.backgroundColor;
         if (indexPath.section == 0) {
             headView.title.text = @"充值金额(最小充值50元)";
         }else

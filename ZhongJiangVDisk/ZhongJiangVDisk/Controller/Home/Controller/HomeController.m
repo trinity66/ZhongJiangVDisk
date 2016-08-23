@@ -25,7 +25,7 @@ __weak HomeController *_self;
 - (void)viewDidLoad {
     [super viewDidLoad];
     _self = self;
-    if ([Core shareCore].isLogin) {
+    if (LCoreCurrent.isLogin) {
         _put = [[NSBundle mainBundle] loadNibNamed:@"InputDealPswdView" owner:nil options:nil].lastObject;
         _put.btnsActionBlock = ^(NSInteger index) {
             if (index == 0) {
@@ -44,7 +44,7 @@ __weak HomeController *_self;
 - (void)goForgetDealPswd
 {
     //忘记交易密码
-    [[Core shareCore] goForgetDealPswdVC];
+    [LCoreCurrent goForgetDealPswdVC];
     [_put removeInputDealPswdView];
 }
 - (void)putBtnAction
@@ -68,7 +68,7 @@ __weak HomeController *_self;
         _scrollView = [[UIScrollView alloc] initWithFrame: rect];
         _scrollView.scrollEnabled = YES;
         _scrollView.delegate = self;
-        _scrollView.backgroundColor = [Core shareCore].backgroundColor;
+        _scrollView.backgroundColor = LCoreCurrent.backgroundColor;
         [self.view addSubview:_scrollView];
     }
     if (!_chartSuperView) {
@@ -76,7 +76,7 @@ __weak HomeController *_self;
         _chartSuperView.frame = CGRectMake(0, 0, kScreenWidth, 330);
         [_scrollView addSubview:_chartSuperView];
     }
-    if ([Core shareCore].VDiskType == VDiskTypeZhongJiang) {
+    if (LCoreCurrent.VDiskType == VDiskTypeZhongJiang) {
         if (!_collectionSuperView) {
             _collectionSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductCollectionView" owner:nil options:nil].lastObject;
             _collectionSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, kScreenWidth, 160);
@@ -84,7 +84,7 @@ __weak HomeController *_self;
             _scrollView.contentSize = CGSizeMake(kScreenWidth, _chartSuperView.frame.size.height + _collectionSuperView.frame.size.height);
         }
     }
-    if ([Core shareCore].VDiskType == VDiskTypeZhongHui) {
+    if (LCoreCurrent.VDiskType == VDiskTypeZhongHui) {
         if (!_productTableSuperView) {
             _productTableSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductTableView" owner:nil options:nil].lastObject;
             _productTableSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, kScreenWidth, 160);

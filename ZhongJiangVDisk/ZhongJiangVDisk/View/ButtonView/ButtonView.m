@@ -26,8 +26,8 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    self.backgroundColor = [Core shareCore].backgroundColor;
-    _button.backgroundColor = [Core shareCore].buttonBackColor;
+    self.backgroundColor = LCoreCurrent.backgroundColor;
+    _button.backgroundColor = LCoreCurrent.buttonBackColor;
 }
 - (void)setBtnTitle:(NSString *)btnTitle
 {

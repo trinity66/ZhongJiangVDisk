@@ -24,7 +24,7 @@ __weak ForgetDealPswdController *_forgetDealSelf;
     _forgetDealSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"手机号："];
-    _tableView.backgroundColor = [Core shareCore].backgroundColor;
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning {
@@ -88,7 +88,7 @@ __weak ForgetDealPswdController *_forgetDealSelf;
                     //确认按钮
                     title = @"交易密码已重置";
                 }
-                [[Core shareCore] showAlertTitle:title timeCount:2 inView:_forgetDealSelf.view];
+                [LCoreCurrent showAlertTitle:title timeCount:2 inView:_forgetDealSelf.view];
             };
             _tableView.tableFooterView = _foot;
             [_foot setButtonTitle:@"重置密码"];

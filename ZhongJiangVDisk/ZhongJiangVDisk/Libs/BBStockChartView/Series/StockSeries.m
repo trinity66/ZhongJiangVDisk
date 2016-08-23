@@ -40,13 +40,13 @@
     StockSeriesPoint* point = (StockSeriesPoint*)(self.data[idx]);
     UIColor* color = nil;
     if (idx == 0) {
-        color = [Core shareCore].riseColor;
+        color = LCoreCurrent.riseColor;
     }else{
         StockSeriesPoint* prePoint = (StockSeriesPoint*)(self.data[idx-1]);
         if (prePoint.open >= point.open) {
-            color = [Core shareCore].riseColor;
+            color = LCoreCurrent.riseColor;
         }else{
-            color = [Core shareCore].fallColor;
+            color = LCoreCurrent.fallColor;
         }
     }
     CGFloat height = self.bounds.size.height;
