@@ -36,27 +36,30 @@ __weak HomeController *_self;
             }
         };
     }
-
+    // Do any additional setup after loading the view.
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [self addSegmentWithUserEnabled:YES];
     [self set_scrollView];
-    // Do any additional setup after loading the view.
 }
 - (void)goForgetDealPswd
 {
     //忘记交易密码
     [LCoreCurrent goForgetDealPswdVC];
-    [_put removeInputDealPswdView];
+    [_put removeInputDealPswdViewAnimated:NO];
 }
 - (void)putBtnAction
 {
-    [_put removeInputDealPswdView];
+    [_put removeInputDealPswdViewAnimated:NO];
     _put = nil;
 }
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     if (_put) {
-        [_put showInputDealPswdView];
+        [_put showInputDealPswdViewAnimated:NO];
     }
 }
 #pragma mark 设置scrollView
@@ -92,9 +95,6 @@ __weak HomeController *_self;
             _scrollView.contentSize = CGSizeMake(kScreenWidth, _chartSuperView.frame.size.height + _productTableSuperView.frame.size.height);
         }
     }
-    
-    
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

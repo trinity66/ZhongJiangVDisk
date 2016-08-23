@@ -276,9 +276,9 @@
                     showHeight = 60;
                     showAnimationed = NO;
                     _stockDataView = [[NSBundle mainBundle] loadNibNamed:@"StockChartDataView" owner:nil options:nil].lastObject;
-                    [_stockDataView setTime:@"未知" open:p.open close:p.close high:p.high low:p.low];
                     [self addSubview:_stockDataView];
                 }
+                [_stockDataView setTime:@"未知" open:p.open close:p.close high:p.high low:p.low];
                 x += itemWidth/2.0;
             }else
             {
@@ -289,10 +289,10 @@
                     showWidth = 76;
                     showHeight = 40;
                     showAnimationed = NO;
-                    [_lineDataView setTime:@"未知" data:f];
                     
                     [self addSubview:_lineDataView];
                 }
+                [_lineDataView setTime:@"未知" data:f];
             }
             CGFloat height = self.series.bounds.size.height;
             float y = height - [self.series.axisAttached heighForVal:f];
@@ -300,7 +300,7 @@
             if (showX < axisYwidth) {
                 showX = x+axisYwidth;
             }
-            if (showX > self.bounds.size.width-axisYwidth-showWidth/2.0) {
+            if (showX > self.bounds.size.width-axisYwidth-20-showWidth/2.0) {
                 showX = showX-showWidth/2.0;
             }
             if (y > showHeight) {

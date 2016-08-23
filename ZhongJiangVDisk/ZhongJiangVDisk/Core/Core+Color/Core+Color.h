@@ -9,6 +9,7 @@
 #import "Core.h"
 
 @interface Core (Color)
-- (void)initColorsWithModelkey:(NSString *)key;
 
+- (void)initColors;
+- (NSDictionary *)colorsDictionary;
 @end

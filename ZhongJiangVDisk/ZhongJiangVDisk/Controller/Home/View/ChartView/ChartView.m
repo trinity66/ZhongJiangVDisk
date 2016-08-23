@@ -54,14 +54,12 @@
     areaup.bottomAxis.labelProvider = self;
     NSInteger index = _segmentC.selectedSegmentIndex;
     if (index == 0) {
-        LineSeries* line2 = [[LineSeries alloc] init];
-        line2.color = [UIColor brownColor];
-        [areaup addSeries:line2];
-        
+        LineSeries* line = [[LineSeries alloc] init];
+        line.color = [UIColor brownColor];
+        [areaup addSeries:line];
         for (NSArray* arr in _chartData) {
-            [line2 addPoint:(Float(arr[4]) + Float(arr[3]))/2];
+            [line addPoint:(Float(arr[4]) + Float(arr[3]))/2];
         }
-        NSLog(@"%@",line2.data);
     }else {// if (index == 1)
         StockSeries* stock = [[StockSeries alloc] init];
         [areaup addSeries:stock];

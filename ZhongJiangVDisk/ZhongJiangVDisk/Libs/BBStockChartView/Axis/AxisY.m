@@ -80,15 +80,14 @@
 -(void)drawAnimated:(BOOL)animated{
     CGFloat width = self.bounds.size.width;
     CGFloat height = self.bounds.size.height;
-    CALayer* line = [BaseLayer layerOfLineFrom:CGPointZero to:CGPointMake(0, self.designHight+1) withColor:LCoreCurrent.chartLineColor andWidth:1.5 animated:NO];
-    line.position = CGPointMake(self.bounds.size.width-2, 0);
+    CALayer* line = [BaseLayer layerOfLineFrom:CGPointMake(0, 0) to:CGPointMake(0, self.designHight+1) withColor:LCoreCurrent.chartLineColor andWidth:1 animated:NO];
+    line.position = CGPointMake(self.bounds.size.width, 0);
     [self addSublayer:line];
     NSUInteger cnt = [BBTheme theme].defYLabelGap;
     CGFloat labelHei = [self sizeOfText:@"abc" andSize:[BBTheme theme].yAxisFontSize].height;
-
     for (int i = 0; i < cnt; ++i) {
         CGFloat curHei = self.bounds.size.height/(float)cnt*(float)i;
-        CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(self.bounds.size.width-1.5-5, curHei) to:CGPointMake(self.bounds.size.width-2, curHei) withColor:LCoreCurrent.chartLineColor andWidth:0.5 animated:animated];
+        CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(self.bounds.size.width+2-1-5, curHei) to:CGPointMake(self.bounds.size.width, curHei) withColor:LCoreCurrent.chartLineColor andWidth:0.5 animated:animated];
         CGFloat val = [self valForHeigth:height-curHei];
         NSString* lab = [NSString stringWithFormat:@"%.3f", val];
         if (val > 1000) {
@@ -96,8 +95,6 @@
         }
         CATextLayer* t = [BaseLayer layerOfText:lab withFont:@"Helvetica" fontSize:[BBTheme theme].yAxisFontSize andColor:LCoreCurrent.chartYTextColor];
         t.alignmentMode = kCAAlignmentRight;
-
-//        NSLog(@"mark val:%.1f H:%f", [self valForHeigth:curHei], curHei);
         if (i == 0) {
             t.anchorPoint = CGPointZero;
         }else{

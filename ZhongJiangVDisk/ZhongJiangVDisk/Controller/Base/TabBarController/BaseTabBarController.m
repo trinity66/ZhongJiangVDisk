@@ -35,7 +35,8 @@ __weak BaseTabBarController *baseTabSelf;
 {
     [super viewWillAppear:animated];
     if (!LCoreCurrent.isLogin) {
-        [self intoQRCodeVC];
+//        [self intoQRCodeVC];
+        LCoreCurrent.isLogin = YES;
     }
 }
 #pragma  mark - 二维码扫描

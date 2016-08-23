@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    LCoreCurrent.VDiskType = VDiskTypeZhongHui;////VDiskTypeZhongJiang
+    LCoreCurrent.VDiskType = VDiskTypeZhongJiang;//VDiskTypeZhongHui//
     return YES;
 }
 

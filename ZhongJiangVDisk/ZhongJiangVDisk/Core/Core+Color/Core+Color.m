@@ -78,16 +78,14 @@
              @"textFieldSelectBackColor":[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0],
              };
 }
-- (void)initColorsWithModelkey:(NSString *)key
+- (void)initColors
 {
-    
-    NSDictionary *dict = [self colorsDictionary][key];
+    NSDictionary *dict = [self colorsDictionary][self.VDiskTypeString];
     self.riseColor = [self colorWithArray:dict[@"riseColor"]];
     self.fallColor = [self colorWithArray:dict[@"fallColor"]];
     self.backgroundColor = [self colorWithArray:dict[@"backgroundColor"]];
     self.detailBackColor = [self colorWithArray:dict[@"detailBackColor"]];
     self.detailLightBackColor = [self colorWithArray:dict[@"detailLightBackColor"]];
-    
     self.riseTextColor = [self colorWithArray:dict[@"riseTextColor"]];
     self.fallTextColor = [self colorWithArray:dict[@"fallTextColor"]];
     self.labelTextColor = [self colorWithArray:dict[@"labelTextColor"]];

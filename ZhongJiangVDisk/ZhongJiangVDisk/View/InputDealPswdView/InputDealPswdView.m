@@ -21,30 +21,38 @@
 
 @end
 @implementation InputDealPswdView
-- (void)showInputDealPswdView
+- (void)showInputDealPswdViewAnimated:(BOOL)animated
 {
     self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:self];
-    _mainView.alpha = 0.0;
-    _mainView.transform = CGAffineTransformMakeScale(0.1, 0.1);
-    [UIView animateWithDuration:0.3 animations:^{
-        _mainView.alpha = 1.0;
-        _mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
-    }];
-    [_textField becomeFirstResponder];
-}
-- (void)removeInputDealPswdView
-{
-    [self resignTextFieldFirstResponder];
-    _mainView.alpha = 1.0;
-    _mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
-    [UIView animateWithDuration:0.3 animations:^{
+    if (animated) {
         _mainView.alpha = 0.0;
         _mainView.transform = CGAffineTransformMakeScale(0.1, 0.1);
-    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3 animations:^{
+            _mainView.alpha = 1.0;
+            _mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        }];
+    }
+    [_textField becomeFirstResponder];
+}
+- (void)removeInputDealPswdViewAnimated:(BOOL)animated
+{
+    [self resignTextFieldFirstResponder];
+    if (animated) {
+        _mainView.alpha = 1.0;
+        _mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        [UIView animateWithDuration:0.3 animations:^{
+            _mainView.alpha = 0.0;
+            _mainView.transform = CGAffineTransformMakeScale(0.1, 0.1);
+        } completion:^(BOOL finished) {
+            [self removeFromSuperview];
+        }];
+    }else
+    {
         [self removeFromSuperview];
-    }];
+    }
+    
     
 }
 - (IBAction)forgetPswdBtnAction:(id)sender {

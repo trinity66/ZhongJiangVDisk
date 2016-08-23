@@ -15,8 +15,8 @@
 - (void)drawAnimated:(BOOL)animated{
     CGFloat height = self.bounds.size.height;
     CGFloat width = self.bounds.size.width;
-    CALayer* line = [BaseLayer layerOfLineFrom:CGPointZero to:CGPointMake(width+2, 0) withColor:LCoreCurrent.chartLineColor andWidth:1 animated:NO];
-    line.position = CGPointMake(-2, 1);
+    CALayer* line = [BaseLayer layerOfLineFrom:CGPointMake(0, 0) to:CGPointMake(width, 0) withColor:LCoreCurrent.chartLineColor andWidth:1 animated:NO];
+    line.position = CGPointMake(0, 1);
     line.anchorPoint = CGPointZero;
     [self addSublayer:line];
 //

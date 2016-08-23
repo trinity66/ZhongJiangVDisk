@@ -96,10 +96,11 @@
 {
     _VDiskType = VDiskType;
     if (_VDiskType == VDiskTypeZhongJiang) {
-        [self initColorsWithModelkey:@"VDiskTypeZhongJiang"];
+        self.VDiskTypeString = @"VDiskTypeZhongJiang";
     }
     if (_VDiskType == VDiskTypeZhongHui) {
-        [self initColorsWithModelkey:@"VDiskTypeZhongHui"];
+        self.VDiskTypeString = @"VDiskTypeZhongHui";
     }
+    [self initColors];
 }
 @end

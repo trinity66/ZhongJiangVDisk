@@ -10,6 +10,6 @@
 
 @interface InputDealPswdView : UIView
 @property (nonatomic, copy)btnsActionBlock btnsActionBlock;
-- (void)showInputDealPswdView;
-- (void)removeInputDealPswdView;
+- (void)showInputDealPswdViewAnimated:(BOOL)animated;
+- (void)removeInputDealPswdViewAnimated:(BOOL)animated;
 @end
