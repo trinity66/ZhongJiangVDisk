@@ -20,34 +20,42 @@
 @property (nonatomic, strong) LTextField *inputTF;
 
 @end
-
+__weak RechargeController *rechargeSelf;
 @implementation RechargeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setSomeControl];
+    [self setSomethingForCollectionView];
+    [self addButtonView];
+    // Do any additional setup after loading the view.
+}
+- (void)addButtonView
+{
+    _buttonView = [[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil].lastObject;
+    _buttonView.frame = _btnSuperView.bounds;
+    [_buttonView setBtnTitle:@"立即充值"];
+    _buttonView.btnActionBlock = ^(){
+        [rechargeSelf clickButtonAction];
+    };
+    [_btnSuperView addSubview:_buttonView];
+}
+- (void)setSomeControl
+{
+    rechargeSelf = self;
     self.view.backgroundColor = [LCoreCurrent backgroundColor];
     _topCollectionViewY.constant = [self getTableViewY] -1;
     _collectionView.backgroundColor = LCoreCurrent.backgroundColor;
     [self.personalTopView setRechargeEnabled:NO];
     _titles = @[
-  @[@"50", @"500", @"1000", @"5000", @"", @"10000"],
-  @[@"银联充值", @"微信充值"]
-  ];
+                @[@"50", @"500", @"1000", @"5000", @"", @"10000"],
+                @[@"银联充值", @"微信充值"]
+                ];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(clickCancelButton)];
     
     //设置默认选中方式
     _selectWayIndex = 0;
     _selectMoneyIndex = 4;
-    [self setSomethingForCollectionView];
-    _buttonView = [[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil].lastObject;
-    _buttonView.frame = _btnSuperView.bounds;
-    [_buttonView setBtnTitle:@"立即充值"];
-    __block RechargeController* _self =self;
-    _buttonView.btnActionBlock = ^(){
-        [LCoreCurrent showAlertTitle:@"充值成功" timeCount:2 inView:_self.view];
-    };
-    [_btnSuperView addSubview:_buttonView];
-    // Do any additional setup after loading the view.
 }
 - (void)clickCancelButton
 {
@@ -56,7 +64,6 @@
 - (void)setSomethingForCollectionView
 {
     _flowLayout.headerReferenceSize = CGSizeMake(kScreenWidth, 44);
-//    _flowLayout.footerReferenceSize = CGSizeMake(kScreenWidth, 40);
     //注册cell
     [_collectionView registerNib:[UINib nibWithNibName:@"RechargeCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"RechargeCell"];
     //注册表头
@@ -181,6 +188,28 @@
 {
     [_inputTF resignFirstResponder];
 }
+/*
+ 点击确认之后的处理
+ */
+- (void)clickButtonAction
+{
+    if (_inputTF.text.length == 0) {
+        [self showAlert:@"请输入充值金额"];
+        return;
+    }else
+    if (![LCoreCurrent isValidNumber:_inputTF.text decimalCount:2]) {
+        [self showAlert:@"充值金额格式错误"];
+        return;
+    }
+    //注册操作，登录成功
+    double money = [_inputTF.text doubleValue];
+    double oldMoney = [LCoreCurrent.userInfo[@"balance"] doubleValue];
+    money += oldMoney;
+    [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(money)];
+    [self showAlert:@"充值成功"];
+    [self setBalance];
+}
+
 /*
 #pragma mark - Navigation
 

@@ -12,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPswdBtn;
 @property (weak, nonatomic) IBOutlet LButton *button;
-@property (weak, nonatomic) IBOutlet LTextField *textField;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIView *lOne;
 @property (weak, nonatomic) IBOutlet UIView *lTwo;

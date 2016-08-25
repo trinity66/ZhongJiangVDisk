@@ -94,20 +94,18 @@ __weak WithdrawController *_withdrawSelf;
             _codeTF.delegate = self;
             _foot.btnsActionBlock = ^(NSInteger index) {
                 [_withdrawSelf textFieldResignFirstResponder];
-                NSString *title;
                 if (index == 0) {
                     //验证码
-                    title = @"验证码发送成功";
+                    [_withdrawSelf sendCodeActionWithIndex:0];
                     
                 }else if (index == 1) {
                     //拨打电话
-                    title = @"已成功通过拨打电话方式告知验证码";
+                    [_withdrawSelf sendCodeActionWithIndex:1];
                     
                 }else if (index == 2) {
                     //确认按钮
-                    title = @"提现申请已提交";
+                    [_withdrawSelf clickButtonAction];
                 }
-                [LCoreCurrent showAlertTitle:title timeCount:2 inView:_withdrawSelf.view];
             };
             _tableView.tableFooterView = _foot;
             [_foot setButtonTitle:@"提交"];
@@ -135,6 +133,74 @@ __weak WithdrawController *_withdrawSelf;
     NSArray *ary = @[_moneyTF, _bankTF, _nameTF, _bankNumberTF,_dealPswdTF, _codeTF];
     for (LTextField *tf in ary) {
         [tf resignFirstResponder];
+    }
+    
+}
+/*
+ 点击确认之后的处理
+ */
+- (void)clickButtonAction
+{
+    NSArray *tfs = @[_moneyTF, _bankTF, _nameTF, _bankNumberTF,_dealPswdTF, _codeTF];
+    NSArray *names = @[@"提现金额", @"提现银行", @"姓名", @"银行账号", @"交易密码"];
+    for (int i = 0; i < tfs.count; i ++) {
+        LTextField *tf = tfs[i];
+        if (tf.text.length == 0) {
+            [self showAlert:[NSString stringWithFormat:@"请输入%@",names[i]]];
+            return;
+        }
+    }
+    //提现金额
+    if (![LCoreCurrent isValidNumber:_moneyTF.text decimalCount:2]) {
+        [self showAlert:@"提现金额格式错误"];
+        return;
+    }
+    double balance = [LCoreCurrent.userInfo[@"balance"] doubleValue];
+    double money = [_moneyTF.text doubleValue];
+    if (balance < money) {
+        [self showAlert:@"余额不足"];
+        return;
+    }
+    //真实姓名
+    if (![LCoreCurrent isValidChineseCharacter:_nameTF.text]) {
+        [self showAlert:@"真实姓名输入错误，只可输入汉字"];
+        return;
+    }
+    //银行帐号
+    if (![LCoreCurrent isValidNumber:_bankNumberTF.text]) {
+        [self showAlert:@"银行账号格式错误，请检查"];
+        return;
+    }
+    NSString *deal = LCoreCurrent.userInfo[@"dealPassword"];
+    if (![deal isEqualToString:_dealPswdTF.text]) {
+        [self showAlert:@"交易密码输入错误"];
+        return;
+    }
+    //验证码
+    if (![LCoreCurrent isValidNumber:_codeTF.text]) {
+        [self showAlert:@"验证码输入不正确，请检查"];
+        return;
+    }
+    balance -= money;
+    [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(balance)];
+    [self setBalance];
+    [self showAlert:@"提现成功"];
+    
+    
+}
+/*
+ 发送验证码
+ */
+- (void)sendCodeActionWithIndex:(NSInteger)index
+{
+//    NSString *phone = LCoreCurrent.userInfo[@"phone"];
+    if (index == 0) {
+        //短信验证码
+        [self showAlert:@"验证码发送成功"];
+    }else
+    {
+        //电话验证码
+        [self showAlert:@"验证码已通过电话告知给您"];
     }
     
 }

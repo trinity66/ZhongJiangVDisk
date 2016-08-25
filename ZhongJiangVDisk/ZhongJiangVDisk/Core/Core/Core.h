@@ -32,4 +32,5 @@ typedef void(^btnsActionBlock)(NSInteger index);
 //初始化视图类型
 @property (nonatomic, assign)VDiskType VDiskType;
 @property (nonatomic, copy)NSString *VDiskTypeString;
+@property (nonatomic, strong) NSDictionary *userInfo;
 @end

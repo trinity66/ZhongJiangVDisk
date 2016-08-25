@@ -94,11 +94,9 @@ __weak RegisterController *registerSelf;
             _codeTF.delegate = self;
             _foot.btnsActionBlock = ^(NSInteger index) {
                 [registerSelf textFieldResignFirstResponder];
-                NSString *title;
                 if (index == 0) {
                     //验证码
-                    title = @"验证码发送成功(111111)";
-                    [LCoreCurrent showAlertTitle:title timeCount:2 inView:registerSelf.view];
+                    [registerSelf sendCodeAction];
                 }else if (index == 1) {
                     //是否同意开户协议
                     weakFoot.isAgreeBtn.selected = !weakFoot.isAgreeBtn.selected;
@@ -186,10 +184,32 @@ __weak RegisterController *registerSelf;
         [self showAlert:@"注册账户必须同意开户协议"];
         return;
     }
-    //注册操作，登录成功
+    //注册操作，登录成功@[@"交易密码", @"真实姓名", @"身份证号码", @"手机号码", @"验证码"]
     LCoreCurrent.isLogin = YES;
+    NSDictionary *userInfo = @{@"createTime":[NSString stringWithFormat:@"%@",[NSDate date]],
+                               @"phone":_phoneTF.text,
+                               @"dealPassword":_dealPswdTF.text,
+                               @"realName":_nameTF.text,
+                               @"balance":@(0),
+                               };
+    [LCoreCurrent saveUserInfo:userInfo];
     [self selfRemoveFromSuper];
     
+}
+/*
+  发送验证码
+ */
+- (void)sendCodeAction
+{
+    if (_phoneTF.text.length == 0) {
+        [self showAlert:@"请输入手机号码"];
+        return;
+    }else
+        if (![LCoreCurrent isValidPhoneNumber:_phoneTF.text]) {
+            [self showAlert:@"手机号码输入不正确，请检查"];
+            return;
+        }
+    [self showAlert:@"验证码发送成功"];
 }
 - (void)showAlert:(NSString *)string
 {

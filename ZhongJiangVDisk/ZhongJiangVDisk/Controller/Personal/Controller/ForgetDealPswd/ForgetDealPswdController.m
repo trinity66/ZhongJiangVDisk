@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) SecurityCodeView *foot;
-@property (nonatomic, strong) LTextField *phoneTF, *codeTF;
+@property (nonatomic, strong) LTextField *phoneTF, *dealPswdTF, *codeTF;
 @end
 __weak ForgetDealPswdController *_forgetDealSelf;
 @implementation ForgetDealPswdController
@@ -23,7 +23,7 @@ __weak ForgetDealPswdController *_forgetDealSelf;
     
     _forgetDealSelf = self;
     _topTableViewY.constant = [self getTableViewY];
-    _titles = @[@"手机号："];
+    _titles = @[@"手机号码：", @"新密码："];
     _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
@@ -60,8 +60,18 @@ __weak ForgetDealPswdController *_forgetDealSelf;
     TextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
+        cell.textField.delegate = self;
     }
-    cell.textField.delegate = self;
+    if (indexPath.row == 0) {
+        _phoneTF = cell.textField;
+        NSString *phone = LCoreCurrent.userInfo[@"phone"];
+        _phoneTF.text = [NSString stringWithFormat:@"%@****%@",[phone substringToIndex:3],[phone substringFromIndex:7]];
+        _phoneTF.enabled = NO;
+    }else
+    {
+        _dealPswdTF = cell.textField;
+        
+    }
     _phoneTF = cell.textField;
     cell.title.text = _titles[indexPath.row];
     return cell;
@@ -75,20 +85,18 @@ __weak ForgetDealPswdController *_forgetDealSelf;
             _codeTF.delegate = self;
             _foot.btnsActionBlock = ^(NSInteger index) {
                 [_forgetDealSelf textFieldResignFirstResponder];
-                NSString *title;
                 if (index == 0) {
                     //验证码
-                    title = @"验证码发送成功";
+                    [_forgetDealSelf sendCodeActionWithIndex:0];
                     
                 }else if (index == 1) {
                     //拨打电话
-                    title = @"已成功通过拨打电话方式告知验证码";
+                    [_forgetDealSelf sendCodeActionWithIndex:1];
                     
                 }else if (index == 2) {
                     //确认按钮
-                    title = @"交易密码已重置";
+                    [_forgetDealSelf clickButtonAction];
                 }
-                [LCoreCurrent showAlertTitle:title timeCount:2 inView:_forgetDealSelf.view];
             };
             _tableView.tableFooterView = _foot;
             [_foot setButtonTitle:@"重置密码"];
@@ -116,6 +124,44 @@ __weak ForgetDealPswdController *_forgetDealSelf;
     NSArray *ary = @[_phoneTF, _codeTF];
     for (LTextField *tf in ary) {
         [tf resignFirstResponder];
+    }
+    
+}
+/*
+ 点击确认之后的处理
+ */
+- (void)clickButtonAction
+{
+    NSArray *tfs = @[ _dealPswdTF, _codeTF];
+    NSArray *names = @[@"新交易密码", @"验证码"];
+    for (int i = 0; i < tfs.count; i ++) {
+        LTextField *tf = tfs[i];
+        if (tf.text.length == 0) {
+            [self showAlert:[NSString stringWithFormat:@"请输入%@",names[i]]];
+            return;
+        }
+    }
+    //验证码
+    if (![LCoreCurrent isValidNumber:_codeTF.text]) {
+        [self showAlert:@"验证码输入不正确，请检查"];
+        return;
+    }
+    //注册操作，登录成功
+    [LCoreCurrent saveUserInfoWithKey:@"dealPassword" value:_dealPswdTF.text];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+/*
+ 发送验证码
+ */
+- (void)sendCodeActionWithIndex:(NSInteger)index
+{
+    if (index == 0) {
+        //短信验证码
+        [self showAlert:@"验证码发送成功"];
+    }else
+    {
+        //电话验证码
+        [self showAlert:@"验证码已通过电话告知给您"];
     }
     
 }

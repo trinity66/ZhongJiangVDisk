@@ -9,10 +9,7 @@
 #import "Core.h"
 
 @interface Core (Data)
-- (BOOL)isValidChineseCharacter:(NSString *)string;
-- (BOOL)isValidNumber:(NSString *)string;
-- (BOOL)isValidNumber:(NSString *)string decimalCount:(int)decimalCount;
-- (BOOL)isValidIdCard:(NSString *)string;
-- (BOOL)isValidPhoneNumber:(NSString *)string;
-- (NSString *)deleteSpaceAndNewline:(NSString *)string;
+- (void)saveUserInfo:(NSDictionary *)userInfo;
+- (NSDictionary *)getUserInfo;
+- (void)saveUserInfoWithKey:(NSString *)key value:(id)value;
 @end

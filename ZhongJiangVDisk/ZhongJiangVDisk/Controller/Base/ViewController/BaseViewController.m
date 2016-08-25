@@ -13,16 +13,23 @@
 @end
 
 @implementation BaseViewController
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-//
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addPersonalTopView];
     self.view.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setBalance];
+}
+- (void)setBalance
+{
+    if (LCoreCurrent.isLogin) {
+        _personalTopView.balance.text = [NSString stringWithFormat:@"个人资产:%.02f",[LCoreCurrent.userInfo[@"balance"] doubleValue]];
+    }
 }
 - (CGFloat)getTableViewY
 {
@@ -65,6 +72,10 @@
     }
     
     
+}
+- (void)showAlert:(NSString *)string
+{
+    [LCoreCurrent showAlertTitle:string timeCount:2 inView:self.view];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

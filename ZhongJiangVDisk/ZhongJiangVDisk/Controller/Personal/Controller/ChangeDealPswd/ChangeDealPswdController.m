@@ -85,10 +85,9 @@ __weak ChangeDealPswdController *changeDealSelf;
             _foot = [[NSBundle mainBundle] loadNibNamed:@"ButtonView" owner:nil options:nil].lastObject;
             [_foot setBtnTitle:@"确定"];
             _tableView.tableFooterView = _foot;
-            __block ChangeDealPswdController* _self =self;
             _foot.btnActionBlock = ^(){
                 [changeDealSelf textFieldResignFirstResponder];
-                [LCoreCurrent showAlertTitle:@"交易密码修改成功" timeCount:2 inView:_self.view];
+                [changeDealSelf clickButtonAction];
             };
         }
     }
@@ -115,6 +114,33 @@ __weak ChangeDealPswdController *changeDealSelf;
     for (LTextField *tf in ary) {
         [tf resignFirstResponder];
     }
+    
+}
+/*
+ 点击确认之后的处理
+ */
+- (void)clickButtonAction
+{
+    NSArray *tfs = @[_pswdTFOld, _pswdTFNew, _pswdTFNewAgain];
+    NSArray *names = @[@"原交易密码", @"新交易密码", @"确认的交易密码"];
+    for (int i = 0; i < tfs.count; i ++) {
+        LTextField *tf = tfs[i];
+        if (tf.text.length == 0) {
+            [self showAlert:[NSString stringWithFormat:@"请输入%@",names[i]]];
+            return;
+        }
+    }
+    NSString *oldDeal = LCoreCurrent.userInfo[@"dealPassword"];
+    if (![oldDeal isEqualToString:_pswdTFOld.text]) {
+        [self showAlert:@"原交易密码输入错误"];
+        return;
+    }
+    if (![_pswdTFNew.text isEqualToString:_pswdTFNewAgain.text]) {
+        [self showAlert:@"两次新密码输入不同"];
+        return;
+    }
+    [LCoreCurrent saveUserInfoWithKey:@"dealPassword" value:_pswdTFNew.text];
+    [self showAlert:@"交易密码修改成功"];
     
 }
 /*

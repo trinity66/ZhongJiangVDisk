@@ -17,4 +17,6 @@
 - (void)addSegmentWithUserEnabled:(BOOL)userEnabled;
 - (CGFloat)getTableViewY;
 - (void)addPersonalTopView;
+- (void)showAlert:(NSString *)string;
+- (void)setBalance;
 @end

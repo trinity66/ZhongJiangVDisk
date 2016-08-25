@@ -30,6 +30,7 @@
 #import "Core+Color.h"
 #import "Core+Data.h"
 #import "Core+Controller.h"
+#import "Core+CheckData.h"
 
 #import "BaseViewController.h"//基Controller
 #import "BaseTabBarController.h"

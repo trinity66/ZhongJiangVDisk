@@ -36,13 +36,15 @@ __weak HomeController *_self;
             }
         };
     }
-    // Do any additional setup after loading the view.
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self addSegmentWithUserEnabled:YES];
-    [self set_scrollView];
+    if (LCoreCurrent.isLogin) {
+        [self addSegmentWithUserEnabled:YES];
+        [self set_scrollView];
+    }
+    
 }
 - (void)goForgetDealPswd
 {
@@ -52,7 +54,20 @@ __weak HomeController *_self;
 }
 - (void)putBtnAction
 {
-    [_put removeInputDealPswdViewAnimated:NO];
+    if (_put.textField.text.length == 0) {
+        [LCoreCurrent showAlertTitle:@"请输入交易密码" timeCount:2 inView:_put];
+        return;
+    }else
+    {
+        NSString *dealPswd = LCoreCurrent.userInfo[@"dealPassword"];
+        if ([dealPswd isEqualToString:_put.textField.text]) {
+            [_put removeInputDealPswdViewAnimated:NO];
+        }else
+        {
+            [LCoreCurrent showAlertTitle:@"输入交易密码错误" timeCount:2 inView:_put];
+            return;
+        }
+    }
     _put = nil;
 }
 -(void)viewDidAppear:(BOOL)animated

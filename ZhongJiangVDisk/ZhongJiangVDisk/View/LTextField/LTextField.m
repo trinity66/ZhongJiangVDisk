@@ -20,6 +20,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    self.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.layer.borderWidth = 1;
     self.layer.cornerRadius = 5;
     self.font = [UIFont systemFontOfSize:kCellLabelFont];
@@ -29,6 +30,7 @@
 - (void)setDefalutColor
 {
     self.textColor = LCoreCurrent.cellTextColor;
+    self.tintColor = LCoreCurrent.cellTextColor;
     self.layer.borderColor = LCoreCurrent.textFieldBorderColor.CGColor;
     self.backgroundColor = LCoreCurrent.textFieldBackColor;
 }

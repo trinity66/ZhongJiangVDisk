@@ -32,6 +32,9 @@ __weak ApplyForBrokerController *_applySelf;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+/*
+ tableView delegate
+ */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -66,12 +69,19 @@ __weak ApplyForBrokerController *_applySelf;
     switch (indexPath.row) {
         case 0:
             _brokerTF = cell.textField;
+            _brokerTF.text = LCoreCurrent.userInfo[@"realName"];
             break;
         case 1:
             _loginPswdTF = cell.textField;
+            _loginPswdTF.placeholder = @"后台登录密码";
             break;
         case 2:
+        {
             _phoneTF = cell.textField;
+            NSString *phone = LCoreCurrent.userInfo[@"phone"];
+            _phoneTF.text = [NSString stringWithFormat:@"%@****%@",[phone substringToIndex:3],[phone substringFromIndex:7]];
+            _phoneTF.enabled = NO;
+        }
             break;
         case 3:
             _numberTF = cell.textField;
@@ -91,20 +101,18 @@ __weak ApplyForBrokerController *_applySelf;
             _codeTF.delegate = self;
             _foot.btnsActionBlock = ^(NSInteger index) {
                 [_applySelf textFieldResignFirstResponder];
-                NSString *title;
                 if (index == 0) {
                     //验证码
-                    title = @"验证码发送成功";
-                    
+                    [_applySelf sendCodeActionWithIndex:0];
                 }else if (index == 1) {
                     //拨打电话
-                    title = @"已成功通过拨打电话方式告知验证码";
+                    [_applySelf sendCodeActionWithIndex:1];
                     
                 }else if (index == 2) {
                     //确认按钮
-                    title = @"经纪人申请已提交";
+                    [_applySelf clickButtonAction];
+                    return;
                 }
-                [LCoreCurrent showAlertTitle:title timeCount:2 inView:_applySelf.view];
             };
             _tableView.tableFooterView = _foot;
             [_foot setButtonTitle:@"提交申请"];
@@ -132,6 +140,51 @@ __weak ApplyForBrokerController *_applySelf;
     NSArray *ary = @[_brokerTF, _loginPswdTF, _phoneTF, _numberTF, _codeTF];
     for (LTextField *tf in ary) {
         [tf resignFirstResponder];
+    }
+    
+}
+/*
+ 点击确认之后的处理
+ */
+- (void)clickButtonAction
+{
+    NSArray *tfs = @[_brokerTF, _loginPswdTF, _numberTF, _codeTF];
+    NSArray *names = @[@"经纪人名称", @"登录密码", @"机构编号", @"验证码"];
+    for (int i = 0; i < tfs.count; i ++) {
+        LTextField *tf = tfs[i];
+        if (tf.text.length == 0) {
+            [self showAlert:[NSString stringWithFormat:@"请输入%@",names[i]]];
+            return;
+        }
+    }
+    //经纪人名称
+    if (_brokerTF.text.length > 0 && ![LCoreCurrent isValidChineseCharacter:_brokerTF.text]) {
+        [self showAlert:@"经纪人名称输入错误，只可输入汉字"];
+        return;
+    }
+    //验证码
+    if (![LCoreCurrent isValidNumber:_codeTF.text]) {
+        [self showAlert:@"验证码输入不正确，请检查"];
+        return;
+    }
+    //注册操作，登录成功
+    [LCoreCurrent saveUserInfoWithKey:@"loginPassword" value:_loginPswdTF.text];
+    [LCoreCurrent saveUserInfoWithKey:@"realName" value:_brokerTF.text];
+    [LCoreCurrent saveUserInfoWithKey:@"organizationNumber" value:_numberTF.text];
+    [self showAlert:@"经纪人申请提交成功"];
+}
+/*
+ 发送验证码
+ */
+- (void)sendCodeActionWithIndex:(NSInteger)index
+{
+    if (index == 0) {
+        //短信验证码
+        [self showAlert:@"验证码发送成功"];
+    }else
+    {
+        //电话验证码
+        [self showAlert:@"验证码已通过电话告知给您"];
     }
     
 }

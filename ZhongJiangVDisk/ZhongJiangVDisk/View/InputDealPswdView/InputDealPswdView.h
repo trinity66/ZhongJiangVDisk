@@ -10,6 +10,7 @@
 
 @interface InputDealPswdView : UIView
 @property (nonatomic, copy)btnsActionBlock btnsActionBlock;
+@property (weak, nonatomic) IBOutlet LTextField *textField;
 - (void)showInputDealPswdViewAnimated:(BOOL)animated;
 - (void)removeInputDealPswdViewAnimated:(BOOL)animated;
 @end
