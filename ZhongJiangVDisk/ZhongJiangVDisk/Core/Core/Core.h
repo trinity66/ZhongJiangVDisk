@@ -20,11 +20,6 @@ typedef void(^btnActionBlock)();
 typedef void(^btnsActionBlock)(NSInteger index);
 @interface Core : NSObject
 +(Core *)current;
-- (void)goRechargeVC;
-- (void)goForgetDealPswdVC;
-- (void)goRegisterVC;
-- (void)showAlertTitle:(NSString *)title timeCount:(NSInteger)timeCount inView:(UIView *)view;
-- (UIImage *)image_with_color:(UIColor *)color;
 @property (nonatomic, assign)BOOL isLogin;
 //基准色
 @property (nonatomic, strong)UIColor *riseColor, *fallColor, *backgroundColor, *riseTextColor, *fallTextColor;

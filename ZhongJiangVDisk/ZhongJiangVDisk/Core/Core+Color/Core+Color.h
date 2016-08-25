@@ -11,5 +11,6 @@
 @interface Core (Color)
 
 - (void)initColors;
+- (UIImage *)image_with_color:(UIColor *)color;
 - (NSDictionary *)colorsDictionary;
 @end

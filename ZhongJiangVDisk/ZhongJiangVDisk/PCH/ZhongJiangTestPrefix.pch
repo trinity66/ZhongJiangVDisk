@@ -25,8 +25,11 @@
 #define kTableViewFootHeight 0.0000001
 #define kCellLabelFont 15
 
+#import <JavaScriptCore/JavaScriptCore.h>
 #import "Core.h"
 #import "Core+Color.h"
+#import "Core+Data.h"
+#import "Core+Controller.h"
 
 #import "BaseViewController.h"//基Controller
 #import "BaseTabBarController.h"
@@ -90,6 +93,7 @@
 #import "RegisterButtonView.h"//注册底部Button
 #import "RegisterController.h"//注册控制器
 #import "LConfig.h"
+#import "WebController.h"//网页
 
 //分时图，k图
 #import "Area.h"

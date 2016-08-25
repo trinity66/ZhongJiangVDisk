@@ -10,7 +10,7 @@
 
 @interface RegisterButtonView ()
 @property (weak, nonatomic) IBOutlet LButton *codeButton;
-@property (weak, nonatomic) IBOutlet UIButton *isAgreeBtn;
+
 @property (weak, nonatomic) IBOutlet UIButton *propertyBtn;
 @property (weak, nonatomic) IBOutlet LButton *button;
 @property (weak, nonatomic) IBOutlet UILabel *codeLabel;

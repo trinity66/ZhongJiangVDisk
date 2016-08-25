@@ -535,6 +535,43 @@
             </objects>
             <point key="canvasLocation" x="1608" y="1662"/>
         </scene>
+        <!--加载中···-->
+        <scene sceneID="YyY-kM-CEh">
+            <objects>
+                <viewController storyboardIdentifier="WebController" title="加载中···" id="GAW-cC-yMz" customClass="WebController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aWQ-oe-UfS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wfe-jE-Dxz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2IR-ei-cMR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HuQ-ZE-Aan">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="GAW-cC-yMz" id="b4V-bh-IVe"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HuQ-ZE-Aan" firstAttribute="top" secondItem="2IR-ei-cMR" secondAttribute="topMargin" id="9Wx-sB-K1c"/>
+                            <constraint firstItem="Wfe-jE-Dxz" firstAttribute="top" secondItem="HuQ-ZE-Aan" secondAttribute="bottom" id="PQ0-kI-e4b"/>
+                            <constraint firstItem="HuQ-ZE-Aan" firstAttribute="leading" secondItem="2IR-ei-cMR" secondAttribute="leading" id="aOG-De-GK8"/>
+                            <constraint firstAttribute="trailing" secondItem="HuQ-ZE-Aan" secondAttribute="trailing" id="oAN-Ro-yCV"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="webView" destination="HuQ-ZE-Aan" id="FyG-ga-aqh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NLl-AA-eD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727" y="2324"/>
+        </scene>
         <!--经纪人申请-->
         <scene sceneID="DPv-qc-fgm">
             <objects>

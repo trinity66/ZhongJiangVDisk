@@ -34,10 +34,6 @@ __weak BaseTabBarController *baseTabSelf;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (!LCoreCurrent.isLogin) {
-//        [self intoQRCodeVC];
-        LCoreCurrent.isLogin = YES;
-    }
 }
 #pragma  mark - 二维码扫描
 /**
@@ -68,26 +64,6 @@ __weak BaseTabBarController *baseTabSelf;
             [[UIApplication sharedApplication] openURL:url];
         }
     }
-}
-/*!
- *  扫一扫
- */
-- (void)intoQRCodeVC {
-    ScanQRCodeController *qrcodeVC = [[ScanQRCodeController alloc] init];
-    __block ScanQRCodeController*qr = qrcodeVC;
-    [qrcodeVC setDidReceiveBlock:^(NSString *rst) {
-        NSLog(@"------------%@", rst);
-        [baseTabSelf scanQRCodeWithURL:rst];
-        [qr selfRemoveFromSuperview];
-    }];
-    [self addChildViewController:qrcodeVC];
-    [self.view addSubview:qrcodeVC.view];
-    
-}
-- (void)scanQRCodeWithURL:(NSString *)url
-{
-#warning 扫描二维码之后的处理
-    [LCoreCurrent goRegisterVC];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

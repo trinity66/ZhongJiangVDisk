@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 
 @implementation BaseLayer
-
 -(void)drawAnimated:(BOOL)animated{
     
 }

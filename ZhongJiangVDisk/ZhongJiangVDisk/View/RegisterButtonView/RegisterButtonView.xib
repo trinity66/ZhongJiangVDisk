@@ -47,19 +47,20 @@
                         <action selector="codeButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="UUB-Ep-wYg"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxf-bG-dtz">
-                    <rect key="frame" x="101" y="44" width="20" height="20"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxf-bG-dtz">
+                    <rect key="frame" x="101" y="44" width="15" height="15"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="20" id="76c-Ny-zHt"/>
+                        <constraint firstAttribute="width" constant="15" id="76c-Ny-zHt"/>
                         <constraint firstAttribute="width" secondItem="Lxf-bG-dtz" secondAttribute="height" id="8Mb-le-vF1"/>
                     </constraints>
-                    <state key="normal" title="√"/>
+                    <state key="normal" image="disagree"/>
+                    <state key="selected" image="agree"/>
                     <connections>
                         <action selector="isAgreeBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="0ce-Go-F0s"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已阅读并同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnU-xE-kqd">
-                    <rect key="frame" x="121" y="43" width="75" height="21"/>
+                    <rect key="frame" x="119" y="40.5" width="75" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="75" id="E39-II-n2A"/>
                         <constraint firstAttribute="height" constant="21" id="rRT-oq-ILI"/>
@@ -69,7 +70,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jna-PQ-zBV">
-                    <rect key="frame" x="195" y="39" width="50.5" height="30"/>
+                    <rect key="frame" x="193" y="36.5" width="50.5" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="S2T-K6-hHb"/>
                         <constraint firstAttribute="width" constant="50.5" id="WFn-ww-BoD"/>
@@ -81,7 +82,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qy-1b-TiF" customClass="LButton">
-                    <rect key="frame" x="10" y="74" width="246" height="35"/>
+                    <rect key="frame" x="10" y="69" width="246" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="20F-26-Y1x"/>
                     </constraints>
@@ -103,7 +104,7 @@
                 <constraint firstItem="BKb-zC-Cbq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="MCe-ad-fu6"/>
                 <constraint firstItem="wwa-xk-fYH" firstAttribute="leading" secondItem="BKb-zC-Cbq" secondAttribute="trailing" constant="8" id="Owa-Uc-Elm"/>
                 <constraint firstItem="5qy-1b-TiF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="S9o-Ud-cnl"/>
-                <constraint firstItem="lnU-xE-kqd" firstAttribute="leading" secondItem="Lxf-bG-dtz" secondAttribute="trailing" id="SZF-T9-Ad4"/>
+                <constraint firstItem="lnU-xE-kqd" firstAttribute="leading" secondItem="Lxf-bG-dtz" secondAttribute="trailing" constant="3" id="SZF-T9-Ad4"/>
                 <constraint firstAttribute="trailing" secondItem="wwa-xk-fYH" secondAttribute="trailing" constant="20" id="V68-vZ-vwe"/>
                 <constraint firstItem="8Qq-O9-0yF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Wlp-Fn-YTt"/>
                 <constraint firstItem="Z2A-6j-mJt" firstAttribute="leading" secondItem="8Qq-O9-0yF" secondAttribute="trailing" id="YeM-dj-BSG"/>
@@ -139,4 +140,8 @@
             <point key="canvasLocation" x="203" y="95"/>
         </view>
     </objects>
+    <resources>
+        <image name="agree" width="23" height="23"/>
+        <image name="disagree" width="23" height="23"/>
+    </resources>
 </document>

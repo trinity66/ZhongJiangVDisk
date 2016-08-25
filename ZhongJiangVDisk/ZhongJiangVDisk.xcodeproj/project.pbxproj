@@ -103,6 +103,10 @@
 		5EAF828E1D6AF54600239CB5 /* LConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF828D1D6AF54600239CB5 /* LConfig.m */; };
 		5EAF82911D6BDEBD00239CB5 /* DisabledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82901D6BDEBD00239CB5 /* DisabledView.m */; };
 		5EAF82931D6BDEC700239CB5 /* DisabledView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82921D6BDEC700239CB5 /* DisabledView.xib */; };
+		5EAF83CF1D6E864400239CB5 /* WebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF83CE1D6E864400239CB5 /* WebController.m */; };
+		5EAF83D41D6E896400239CB5 /* Core+Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF83D31D6E896400239CB5 /* Core+Controller.m */; };
+		5EAF83D71D6E896C00239CB5 /* Core+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF83D61D6E896C00239CB5 /* Core+Data.m */; };
+		5EAF83DC1D6E95DE00239CB5 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF83DB1D6E95DE00239CB5 /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +289,13 @@
 		5EAF828F1D6BDEBD00239CB5 /* DisabledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisabledView.h; sourceTree = "<group>"; };
 		5EAF82901D6BDEBD00239CB5 /* DisabledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisabledView.m; sourceTree = "<group>"; };
 		5EAF82921D6BDEC700239CB5 /* DisabledView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisabledView.xib; sourceTree = "<group>"; };
+		5EAF83CD1D6E864400239CB5 /* WebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebController.h; sourceTree = "<group>"; };
+		5EAF83CE1D6E864400239CB5 /* WebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebController.m; sourceTree = "<group>"; };
+		5EAF83D21D6E896400239CB5 /* Core+Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core+Controller.h"; sourceTree = "<group>"; };
+		5EAF83D31D6E896400239CB5 /* Core+Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Core+Controller.m"; sourceTree = "<group>"; };
+		5EAF83D51D6E896C00239CB5 /* Core+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core+Data.h"; sourceTree = "<group>"; };
+		5EAF83D61D6E896C00239CB5 /* Core+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Core+Data.m"; sourceTree = "<group>"; };
+		5EAF83DB1D6E95DE00239CB5 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -294,6 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EAF83DC1D6E95DE00239CB5 /* JavaScriptCore.framework in Frameworks */,
 				5EAF823B1D6AE4BE00239CB5 /* AVFoundation.framework in Frameworks */,
 				59426E86B20513BFE4F7A7CC /* Pods_ZhongJiangVDisk.framework in Frameworks */,
 			);
@@ -412,8 +424,9 @@
 		5E1721EE1D630082003CA0AE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5EAF824C1D6AEEC800239CB5 /* Register */,
+				5EAF83CC1D6E862800239CB5 /* Web */,
 				5E1721EF1D630082003CA0AE /* Base */,
+				5EAF824C1D6AEEC800239CB5 /* Register */,
 				5E1721F91D630082003CA0AE /* Home */,
 				5E17220B1D630082003CA0AE /* Personal */,
 				5E1722481D630082003CA0AE /* Position */,
@@ -791,6 +804,8 @@
 		5E1722511D630082003CA0AE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5EAF83D01D6E895600239CB5 /* Core+Controller */,
+				5EAF83D11D6E895600239CB5 /* Core+Data */,
 				5E1722521D630082003CA0AE /* Core */,
 				5E1722551D630082003CA0AE /* Core+Color */,
 			);
@@ -1125,9 +1140,37 @@
 			path = LConfig;
 			sourceTree = "<group>";
 		};
+		5EAF83CC1D6E862800239CB5 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF83CD1D6E864400239CB5 /* WebController.h */,
+				5EAF83CE1D6E864400239CB5 /* WebController.m */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		5EAF83D01D6E895600239CB5 /* Core+Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF83D21D6E896400239CB5 /* Core+Controller.h */,
+				5EAF83D31D6E896400239CB5 /* Core+Controller.m */,
+			);
+			path = "Core+Controller";
+			sourceTree = "<group>";
+		};
+		5EAF83D11D6E895600239CB5 /* Core+Data */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF83D51D6E896C00239CB5 /* Core+Data.h */,
+				5EAF83D61D6E896C00239CB5 /* Core+Data.m */,
+			);
+			path = "Core+Data";
+			sourceTree = "<group>";
+		};
 		794F7078CFCCD2419F25CE2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EAF83DB1D6E95DE00239CB5 /* JavaScriptCore.framework */,
 				5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */,
 				80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */,
 			);
@@ -1371,13 +1414,16 @@
 				5EAF824A1D6AEE9F00239CB5 /* RegisterButtonView.m in Sources */,
 				5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */,
 				5E1722D51D63008A003CA0AE /* ButtonView.m in Sources */,
+				5EAF83D41D6E896400239CB5 /* Core+Controller.m in Sources */,
 				5E17228D1D630082003CA0AE /* DealHistoryHeadView.m in Sources */,
 				5EAF828E1D6AF54600239CB5 /* LConfig.m in Sources */,
+				5EAF83CF1D6E864400239CB5 /* WebController.m in Sources */,
 				5E17227A1D630082003CA0AE /* AppDelegate.m in Sources */,
 				5E1722DB1D63008A003CA0AE /* InputDealPswdView.m in Sources */,
 				5EAF82381D6AE3C100239CB5 /* LButton.m in Sources */,
 				5E1722FF1D65AB49003CA0AE /* ProductTableView.m in Sources */,
 				5E1722DF1D63008A003CA0AE /* SecurityCodeView.m in Sources */,
+				5EAF83D71D6E896C00239CB5 /* Core+Data.m in Sources */,
 				5EAF82841D6AF51200239CB5 /* StockSeries.m in Sources */,
 				5E1722821D630082003CA0AE /* ChartView.m in Sources */,
 				5E1722E21D63008A003CA0AE /* SegmentView.m in Sources */,

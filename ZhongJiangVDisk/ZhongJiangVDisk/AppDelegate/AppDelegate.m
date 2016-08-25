@@ -18,7 +18,43 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     LCoreCurrent.VDiskType = VDiskTypeZhongJiang;//VDiskTypeZhongHui//
+    if (!LCoreCurrent.isLogin) {
+//        [self intoQRCodeVC];
+        [self performSelector:@selector(goRegister) withObject:nil afterDelay:0.01];
+    }else
+    {
+        
+        
+    }
+    
     return YES;
+}
+/*!
+ *  扫一扫
+ */
+- (void)intoQRCodeVC {
+    ScanQRCodeController *qrcodeVC = [[ScanQRCodeController alloc] init];
+    __block ScanQRCodeController*qr = qrcodeVC;
+    BaseTabBarController *root = (BaseTabBarController *)self.window.rootViewController;
+    __block AppDelegate *weakSelf = self;
+    [qrcodeVC setDidReceiveBlock:^(NSString *rst) {
+        NSLog(@"------------%@", rst);
+        [weakSelf scanQRCodeWithURL:rst];
+        [qr selfRemoveFromSuperview];
+    }];
+    [root addChildViewController:qrcodeVC];
+    [root.view addSubview:qrcodeVC.view];
+    
+}
+- (void)scanQRCodeWithURL:(NSString *)url
+{
+#warning 扫描二维码之后的处理
+    [LCoreCurrent goRegisterVC];
+}
+//模拟机测试时的通道
+- (void)goRegister
+{
+    [LCoreCurrent goRegisterVC];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
