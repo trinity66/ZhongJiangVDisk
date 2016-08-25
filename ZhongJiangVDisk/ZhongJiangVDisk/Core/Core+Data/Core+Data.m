@@ -40,7 +40,7 @@
 /*获取用户信息*/
 - (NSDictionary *)getUserInfo
 {
-    return self.userInfo;
+    return [LConfigCurrent object_value_with_key:@"userInfo"];
 }
 /*保存用户的某一个信息*/
 - (void)saveUserInfoWithKey:(NSString *)key value:(id)value

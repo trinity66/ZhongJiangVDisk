@@ -16,6 +16,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         core = [[Core alloc] init];
+        core.userInfo = [core getUserInfo];
     });
     return core;
 }
