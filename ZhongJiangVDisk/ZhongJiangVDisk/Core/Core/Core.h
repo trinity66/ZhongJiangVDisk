@@ -20,6 +20,7 @@ typedef void(^btnActionBlock)();
 typedef void(^btnsActionBlock)(NSInteger index);
 @interface Core : NSObject
 +(Core *)current;
+@property (nonatomic, strong) NSArray *productsList;
 @property (nonatomic, assign)BOOL isLogin;
 //基准色
 @property (nonatomic, strong)UIColor *riseColor, *fallColor, *backgroundColor, *riseTextColor, *fallTextColor;

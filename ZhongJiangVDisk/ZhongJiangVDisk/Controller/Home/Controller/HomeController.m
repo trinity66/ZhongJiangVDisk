@@ -40,8 +40,11 @@ __weak HomeController *_self;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (LCoreCurrent.isLogin) {
+    if (LCoreCurrent.isLogin && !self.segment) {
         [self addSegmentWithUserEnabled:YES];
+        self.segment.btnsActionBlock = ^(NSInteger index) {
+            [_self.collectionSuperView setCollectionViewContentOffsetWithIndex:index];
+        };
         [self set_scrollView];
     }
     
@@ -97,6 +100,9 @@ __weak HomeController *_self;
     if (LCoreCurrent.VDiskType == VDiskTypeZhongJiang) {
         if (!_collectionSuperView) {
             _collectionSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductCollectionView" owner:nil options:nil].lastObject;
+            _collectionSuperView.btnsActionBlock = ^(NSInteger index) {
+                _self.segment.selectedIndex = index;
+            };
             _collectionSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, kScreenWidth, 160);
             [_scrollView addSubview:_collectionSuperView];
             _scrollView.contentSize = CGSizeMake(kScreenWidth, _chartSuperView.frame.size.height + _collectionSuperView.frame.size.height);

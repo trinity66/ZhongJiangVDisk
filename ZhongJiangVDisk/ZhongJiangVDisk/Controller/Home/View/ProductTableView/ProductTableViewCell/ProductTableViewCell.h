@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ProductTableViewCell : UITableViewCell
-- (void)setTitleWithTitle:(NSString *)title detail:(NSString *)detail;
 @property (nonatomic, copy) btnsActionBlock btnsActionBlock;
+@property (nonatomic, strong)ProductModel *model;
 @end

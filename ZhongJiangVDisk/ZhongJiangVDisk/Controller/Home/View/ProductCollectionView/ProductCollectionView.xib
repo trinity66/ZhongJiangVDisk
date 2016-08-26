@@ -13,10 +13,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="JYy-OW-Goe">
-                    <rect key="frame" x="131" y="117" width="50" height="30"/>
+                    <rect key="frame" x="56" y="117" width="200" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="0ZF-Lz-jOd"/>
-                        <constraint firstAttribute="width" constant="50" id="lpy-cO-XZA"/>
+                        <constraint firstAttribute="width" constant="200" id="lpy-cO-XZA"/>
                     </constraints>
                     <color key="pageIndicatorTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="currentPageIndicatorTintColor" red="0.88335546919999997" green="0.73859307029999999" blue="0.4843076804" alpha="1" colorSpace="calibratedRGB"/>

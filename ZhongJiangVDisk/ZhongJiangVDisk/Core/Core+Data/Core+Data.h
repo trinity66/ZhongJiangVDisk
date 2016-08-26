@@ -12,4 +12,5 @@
 - (void)saveUserInfo:(NSDictionary *)userInfo;
 - (NSDictionary *)getUserInfo;
 - (void)saveUserInfoWithKey:(NSString *)key value:(id)value;
+- (void)products;
 @end

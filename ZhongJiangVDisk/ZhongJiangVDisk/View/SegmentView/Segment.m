@@ -59,6 +59,9 @@
             self.selectedIndex = 2;
         }
     }
+    if (self.btnsActionBlock) {
+        self.btnsActionBlock(self.selectedIndex);
+    }
 }
 -(void)setSelectedIndex:(NSInteger)selectedIndex
 {

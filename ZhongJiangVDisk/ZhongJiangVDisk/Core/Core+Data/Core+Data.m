@@ -56,5 +56,12 @@
     [self saveUserInfo:dictionary];
 }
 
+- (void)products
+{
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Products" ofType:@"json"]];
+    NSError* err = nil;
+    self.productsList = (NSArray*)[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&err];
+}
+
 
 @end

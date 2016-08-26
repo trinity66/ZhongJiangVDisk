@@ -11,4 +11,5 @@
 @interface Segment : UIView
 @property (nonatomic, assign) NSInteger selectedIndex;
 - (void)setValueWithIndex:(NSInteger)index title:(NSString *)title number:(double)number isRise:(BOOL)isRise;
+@property (nonatomic, copy)btnsActionBlock btnsActionBlock;
 @end

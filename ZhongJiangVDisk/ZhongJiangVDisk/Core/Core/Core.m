@@ -17,6 +17,7 @@
     dispatch_once(&onceToken, ^{
         core = [[Core alloc] init];
         core.userInfo = [core getUserInfo];
+        [core products];
     });
     return core;
 }

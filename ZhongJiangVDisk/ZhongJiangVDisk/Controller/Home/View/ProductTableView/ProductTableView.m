@@ -28,11 +28,13 @@ __weak ProductTableView *productTabelSelf;
 */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return LCoreCurrent.productsList.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    NSDictionary *dict = LCoreCurrent.productsList[section];
+    NSArray *list = dict[@"list"];
+    return list.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -52,11 +54,13 @@ __weak ProductTableView *productTabelSelf;
     ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductTableViewCell"];
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ProductTableViewCell" owner:nil options:nil].lastObject;
-        [cell setTitleWithTitle:@"中汇银100G" detail:@" 波动盈亏：0.10元"];
         cell.btnsActionBlock = ^(NSInteger index) {
             [productTabelSelf candleBuyViewWithIndex:index indexpath:indexPath];
         };
     }
+    NSDictionary *dict = LCoreCurrent.productsList[indexPath.section];
+    NSArray *list = dict[@"list"];
+    cell.model = [ProductModel modelWithDictionary:list[indexPath.row]];
     return cell;
 }
 - (void)candleBuyViewWithIndex:(NSInteger)index indexpath:(NSIndexPath *)indexPath
@@ -68,6 +72,9 @@ __weak ProductTableView *productTabelSelf;
             [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
         };
     }
+    NSDictionary *dict = LCoreCurrent.productsList[indexPath.section];
+    NSArray *list = dict[@"list"];
+    _buyView.model = [ProductModel modelWithDictionary:list[indexPath.row]];
     _buyView.isBuyRise = !index;
     [_buyView showBuyViewAnimated:NO];
 }

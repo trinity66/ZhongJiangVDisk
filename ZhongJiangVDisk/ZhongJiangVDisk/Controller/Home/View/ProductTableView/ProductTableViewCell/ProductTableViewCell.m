@@ -24,6 +24,16 @@
     [self setSomeControl];
     // Initialization code
 }
+- (void)setModel:(ProductModel *)model
+{
+    _model = model;
+    _model = model;
+    NSString *title = _model.productName;
+    NSString *detail = [NSString stringWithFormat:@"波动盈亏:%.03f元",_model.fluctuations];
+    [self setTitleWithTitle:title detail:detail];
+    _detail.text = [NSString stringWithFormat:@"%.02f元/手",_model.price];
+    
+}
 - (void)setSomeControl
 {
     _mainView.backgroundColor = LCoreCurrent.backgroundColor;

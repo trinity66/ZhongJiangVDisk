@@ -26,6 +26,17 @@
          "contractPrice":29910.00,
          "poundage":0.120,
          },
+         {
+         "_id":"20160826100003",
+         "productType":100,
+         "productName":"中江银7.5KG(2)",
+         "fluctuations":7.500,
+         "maxProfit":90,
+         "maxLoss":60,
+         "price":500.00,
+         "contractPrice":29910.00,
+         "poundage":0.120,
+         },
          ],
  },
  {

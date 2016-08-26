@@ -27,7 +27,8 @@
 @end
 __weak BuyView *buySelf;
 @implementation BuyView
-
+//懒加载
+/*model*/
 - (void)setModel:(ProductModel *)model
 {
     _model = model;
@@ -39,7 +40,12 @@ __weak BuyView *buySelf;
     self.currentLossIndex = 0;
     self.currentCountIndex = 0;
 }
-
+- (void)setIsBuyRise:(BOOL)isBuyRise
+{
+    _isBuyRise = isBuyRise;
+    [self setSomeData];
+}
+/*maxLoss*/
 - (void)setMaxLoss:(NSInteger)maxLoss
 {
     _maxLoss = maxLoss;
@@ -53,6 +59,7 @@ __weak BuyView *buySelf;
         [_losses addObject:[NSNumber numberWithInteger:i]];
     }
 }
+/*currentLossIndex*/
 - (void)setCurrentLossIndex:(NSInteger)currentLossIndex
 {
     _currentLossIndex = currentLossIndex;
@@ -65,6 +72,7 @@ __weak BuyView *buySelf;
     }
     self.lossTf.text = text;
 }
+/*maxCount*/
 - (void)setMaxCount:(NSInteger)maxCount
 {
     _maxCount = maxCount;
@@ -78,6 +86,7 @@ __weak BuyView *buySelf;
         [_counts addObject:[NSNumber numberWithInteger:i]];
     }
 }
+/*currentCountIndex*/
 - (void)setCurrentCountIndex:(NSInteger)currentCountIndex
 {
     _currentCountIndex = currentCountIndex;
@@ -85,6 +94,7 @@ __weak BuyView *buySelf;
     _countTf.text = text;
     [self setSomeData];
 }
+/*maxProfit*/
 - (void)setMaxProfit:(NSInteger)maxProfit
 {
     _maxProfit = maxProfit;
@@ -98,6 +108,7 @@ __weak BuyView *buySelf;
         [_profits addObject:[NSNumber numberWithInteger:i]];
     }
 }
+/*currentProfitIndex*/
 - (void)setCurrentProfitIndex:(NSInteger)currentProfitIndex
 {
     _currentProfitIndex = currentProfitIndex;

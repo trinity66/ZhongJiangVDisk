@@ -11,5 +11,6 @@
 @interface ProductCollectionView : UIView
 @property (weak, nonatomic) IBOutlet UIPageControl *pagC;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (nonatomic, copy) btnsActionBlock btnsActionBlock;
+- (void)setCollectionViewContentOffsetWithIndex:(NSInteger)index;
 @end
