@@ -15,24 +15,101 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
 @property (weak, nonatomic) IBOutlet UIView *lTwo;
 @property (weak, nonatomic) IBOutlet UIView *lOne;
+@property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lHeight;
 @property (nonatomic, assign) NSInteger maxProfit, maxLoss, maxCount;
 @property (nonatomic, assign) NSInteger currentProfitIndex, currentLossIndex, currentCountIndex;
 @property (nonatomic, strong) NSMutableArray *profits, *losses, *counts;
-@property (nonatomic, strong) UITextField *profitTf, *lossTf, *countTf;
+@property (nonatomic, strong) LTextField *profitTf, *lossTf, *countTf, *priceTF, *contractPriceTF;
 @property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, assign) double poundage;
 
 @end
 __weak BuyView *buySelf;
 @implementation BuyView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setModel:(ProductModel *)model
+{
+    _model = model;
+    self.maxProfit = model.maxProfit;
+    self.maxLoss = model.maxLoss;
+    self.poundage = model.poundage;
+    self.maxCount = 1000;
+    self.currentProfitIndex = 0;
+    self.currentLossIndex = 0;
+    self.currentCountIndex = 0;
 }
-*/
+
+- (void)setMaxLoss:(NSInteger)maxLoss
+{
+    _maxLoss = maxLoss;
+    if (_losses) {
+        [_losses removeAllObjects];
+    }else
+    {
+        _losses = [NSMutableArray array];
+    }
+    for (int i = 0; i <= maxLoss; i = i + 10) {
+        [_losses addObject:[NSNumber numberWithInteger:i]];
+    }
+}
+- (void)setCurrentLossIndex:(NSInteger)currentLossIndex
+{
+    _currentLossIndex = currentLossIndex;
+    NSString *text;
+    if (currentLossIndex == 0) {
+        text = @"不设";
+    }else
+    {
+        text = [NSString stringWithFormat:@"%ld",(long)[_losses[currentLossIndex] integerValue]];
+    }
+    self.lossTf.text = text;
+}
+- (void)setMaxCount:(NSInteger)maxCount
+{
+    _maxCount = maxCount;
+    if (_counts) {
+        [_counts removeAllObjects];
+    }else
+    {
+        _counts = [NSMutableArray array];
+    }
+    for (int i = 1; i <= maxCount;  i ++) {
+        [_counts addObject:[NSNumber numberWithInteger:i]];
+    }
+}
+- (void)setCurrentCountIndex:(NSInteger)currentCountIndex
+{
+    _currentCountIndex = currentCountIndex;
+    NSString *text = [NSString stringWithFormat:@"%ld",(long)[_counts[currentCountIndex] integerValue]];
+    _countTf.text = text;
+    [self setSomeData];
+}
+- (void)setMaxProfit:(NSInteger)maxProfit
+{
+    _maxProfit = maxProfit;
+    if (_profits) {
+        [_profits removeAllObjects];
+    }else
+    {
+        _profits = [NSMutableArray array];
+    }
+    for (int i = 0; i <= maxProfit; i = i + 10) {
+        [_profits addObject:[NSNumber numberWithInteger:i]];
+    }
+}
+- (void)setCurrentProfitIndex:(NSInteger)currentProfitIndex
+{
+    _currentProfitIndex = currentProfitIndex;
+    NSString *text;
+    if (currentProfitIndex == 0) {
+        text = @"不设";
+    }else
+    {
+        text = [NSString stringWithFormat:@"%ld",(long)[_profits[currentProfitIndex] integerValue]];
+    }
+    _profitTf.text = text;
+}
 - (void)showBuyViewAnimated:(BOOL)animated
 {
     self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
@@ -85,24 +162,6 @@ __weak BuyView *buySelf;
     _lHeight.constant = 0.5;
     _button.backgroundColor = LCoreCurrent.buttonBackColor;
     _titles = @[@"止盈（％）", @"止损（％）", @"购买数量", @"预付款", @"合同总价值"];
-    _maxProfit = 60;
-    _maxLoss = 60;
-    _maxCount = 20;
-    _profits = [NSMutableArray array];
-    _losses = [NSMutableArray array];
-    _counts = [NSMutableArray array];
-    for (int i = 0; i <= _maxProfit; i = i + 10) {
-        [_profits addObject:[NSNumber numberWithInteger:i]];
-    }
-    for (int i = 0; i <= _maxLoss; i = i + 10) {
-        [_losses addObject:[NSNumber numberWithInteger:i]];
-    }
-    for (int i = 1; i <= _maxCount; i ++) {
-        [_counts addObject:[NSNumber numberWithInteger:i]];
-    }
-    _currentProfitIndex = 0;
-    _currentLossIndex = 0;
-    _currentCountIndex = 0;
     _title.textColor = LCoreCurrent.cellTextColor;
     _mainView.backgroundColor = LCoreCurrent.backgroundColor;
     _mainView.layer.borderColor = LCoreCurrent.buttonBorderColor.CGColor;
@@ -140,28 +199,28 @@ __weak BuyView *buySelf;
             cell.title.text = _titles[indexPath.row];
             switch (indexPath.row) {
                 case 0:
-                    _profitTf = cell.textField;
-                    [self setProfitText];
-                    cell.btnsActionBlock = ^(NSInteger index) {
-                        [buySelf setProfitWithIndex:index];
-                    };
-                    break;
+                _profitTf = cell.textField;
+                _profitTf.text = @"不设";
+                cell.btnsActionBlock = ^(NSInteger index) {
+                    [buySelf setProfitWithIndex:index];
+                };
+                break;
                 case 1:
-                    _lossTf = cell.textField;
-                   [self setLossText];
-                    cell.btnsActionBlock = ^(NSInteger index) {
-                        [buySelf setLossWithIndex:index];
-                    };
-                    break;
+                _lossTf = cell.textField;
+                _lossTf.text = @"不设";
+                cell.btnsActionBlock = ^(NSInteger index) {
+                    [buySelf setLossWithIndex:index];
+                };
+                break;
                 case 2:
-                    _countTf = cell.textField;
-                    [self setCountText];
-                    cell.btnsActionBlock = ^(NSInteger index) {
-                        [buySelf setCountWithIndex:index];
-                    };
-                    break;
+                _countTf = cell.textField;
+                _countTf.text = @"1";
+                cell.btnsActionBlock = ^(NSInteger index) {
+                    [buySelf setCountWithIndex:index];
+                };
+                break;
                 default:
-                    break;
+                break;
             }
         }
         return cell;
@@ -171,6 +230,14 @@ __weak BuyView *buySelf;
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
             cell.textField.enabled = NO;
+            if (indexPath.row == 3) {
+                _priceTF = cell.textField;
+                _priceTF.text = [NSString stringWithFormat:@"%.02f",_model.price];
+            }else
+            {
+                _contractPriceTF = cell.textField;
+                _contractPriceTF.text = [NSString stringWithFormat:@"%.02f",_model.contractPrice];
+            }
         }
         cell.title.text = _titles[indexPath.row];
         return cell;
@@ -181,89 +248,75 @@ __weak BuyView *buySelf;
     //盈
     switch (btnIndex) {
         case 0:
-            //减
-            if (_currentProfitIndex > 0) {
-                _currentProfitIndex -= 1;
-            }
-            break;
+        //减
+        if (self.currentProfitIndex > 0) {
+            self.currentProfitIndex -= 1;
+        }
+        break;
         case 1:
-            //加
-            if (_currentProfitIndex < _profits.count-1) {
-                _currentProfitIndex += 1;
-            }
-            break;
+        //加
+        if (self.currentProfitIndex < _profits.count-1) {
+            self.currentProfitIndex += 1;
+        }
+        break;
         default:
-            break;
+        break;
     }
-    [self setProfitText];
-}
-- (void)setProfitText {
-    NSString *text;
-    if (_currentProfitIndex == 0) {
-        text = @"不设";
-    }else
-    {
-        text = [NSString stringWithFormat:@"%ld",(long)[_profits[_currentProfitIndex] integerValue]];
-    }
-    _profitTf.text = text;
 }
 - (void)setLossWithIndex:(NSInteger)btnIndex
 {
     //损
     switch (btnIndex) {
         case 0:
-            //减
-            if (_currentLossIndex > 0) {
-                _currentLossIndex -= 1;
-            }
-            break;
+        //减
+        if (self.currentLossIndex > 0) {
+            self.currentLossIndex -= 1;
+        }
+        break;
         case 1:
-            //加
-            if (_currentLossIndex < _losses.count-1) {
-                _currentLossIndex += 1;
-            }
-            break;
+        //加
+        if (self.currentLossIndex < _losses.count-1) {
+            self.currentLossIndex += 1;
+        }
+        break;
         default:
-            break;
+        break;
     }
-    [self setLossText];
     
-}
-- (void)setLossText
-{
-    NSString *text;
-    if (_currentLossIndex == 0) {
-        text = @"不设";
-    }else
-    {
-        text = [NSString stringWithFormat:@"%ld",(long)[_losses[_currentLossIndex] integerValue]];
-    }
-    _lossTf.text = text;
 }
 - (void)setCountWithIndex:(NSInteger)btnIndex
 {
     //数量
     switch (btnIndex) {
         case 0:
-            //减
-            if (_currentCountIndex > 0) {
-                _currentCountIndex -= 1;
-            }
-            break;
+        //减
+        if (self.currentCountIndex > 0) {
+            self.currentCountIndex -= 1;
+        }
+        break;
         case 1:
-            //加
-            if (_currentCountIndex < _counts.count-1) {
-                _currentCountIndex += 1;
-            }
-            break;
+        //加
+        if (self.currentCountIndex < _counts.count-1) {
+            self.currentCountIndex += 1;
+        }
+        break;
         default:
-            break;
+        break;
     }
-    [self setCountText];
 }
-- (void)setCountText
+- (void)setSomeData
 {
-    NSString *text = [NSString stringWithFormat:@"%ld",(long)[_counts[_currentCountIndex] integerValue]];
-    _countTf.text = text;
+    NSString *str;
+    if (_isBuyRise) {
+        str = @"买涨";
+    }else
+    {
+        str = @"买跌";
+    }
+    NSInteger count = _currentCountIndex + 1;
+    NSString *title = [NSString stringWithFormat:@"%@ %@, 手续费:%.0f", _model.productName, str, _model.price*count*_poundage];
+    _title.text = title;
+    _priceTF.text = [NSString stringWithFormat:@"%.2f",count*_model.price];
+    _contractPriceTF.text = [NSString stringWithFormat:@"%.2f",count*_model.contractPrice];
 }
 @end

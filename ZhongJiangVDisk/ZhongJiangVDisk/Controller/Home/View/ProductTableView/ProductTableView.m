@@ -68,12 +68,7 @@ __weak ProductTableView *productTabelSelf;
             [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
         };
     }
-    if (index == 0) {
-        _buyView.title.text = @"买涨";
-    }else
-    {
-        _buyView.title.text = @"买跌";
-    }
+    _buyView.isBuyRise = !index;
     [_buyView showBuyViewAnimated:NO];
 }
 @end

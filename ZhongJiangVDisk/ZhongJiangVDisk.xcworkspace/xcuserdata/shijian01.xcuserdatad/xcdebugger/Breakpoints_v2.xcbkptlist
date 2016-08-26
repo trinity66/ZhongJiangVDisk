@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZhongJiangVDisk/Controller/Home/Controller/HomeController.m"
-            timestampString = "493805229.855881"
+            filePath = "ZhongJiangVDisk/View/BuyView/BuyView.m"
+            timestampString = "493875676.374489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-putBtnAction"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-setModel:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

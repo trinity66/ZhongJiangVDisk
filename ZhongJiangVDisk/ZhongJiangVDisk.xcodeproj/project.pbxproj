@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		59426E86B20513BFE4F7A7CC /* Pods_ZhongJiangVDisk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */; };
+		5E1350D81D6FF3F400D673E1 /* BuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1350CF1D6FF3F400D673E1 /* BuyView.m */; };
+		5E1350D91D6FF3F400D673E1 /* BuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1350D01D6FF3F400D673E1 /* BuyView.xib */; };
+		5E1350DA1D6FF3F400D673E1 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1350D31D6FF3F400D673E1 /* ProductModel.m */; };
+		5E1350DB1D6FF3F400D673E1 /* SelectDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1350D61D6FF3F400D673E1 /* SelectDataCell.m */; };
+		5E1350DC1D6FF3F400D673E1 /* SelectDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1350D71D6FF3F400D673E1 /* SelectDataCell.xib */; };
 		5E1721B41D62FFD4003CA0AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721B31D62FFD4003CA0AE /* main.m */; };
 		5E1721CD1D62FFD4003CA0AE /* ZhongJiangVDiskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721CC1D62FFD4003CA0AE /* ZhongJiangVDiskTests.m */; };
 		5E1721D81D62FFD4003CA0AE /* ZhongJiangVDiskUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721D71D62FFD4003CA0AE /* ZhongJiangVDiskUITests.m */; };
@@ -52,10 +57,6 @@
 		5E1722A21D630082003CA0AE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722581D630082003CA0AE /* Info.plist */; };
 		5E1722D51D63008A003CA0AE /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722B51D63008A003CA0AE /* ButtonView.m */; };
 		5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722B61D63008A003CA0AE /* ButtonView.xib */; };
-		5E1722D71D63008A003CA0AE /* BuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722B91D63008A003CA0AE /* BuyView.m */; };
-		5E1722D81D63008A003CA0AE /* BuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722BA1D63008A003CA0AE /* BuyView.xib */; };
-		5E1722D91D63008A003CA0AE /* SelectDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722BD1D63008A003CA0AE /* SelectDataCell.m */; };
-		5E1722DA1D63008A003CA0AE /* SelectDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722BE1D63008A003CA0AE /* SelectDataCell.xib */; };
 		5E1722DB1D63008A003CA0AE /* InputDealPswdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722C11D63008A003CA0AE /* InputDealPswdView.m */; };
 		5E1722DC1D63008A003CA0AE /* InputDealPswdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722C21D63008A003CA0AE /* InputDealPswdView.xib */; };
 		5E1722DF1D63008A003CA0AE /* SecurityCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722C91D63008A003CA0AE /* SecurityCodeView.m */; };
@@ -108,6 +109,7 @@
 		5EAF83D71D6E896C00239CB5 /* Core+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF83D61D6E896C00239CB5 /* Core+Data.m */; };
 		5EAF83DC1D6E95DE00239CB5 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF83DB1D6E95DE00239CB5 /* JavaScriptCore.framework */; };
 		5EAF83E01D6EC23600239CB5 /* Core+CheckData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF83DF1D6EC23600239CB5 /* Core+CheckData.m */; };
+		5EAF83E21D6FD3D000239CB5 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF83E11D6FD3D000239CB5 /* Products.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,14 @@
 
 /* Begin PBXFileReference section */
 		2FC96D50A9163C9FB43FB0C5 /* Pods-ZhongJiangVDisk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.release.xcconfig"; sourceTree = "<group>"; };
+		5E1350CE1D6FF3F400D673E1 /* BuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyView.h; sourceTree = "<group>"; };
+		5E1350CF1D6FF3F400D673E1 /* BuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyView.m; sourceTree = "<group>"; };
+		5E1350D01D6FF3F400D673E1 /* BuyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyView.xib; sourceTree = "<group>"; };
+		5E1350D21D6FF3F400D673E1 /* ProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
+		5E1350D31D6FF3F400D673E1 /* ProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
+		5E1350D51D6FF3F400D673E1 /* SelectDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDataCell.h; sourceTree = "<group>"; };
+		5E1350D61D6FF3F400D673E1 /* SelectDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDataCell.m; sourceTree = "<group>"; };
+		5E1350D71D6FF3F400D673E1 /* SelectDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectDataCell.xib; sourceTree = "<group>"; };
 		5E1721AF1D62FFD4003CA0AE /* ZhongJiangVDisk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhongJiangVDisk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1721B31D62FFD4003CA0AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E1721C81D62FFD4003CA0AE /* ZhongJiangVDiskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhongJiangVDiskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,12 +216,6 @@
 		5E1722B41D63008A003CA0AE /* ButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
 		5E1722B51D63008A003CA0AE /* ButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
 		5E1722B61D63008A003CA0AE /* ButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
-		5E1722B81D63008A003CA0AE /* BuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyView.h; sourceTree = "<group>"; };
-		5E1722B91D63008A003CA0AE /* BuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyView.m; sourceTree = "<group>"; };
-		5E1722BA1D63008A003CA0AE /* BuyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyView.xib; sourceTree = "<group>"; };
-		5E1722BC1D63008A003CA0AE /* SelectDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDataCell.h; sourceTree = "<group>"; };
-		5E1722BD1D63008A003CA0AE /* SelectDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDataCell.m; sourceTree = "<group>"; };
-		5E1722BE1D63008A003CA0AE /* SelectDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectDataCell.xib; sourceTree = "<group>"; };
 		5E1722C01D63008A003CA0AE /* InputDealPswdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputDealPswdView.h; sourceTree = "<group>"; };
 		5E1722C11D63008A003CA0AE /* InputDealPswdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputDealPswdView.m; sourceTree = "<group>"; };
 		5E1722C21D63008A003CA0AE /* InputDealPswdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputDealPswdView.xib; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 		5EAF83DB1D6E95DE00239CB5 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		5EAF83DE1D6EC23600239CB5 /* Core+CheckData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core+CheckData.h"; sourceTree = "<group>"; };
 		5EAF83DF1D6EC23600239CB5 /* Core+CheckData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Core+CheckData.m"; sourceTree = "<group>"; };
+		5EAF83E11D6FD3D000239CB5 /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -338,6 +343,37 @@
 				2FC96D50A9163C9FB43FB0C5 /* Pods-ZhongJiangVDisk.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5E1350CD1D6FF3F400D673E1 /* BuyView */ = {
+			isa = PBXGroup;
+			children = (
+				5E1350CE1D6FF3F400D673E1 /* BuyView.h */,
+				5E1350CF1D6FF3F400D673E1 /* BuyView.m */,
+				5E1350D01D6FF3F400D673E1 /* BuyView.xib */,
+				5E1350D11D6FF3F400D673E1 /* ProductModel */,
+				5E1350D41D6FF3F400D673E1 /* SelectDataCell */,
+			);
+			path = BuyView;
+			sourceTree = "<group>";
+		};
+		5E1350D11D6FF3F400D673E1 /* ProductModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E1350D21D6FF3F400D673E1 /* ProductModel.h */,
+				5E1350D31D6FF3F400D673E1 /* ProductModel.m */,
+			);
+			path = ProductModel;
+			sourceTree = "<group>";
+		};
+		5E1350D41D6FF3F400D673E1 /* SelectDataCell */ = {
+			isa = PBXGroup;
+			children = (
+				5E1350D51D6FF3F400D673E1 /* SelectDataCell.h */,
+				5E1350D61D6FF3F400D673E1 /* SelectDataCell.m */,
+				5E1350D71D6FF3F400D673E1 /* SelectDataCell.xib */,
+			);
+			path = SelectDataCell;
 			sourceTree = "<group>";
 		};
 		5E1721A61D62FFD4003CA0AE = {
@@ -503,6 +539,7 @@
 		5E1721FE1D630082003CA0AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5E1350CD1D6FF3F400D673E1 /* BuyView */,
 				5E1722FB1D65AB15003CA0AE /* ProductTableView */,
 				5E1721FF1D630082003CA0AE /* ChartView */,
 				5E1722031D630082003CA0AE /* ProductCollectionView */,
@@ -849,7 +886,6 @@
 				5EAF82321D6AE3C100239CB5 /* LButton */,
 				5EAF82351D6AE3C100239CB5 /* LTextField */,
 				5E1722B31D63008A003CA0AE /* ButtonView */,
-				5E1722B71D63008A003CA0AE /* BuyView */,
 				5E1722BF1D63008A003CA0AE /* InputDealPswdView */,
 				5E1722C31D63008A003CA0AE /* PersonalTopView */,
 				5E1722C71D63008A003CA0AE /* SecurityCodeView */,
@@ -867,27 +903,6 @@
 				5E1722B61D63008A003CA0AE /* ButtonView.xib */,
 			);
 			path = ButtonView;
-			sourceTree = "<group>";
-		};
-		5E1722B71D63008A003CA0AE /* BuyView */ = {
-			isa = PBXGroup;
-			children = (
-				5E1722B81D63008A003CA0AE /* BuyView.h */,
-				5E1722B91D63008A003CA0AE /* BuyView.m */,
-				5E1722BA1D63008A003CA0AE /* BuyView.xib */,
-				5E1722BB1D63008A003CA0AE /* SelectDataCell */,
-			);
-			path = BuyView;
-			sourceTree = "<group>";
-		};
-		5E1722BB1D63008A003CA0AE /* SelectDataCell */ = {
-			isa = PBXGroup;
-			children = (
-				5E1722BC1D63008A003CA0AE /* SelectDataCell.h */,
-				5E1722BD1D63008A003CA0AE /* SelectDataCell.m */,
-				5E1722BE1D63008A003CA0AE /* SelectDataCell.xib */,
-			);
-			path = SelectDataCell;
 			sourceTree = "<group>";
 		};
 		5E1722BF1D63008A003CA0AE /* InputDealPswdView */ = {
@@ -1032,6 +1047,7 @@
 		5EAF82501D6AF51200239CB5 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				5EAF83E11D6FD3D000239CB5 /* Products.json */,
 				5EAF82511D6AF51200239CB5 /* BBStockChartView */,
 				5EAF826E1D6AF51200239CB5 /* QRcode */,
 				5EAF82741D6AF51200239CB5 /* QRCodeImage-生成二维码 */,
@@ -1304,17 +1320,18 @@
 				5E17229F1D630082003CA0AE /* PositionCell.xib in Resources */,
 				5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */,
 				5E17228C1D630082003CA0AE /* DealHistoryCell.xib in Resources */,
+				5E1350D91D6FF3F400D673E1 /* BuyView.xib in Resources */,
 				5E17229B1D630082003CA0AE /* RechargeHeadView.xib in Resources */,
 				5E1722E01D63008A003CA0AE /* SecurityCodeView.xib in Resources */,
 				5E1723141D66E090003CA0AE /* StockChartDataView.xib in Resources */,
 				5EAF828A1D6AF51200239CB5 /* VDiskTypes.json in Resources */,
+				5EAF83E21D6FD3D000239CB5 /* Products.json in Resources */,
 				5E1722991D630082003CA0AE /* RechargeCell.xib in Resources */,
 				5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */,
 				5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */,
 				5EAF824B1D6AEE9F00239CB5 /* RegisterButtonView.xib in Resources */,
 				5E1722A21D630082003CA0AE /* Info.plist in Resources */,
 				5E1722911D630082003CA0AE /* DealCell.xib in Resources */,
-				5E1722DA1D63008A003CA0AE /* SelectDataCell.xib in Resources */,
 				5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */,
 				5EAF827C1D6AF51200239CB5 /* data.json in Resources */,
 				5EAF82931D6BDEC700239CB5 /* DisabledView.xib in Resources */,
@@ -1325,8 +1342,8 @@
 				5E1722851D630082003CA0AE /* ProductCollectionCell.xib in Resources */,
 				5E1722F71D658CAA003CA0AE /* PersonalTopView.xib in Resources */,
 				5EAF82861D6AF51200239CB5 /* 扫描框@2x.png in Resources */,
-				5E1722D81D63008A003CA0AE /* BuyView.xib in Resources */,
 				5E1722E31D63008A003CA0AE /* SegmentView.xib in Resources */,
+				5E1350DC1D6FF3F400D673E1 /* SelectDataCell.xib in Resources */,
 				5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */,
 				5E1722831D630082003CA0AE /* ChartView.xib in Resources */,
 			);
@@ -1409,9 +1426,9 @@
 				5EAF824F1D6AEEC800239CB5 /* RegisterController.m in Sources */,
 				5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */,
 				5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */,
+				5E1350DB1D6FF3F400D673E1 /* SelectDataCell.m in Sources */,
 				5EAF82911D6BDEBD00239CB5 /* DisabledView.m in Sources */,
 				5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */,
-				5E1722D71D63008A003CA0AE /* BuyView.m in Sources */,
 				5E1722A11D630082003CA0AE /* Core+Color.m in Sources */,
 				5E1722941D630082003CA0AE /* QRCodeController.m in Sources */,
 				5EAF827A1D6AF51200239CB5 /* AxisX.m in Sources */,
@@ -1421,7 +1438,6 @@
 				5E17229C1D630082003CA0AE /* WithdrawController.m in Sources */,
 				5E1722801D630082003CA0AE /* BaseViewController.m in Sources */,
 				5E17229A1D630082003CA0AE /* RechargeHeadView.m in Sources */,
-				5E1722D91D63008A003CA0AE /* SelectDataCell.m in Sources */,
 				5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */,
 				5EAF827D1D6AF51200239CB5 /* BaseLayer.m in Sources */,
 				5EAF824A1D6AEE9F00239CB5 /* RegisterButtonView.m in Sources */,
@@ -1448,6 +1464,7 @@
 				5E1721B41D62FFD4003CA0AE /* main.m in Sources */,
 				5E1723181D66E0BA003CA0AE /* LineChartDataView.m in Sources */,
 				5E1722921D630082003CA0AE /* InfosController.m in Sources */,
+				5E1350D81D6FF3F400D673E1 /* BuyView.m in Sources */,
 				5EAF82821D6AF51200239CB5 /* LineSeries.m in Sources */,
 				5E17229E1D630082003CA0AE /* PositionCell.m in Sources */,
 				5E1722811D630082003CA0AE /* HomeController.m in Sources */,
@@ -1461,6 +1478,7 @@
 				5E17228B1D630082003CA0AE /* DealHistoryCell.m in Sources */,
 				5EAF827F1D6AF51200239CB5 /* BBChartView.m in Sources */,
 				5EAF82851D6AF51200239CB5 /* ScanQRCodeController.m in Sources */,
+				5E1350DA1D6FF3F400D673E1 /* ProductModel.m in Sources */,
 				5E1722931D630082003CA0AE /* PersonalController.m in Sources */,
 				5E1722841D630082003CA0AE /* ProductCollectionCell.m in Sources */,
 				5E1722861D630082003CA0AE /* ProductCollectionView.m in Sources */,

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ProductModel.h"
 @interface BuyView : UIView
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (nonatomic, copy) btnActionBlock btnActionBlock;
+
 - (void)showBuyViewAnimated:(BOOL)animated;
 - (void)removeBuyViewAnimated:(BOOL)animated;
+@property (nonatomic, strong) ProductModel *model;
+@property (nonatomic, assign) BOOL isBuyRise;
+@property (nonatomic, copy) btnActionBlock btnActionBlock;
 @end

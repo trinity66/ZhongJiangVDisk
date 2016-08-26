@@ -10,33 +10,37 @@
 
 @interface ProductCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) BuyView *buyView;
+@property (nonatomic, strong) NSArray *productsList;
 @end
 __weak ProductCollectionView *productCollectionSelf;
 @implementation ProductCollectionView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    [self products];
     productCollectionSelf = self;
     self.backgroundColor = LCoreCurrent.detailBackColor;
     //注册cell
     [_collectionView registerNib:[UINib nibWithNibName:@"ProductCollectionCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"ProductCollectionCell"];
 }
+- (void)products
+{
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Products" ofType:@"json"]];
+    NSError* err = nil;
+    _productsList = (NSArray*)[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&err];
+}
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 1;
+    
+    return _productsList.count;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 6;
+    NSDictionary *dict = _productsList[section];
+    NSArray *list = dict[@"list"];
+    return list.count;
 }
 //cell大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -52,19 +56,24 @@ __weak ProductCollectionView *productCollectionSelf;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProductCollectionCell" forIndexPath:indexPath];
-    cell.btnsActionBlock = ^(NSInteger index) {
-        [productCollectionSelf candleBuyViewWithIndex:index indexpath:indexPath];
-    };
-    if (indexPath.item % 2 == 0) {
+    NSDictionary *dict = _productsList[indexPath.section];
+    NSArray *list = dict[@"list"];
+    cell.model = [ProductModel modelWithDictionary:list[indexPath.row]];
+    if (indexPath.row == list.count-1) {
         [cell setColorWithType:@"RED"];
     }else
     {
         [cell setColorWithType:@"BROWN"];
     }
+    cell.btnsActionBlock = ^(NSInteger index) {
+        [productCollectionSelf candleBuyViewWithIndex:index indexPath:indexPath];
+    };
     return cell;
 }
-- (void)candleBuyViewWithIndex:(NSInteger)index indexpath:(NSIndexPath *)indexPath
+- (void)candleBuyViewWithIndex:(NSInteger)index indexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *dict = _productsList[indexPath.section];
+    NSArray *list = dict[@"list"];
     if (!_buyView) {
         _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
         __block BuyView *_buy = self.buyView;
@@ -72,12 +81,8 @@ __weak ProductCollectionView *productCollectionSelf;
             [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
         };
     }
-    if (index == 0) {
-        _buyView.title.text = @"买涨";
-    }else
-    {
-        _buyView.title.text = @"买跌";
-    }
+    _buyView.model = [ProductModel modelWithDictionary:list[indexPath.row]];
+    _buyView.isBuyRise = !index;
     [_buyView showBuyViewAnimated:NO];
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView

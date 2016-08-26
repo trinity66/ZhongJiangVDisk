@@ -50,5 +50,12 @@
         self.btnsActionBlock(1);
     }
 }
+- (void)setModel:(ProductModel *)model
+{
+    _model = model;
+    _title.text = [NSString stringWithFormat:@"%.02f元/手",_model.price];
+    _name.text = _model.productName;
+    _detail.text = [NSString stringWithFormat:@"波动盈亏:%.03f元",_model.fluctuations];
+}
 
 @end
