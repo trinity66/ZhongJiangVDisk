@@ -86,9 +86,7 @@ __weak ProductCollectionView *productCollectionSelf;
 {
     if (!_buyView) {
         _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
-        __block BuyView *_buy = self.buyView;
         _buyView.btnActionBlock = ^() {
-            [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
         };
     }
     NSDictionary *dict = LCoreCurrent.productsList[indexPath.section];

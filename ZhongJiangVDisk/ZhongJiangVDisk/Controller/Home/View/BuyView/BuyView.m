@@ -140,9 +140,23 @@ __weak BuyView *buySelf;
     [self removeBuyViewAnimated:NO];
 }
 - (IBAction)buttonAction:(id)sender {
-    if (self.btnActionBlock) {
-        self.btnActionBlock();
+    double balance = [LCoreCurrent.userInfo[@"balance"] doubleValue];
+    double money = [_priceTF.text doubleValue];
+    if (money > balance) {
+        [LCoreCurrent showAlertTitle:@"余额不足" timeCount:2 inView:self];
+    }else
+    {
+        [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:self];
+        balance -= money;
+        [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(balance)];
+        BaseNavigationController *navc = ((BaseTabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController).viewControllers[0];
+        HomeController *vc = (HomeController*)navc.viewControllers[0];
+        [vc setBalance];
+        if (self.btnActionBlock) {
+            self.btnActionBlock();
+        }
     }
+    
 }
 - (void)removeBuyViewAnimated:(BOOL)animated
 {
