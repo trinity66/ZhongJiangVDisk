@@ -159,15 +159,6 @@ __weak BuyView *buySelf;
                                @"isFinsih":@0,
                                };
         [LCoreCurrent saveDeal:dict];
-        /*
-         _id:
-         time:
-         productName:商品名称
-         countNumber:买的个数
-         money:钱数
-         product:
-         isBuyRise:是否是买涨
-         */
         NSDictionary *dict2 = @{
                                 @"_id":time,
                                 @"time":time,

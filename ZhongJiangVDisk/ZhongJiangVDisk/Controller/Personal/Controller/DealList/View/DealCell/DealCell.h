@@ -7,13 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DealModel.h"
 @interface DealCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *idNumber;
-@property (weak, nonatomic) IBOutlet UILabel *balance;
-@property (weak, nonatomic) IBOutlet UILabel *kind;
-@property (weak, nonatomic) IBOutlet UILabel *product;
-@property (weak, nonatomic) IBOutlet UILabel *amount;
-@property (weak, nonatomic) IBOutlet UILabel *time;
-- (void)setAmountWithNumber:(double)number isRise:(BOOL)isRise;
+@property (nonatomic, strong) DealModel *model;
 @end

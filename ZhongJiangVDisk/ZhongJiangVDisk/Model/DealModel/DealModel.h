@@ -16,6 +16,7 @@
  "time":时间
  "money":金额
  "balance":余额
+ "isFinsih":
  */
 +(DealModel*)modelWithDictionary:(NSDictionary *)dictionary;
 @property (nonatomic,copy) NSString *_id, *time;

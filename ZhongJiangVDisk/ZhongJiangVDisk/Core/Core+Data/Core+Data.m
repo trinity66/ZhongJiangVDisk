@@ -72,7 +72,7 @@
     [LConfigCurrent set_object_for_key:@"dealList" value:list];
     
 }
-- (void)saveDealWithList:(NSArray *)list
+- (void)saveDealWithList:(NSMutableArray *)list
 {
     [LConfigCurrent set_object_for_key:@"dealList" value:list];
 }

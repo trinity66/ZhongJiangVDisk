@@ -188,7 +188,7 @@ __weak WithdrawController *_withdrawSelf;
                              @"type":@400,
                              @"product":@{
                                      @"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
-                                     @"productName":@"提现",
+                                     @"productName":_bankTF.text,
                                      @"bankNumber":_bankNumberTF.text,
                                      @"bankTitle":_bankTF.text,
                                      @"name":_nameTF.text,
@@ -205,7 +205,7 @@ __weak WithdrawController *_withdrawSelf;
                              @"type":@401,
                              @"product":@{
                                      @"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
-                                     @"productName":@"提现手续费",
+                                     @"productName":_bankTF.text,
                                      @"bankNumber":_bankNumberTF.text,
                                      @"bankTitle":_bankTF.text,
                                      @"name":_nameTF.text,

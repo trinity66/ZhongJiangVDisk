@@ -11,7 +11,7 @@
 @interface DealListController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
-
+@property (nonatomic, strong) NSArray *list;
 @end
 
 @implementation DealListController
@@ -24,6 +24,12 @@
     _tableView.separatorColor = LCoreCurrent.detailLightBackColor;
     // Do any additional setup after loading the view.
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _list = [LCoreCurrent getDealList];
+    [_tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -35,7 +41,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 9;
+    return _list.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -59,15 +65,13 @@
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"DealCell" owner:nil options:nil].lastObject;
     }
-    BOOL isRise = YES;
     if (indexPath.row % 2 == 0) {
         cell.backgroundColor = LCoreCurrent.backgroundColor;
-        isRise = NO;
     }else
     {
-        cell.backgroundColor = LCoreCurrent.detailBackColor;
+        cell.backgroundColor = LCoreCurrent.topSegmentColor;
     }
-    [cell setAmountWithNumber:4.8 isRise:isRise];
+    cell.model = [DealModel modelWithDictionary:_list[indexPath.row]];
     return cell;
 }
 /*

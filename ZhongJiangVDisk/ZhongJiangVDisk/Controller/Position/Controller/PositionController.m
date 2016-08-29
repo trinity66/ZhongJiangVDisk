@@ -82,20 +82,21 @@ __weak PositionController *_positionSelf;
             double poundageMoney = money*poundage;
             double balance = [LCoreCurrent.userInfo[@"balance"] doubleValue];
             balance += money;
-            [list addObject:@{@"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+            NSString *time = [NSString stringWithFormat:@"%@",[NSDate date]];
+            [list addObject:@{@"_id":time,
                                  @"type":@300,
-                                 @"product":model.productModel.modelDict,
-                                 @"time":[NSString stringWithFormat:@"%@",[NSDate date]],
+                                 @"product":deal[@"product"],
+                                 @"time":time,
                                  @"money":@(money),
                                  @"balance":@(balance),
                                  @"isFinsih":@1,
                                  }];
             balance -= poundageMoney;
             //卖出手续费
-            [list addObject:@{@"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+            [list addObject:@{@"_id":time,
                                  @"type":@301,
-                                 @"product":model.productModel.modelDict,
-                                 @"time":[NSString stringWithFormat:@"%@",[NSDate date]],
+                                 @"product":deal[@"product"],
+                                 @"time":time,
                                  @"money":@(poundageMoney),
                                  @"balance":@(balance),
                                  @"isFinsih":@1,
@@ -103,8 +104,8 @@ __weak PositionController *_positionSelf;
             [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(balance)];
             [self setBalance];
             /*买入状态改为已结束*/
-            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:model.modelDict];
-            [dict setObject:@"isFinsih" forKey:@1];
+            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:deal];
+            [dict setObject:@1 forKey:@"isFinsih"];
             [list replaceObjectAtIndex:index withObject:dict];
         }
     }

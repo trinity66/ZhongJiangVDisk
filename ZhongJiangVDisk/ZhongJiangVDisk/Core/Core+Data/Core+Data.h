@@ -18,7 +18,7 @@
 
 
 - (void)saveDeal:(NSDictionary *)dictionary;
-- (void)saveDealWithList:(NSArray *)list;
+- (void)saveDealWithList:(NSMutableArray *)list;
 - (NSArray*)getDealList;
 
 - (void)saveDealHistory:(NSDictionary *)dictionary;

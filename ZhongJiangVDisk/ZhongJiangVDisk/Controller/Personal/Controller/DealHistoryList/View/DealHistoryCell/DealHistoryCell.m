@@ -8,6 +8,12 @@
 
 #import "DealHistoryCell.h"
 
+@interface DealHistoryCell ()
+@property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet UILabel *money;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *detail;
+@end
 @implementation DealHistoryCell
 
 - (void)awakeFromNib {
@@ -27,6 +33,15 @@
     _time.font = font;
     _detail.font = font;
     _money.font = font;
+}
+- (void)setModel:(DealHistoryModel *)model
+{
+    _model = model;
+    NSString *str = [model.time substringToIndex:10];
+    _time.text = [NSString stringWithFormat:@"%@",str];
+    _title.text = model.productName;
+    _money.text = [NSString stringWithFormat:@"%.02lf",model.money];
+    [self setDetailWithNumber:model.countNumber isRise:model.isBuyRise];
 }
 - (void)setDetailWithNumber:(NSInteger)num isRise:(BOOL)isRise
 {

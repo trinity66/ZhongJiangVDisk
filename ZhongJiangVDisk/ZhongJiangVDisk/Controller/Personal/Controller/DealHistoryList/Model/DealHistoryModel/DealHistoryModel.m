@@ -19,7 +19,7 @@
     model.money = [dictionary[@"money"] doubleValue];
     model.product = dictionary[@"product"];
     model.productModel = [ProductModel modelWithDictionary:dictionary[@"product"]];
-    model.isBuyRise = dictionary[@"isBuyRise"];
+    model.isBuyRise = [dictionary[@"isBuyRise"] boolValue];
     model.modelDict = dictionary;
     return model;
 }

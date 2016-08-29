@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DealHistoryModel.h"
 @interface DealHistoryCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *time;
-@property (weak, nonatomic) IBOutlet UILabel *money;
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UILabel *detail;
-- (void)setDetailWithNumber:(NSInteger)num isRise:(BOOL)isRise;
+@property (nonatomic, strong) DealHistoryModel *model;
+
 @end

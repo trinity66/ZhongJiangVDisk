@@ -12,7 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
 @property (nonatomic, strong) DealHistoryHeadView *head;
-
+@property (nonatomic, strong) NSArray *list;
 @end
 
 @implementation DealHistoryListController
@@ -26,6 +26,19 @@
     [self addHeadTableView];
     // Do any additional setup after loading the view.
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _list = [LCoreCurrent getDealHistoryList];
+    _head.tfOne.text = [NSString stringWithFormat:@"%lu",(unsigned long)_list.count];
+    int totalCount = 0;
+    for (NSDictionary *dict in _list) {
+        DealHistoryModel *model = [DealHistoryModel modelWithDictionary:dict];
+        totalCount += model.countNumber;
+    }
+    _head.tfTwo.text = [NSString stringWithFormat:@"%d",totalCount];
+    [_tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -37,7 +50,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 9;
+    return _list.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -68,7 +81,7 @@
     {
         cell.backgroundColor = LCoreCurrent.detailBackColor;
     }
-    [cell setDetailWithNumber:indexPath.row + 1 isRise:isRise];
+    cell.model = [DealHistoryModel modelWithDictionary:_list[indexPath.row]];
     return cell;
 }
 - (void)addHeadTableView
