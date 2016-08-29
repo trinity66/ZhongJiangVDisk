@@ -181,7 +181,40 @@ __weak WithdrawController *_withdrawSelf;
         [self showAlert:@"验证码输入不正确，请检查"];
         return;
     }
+#warning mark 提现
     balance -= money;
+    //提现
+    [LCoreCurrent saveDeal:@{@"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+                             @"type":@400,
+                             @"product":@{
+                                     @"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+                                     @"productName":@"提现",
+                                     @"bankNumber":_bankNumberTF.text,
+                                     @"bankTitle":_bankTF.text,
+                                     @"name":_nameTF.text,
+                                     },
+                             @"time":[NSString stringWithFormat:@"%@",[NSDate date]],
+                             @"money":@(money),
+                             @"balance":@(balance),
+                             @"isFinsih":@1,
+                             }];
+    //提现手续费
+    double poundage = money *0.01;
+    balance -= poundage;
+    [LCoreCurrent saveDeal:@{@"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+                             @"type":@401,
+                             @"product":@{
+                                     @"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+                                     @"productName":@"提现手续费",
+                                     @"bankNumber":_bankNumberTF.text,
+                                     @"bankTitle":_bankTF.text,
+                                     @"name":_nameTF.text,
+                                     },
+                             @"time":[NSString stringWithFormat:@"%@",[NSDate date]],
+                             @"money":@(poundage),
+                             @"balance":@(balance),
+                             @"isFinsih":@1,
+                             }];
     [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(balance)];
     [self setBalance];
     [self showAlert:@"提现成功"];

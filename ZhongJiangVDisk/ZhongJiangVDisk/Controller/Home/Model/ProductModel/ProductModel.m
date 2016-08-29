@@ -24,6 +24,7 @@
     model.price = [dictionary[@"price"] doubleValue];
     model.contractPrice = [dictionary[@"contractPrice"] doubleValue];
     model.poundage = [dictionary[@"poundage"] doubleValue];
+    model.modelDict = dictionary;
     return model;
 }
 @end

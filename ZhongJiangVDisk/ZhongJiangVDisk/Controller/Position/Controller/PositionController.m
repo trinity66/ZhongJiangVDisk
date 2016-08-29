@@ -57,7 +57,8 @@ __weak PositionController *_positionSelf;
         cell = [[NSBundle mainBundle] loadNibNamed:@"PositionCell" owner:nil options:nil].lastObject;
     }
     cell.btnActionBlock = ^() {
-        [LCoreCurrent showAlertTitle:@"平仓成功" timeCount:2 inView:_positionSelf.view];
+        [_positionSelf clickButtonAction];
+        
     };
     [cell setDetailWithNumber:0.00 isRise:YES];
     return cell;
@@ -65,6 +66,50 @@ __weak PositionController *_positionSelf;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+/*点击一键平仓的操作*/
+- (void)clickButtonAction
+{
+    NSMutableArray *list = [NSMutableArray arrayWithArray:[LCoreCurrent getDealList]];
+    for (int index = 0; index < list.count; index ++) {
+        NSDictionary *deal = list[index];
+        DealModel *model = [DealModel modelWithDictionary:deal];
+        if (model.type == 200 && !model.isFinsih) {
+#warning mark 卖出&&卖出手续费
+            //卖出
+            double money = model.money;
+            double poundage = model.productModel.poundage;
+            double poundageMoney = money*poundage;
+            double balance = [LCoreCurrent.userInfo[@"balance"] doubleValue];
+            balance += money;
+            [list addObject:@{@"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+                                 @"type":@300,
+                                 @"product":model.productModel.modelDict,
+                                 @"time":[NSString stringWithFormat:@"%@",[NSDate date]],
+                                 @"money":@(money),
+                                 @"balance":@(balance),
+                                 @"isFinsih":@1,
+                                 }];
+            balance -= poundageMoney;
+            //卖出手续费
+            [list addObject:@{@"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+                                 @"type":@301,
+                                 @"product":model.productModel.modelDict,
+                                 @"time":[NSString stringWithFormat:@"%@",[NSDate date]],
+                                 @"money":@(poundageMoney),
+                                 @"balance":@(balance),
+                                 @"isFinsih":@1,
+                                 }];
+            [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(balance)];
+            [self setBalance];
+            /*买入状态改为已结束*/
+            NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:model.modelDict];
+            [dict setObject:@"isFinsih" forKey:@1];
+            [list replaceObjectAtIndex:index withObject:dict];
+        }
+    }
+    [LCoreCurrent saveDealWithList:list];
+    [self showAlert:@"平仓成功"];
 }
 /*
 #pragma mark - Navigation

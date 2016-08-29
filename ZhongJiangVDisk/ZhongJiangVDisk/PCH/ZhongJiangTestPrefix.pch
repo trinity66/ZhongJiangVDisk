@@ -120,6 +120,7 @@
 #import "MJRefresh.h"
 
 #import "ProductModel.h"
+#import "DealModel.h"
 
 
 

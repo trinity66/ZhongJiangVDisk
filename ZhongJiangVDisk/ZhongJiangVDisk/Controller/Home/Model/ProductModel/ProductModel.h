@@ -23,5 +23,7 @@
 @property(nonatomic, copy)NSString *_id, *productName;
 @property(nonatomic, assign)NSInteger productType,maxProfit,maxLoss;
 @property(nonatomic, assign)double fluctuations, price, contractPrice, poundage;
+@property (nonatomic, strong)NSDictionary *modelDict;
 +(ProductModel *)modelWithDictionary:(NSDictionary *)dictionary;
+
 @end

@@ -10,7 +10,6 @@
 		59426E86B20513BFE4F7A7CC /* Pods_ZhongJiangVDisk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */; };
 		5E1350D81D6FF3F400D673E1 /* BuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1350CF1D6FF3F400D673E1 /* BuyView.m */; };
 		5E1350D91D6FF3F400D673E1 /* BuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1350D01D6FF3F400D673E1 /* BuyView.xib */; };
-		5E1350DA1D6FF3F400D673E1 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1350D31D6FF3F400D673E1 /* ProductModel.m */; };
 		5E1350DB1D6FF3F400D673E1 /* SelectDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1350D61D6FF3F400D673E1 /* SelectDataCell.m */; };
 		5E1350DC1D6FF3F400D673E1 /* SelectDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1350D71D6FF3F400D673E1 /* SelectDataCell.xib */; };
 		5E1721B41D62FFD4003CA0AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721B31D62FFD4003CA0AE /* main.m */; };
@@ -77,6 +76,9 @@
 		5E1723141D66E090003CA0AE /* StockChartDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723121D66E090003CA0AE /* StockChartDataView.xib */; };
 		5E1723181D66E0BA003CA0AE /* LineChartDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723171D66E0BA003CA0AE /* LineChartDataView.m */; };
 		5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */; };
+		5E75AF6B1D73C4260051FB1D /* DealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6A1D73C4260051FB1D /* DealModel.m */; };
+		5E75AF6F1D73C5190051FB1D /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6E1D73C5190051FB1D /* ProductModel.m */; };
+		5E75AF731D73DEF70051FB1D /* DealHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF721D73DEF70051FB1D /* DealHistoryModel.m */; };
 		5EAF82381D6AE3C100239CB5 /* LButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82341D6AE3C100239CB5 /* LButton.m */; };
 		5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82371D6AE3C100239CB5 /* LTextField.m */; };
 		5EAF823B1D6AE4BE00239CB5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */; };
@@ -134,8 +136,6 @@
 		5E1350CE1D6FF3F400D673E1 /* BuyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyView.h; sourceTree = "<group>"; };
 		5E1350CF1D6FF3F400D673E1 /* BuyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyView.m; sourceTree = "<group>"; };
 		5E1350D01D6FF3F400D673E1 /* BuyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyView.xib; sourceTree = "<group>"; };
-		5E1350D21D6FF3F400D673E1 /* ProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
-		5E1350D31D6FF3F400D673E1 /* ProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
 		5E1350D51D6FF3F400D673E1 /* SelectDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectDataCell.h; sourceTree = "<group>"; };
 		5E1350D61D6FF3F400D673E1 /* SelectDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectDataCell.m; sourceTree = "<group>"; };
 		5E1350D71D6FF3F400D673E1 /* SelectDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectDataCell.xib; sourceTree = "<group>"; };
@@ -247,6 +247,12 @@
 		5E1723161D66E0BA003CA0AE /* LineChartDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartDataView.h; sourceTree = "<group>"; };
 		5E1723171D66E0BA003CA0AE /* LineChartDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartDataView.m; sourceTree = "<group>"; };
 		5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChartDataView.xib; sourceTree = "<group>"; };
+		5E75AF691D73C4260051FB1D /* DealModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealModel.h; sourceTree = "<group>"; };
+		5E75AF6A1D73C4260051FB1D /* DealModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealModel.m; sourceTree = "<group>"; };
+		5E75AF6D1D73C5190051FB1D /* ProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
+		5E75AF6E1D73C5190051FB1D /* ProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
+		5E75AF711D73DEF70051FB1D /* DealHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealHistoryModel.h; sourceTree = "<group>"; };
+		5E75AF721D73DEF70051FB1D /* DealHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealHistoryModel.m; sourceTree = "<group>"; };
 		5EAF82331D6AE3C100239CB5 /* LButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LButton.h; sourceTree = "<group>"; };
 		5EAF82341D6AE3C100239CB5 /* LButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LButton.m; sourceTree = "<group>"; };
 		5EAF82361D6AE3C100239CB5 /* LTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTextField.h; sourceTree = "<group>"; };
@@ -351,19 +357,9 @@
 				5E1350CE1D6FF3F400D673E1 /* BuyView.h */,
 				5E1350CF1D6FF3F400D673E1 /* BuyView.m */,
 				5E1350D01D6FF3F400D673E1 /* BuyView.xib */,
-				5E1350D11D6FF3F400D673E1 /* ProductModel */,
 				5E1350D41D6FF3F400D673E1 /* SelectDataCell */,
 			);
 			path = BuyView;
-			sourceTree = "<group>";
-		};
-		5E1350D11D6FF3F400D673E1 /* ProductModel */ = {
-			isa = PBXGroup;
-			children = (
-				5E1350D21D6FF3F400D673E1 /* ProductModel.h */,
-				5E1350D31D6FF3F400D673E1 /* ProductModel.m */,
-			);
-			path = ProductModel;
 			sourceTree = "<group>";
 		};
 		5E1350D41D6FF3F400D673E1 /* SelectDataCell */ = {
@@ -401,10 +397,11 @@
 		5E1721B11D62FFD4003CA0AE /* ZhongJiangVDisk */ = {
 			isa = PBXGroup;
 			children = (
-				5EAF82781D6AF51200239CB5 /* LLibs */,
 				5E1721EE1D630082003CA0AE /* Controller */,
-				5E1722511D630082003CA0AE /* Core */,
 				5E1722B21D63008A003CA0AE /* View */,
+				5E75AF671D73C3F50051FB1D /* Model */,
+				5E1722511D630082003CA0AE /* Core */,
+				5EAF82781D6AF51200239CB5 /* LLibs */,
 				5EAF82501D6AF51200239CB5 /* Libs */,
 				5E1722B01D63008A003CA0AE /* PCH */,
 				5E1721E51D630082003CA0AE /* AppDelegate */,
@@ -532,6 +529,7 @@
 		5E1721FD1D630082003CA0AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5E75AF6C1D73C5190051FB1D /* ProductModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -640,6 +638,7 @@
 		5E1722161D630082003CA0AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5E75AF701D73DEF20051FB1D /* DealHistoryModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1005,6 +1004,41 @@
 				5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */,
 			);
 			path = LineChartDataView;
+			sourceTree = "<group>";
+		};
+		5E75AF671D73C3F50051FB1D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E75AF681D73C41A0051FB1D /* DealModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E75AF681D73C41A0051FB1D /* DealModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E75AF691D73C4260051FB1D /* DealModel.h */,
+				5E75AF6A1D73C4260051FB1D /* DealModel.m */,
+			);
+			path = DealModel;
+			sourceTree = "<group>";
+		};
+		5E75AF6C1D73C5190051FB1D /* ProductModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E75AF6D1D73C5190051FB1D /* ProductModel.h */,
+				5E75AF6E1D73C5190051FB1D /* ProductModel.m */,
+			);
+			path = ProductModel;
+			sourceTree = "<group>";
+		};
+		5E75AF701D73DEF20051FB1D /* DealHistoryModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E75AF711D73DEF70051FB1D /* DealHistoryModel.h */,
+				5E75AF721D73DEF70051FB1D /* DealHistoryModel.m */,
+			);
+			path = DealHistoryModel;
 			sourceTree = "<group>";
 		};
 		5EAF82321D6AE3C100239CB5 /* LButton */ = {
@@ -1426,6 +1460,7 @@
 				5EAF824F1D6AEEC800239CB5 /* RegisterController.m in Sources */,
 				5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */,
 				5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */,
+				5E75AF731D73DEF70051FB1D /* DealHistoryModel.m in Sources */,
 				5E1350DB1D6FF3F400D673E1 /* SelectDataCell.m in Sources */,
 				5EAF82911D6BDEBD00239CB5 /* DisabledView.m in Sources */,
 				5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */,
@@ -1451,6 +1486,7 @@
 				5E1722DB1D63008A003CA0AE /* InputDealPswdView.m in Sources */,
 				5EAF82381D6AE3C100239CB5 /* LButton.m in Sources */,
 				5E1722FF1D65AB49003CA0AE /* ProductTableView.m in Sources */,
+				5E75AF6B1D73C4260051FB1D /* DealModel.m in Sources */,
 				5E1722DF1D63008A003CA0AE /* SecurityCodeView.m in Sources */,
 				5EAF83D71D6E896C00239CB5 /* Core+Data.m in Sources */,
 				5EAF82841D6AF51200239CB5 /* StockSeries.m in Sources */,
@@ -1466,6 +1502,7 @@
 				5E1722921D630082003CA0AE /* InfosController.m in Sources */,
 				5E1350D81D6FF3F400D673E1 /* BuyView.m in Sources */,
 				5EAF82821D6AF51200239CB5 /* LineSeries.m in Sources */,
+				5E75AF6F1D73C5190051FB1D /* ProductModel.m in Sources */,
 				5E17229E1D630082003CA0AE /* PositionCell.m in Sources */,
 				5E1722811D630082003CA0AE /* HomeController.m in Sources */,
 				5E17229D1D630082003CA0AE /* PositionController.m in Sources */,
@@ -1478,7 +1515,6 @@
 				5E17228B1D630082003CA0AE /* DealHistoryCell.m in Sources */,
 				5EAF827F1D6AF51200239CB5 /* BBChartView.m in Sources */,
 				5EAF82851D6AF51200239CB5 /* ScanQRCodeController.m in Sources */,
-				5E1350DA1D6FF3F400D673E1 /* ProductModel.m in Sources */,
 				5E1722931D630082003CA0AE /* PersonalController.m in Sources */,
 				5E1722841D630082003CA0AE /* ProductCollectionCell.m in Sources */,
 				5E1722861D630082003CA0AE /* ProductCollectionView.m in Sources */,

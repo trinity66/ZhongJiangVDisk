@@ -147,8 +147,37 @@ __weak BuyView *buySelf;
     }else
     {
         [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:self];
-        balance -= money;
-        [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(balance)];
+        [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(balance-money)];
+        NSString *time = [NSString stringWithFormat:@"%@",[NSDate date]];
+#warning mark 买入
+        NSDictionary *dict = @{@"_id":time,
+                               @"type":@200,
+                               @"product":_model.modelDict,
+                               @"time":time,
+                               @"money":@(money),
+                               @"balance":@(balance-money),
+                               @"isFinsih":@0,
+                               };
+        [LCoreCurrent saveDeal:dict];
+        /*
+         _id:
+         time:
+         productName:商品名称
+         countNumber:买的个数
+         money:钱数
+         product:
+         isBuyRise:是否是买涨
+         */
+        NSDictionary *dict2 = @{
+                                @"_id":time,
+                                @"time":time,
+                                @"productName":_model.productName,
+                                @"countNumber":@([_countTf.text integerValue]),
+                                @"money":@(money),
+                                @"product":_model.modelDict,
+                                @"isBuyRise":@(_isBuyRise),
+                                };
+        [LCoreCurrent saveDealHistory:dict2];
         BaseNavigationController *navc = ((BaseTabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController).viewControllers[0];
         HomeController *vc = (HomeController*)navc.viewControllers[0];
         [vc setBalance];

@@ -10,7 +10,17 @@
 
 @interface Core (Data)
 - (void)saveUserInfo:(NSDictionary *)userInfo;
-- (NSDictionary *)getUserInfo;
 - (void)saveUserInfoWithKey:(NSString *)key value:(id)value;
+- (NSDictionary *)getUserInfo;
+
+
 - (void)products;
+
+
+- (void)saveDeal:(NSDictionary *)dictionary;
+- (void)saveDealWithList:(NSArray *)list;
+- (NSArray*)getDealList;
+
+- (void)saveDealHistory:(NSDictionary *)dictionary;
+- (NSArray *)getDealHistoryList;
 @end

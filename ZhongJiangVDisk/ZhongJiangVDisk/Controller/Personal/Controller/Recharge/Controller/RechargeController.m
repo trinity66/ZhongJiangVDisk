@@ -204,8 +204,20 @@ __weak RechargeController *rechargeSelf;
     //注册操作，登录成功
     double money = [_inputTF.text doubleValue];
     double oldMoney = [LCoreCurrent.userInfo[@"balance"] doubleValue];
-    money += oldMoney;
-    [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(money)];
+    [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(money+oldMoney)];
+#warning mark 充值
+    NSDictionary *dict = @{@"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+                           @"type":@100,
+                           @"product":@{
+                               @"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+                               @"productName":@"充值",
+                           },
+                           @"time":[NSString stringWithFormat:@"%@",[NSDate date]],
+                           @"money":@(money),
+                           @"balance":@(money+oldMoney),
+                           @"isFinsih":@1,
+                               };
+    [LCoreCurrent saveDeal:dict];
     [self showAlert:@"充值成功"];
     [self setBalance];
 }
