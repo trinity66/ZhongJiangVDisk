@@ -79,6 +79,11 @@
 		5E75AF6B1D73C4260051FB1D /* DealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6A1D73C4260051FB1D /* DealModel.m */; };
 		5E75AF6F1D73C5190051FB1D /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6E1D73C5190051FB1D /* ProductModel.m */; };
 		5E75AF731D73DEF70051FB1D /* DealHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF721D73DEF70051FB1D /* DealHistoryModel.m */; };
+		5E99F2AC1D8002C4009863A9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99F2AB1D8002C4009863A9 /* CoreTelephony.framework */; };
+		5E99F2AE1D8002CC009863A9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99F2AD1D8002CC009863A9 /* OpenGLES.framework */; };
+		5E99F2B01D8002D8009863A9 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99F2AF1D8002D8009863A9 /* CoreMotion.framework */; };
+		5E99F2B21D8002E2009863A9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99F2B11D8002E2009863A9 /* AudioToolbox.framework */; };
+		5E99F2B41D8002EF009863A9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99F2B31D8002EF009863A9 /* SystemConfiguration.framework */; };
 		5EAF82381D6AE3C100239CB5 /* LButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82341D6AE3C100239CB5 /* LButton.m */; };
 		5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82371D6AE3C100239CB5 /* LTextField.m */; };
 		5EAF823B1D6AE4BE00239CB5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */; };
@@ -253,6 +258,11 @@
 		5E75AF6E1D73C5190051FB1D /* ProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
 		5E75AF711D73DEF70051FB1D /* DealHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealHistoryModel.h; sourceTree = "<group>"; };
 		5E75AF721D73DEF70051FB1D /* DealHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealHistoryModel.m; sourceTree = "<group>"; };
+		5E99F2AB1D8002C4009863A9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		5E99F2AD1D8002CC009863A9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		5E99F2AF1D8002D8009863A9 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		5E99F2B11D8002E2009863A9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5E99F2B31D8002EF009863A9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5EAF82331D6AE3C100239CB5 /* LButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LButton.h; sourceTree = "<group>"; };
 		5EAF82341D6AE3C100239CB5 /* LButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LButton.m; sourceTree = "<group>"; };
 		5EAF82361D6AE3C100239CB5 /* LTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTextField.h; sourceTree = "<group>"; };
@@ -319,6 +329,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E99F2B41D8002EF009863A9 /* SystemConfiguration.framework in Frameworks */,
+				5E99F2B21D8002E2009863A9 /* AudioToolbox.framework in Frameworks */,
+				5E99F2B01D8002D8009863A9 /* CoreMotion.framework in Frameworks */,
+				5E99F2AE1D8002CC009863A9 /* OpenGLES.framework in Frameworks */,
+				5E99F2AC1D8002C4009863A9 /* CoreTelephony.framework in Frameworks */,
 				5EAF83DC1D6E95DE00239CB5 /* JavaScriptCore.framework in Frameworks */,
 				5EAF823B1D6AE4BE00239CB5 /* AVFoundation.framework in Frameworks */,
 				59426E86B20513BFE4F7A7CC /* Pods_ZhongJiangVDisk.framework in Frameworks */,
@@ -1233,6 +1248,11 @@
 		794F7078CFCCD2419F25CE2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E99F2B31D8002EF009863A9 /* SystemConfiguration.framework */,
+				5E99F2B11D8002E2009863A9 /* AudioToolbox.framework */,
+				5E99F2AF1D8002D8009863A9 /* CoreMotion.framework */,
+				5E99F2AD1D8002CC009863A9 /* OpenGLES.framework */,
+				5E99F2AB1D8002C4009863A9 /* CoreTelephony.framework */,
 				5EAF83DB1D6E95DE00239CB5 /* JavaScriptCore.framework */,
 				5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */,
 				80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */,
