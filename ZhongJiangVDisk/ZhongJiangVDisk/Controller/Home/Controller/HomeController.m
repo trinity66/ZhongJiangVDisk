@@ -154,6 +154,9 @@ __weak HomeController *_self;
             }
             if (!_latestInfos) {
                 _latestInfos = [[NSBundle mainBundle] loadNibNamed:@"LatestInfos" owner:nil options:nil].lastObject;
+                _latestInfos.btnsActionBlock = ^(NSInteger index) {
+                    [_self goWebWithIndex:index];
+                };
                 _latestInfos.frame = CGRectMake(0, space + height, width, 25+kTableViewCellHegiht*3);
                 [_scrollView addSubview:_latestInfos];
                 height += (space + 25+kTableViewCellHegiht*3);
@@ -164,6 +167,10 @@ __weak HomeController *_self;
         default:
         break;
     }
+}
+- (void)goWebWithIndex:(NSInteger)index
+{
+    [LCoreCurrent goWebVCWithUrl:@"http://www.baidu.com" inNavigationController:self.navigationController];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

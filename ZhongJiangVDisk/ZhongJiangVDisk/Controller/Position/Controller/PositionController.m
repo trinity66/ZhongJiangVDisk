@@ -11,6 +11,10 @@
 @interface PositionController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *left;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *right;
+@property (nonatomic, strong) NSArray *list;
 @end
 __weak PositionController *_positionSelf;
 @implementation PositionController
@@ -19,10 +23,27 @@ __weak PositionController *_positionSelf;
     [super viewDidLoad];
     _positionSelf = self;
     _tableView.backgroundColor = LCoreCurrent.backgroundColor;
-    _tableView.separatorColor = LCoreCurrent.backgroundColor;
     [self addSegmentWithUserEnabled:NO];
     _topTableViewY.constant = [self getTableViewY];
+
+    if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        _tableView.layer.cornerRadius = 5;
+        _tableView.layer.borderColor = LCoreCurrent.personalTopColor.CGColor;
+        _tableView.layer.borderWidth = 1;
+        _topTableViewY.constant = [self getTableViewY]+10;
+        _left.constant = 10;
+        _right.constant = 10;
+    }else
+    {
+        _tableView.separatorColor = LCoreCurrent.backgroundColor;
+    }
     // Do any additional setup after loading the view.
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _list = [LCoreCurrent getDealHistoryList];
+    _tableHeight.constant = _list.count*50+30;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +57,9 @@ __weak PositionController *_positionSelf;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        return _list.count;
+    }
     return 1;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -44,23 +68,43 @@ __weak PositionController *_positionSelf;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return kTableViewFootHeight;
+    return 20;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    if (section == 0 && LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        return 20;
+    }
     return kTableViewFootHeight;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0 && LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        UIView *view = [[UIView alloc] init];
+        view.backgroundColor = LCoreCurrent.personalTopColor;;
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 100, 20)];
+        label.font = [UIFont systemFontOfSize:12];
+        label.text = @"我的持仓单";
+        [view addSubview:label];
+        LButton *button = [LButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(kScreenWidth-23-60, 2, 60, 20-2*2);
+        button.layer.cornerRadius = 5;
+        button.backgroundColor = LCoreCurrent.buttonBackColor;
+        [button setTitleColor:LCoreCurrent.buttonTitleColor forState:UIControlStateNormal];
+        [button setTitle:@"一键平仓" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:12];
+        [view addSubview:button];
+        return view;
+    }
+    return nil;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PositionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PositionCell"];
+    DealHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DealHistoryCell"];
     if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"PositionCell" owner:nil options:nil].lastObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:@"DealHistoryCell" owner:nil options:nil].lastObject;
     }
-    cell.btnActionBlock = ^() {
-        [_positionSelf clickButtonAction];
-        
-    };
-    [cell setDetailWithNumber:0.00 isRise:YES];
+    cell.model = [DealHistoryModel modelWithDictionary:_list[indexPath.row]];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

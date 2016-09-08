@@ -18,7 +18,6 @@ __weak ProductTableView *productTabelSelf;
     [super awakeFromNib];
     productTabelSelf = self;
     if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
-        
         _tableView.backgroundColor = LCoreCurrent.backgroundColor;
         _tableView.bounces = NO;
         _tableView.layer.cornerRadius = 5;

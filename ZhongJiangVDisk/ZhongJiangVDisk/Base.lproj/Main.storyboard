@@ -59,9 +59,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="iWa-hG-mrH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="iWa-hG-mrH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="k4C-kt-sPo"/>
+                                </constraints>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="tCe-UO-YbD" id="46y-9Z-20b"/>
@@ -74,12 +77,14 @@
                             <constraint firstItem="iWa-hG-mrH" firstAttribute="top" secondItem="eQd-Yi-Bne" secondAttribute="topMargin" id="Lq2-5D-o3A"/>
                             <constraint firstItem="iWa-hG-mrH" firstAttribute="leading" secondItem="eQd-Yi-Bne" secondAttribute="leading" id="NEo-OY-fIn"/>
                             <constraint firstAttribute="trailing" secondItem="iWa-hG-mrH" secondAttribute="trailing" id="fUU-PS-HVW"/>
-                            <constraint firstItem="iWa-hG-mrH" firstAttribute="bottom" secondItem="eQd-Yi-Bne" secondAttribute="bottomMargin" id="jcF-Qq-GYO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="持仓" id="neD-PD-KHF"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="left" destination="NEo-OY-fIn" id="OGK-77-7wA"/>
+                        <outlet property="right" destination="fUU-PS-HVW" id="sSm-30-6Jq"/>
+                        <outlet property="tableHeight" destination="k4C-kt-sPo" id="436-re-jZY"/>
                         <outlet property="tableView" destination="iWa-hG-mrH" id="6yA-CA-opm"/>
                         <outlet property="topTableViewY" destination="Lq2-5D-o3A" id="wVk-tD-uru"/>
                     </connections>
