@@ -76,6 +76,7 @@
 #import "SelectDataCell.h"//购买时选择数据view
 
 #import "ChartView.h"//首页分时图
+#import "ChartViewTwo.h"//首页分时图样式2
 #import "ProductCollectionView.h"//首页底部collectionView
 #import "ProductCollectionCell.h"//首页底部collectionCell
 #import "ProductTableView.h"

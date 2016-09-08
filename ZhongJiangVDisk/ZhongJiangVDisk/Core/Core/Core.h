@@ -13,6 +13,7 @@
 typedef NS_ENUM(NSUInteger, VDiskType) {
     VDiskTypeZhongJiang = 0,
     VDiskTypeZhongHui,
+    VDiskTypeYinHe,
     
     
 };

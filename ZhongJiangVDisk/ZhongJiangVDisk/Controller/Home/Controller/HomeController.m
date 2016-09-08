@@ -11,10 +11,10 @@
 @interface HomeController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) ChartView *chartSuperView;
+@property (nonatomic, strong) ChartViewTwo *chartSuperViewTwo;
 @property (nonatomic, strong) ProductCollectionView *collectionSuperView;
 @property (nonatomic, strong) ProductTableView *productTableSuperView;
 @property (nonatomic, strong) InputDealPswdView *put;
-
 
 @property (nonatomic, strong) LineSeries *line;
 @property (nonatomic, strong) StockSeries *stock;
@@ -92,46 +92,58 @@ __weak HomeController *_self;
         _scrollView.backgroundColor = LCoreCurrent.backgroundColor;
         [self.view addSubview:_scrollView];
     }
-    if (!_chartSuperView) {
-        _chartSuperView = [[NSBundle mainBundle] loadNibNamed:@"ChartView" owner:nil options:nil].lastObject;
-        _chartSuperView.frame = CGRectMake(0, 0, kScreenWidth, 330);
-        [_scrollView addSubview:_chartSuperView];
-    }
-    if (LCoreCurrent.VDiskType == VDiskTypeZhongJiang) {
-        if (!_collectionSuperView) {
-            _collectionSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductCollectionView" owner:nil options:nil].lastObject;
-            _collectionSuperView.btnsActionBlock = ^(NSInteger index) {
-                _self.segment.selectedIndex = index;
-            };
-            _collectionSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, kScreenWidth, 160);
-            [_scrollView addSubview:_collectionSuperView];
-            _scrollView.contentSize = CGSizeMake(kScreenWidth, _chartSuperView.frame.size.height + _collectionSuperView.frame.size.height);
+    switch (LCoreCurrent.VDiskType) {
+        case VDiskTypeZhongJiang:
+        {
+            if (!_chartSuperView) {
+                _chartSuperView = [[NSBundle mainBundle] loadNibNamed:@"ChartView" owner:nil options:nil].lastObject;
+                _chartSuperView.frame = CGRectMake(0, 0, kScreenWidth, 330);
+                [_scrollView addSubview:_chartSuperView];
+            }
+            if (!_collectionSuperView) {
+                _collectionSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductCollectionView" owner:nil options:nil].lastObject;
+                _collectionSuperView.btnsActionBlock = ^(NSInteger index) {
+                    _self.segment.selectedIndex = index;
+                };
+                _collectionSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, kScreenWidth, 160);
+                [_scrollView addSubview:_collectionSuperView];
+                _scrollView.contentSize = CGSizeMake(kScreenWidth, _chartSuperView.frame.size.height + _collectionSuperView.frame.size.height);
+            }
         }
-    }
-    if (LCoreCurrent.VDiskType == VDiskTypeZhongHui) {
-        if (!_productTableSuperView) {
-            _productTableSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductTableView" owner:nil options:nil].lastObject;
-            _productTableSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, kScreenWidth, 160);
-            [_scrollView addSubview:_productTableSuperView];
-            _scrollView.contentSize = CGSizeMake(kScreenWidth, _chartSuperView.frame.size.height + _productTableSuperView.frame.size.height);
+        break;
+        case VDiskTypeZhongHui:
+        {
+            if (!_chartSuperView) {
+                _chartSuperView = [[NSBundle mainBundle] loadNibNamed:@"ChartView" owner:nil options:nil].lastObject;
+                _chartSuperView.frame = CGRectMake(0, 0, kScreenWidth, 330);
+                [_scrollView addSubview:_chartSuperView];
+            }
+            if (!_productTableSuperView) {
+                _productTableSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductTableView" owner:nil options:nil].lastObject;
+                _productTableSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, kScreenWidth, 160);
+                [_scrollView addSubview:_productTableSuperView];
+                _scrollView.contentSize = CGSizeMake(kScreenWidth, _chartSuperView.frame.size.height + _productTableSuperView.frame.size.height);
+            }
         }
+        break;
+        case VDiskTypeYinHe:
+        {
+            double topSapce = 10;
+            
+            if (!_chartSuperViewTwo) {
+                _chartSuperViewTwo = [[NSBundle mainBundle] loadNibNamed:@"ChartViewTwo" owner:nil options:nil].lastObject;
+                _chartSuperViewTwo.frame = CGRectMake(20, topSapce, kScreenWidth-30, 340);
+                [_scrollView addSubview:_chartSuperViewTwo];
+            }
+        }
+        break;
+        default:
+            break;
     }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

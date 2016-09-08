@@ -11,6 +11,6 @@
 @interface LineSeries : Series
 
 @property (nonatomic, strong) UIColor* color;
-@property (nonatomic) float width;
+@property (nonatomic) float width, height;
 - (void)addBackLayer;
 @end

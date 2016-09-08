@@ -32,7 +32,7 @@
 
 - (void)drawPoint:(NSUInteger)idx animated:(BOOL)animated{
     if (idx == 0 || idx >= self.data.count) {
-        if (idx == 0) {
+        if (idx == 0 && LCoreCurrent.VDiskType != VDiskTypeYinHe) {
             [self addBackLayer];
         }
         return;
@@ -53,7 +53,7 @@
         float x = i*self.pointWidth;
         [dataY addObject:@[[NSNumber numberWithFloat:x], [NSNumber numberWithFloat:y]]];
     }
-    CALayer* back = [BaseLayer backWithPoints:dataY];
+    CALayer* back = [BaseLayer backWithPoints:dataY height:_height];
     [self addSublayer:back];
 }
 

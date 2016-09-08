@@ -6,31 +6,39 @@
 //  Copyright © 2016年 liuxiaomin. All rights reserved.
 //
 #define Float(a) (((NSNumber*)a).floatValue)
-#import "ChartView.h"
+#import "ChartViewTwo.h"
 
-@interface ChartView ()<AxisXLabelProvider>
-@property (weak, nonatomic) IBOutlet UIView *chartViewSuper;
+@interface ChartViewTwo ()<AxisXLabelProvider>
+@property (weak, nonatomic) IBOutlet UISegmentedControl *bottomSeg;
+@property (weak, nonatomic) IBOutlet UIView *line;
+@property (weak, nonatomic) IBOutlet UIView *lineSub;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *chartHeight;
-@property (weak, nonatomic) IBOutlet UIView *segmentSuper;
-@property (nonatomic, strong) HMSegmentedControl *segmentC;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *topSeg;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIView *chartViewSuper;
 @property (nonatomic) NSArray* chartData;
 @property (nonatomic, strong) BBChartView *chartView;
-@end
-@implementation ChartView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+@end
+@implementation ChartViewTwo
+
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    UIColor *color = LCoreCurrent.topSegmentColor;
+    self.layer.borderColor = color.CGColor;
+    _line.backgroundColor = color;
+    _lineSub.backgroundColor = color;
     self.backgroundColor = LCoreCurrent.detailBackColor;
+    _title.textColor = LCoreCurrent.cellTextColor;
+    _title.font = [UIFont systemFontOfSize:kCellLabelFont-4];
+    _topSeg.tintColor = LCoreCurrent.riseColor;
+    _bottomSeg.tintColor = LCoreCurrent.riseColor;
+    _chartViewSuper.backgroundColor = LCoreCurrent.detailBackColor;
+    [BBTheme theme].barBorderColor = [UIColor clearColor];
+    [BBTheme theme].xAxisFontSize = 11;
     [self loadData];
-    [self set_segmentC];
     [self set_chartView];
 }
 - (void)loadData{
@@ -45,7 +53,7 @@
     _chartView = nil;
     if (!_chartView) {
         _chartViewSuper.backgroundColor = LCoreCurrent.detailBackColor;
-        _chartView = [[BBChartView alloc] initWithFrame:CGRectMake(0, 36, kScreenWidth-10, _chartViewSuper.bounds.size.height-36)];
+        _chartView = [[BBChartView alloc] initWithFrame:CGRectMake(0, 36, kScreenWidth-30, _chartViewSuper.bounds.size.height-36)];
         _chartView.userInteractionEnabled = YES;
         [self.chartViewSuper addSubview:_chartView];
         [BBTheme theme].barBorderColor = [UIColor clearColor];
@@ -53,11 +61,11 @@
     }
     Area* areaup = [[Area alloc] init];
     areaup.bottomAxis.labelProvider = self;
-    NSInteger index = _segmentC.selectedSegmentIndex;
+    NSInteger index = _bottomSeg.selectedSegmentIndex;
     if (index == 0) {
         LineSeries* line = [[LineSeries alloc] init];
-        line.height = _chartHeight.constant;
         line.color = [UIColor brownColor];
+        line.height = _chartHeight.constant;
         [areaup addSeries:line];
         for (NSArray* arr in _chartData) {
             [line addPoint:(Float(arr[4]) + Float(arr[3]))/2];
@@ -72,6 +80,7 @@
     [self.chartView addArea:areaup];
     [self.chartView drawAnimated:YES];
 }
+
 #pragma mark - AxisDataProvider
 - (NSString *)textForIdx:(NSUInteger)idx{
     NSString* ret = nil;
@@ -90,37 +99,9 @@
     return ret;
     
 }
-#pragma mark 设置segment
-- (void)set_segmentC
-{
-    
-    if (_segmentC == nil) {
-        NSDictionary *defaults = @{
-                                   NSFontAttributeName : [UIFont systemFontOfSize:kCellLabelFont-2],
-                                   NSForegroundColorAttributeName : LCoreCurrent.cellTextColor,
-                                   };
-        NSDictionary *selected = @{
-                                   NSFontAttributeName : [UIFont systemFontOfSize:kCellLabelFont-2],
-                                   NSForegroundColorAttributeName :LCoreCurrent.selectedLineColor,
-                                   };
-        _segmentC = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, -10, kScreenWidth, 35)];
-        [_segmentSuper addSubview:_segmentC];
-        _segmentSuper.backgroundColor = LCoreCurrent.detailBackColor;
-        _segmentC.selectionIndicatorHeight = 1.5;
-        _segmentC.titleTextAttributes = defaults;
-        _segmentC.selectedTitleTextAttributes = selected;
-        [_segmentC addTarget:self action:@selector(segment_change_valued:) forControlEvents:UIControlEventValueChanged];
-        
-        _segmentC.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
-        _segmentC.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
-        _segmentC.backgroundColor = LCoreCurrent.detailBackColor;
-        _segmentC.selectionIndicatorColor = LCoreCurrent.selectedLineColor;
-        _segmentC.sectionTitles = @[@"分时线", @"五分", @"十五分", @"三十分", @"一小时"];
-        
-    }
+- (IBAction)topSegChanged:(id)sender {
 }
-- (void)segment_change_valued:(HMSegmentedControl *)segmentC
-{
+- (IBAction)bottpmSegChanged:(id)sender {
     [self set_chartView];
 }
 @end

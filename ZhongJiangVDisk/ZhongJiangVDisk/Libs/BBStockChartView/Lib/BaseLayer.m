@@ -45,10 +45,10 @@
     return line;
 }
 
-+(CALayer *)backWithPoints:(NSArray*)points
++(CALayer *)backWithPoints:(NSArray*)points height:(float)height
 {
     //绘制渐变色层
-    double height = 290-64-1;
+    height = height-64-1;
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame =CGRectMake(0, 0, 500, 400) ;// self.view.frame;
     NSDictionary *dict = [LCoreCurrent colorsDictionary][LCoreCurrent.VDiskTypeString];

@@ -54,7 +54,7 @@
         "chartXTextColor":[0.80, 0.80, 0.80, 1.00],
         "chartBackColor":[0.20, 0.20, 0.20, 1.00],
         
-        "selectedLineColor":[0.88, 0.73, 0.50, 1.00],
+        "selectedLineColor":[0.79, 0.03, 0.08, 1.00],
         "tabBarSelectTextColor":[1.00, 1.00, 1.00, 1.00],
         "tabBarTextColor":[0.80, 0.80, 0.80, 1.00],
         "buttonBackColor":[0.00, 0.00, 0.00, 1.00],
@@ -67,5 +67,38 @@
         "textFieldSelectBackColor":[0.3, 0.3, 0.3, 1.00],
         "buttonBorderColor":[0.37, 0.37, 0.37, 1.00],
     },
+    "VDiskTypeYinHe":
+    {
+        "riseColor":[0.79, 0.03, 0.08, 1.00],
+        "fallColor":[0.06, 0.51, 0.07, 1.00],
+        "backgroundColor":[1.00, 1.00, 1.00, 1.00],
+        "detailBackColor":[1.00, 1.00, 1.00, 1.00],
+        "detailLightBackColor":[0.92, 0.92, 0.92, 1.00],
+        
+        "riseTextColor":[0.79, 0.03, 0.08, 1.00],
+        "fallTextColor":[0.06, 0.51, 0.07, 1.00],
+        "labelTextColor":[1.00, 1.00, 1.00, 1.00],
+        "buttonTitleColor":[1.00, 1.00, 1.00, 1.00],
+        "positionCellTextColor":[0.79, 0.03, 0.08, 1.00],
+        
+        "chartLineColor":[0.84, 0.84, 0.84, 1.00],
+        "chartLinesColor":[0.88, 0.88, 0.88, 1.00],
+        "chartYTextColor":[0.80, 0.80, 0.80, 1.00],
+        "chartXTextColor":[0.80, 0.80, 0.80, 1.00],
+        "chartBackColor":[1.00, 1.00, 1.00, 1.00],
+        
+        "selectedLineColor":[0.79, 0.03, 0.08, 0.80],
+        "tabBarSelectTextColor":[0.79, 0.03, 0.08, 1.00],
+        "tabBarTextColor":[0.80, 0.80, 0.80, 1.00],
+        "buttonBackColor":[0.79, 0.03, 0.08, 1.00],
+        "personalTopColor":[0.92, 0.92, 0.92, 1.00],
+        
+        "cellTextColor":[0.00, 0.00, 0.00, 1.00],
+        "topSegmentColor":[0.92, 0.92, 0.92, 1.00],
+        "textFieldBorderColor":[0.79, 0.03, 0.08, 1.00],
+        "textFieldBackColor":[1.00, 1.00, 1.00, 1.00],
+        "textFieldSelectBackColor":[0.79, 0.03, 0.08, 1.00],
+        "buttonBorderColor":[0.00, 0.00, 0.00, 0.00],
+    }
 }
 

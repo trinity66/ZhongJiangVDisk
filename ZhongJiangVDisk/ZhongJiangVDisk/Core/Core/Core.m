@@ -24,11 +24,24 @@
 -(void)setVDiskType:(VDiskType)VDiskType
 {
     _VDiskType = VDiskType;
-    if (_VDiskType == VDiskTypeZhongJiang) {
-        self.VDiskTypeString = @"VDiskTypeZhongJiang";
-    }
-    if (_VDiskType == VDiskTypeZhongHui) {
-        self.VDiskTypeString = @"VDiskTypeZhongHui";
+    switch (_VDiskType) {
+        case VDiskTypeZhongJiang:
+        {
+            self.VDiskTypeString = @"VDiskTypeZhongJiang";
+        }
+            break;
+        case VDiskTypeZhongHui:
+        {
+            self.VDiskTypeString = @"VDiskTypeZhongHui";
+        }
+            break;
+        case VDiskTypeYinHe:
+        {
+            self.VDiskTypeString = @"VDiskTypeYinHe";
+        }
+            break;
+        default:
+            break;
     }
     [self initColors];
 }
