@@ -23,25 +23,19 @@ PODS:
   - HMSegmentedControl (1.5.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
-  - Pgyer (2.8.4)
-  - PgyUpdate (1.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.x)
   - HMSegmentedControl
   - MBProgressHUD
   - MJRefresh
-  - Pgyer
-  - PgyUpdate
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  Pgyer: 26edfcc8da6da6383fabfdbccd2f77c623b9d6eb
-  PgyUpdate: a42e82cec5ad4e992af390e9d494f6fc62db65e4
 
-PODFILE CHECKSUM: e9707f0e2143a8f3af59a984698257de775726aa
+PODFILE CHECKSUM: 88be5c378d3dbf9915615f47ec07d962039d5e42
 
 COCOAPODS: 1.0.1

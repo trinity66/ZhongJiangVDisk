@@ -26,19 +26,19 @@
         
         
     }
-    [self registerPgy];//bee4d9bffbc6cd5e5aa43e468fadc972
+//    [self registerPgy];//bee4d9bffbc6cd5e5aa43e468fadc972
     return YES;
 }
-- (void)registerPgy
-{
-    [[PgyManager sharedPgyManager] setEnableFeedback:NO];
-    //启动基本SDK
-    [[PgyManager sharedPgyManager] startManagerWithAppId:@"bee4d9bffbc6cd5e5aa43e468fadc972"];
-    //启动更新检查SDK
-    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"bee4d9bffbc6cd5e5aa43e468fadc972"];
-    [[PgyUpdateManager sharedPgyManager] checkUpdate];
-    
-}
+//- (void)registerPgy
+//{
+//    [[PgyManager sharedPgyManager] setEnableFeedback:NO];
+//    //启动基本SDK
+//    [[PgyManager sharedPgyManager] startManagerWithAppId:@"bee4d9bffbc6cd5e5aa43e468fadc972"];
+//    //启动更新检查SDK
+//    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"bee4d9bffbc6cd5e5aa43e468fadc972"];
+//    [[PgyUpdateManager sharedPgyManager] checkUpdate];
+//    
+//}
 
 
 /*!
