@@ -64,7 +64,7 @@
     NSInteger index = _bottomSeg.selectedSegmentIndex;
     if (index == 0) {
         LineSeries* line = [[LineSeries alloc] init];
-        line.color = [UIColor brownColor];
+        line.color = LCoreCurrent.selectedLineColor;
         line.height = _chartHeight.constant;
         [areaup addSeries:line];
         for (NSArray* arr in _chartData) {

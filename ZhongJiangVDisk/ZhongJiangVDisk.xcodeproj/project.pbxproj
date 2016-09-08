@@ -119,6 +119,8 @@
 		5EAF83E21D6FD3D000239CB5 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF83E11D6FD3D000239CB5 /* Products.json */; };
 		5EEB44D01D81478900A40AA6 /* PersonalTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB44CE1D81478900A40AA6 /* PersonalTopView.m */; };
 		5EEB44D11D81478900A40AA6 /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EEB44CF1D81478900A40AA6 /* PersonalTopView.xib */; };
+		5EEB44D91D8158C200A40AA6 /* LatestInfos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB44D81D8158C200A40AA6 /* LatestInfos.m */; };
+		5EEB44DB1D815D9F00A40AA6 /* LatestInfos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EEB44DA1D815D9F00A40AA6 /* LatestInfos.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -325,6 +327,9 @@
 		5EEB44CD1D81478900A40AA6 /* PersonalTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTopView.h; sourceTree = "<group>"; };
 		5EEB44CE1D81478900A40AA6 /* PersonalTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTopView.m; sourceTree = "<group>"; };
 		5EEB44CF1D81478900A40AA6 /* PersonalTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTopView.xib; sourceTree = "<group>"; };
+		5EEB44D71D8158C200A40AA6 /* LatestInfos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestInfos.h; sourceTree = "<group>"; };
+		5EEB44D81D8158C200A40AA6 /* LatestInfos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestInfos.m; sourceTree = "<group>"; };
+		5EEB44DA1D815D9F00A40AA6 /* LatestInfos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LatestInfos.xib; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -558,6 +563,7 @@
 		5E1721FE1D630082003CA0AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5EEB44D31D81587F00A40AA6 /* LatestInfos */,
 				5E1350CD1D6FF3F400D673E1 /* BuyView */,
 				5E1722FB1D65AB15003CA0AE /* ProductTableView */,
 				5E1721FF1D630082003CA0AE /* ChartView */,
@@ -1261,6 +1267,16 @@
 			path = PersonalTopView;
 			sourceTree = "<group>";
 		};
+		5EEB44D31D81587F00A40AA6 /* LatestInfos */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB44D71D8158C200A40AA6 /* LatestInfos.h */,
+				5EEB44D81D8158C200A40AA6 /* LatestInfos.m */,
+				5EEB44DA1D815D9F00A40AA6 /* LatestInfos.xib */,
+			);
+			path = LatestInfos;
+			sourceTree = "<group>";
+		};
 		794F7078CFCCD2419F25CE2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1390,6 +1406,7 @@
 				5E17229F1D630082003CA0AE /* PositionCell.xib in Resources */,
 				5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */,
 				5E17228C1D630082003CA0AE /* DealHistoryCell.xib in Resources */,
+				5EEB44DB1D815D9F00A40AA6 /* LatestInfos.xib in Resources */,
 				5E1350D91D6FF3F400D673E1 /* BuyView.xib in Resources */,
 				5E17229B1D630082003CA0AE /* RechargeHeadView.xib in Resources */,
 				5E1722E01D63008A003CA0AE /* SecurityCodeView.xib in Resources */,
@@ -1513,6 +1530,7 @@
 				5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */,
 				5EAF827D1D6AF51200239CB5 /* BaseLayer.m in Sources */,
 				5EAF824A1D6AEE9F00239CB5 /* RegisterButtonView.m in Sources */,
+				5EEB44D91D8158C200A40AA6 /* LatestInfos.m in Sources */,
 				5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */,
 				5E1722D51D63008A003CA0AE /* ButtonView.m in Sources */,
 				5EAF83D41D6E896400239CB5 /* Core+Controller.m in Sources */,

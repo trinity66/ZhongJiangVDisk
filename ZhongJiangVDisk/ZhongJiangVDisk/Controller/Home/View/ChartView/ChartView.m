@@ -57,7 +57,7 @@
     if (index == 0) {
         LineSeries* line = [[LineSeries alloc] init];
         line.height = _chartHeight.constant;
-        line.color = [UIColor brownColor];
+        line.color = LCoreCurrent.selectedLineColor;
         [areaup addSeries:line];
         for (NSArray* arr in _chartData) {
             [line addPoint:(Float(arr[4]) + Float(arr[3]))/2];

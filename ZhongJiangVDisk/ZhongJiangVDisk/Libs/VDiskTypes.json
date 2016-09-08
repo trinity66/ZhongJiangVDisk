@@ -48,7 +48,7 @@
         "buttonTitleColor":[1.00, 1.00, 1.00, 1.00],
         "positionCellTextColor":[1.00, 1.00, 1.00, 1.00],
         
-        "chartLineColor":[1.00, 1.00, 1.00, 1.00],
+        "chartLineColor":[0.79, 0.03, 0.08, 1.00],
         "chartLinesColor":[0.20, 0.20, 0.20, 1.00],
         "chartYTextColor":[1.00, 0.50, 0.00, 1.00],
         "chartXTextColor":[0.80, 0.80, 0.80, 1.00],
@@ -77,7 +77,7 @@
         
         "riseTextColor":[0.79, 0.03, 0.08, 1.00],
         "fallTextColor":[0.06, 0.51, 0.07, 1.00],
-        "labelTextColor":[1.00, 1.00, 1.00, 1.00],
+        "labelTextColor":[0.00, 0.00, 0.00, 1.00],
         "buttonTitleColor":[1.00, 1.00, 1.00, 1.00],
         "positionCellTextColor":[0.79, 0.03, 0.08, 1.00],
         

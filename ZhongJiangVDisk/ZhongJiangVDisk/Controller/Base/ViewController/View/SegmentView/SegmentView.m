@@ -44,6 +44,7 @@
 - (void)setSomeControl
 {
     self.backgroundColor = LCoreCurrent.topSegmentColor;
+    _bottom.hidden = YES;
     self.title.textColor = LCoreCurrent.cellTextColor;
     self.bottom.backgroundColor = LCoreCurrent.selectedLineColor;
     _title.font = [UIFont systemFontOfSize:kCellLabelFont-4];
@@ -89,7 +90,7 @@
                                                                                                                                              }];
     NSTextAttachment *im = [[NSTextAttachment alloc] init];
     [im setImage:[UIImage imageNamed:imageName]];
-    im.bounds = CGRectMake(0, -5, 10, 20);
+    im.bounds = CGRectMake(0, -2, 10, 14);
     NSAttributedString *image = [NSAttributedString attributedStringWithAttachment:im];
     [str appendAttributedString:image];
     _record.attributedText = str;

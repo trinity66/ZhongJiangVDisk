@@ -17,7 +17,15 @@ __weak ProductTableView *productTabelSelf;
 {
     [super awakeFromNib];
     productTabelSelf = self;
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
+    if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        
+        _tableView.backgroundColor = LCoreCurrent.backgroundColor;
+        _tableView.bounces = NO;
+        _tableView.layer.cornerRadius = 5;
+        _tableView.layer.borderColor = LCoreCurrent.personalTopColor.CGColor;
+        _tableView.layer.borderWidth = 1;
+    }
+    
 }
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -46,7 +54,23 @@ __weak ProductTableView *productTabelSelf;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    if (section == 0 && LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        return 21;
+    }
     return kTableViewFootHeight;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0 && LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        UIView *view = [[UIView alloc] init];
+        view.backgroundColor = LCoreCurrent.personalTopColor;;
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 100, 21)];
+        label.font = [UIFont systemFontOfSize:12];
+        label.text = @"选择交易品种";
+        [view addSubview:label];
+        return view;
+    }
+    return nil;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
