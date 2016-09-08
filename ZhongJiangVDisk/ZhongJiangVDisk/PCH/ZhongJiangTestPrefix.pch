@@ -19,7 +19,7 @@
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kPersonalTopViewHeight 60
-#define kSegmentHeight 55
+#define kSegmentHeight 44
 #define kTableViewCellHegiht 40
 #define kTableViewHeadHegiht 5
 #define kTableViewFootHeight 0.0000001

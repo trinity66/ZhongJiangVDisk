@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="110" height="84"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="vB4-Dw-pdq">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="vB4-Dw-pdq">
                     <rect key="frame" x="0.0" y="4" width="110" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="zUQ-aa-vRm"/>
@@ -27,7 +27,7 @@
                         <constraint firstAttribute="height" constant="2" id="BIA-nt-84b"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="GIm-LJ-cv2">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="GIm-LJ-cv2">
                     <rect key="frame" x="0.0" y="25" width="110" height="59"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -51,8 +51,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="bottom" destination="Gqx-ZP-bFL" id="PKW-Ab-xU3"/>
+                <outlet property="bottomLineHeight" destination="BIA-nt-84b" id="EOJ-2I-RVU"/>
                 <outlet property="record" destination="GIm-LJ-cv2" id="RFD-hi-EzW"/>
                 <outlet property="title" destination="vB4-Dw-pdq" id="hlB-g1-XrW"/>
+                <outlet property="topLabelHeight" destination="zUQ-aa-vRm" id="HFm-rp-OXC"/>
             </connections>
             <point key="canvasLocation" x="125" y="207"/>
         </view>

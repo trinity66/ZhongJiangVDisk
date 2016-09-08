@@ -8,6 +8,11 @@
 
 #import "SegmentView.h"
 
+@interface SegmentView ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLabelHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLineHeight;
+
+@end
 @implementation SegmentView
 
 /*
@@ -19,15 +24,28 @@
 */
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setSomeControl];
-    // Initialization code
+    if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        [self setSomeControlTwo];
+    }else
+    {
+      [self setSomeControl];
+    }
+    
+}
+- (void)setSomeControlTwo
+{
+    _title.textColor = [UIColor whiteColor];
+    [_bottom removeFromSuperview];
+    _topLabelHeight.constant = 15;
+    UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-3];
+    _title.font = font;
+    _record.font = font;
 }
 - (void)setSomeControl
 {
     self.backgroundColor = LCoreCurrent.topSegmentColor;
     self.title.textColor = LCoreCurrent.cellTextColor;
     self.bottom.backgroundColor = LCoreCurrent.selectedLineColor;
-    _bottom.hidden = YES;
     _title.font = [UIFont systemFontOfSize:kCellLabelFont-4];
     _record.font = [UIFont systemFontOfSize:kCellLabelFont];
     
@@ -37,13 +55,34 @@
     UIColor *color;
     NSString *imageName;
     _title.text = title;
-    if (isRise) {
-        color = LCoreCurrent.riseTextColor;
-        imageName = @"riseRed";
-    }else
-    {
-        color = LCoreCurrent.fallTextColor;
-        imageName = @"fallGreen";
+    switch (LCoreCurrent.VDiskType) {
+        case VDiskTypeYinHe:
+        {
+            color = [UIColor whiteColor];
+            if (isRise) {
+                self.backgroundColor = LCoreCurrent.riseTextColor;
+                imageName = @"riseRed";
+            }else
+            {
+                self.backgroundColor = LCoreCurrent.fallTextColor;
+                imageName = @"fallGreen";
+    
+            }
+        }
+            break;
+            
+        default:
+        {
+            if (isRise) {
+                color = LCoreCurrent.riseTextColor;
+                imageName = @"riseRed";
+            }else
+            {
+                color = LCoreCurrent.fallTextColor;
+                imageName = @"fallGreen";
+            }
+        }
+            break;
     }
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.02f",number] attributes:@{
                                                                                                                                              NSForegroundColorAttributeName:color

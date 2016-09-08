@@ -24,6 +24,9 @@
     _imageView.layer.borderColor = LCoreCurrent.detailBackColor.CGColor;
     _recharge.backgroundColor = LCoreCurrent.riseTextColor;
     _balance.font = [UIFont systemFontOfSize:kCellLabelFont-4];
+    if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        _balance.textColor = LCoreCurrent.riseColor;
+    }
 }
 - (IBAction)rechargeAction:(id)sender {
     [LCoreCurrent goRechargeVC];

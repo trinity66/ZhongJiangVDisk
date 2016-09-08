@@ -63,8 +63,6 @@
 		5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722D31D63008A003CA0AE /* TextFieldCell.m */; };
 		5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722D41D63008A003CA0AE /* TextFieldCell.xib */; };
 		5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722E81D64121B003CA0AE /* ForgetDealPswdController.m */; };
-		5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722F21D658877003CA0AE /* PersonalTopView.m */; };
-		5E1722F71D658CAA003CA0AE /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */; };
 		5E1722FF1D65AB49003CA0AE /* ProductTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722FE1D65AB49003CA0AE /* ProductTableView.m */; };
 		5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723001D65AB52003CA0AE /* ProductTableView.xib */; };
 		5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */; };
@@ -86,7 +84,6 @@
 		5E99F46D1D81408D009863A9 /* Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E99F4681D81408D009863A9 /* Segment.m */; };
 		5E99F46E1D81408D009863A9 /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E99F46A1D81408D009863A9 /* SegmentView.m */; };
 		5E99F46F1D81408D009863A9 /* SegmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E99F46B1D81408D009863A9 /* SegmentView.xib */; };
-		5E99F4721D8140A5009863A9 /* SegViewTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E99F4711D8140A5009863A9 /* SegViewTwo.m */; };
 		5EAF82381D6AE3C100239CB5 /* LButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82341D6AE3C100239CB5 /* LButton.m */; };
 		5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82371D6AE3C100239CB5 /* LTextField.m */; };
 		5EAF823B1D6AE4BE00239CB5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */; };
@@ -120,7 +117,8 @@
 		5EAF83DC1D6E95DE00239CB5 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF83DB1D6E95DE00239CB5 /* JavaScriptCore.framework */; };
 		5EAF83E01D6EC23600239CB5 /* Core+CheckData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF83DF1D6EC23600239CB5 /* Core+CheckData.m */; };
 		5EAF83E21D6FD3D000239CB5 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF83E11D6FD3D000239CB5 /* Products.json */; };
-		5EEB44CB1D81410800A40AA6 /* SegViewTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EEB44CA1D81410800A40AA6 /* SegViewTwo.xib */; };
+		5EEB44D01D81478900A40AA6 /* PersonalTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB44CE1D81478900A40AA6 /* PersonalTopView.m */; };
+		5EEB44D11D81478900A40AA6 /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EEB44CF1D81478900A40AA6 /* PersonalTopView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,9 +234,6 @@
 		5E1722D41D63008A003CA0AE /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		5E1722E71D64121B003CA0AE /* ForgetDealPswdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetDealPswdController.h; sourceTree = "<group>"; };
 		5E1722E81D64121B003CA0AE /* ForgetDealPswdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetDealPswdController.m; sourceTree = "<group>"; };
-		5E1722F11D658877003CA0AE /* PersonalTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTopView.h; sourceTree = "<group>"; };
-		5E1722F21D658877003CA0AE /* PersonalTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTopView.m; sourceTree = "<group>"; };
-		5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTopView.xib; sourceTree = "<group>"; };
 		5E1722FD1D65AB49003CA0AE /* ProductTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableView.h; sourceTree = "<group>"; };
 		5E1722FE1D65AB49003CA0AE /* ProductTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableView.m; sourceTree = "<group>"; };
 		5E1723001D65AB52003CA0AE /* ProductTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableView.xib; sourceTree = "<group>"; };
@@ -270,8 +265,6 @@
 		5E99F4691D81408D009863A9 /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
 		5E99F46A1D81408D009863A9 /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
 		5E99F46B1D81408D009863A9 /* SegmentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentView.xib; sourceTree = "<group>"; };
-		5E99F4701D8140A5009863A9 /* SegViewTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegViewTwo.h; sourceTree = "<group>"; };
-		5E99F4711D8140A5009863A9 /* SegViewTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegViewTwo.m; sourceTree = "<group>"; };
 		5EAF82331D6AE3C100239CB5 /* LButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LButton.h; sourceTree = "<group>"; };
 		5EAF82341D6AE3C100239CB5 /* LButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LButton.m; sourceTree = "<group>"; };
 		5EAF82361D6AE3C100239CB5 /* LTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTextField.h; sourceTree = "<group>"; };
@@ -329,7 +322,9 @@
 		5EAF83DE1D6EC23600239CB5 /* Core+CheckData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core+CheckData.h"; sourceTree = "<group>"; };
 		5EAF83DF1D6EC23600239CB5 /* Core+CheckData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Core+CheckData.m"; sourceTree = "<group>"; };
 		5EAF83E11D6FD3D000239CB5 /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
-		5EEB44CA1D81410800A40AA6 /* SegViewTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegViewTwo.xib; sourceTree = "<group>"; };
+		5EEB44CD1D81478900A40AA6 /* PersonalTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTopView.h; sourceTree = "<group>"; };
+		5EEB44CE1D81478900A40AA6 /* PersonalTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTopView.m; sourceTree = "<group>"; };
+		5EEB44CF1D81478900A40AA6 /* PersonalTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTopView.xib; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -915,7 +910,6 @@
 				5EAF82351D6AE3C100239CB5 /* LTextField */,
 				5E1722B31D63008A003CA0AE /* ButtonView */,
 				5E1722BF1D63008A003CA0AE /* InputDealPswdView */,
-				5E1722C31D63008A003CA0AE /* PersonalTopView */,
 				5E1722C71D63008A003CA0AE /* SecurityCodeView */,
 				5E1722D11D63008A003CA0AE /* TextFieldCell */,
 			);
@@ -940,16 +934,6 @@
 				5E1722C21D63008A003CA0AE /* InputDealPswdView.xib */,
 			);
 			path = InputDealPswdView;
-			sourceTree = "<group>";
-		};
-		5E1722C31D63008A003CA0AE /* PersonalTopView */ = {
-			isa = PBXGroup;
-			children = (
-				5E1722F11D658877003CA0AE /* PersonalTopView.h */,
-				5E1722F21D658877003CA0AE /* PersonalTopView.m */,
-				5E1722F61D658CAA003CA0AE /* PersonalTopView.xib */,
-			);
-			path = PersonalTopView;
 			sourceTree = "<group>";
 		};
 		5E1722C71D63008A003CA0AE /* SecurityCodeView */ = {
@@ -1060,8 +1044,8 @@
 		5E99F4651D81408D009863A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5EEB44CC1D81478900A40AA6 /* PersonalTopView */,
 				5E99F4661D81408D009863A9 /* SegmentView */,
-				5E99F46C1D81408D009863A9 /* SegViewTwo */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1076,16 +1060,6 @@
 				5E99F46B1D81408D009863A9 /* SegmentView.xib */,
 			);
 			path = SegmentView;
-			sourceTree = "<group>";
-		};
-		5E99F46C1D81408D009863A9 /* SegViewTwo */ = {
-			isa = PBXGroup;
-			children = (
-				5E99F4701D8140A5009863A9 /* SegViewTwo.h */,
-				5E99F4711D8140A5009863A9 /* SegViewTwo.m */,
-				5EEB44CA1D81410800A40AA6 /* SegViewTwo.xib */,
-			);
-			path = SegViewTwo;
 			sourceTree = "<group>";
 		};
 		5EAF82321D6AE3C100239CB5 /* LButton */ = {
@@ -1277,6 +1251,16 @@
 			path = "Core+CheckData";
 			sourceTree = "<group>";
 		};
+		5EEB44CC1D81478900A40AA6 /* PersonalTopView */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB44CD1D81478900A40AA6 /* PersonalTopView.h */,
+				5EEB44CE1D81478900A40AA6 /* PersonalTopView.m */,
+				5EEB44CF1D81478900A40AA6 /* PersonalTopView.xib */,
+			);
+			path = PersonalTopView;
+			sourceTree = "<group>";
+		};
 		794F7078CFCCD2419F25CE2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1416,12 +1400,12 @@
 				5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */,
 				5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */,
 				5EAF824B1D6AEE9F00239CB5 /* RegisterButtonView.xib in Resources */,
-				5EEB44CB1D81410800A40AA6 /* SegViewTwo.xib in Resources */,
 				5E1722A21D630082003CA0AE /* Info.plist in Resources */,
 				5E99F46F1D81408D009863A9 /* SegmentView.xib in Resources */,
 				5E1722911D630082003CA0AE /* DealCell.xib in Resources */,
 				5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */,
 				5EAF827C1D6AF51200239CB5 /* data.json in Resources */,
+				5EEB44D11D81478900A40AA6 /* PersonalTopView.xib in Resources */,
 				5EAF82931D6BDEC700239CB5 /* DisabledView.xib in Resources */,
 				5E17227B1D630082003CA0AE /* Assets.xcassets in Resources */,
 				5E17227C1D630082003CA0AE /* LaunchScreen.storyboard in Resources */,
@@ -1429,7 +1413,6 @@
 				5E17228E1D630082003CA0AE /* DealHistoryHeadView.xib in Resources */,
 				5E99F45B1D813964009863A9 /* ChartViewTwo.xib in Resources */,
 				5E1722851D630082003CA0AE /* ProductCollectionCell.xib in Resources */,
-				5E1722F71D658CAA003CA0AE /* PersonalTopView.xib in Resources */,
 				5EAF82861D6AF51200239CB5 /* 扫描框@2x.png in Resources */,
 				5E1350DC1D6FF3F400D673E1 /* SelectDataCell.xib in Resources */,
 				5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */,
@@ -1512,11 +1495,11 @@
 				5E1722951D630082003CA0AE /* RechargeController.m in Sources */,
 				5EAF82791D6AF51200239CB5 /* Area.m in Sources */,
 				5EAF824F1D6AEEC800239CB5 /* RegisterController.m in Sources */,
-				5E1722F31D658877003CA0AE /* PersonalTopView.m in Sources */,
 				5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */,
 				5E75AF731D73DEF70051FB1D /* DealHistoryModel.m in Sources */,
 				5E1350DB1D6FF3F400D673E1 /* SelectDataCell.m in Sources */,
 				5EAF82911D6BDEBD00239CB5 /* DisabledView.m in Sources */,
+				5EEB44D01D81478900A40AA6 /* PersonalTopView.m in Sources */,
 				5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */,
 				5E1722A11D630082003CA0AE /* Core+Color.m in Sources */,
 				5E1722941D630082003CA0AE /* QRCodeController.m in Sources */,
@@ -1570,7 +1553,6 @@
 				5EAF827F1D6AF51200239CB5 /* BBChartView.m in Sources */,
 				5EAF82851D6AF51200239CB5 /* ScanQRCodeController.m in Sources */,
 				5E1722931D630082003CA0AE /* PersonalController.m in Sources */,
-				5E99F4721D8140A5009863A9 /* SegViewTwo.m in Sources */,
 				5E1722841D630082003CA0AE /* ProductCollectionCell.m in Sources */,
 				5E1722861D630082003CA0AE /* ProductCollectionView.m in Sources */,
 				5E99F46E1D81408D009863A9 /* SegmentView.m in Sources */,

@@ -132,7 +132,7 @@ __weak HomeController *_self;
             
             if (!_chartSuperViewTwo) {
                 _chartSuperViewTwo = [[NSBundle mainBundle] loadNibNamed:@"ChartViewTwo" owner:nil options:nil].lastObject;
-                _chartSuperViewTwo.frame = CGRectMake(20, topSapce, kScreenWidth-30, 340);
+                _chartSuperViewTwo.frame = CGRectMake(10, topSapce, kScreenWidth-20, 340);
                 [_scrollView addSubview:_chartSuperViewTwo];
             }
         }

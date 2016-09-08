@@ -55,12 +55,16 @@
 }
 - (void)addSegmentWithUserEnabled:(BOOL)userEnabled
 {
+    double space = 0;
+    if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        space = 10;
+    }
     if (_segment == nil) {
         CGFloat y = 0;
         if (_personalTopView != nil) {
             y += _personalTopView.frame.size.height + _personalTopView.frame.origin.y;
         }
-        _segment = [[Segment alloc] initWithFrame:CGRectMake(0, y, kScreenWidth, kSegmentHeight)];
+        _segment = [[Segment alloc] initWithFrame:CGRectMake(space, y+space*0.5, kScreenWidth-space*2, kSegmentHeight)];
         [_segment setUserInteractionEnabled:userEnabled];
         if (userEnabled) {
             _segment.selectedIndex = 0;

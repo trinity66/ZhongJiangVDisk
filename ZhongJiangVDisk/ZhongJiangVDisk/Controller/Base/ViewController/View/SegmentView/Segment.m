@@ -29,10 +29,14 @@
         if (views == nil) {
             views = [NSMutableArray array];
         }
+        double space = 0;
+        if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+            space = 3;
+        }
         for (int i = 0; i < 3; i ++) {
             SegmentView *view = [[NSBundle mainBundle] loadNibNamed:@"SegmentView" owner:nil options:nil].lastObject;
-            CGFloat width = frame.size.width/3.0;
-            view.frame = CGRectMake(i * width, 0, width, frame.size.height);
+            CGFloat width = (frame.size.width-space*2.0)/3.0;
+            view.frame = CGRectMake(i * (width+space), 0, width, frame.size.height);
             [views addObject:view];
             [self addSubview:view];
         }
