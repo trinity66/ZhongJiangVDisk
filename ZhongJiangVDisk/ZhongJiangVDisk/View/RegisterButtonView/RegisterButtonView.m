@@ -41,6 +41,7 @@
     _propertyLabel.font = [UIFont systemFontOfSize:kCellLabelFont-4];
     _propertyBtn.titleLabel.font = [UIFont systemFontOfSize:kCellLabelFont-4];
     self.backgroundColor = LCoreCurrent.backgroundColor;
+    [_isAgreeBtn setImage:[[UIImage imageNamed:@"disagree"] imageWithTintColor:LCoreCurrent.tabBarSelectTextColor] forState:UIControlStateSelected];
 }
 - (IBAction)codeButtonAction:(id)sender {
     if (self.btnsActionBlock) {

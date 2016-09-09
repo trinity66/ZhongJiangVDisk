@@ -54,7 +54,6 @@
                         <constraint firstAttribute="width" secondItem="Lxf-bG-dtz" secondAttribute="height" id="8Mb-le-vF1"/>
                     </constraints>
                     <state key="normal" image="disagree"/>
-                    <state key="selected" image="agree"/>
                     <connections>
                         <action selector="isAgreeBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="0ce-Go-F0s"/>
                     </connections>
@@ -141,7 +140,6 @@
         </view>
     </objects>
     <resources>
-        <image name="agree" width="23" height="23"/>
         <image name="disagree" width="23" height="23"/>
     </resources>
 </document>

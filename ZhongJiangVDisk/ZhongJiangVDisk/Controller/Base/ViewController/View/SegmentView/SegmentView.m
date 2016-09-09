@@ -56,18 +56,21 @@
     UIColor *color;
     NSString *imageName;
     _title.text = title;
+    if (isRise) {
+        imageName = @"arrow_up";
+    }else
+    {
+        imageName = @"arrow_down";
+    }
     switch (LCoreCurrent.VDiskType) {
         case VDiskTypeYinHe:
         {
             color = [UIColor whiteColor];
             if (isRise) {
                 self.backgroundColor = LCoreCurrent.riseTextColor;
-                imageName = @"riseRed";
             }else
             {
                 self.backgroundColor = LCoreCurrent.fallTextColor;
-                imageName = @"fallGreen";
-    
             }
         }
             break;
@@ -76,11 +79,9 @@
         {
             if (isRise) {
                 color = LCoreCurrent.riseTextColor;
-                imageName = @"riseRed";
             }else
             {
                 color = LCoreCurrent.fallTextColor;
-                imageName = @"fallGreen";
             }
         }
             break;
@@ -89,8 +90,8 @@
                                                                                                                                              NSForegroundColorAttributeName:color
                                                                                                                                              }];
     NSTextAttachment *im = [[NSTextAttachment alloc] init];
-    [im setImage:[UIImage imageNamed:imageName]];
-    im.bounds = CGRectMake(0, -2, 10, 14);
+    [im setImage:[[UIImage imageNamed:imageName] imageWithTintColor:color]];
+    im.bounds = CGRectMake(0, -2, 8, 14);
     NSAttributedString *image = [NSAttributedString attributedStringWithAttachment:im];
     [str appendAttributedString:image];
     _record.attributedText = str;

@@ -213,6 +213,7 @@ __weak BuyView *buySelf;
     _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     _lOne.backgroundColor = LCoreCurrent.detailLightBackColor;
     _lTwo.backgroundColor = LCoreCurrent.detailLightBackColor;
+    [_cancel setImage:[[UIImage imageNamed:@"buyCancel"] imageWithTintColor:[UIColor lightGrayColor]] forState:UIControlStateNormal];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
