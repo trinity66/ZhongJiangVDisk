@@ -48,13 +48,13 @@
         "buttonTitleColor":[1.00, 1.00, 1.00, 1.00],
         "positionCellTextColor":[1.00, 1.00, 1.00, 1.00],
         
-        "chartLineColor":[0.79, 0.03, 0.08, 1.00],
-        "chartLinesColor":[0.20, 0.20, 0.20, 1.00],
-        "chartYTextColor":[1.00, 0.50, 0.00, 1.00],
+        "chartLineColor":[0.84, 0.84, 0.84, 1.00],
+        "chartLinesColor":[1.00, 1.00, 1.00, 0.00],
+        "chartYTextColor":[0.80, 0.80, 0.80, 1.00],
         "chartXTextColor":[0.80, 0.80, 0.80, 1.00],
         "chartBackColor":[0.20, 0.20, 0.20, 1.00],
         
-        "selectedLineColor":[0.79, 0.03, 0.08, 1.00],
+        "selectedLineColor":[0.84, 0.72, 0.53, 1.00],
         "tabBarSelectTextColor":[1.00, 1.00, 1.00, 1.00],
         "tabBarTextColor":[0.80, 0.80, 0.80, 1.00],
         "buttonBackColor":[0.00, 0.00, 0.00, 1.00],

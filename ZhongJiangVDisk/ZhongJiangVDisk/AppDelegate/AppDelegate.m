@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    LCoreCurrent.VDiskType = VDiskTypeYinHe;//VDiskTypeZhongHui////VDiskTypeZhongJiang
+    LCoreCurrent.VDiskType = VDiskTypeYinHe;//VDiskTypeZhongJiang////VDiskTypeZhongHui
     if (!LCoreCurrent.isLogin) {
 //        [self intoQRCodeVC];
         [self performSelector:@selector(goRegister) withObject:nil afterDelay:0.01];

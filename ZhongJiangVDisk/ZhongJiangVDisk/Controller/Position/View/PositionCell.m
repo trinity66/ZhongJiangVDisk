@@ -40,19 +40,19 @@
     NSString *num;
     if (isRise) {
         color = LCoreCurrent.riseTextColor;
-        imageName = @"riseRed";
+        imageName = @"arrow_up";
         num = [NSString stringWithFormat:@"+%.02f",number];
     }else
     {
         color = LCoreCurrent.fallTextColor;
-        imageName = @"fallGreen";
+        imageName = @"arrow_down";
         num = [NSString stringWithFormat:@"-%.02f",number];
     }
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:num attributes:@{
                                                                                                                                                 NSForegroundColorAttributeName:color
                                                                                                                                                 }];
     NSTextAttachment *im = [[NSTextAttachment alloc] init];
-    [im setImage:[UIImage imageNamed:imageName]];
+    [im setImage:[[UIImage imageNamed:imageName] imageWithTintColor:color]];
     im.bounds = CGRectMake(2, -2, 6, 12);
     NSAttributedString *image = [NSAttributedString attributedStringWithAttachment:im];
     [str appendAttributedString:image];

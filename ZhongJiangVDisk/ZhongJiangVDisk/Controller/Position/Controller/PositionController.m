@@ -99,12 +99,26 @@ __weak PositionController *_positionSelf;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DealHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DealHistoryCell"];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"DealHistoryCell" owner:nil options:nil].lastObject;
+    if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
+        DealHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DealHistoryCell"];
+        if (!cell) {
+            cell = [[NSBundle mainBundle] loadNibNamed:@"DealHistoryCell" owner:nil options:nil].lastObject;
+        }
+        cell.model = [DealHistoryModel modelWithDictionary:_list[indexPath.row]];
+        return cell;
+    }else
+    {
+        PositionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PositionCell"];
+        if (!cell) {
+            cell = [[NSBundle mainBundle] loadNibNamed:@"PositionCell" owner:nil options:nil].lastObject;
+            cell.btnActionBlock = ^(){
+                [_positionSelf clickButtonAction];
+            };
+        }
+        [cell setDetailWithNumber:0.00 isRise:YES];
+        return cell;
     }
-    cell.model = [DealHistoryModel modelWithDictionary:_list[indexPath.row]];
-    return cell;
+    
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
