@@ -121,6 +121,7 @@
 		5EEB44D11D81478900A40AA6 /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EEB44CF1D81478900A40AA6 /* PersonalTopView.xib */; };
 		5EEB44D91D8158C200A40AA6 /* LatestInfos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB44D81D8158C200A40AA6 /* LatestInfos.m */; };
 		5EEB44DB1D815D9F00A40AA6 /* LatestInfos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EEB44DA1D815D9F00A40AA6 /* LatestInfos.xib */; };
+		5EEB44E31D823EFD00A40AA6 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB44E21D823EFD00A40AA6 /* UIImage+Tint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -330,6 +331,8 @@
 		5EEB44D71D8158C200A40AA6 /* LatestInfos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestInfos.h; sourceTree = "<group>"; };
 		5EEB44D81D8158C200A40AA6 /* LatestInfos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestInfos.m; sourceTree = "<group>"; };
 		5EEB44DA1D815D9F00A40AA6 /* LatestInfos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LatestInfos.xib; sourceTree = "<group>"; };
+		5EEB44E11D823EFD00A40AA6 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		5EEB44E21D823EFD00A40AA6 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		80E8EE14EB5CCDB65356FB7D /* Pods_ZhongJiangVDisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhongJiangVDisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhongJiangVDisk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhongJiangVDisk/Pods-ZhongJiangVDisk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1207,6 +1210,7 @@
 		5EAF82781D6AF51200239CB5 /* LLibs */ = {
 			isa = PBXGroup;
 			children = (
+				5EEB44DD1D823ED600A40AA6 /* UIImage+Tint */,
 				5EAF828B1D6AF54600239CB5 /* LConfig */,
 			);
 			path = LLibs;
@@ -1275,6 +1279,15 @@
 				5EEB44DA1D815D9F00A40AA6 /* LatestInfos.xib */,
 			);
 			path = LatestInfos;
+			sourceTree = "<group>";
+		};
+		5EEB44DD1D823ED600A40AA6 /* UIImage+Tint */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB44E11D823EFD00A40AA6 /* UIImage+Tint.h */,
+				5EEB44E21D823EFD00A40AA6 /* UIImage+Tint.m */,
+			);
+			path = "UIImage+Tint";
 			sourceTree = "<group>";
 		};
 		794F7078CFCCD2419F25CE2D /* Frameworks */ = {
@@ -1528,6 +1541,7 @@
 				5E1722801D630082003CA0AE /* BaseViewController.m in Sources */,
 				5E17229A1D630082003CA0AE /* RechargeHeadView.m in Sources */,
 				5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */,
+				5EEB44E31D823EFD00A40AA6 /* UIImage+Tint.m in Sources */,
 				5EAF827D1D6AF51200239CB5 /* BaseLayer.m in Sources */,
 				5EAF824A1D6AEE9F00239CB5 /* RegisterButtonView.m in Sources */,
 				5EEB44D91D8158C200A40AA6 /* LatestInfos.m in Sources */,

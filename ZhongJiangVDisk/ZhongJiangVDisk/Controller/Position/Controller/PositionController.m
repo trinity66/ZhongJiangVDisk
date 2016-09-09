@@ -25,7 +25,6 @@ __weak PositionController *_positionSelf;
     _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     [self addSegmentWithUserEnabled:NO];
     _topTableViewY.constant = [self getTableViewY];
-
     if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
         _tableView.layer.cornerRadius = 5;
         _tableView.layer.borderColor = LCoreCurrent.personalTopColor.CGColor;

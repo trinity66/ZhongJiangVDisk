@@ -367,11 +367,11 @@
             </objects>
             <point key="canvasLocation" x="940" y="1662"/>
         </scene>
-        <!--Base Navigation Controller-->
+        <!--首页-->
         <scene sceneID="FkO-M2-Crg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v3g-Eh-EGs" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="skK-mu-rTS"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="tabBar_home" selectedImage="tabBar_home" id="skK-mu-rTS"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IKG-do-4ZO">
@@ -387,11 +387,11 @@
             </objects>
             <point key="canvasLocation" x="-739" y="416"/>
         </scene>
-        <!--Base Navigation Controller-->
+        <!--持仓-->
         <scene sceneID="DH9-a3-74n">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gHy-kD-Jmy" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="3ym-e1-x2e"/>
+                    <tabBarItem key="tabBarItem" title="持仓" image="tabBar_position" selectedImage="tabBar_position" id="3ym-e1-x2e"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HEW-D3-Edj">
@@ -407,11 +407,11 @@
             </objects>
             <point key="canvasLocation" x="-399" y="416"/>
         </scene>
-        <!--Base Navigation Controller-->
+        <!--我的-->
         <scene sceneID="Z5Z-UV-0Xh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xjq-UE-3el" customClass="BaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Ez3-3r-oyX"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="tabBar_personal" selectedImage="tabBar_personal" id="Ez3-3r-oyX"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="v4b-BU-2hs">
@@ -658,4 +658,9 @@
             <point key="canvasLocation" x="284" y="2279"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabBar_home" width="22" height="22"/>
+        <image name="tabBar_personal" width="16" height="20"/>
+        <image name="tabBar_position" width="21" height="21"/>
+    </resources>
 </document>

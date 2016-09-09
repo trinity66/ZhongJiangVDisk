@@ -87,6 +87,7 @@
 
 #import "LButton.h"//基础button
 #import "LTextField.h"
+#import "UIImage+Tint.h"//改变图片颜色
 
 #import "LineChartDataView.h"
 #import "StockChartDataView.h"
