@@ -19,24 +19,22 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjH-bM-4fo">
                         <rect key="frame" x="8" y="2" width="304" height="39.5"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbs-SX-hzd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbs-SX-hzd" customClass="BuyButton">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="39.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="5A1-8q-8Br"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="买涨"/>
+                                <state key="normal" title="买涨" image="arrow_up_small"/>
                                 <connections>
                                     <action selector="riseAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wNa-EL-DLs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgZ-5M-7nv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgZ-5M-7nv" customClass="BuyButton">
                                 <rect key="frame" x="254" y="0.0" width="50" height="39.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="SAL-oh-otN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="买跌"/>
+                                <state key="normal" title="买跌" image="arrow_down_small"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="SAL-oh-otN"/>
@@ -123,12 +121,16 @@
             <connections>
                 <outlet property="detail" destination="m1g-ah-xDV" id="b2C-HP-Ef9"/>
                 <outlet property="detailTwo" destination="Kbv-lv-Qjr" id="mZH-na-db5"/>
-                <outlet property="fallButton" destination="cgZ-5M-7nv" id="fan-wo-bq5"/>
+                <outlet property="fallButton" destination="cgZ-5M-7nv" id="9ud-SL-sAM"/>
                 <outlet property="mainView" destination="OjH-bM-4fo" id="5P0-Tc-YTI"/>
-                <outlet property="riseButton" destination="sbs-SX-hzd" id="nTw-ri-lWz"/>
+                <outlet property="riseButton" destination="sbs-SX-hzd" id="9zT-8p-rrg"/>
                 <outlet property="title" destination="W3i-AL-xSf" id="luc-FE-JEx"/>
             </connections>
             <point key="canvasLocation" x="230" y="275"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arrow_down_small" width="20" height="20"/>
+        <image name="arrow_up_small" width="20" height="20"/>
+    </resources>
 </document>

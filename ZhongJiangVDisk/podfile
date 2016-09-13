@@ -2,10 +2,11 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'ZhongJiangVDisk' do
-	pod 'AFNetworking', '~> 2.x'
+	pod 'AFNetworking'
 	pod 'MJRefresh'
 	pod 'HMSegmentedControl'
 	pod 'MBProgressHUD'
+    pod 'CocoaSecurity'
     #pod 'Pgyer'
     #pod 'PgyUpdate'
 end

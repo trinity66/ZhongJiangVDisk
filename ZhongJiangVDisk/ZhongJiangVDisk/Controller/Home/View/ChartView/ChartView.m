@@ -15,6 +15,9 @@
 @property (nonatomic, strong) HMSegmentedControl *segmentC;
 @property (nonatomic) NSArray* chartData;
 @property (nonatomic, strong) BBChartView *chartView;
+@property (nonatomic, strong) Area *areaup;
+@property (nonatomic, strong) LineSeries *lineSeries;
+@property (nonatomic, strong) StockSeries *stockSeries;
 @end
 @implementation ChartView
 
@@ -41,36 +44,40 @@
 #pragma mark 设置分时图
 - (void)set_chartView
 {
-    [_chartView removeFromSuperview];
-    _chartView = nil;
     if (!_chartView) {
         _chartViewSuper.backgroundColor = LCoreCurrent.detailBackColor;
         _chartView = [[BBChartView alloc] initWithFrame:CGRectMake(0, 36, kScreenWidth-10, _chartViewSuper.bounds.size.height-36)];
-        _chartView.userInteractionEnabled = YES;
         [self.chartViewSuper addSubview:_chartView];
         [BBTheme theme].barBorderColor = [UIColor clearColor];
         [BBTheme theme].xAxisFontSize = 11;
+    }else
+    {
+        [_chartView reset];
     }
-    Area* areaup = [[Area alloc] init];
-    areaup.bottomAxis.labelProvider = self;
+    _areaup = nil;
+    _lineSeries = nil;
+    _stockSeries = nil;
+    _areaup = [[Area alloc] init];
+    _areaup.bottomAxis.labelProvider = self;
     NSInteger index = _segmentC.selectedSegmentIndex;
     if (index == 0) {
-        LineSeries* line = [[LineSeries alloc] init];
-        line.height = _chartHeight.constant;
-        line.color = LCoreCurrent.selectedLineColor;
-        [areaup addSeries:line];
+        _lineSeries = [[LineSeries alloc] init];
+        _lineSeries.height = _chartHeight.constant;
+        _lineSeries.color = LCoreCurrent.selectedLineColor;
+        [_areaup addSeries:_lineSeries];
         for (NSArray* arr in _chartData) {
-            [line addPoint:(Float(arr[4]) + Float(arr[3]))/2];
+            [_lineSeries addPoint:(Float(arr[4]) + Float(arr[3]))/2];
         }
     }else {// if (index == 1)
-        StockSeries* stock = [[StockSeries alloc] init];
-        [areaup addSeries:stock];
+        
+        _stockSeries = [[StockSeries alloc] init];
+        [_areaup addSeries:_stockSeries];
         for (NSArray* arr in _chartData) {
-            [stock addPointOpen:Float(arr[2]) close:Float(arr[5]) low:Float(arr[4]) high:Float(arr[3])];
+            [_stockSeries addPointOpen:Float(arr[2]) close:Float(arr[5]) low:Float(arr[4]) high:Float(arr[3])];
         }
     }
-    [self.chartView addArea:areaup];
-    [self.chartView drawAnimated:YES];
+    [_chartView addArea:_areaup];
+    [_chartView drawAnimated:YES];
 }
 #pragma mark - AxisDataProvider
 - (NSString *)textForIdx:(NSUInteger)idx{

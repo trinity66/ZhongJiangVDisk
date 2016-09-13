@@ -5,7 +5,7 @@
 //  Created by liuxiaomin on 16/8/11.
 //  Copyright © 2016年 liuxiaomin. All rights reserved.
 //
-#define LCoreCurrent [Core current]
+
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

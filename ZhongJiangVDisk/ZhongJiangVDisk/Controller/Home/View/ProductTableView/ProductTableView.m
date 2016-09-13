@@ -58,20 +58,6 @@ __weak ProductTableView *productTabelSelf;
     }
     return kTableViewFootHeight;
 }
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    if (section == 0 && LCoreCurrent.VDiskType == VDiskTypeYinHe) {
-        UIView *view = [[UIView alloc] init];
-        view.backgroundColor = LCoreCurrent.personalTopColor;;
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 100, 21)];
-        label.font = [UIFont systemFontOfSize:12];
-        label.text = @"选择交易品种";
-        [view addSubview:label];
-        return view;
-    }
-    return nil;
-}
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductTableViewCell"];

@@ -83,7 +83,6 @@
 {
     [self set_object_for_key:defaultName value:[NSNumber numberWithBool:value]];
 }
-
 - (BOOL)boolForKey:(NSString *)defaultName
 {
     id object = [self object_value_with_key:defaultName];

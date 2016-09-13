@@ -5,7 +5,6 @@
 //  Created by liuxiaomin on 16/8/11.
 //  Copyright © 2016年 liuxiaomin. All rights reserved.
 //
-
 #ifndef ZhongJiangVDiskPrefix_pch
 #define ZhongJiangVDiskPrefix_pch
 
@@ -16,14 +15,21 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #endif /* ZhongJiangVDiskPrefix_pch */
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
-#define kPersonalTopViewHeight 60
-#define kSegmentHeight 44
-#define kTableViewCellHegiht 40
-#define kTableViewHeadHegiht 5
-#define kTableViewFootHeight 0.0000001
-#define kCellLabelFont 15
+
+#define LCoreCurrent              [Core current]
+#define LConfigCurrent            [LConfig current]
+#define APP_KEY                   @"77d7ysgdfd374677453j5h5h"
+#define kBaseURL                  @"http://baidu.com"
+#define kTimeOutCount             60
+#define kScreenWidth              [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight             [UIScreen mainScreen].bounds.size.height
+#define kPersonalTopViewHeight    60
+#define kSegmentHeight            44
+#define kTableViewCellHegiht      40
+#define kTableViewHeadHegiht      5
+#define kTableViewFootHeight      0.0000001
+#define kCellLabelFont            15
+
 
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "Core.h"
@@ -31,6 +37,7 @@
 #import "Core+Data.h"
 #import "Core+Controller.h"
 #import "Core+CheckData.h"
+#import "Core+Network.h"
 
 #import "BaseViewController.h"//基Controller
 #import "BaseTabBarController.h"
@@ -43,7 +50,9 @@
 #import "SegmentView.h"//单个产品视图
 #import "Segment.h"//产品总数展示视图
 
+#import "PositionHead.h"
 #import "PositionCell.h"//持仓cell
+
 
 #import "InfosController.h"//公告
 
@@ -77,8 +86,8 @@
 
 #import "ChartView.h"//首页分时图
 #import "ChartViewTwo.h"//首页分时图样式2
-#import "ProductCollectionView.h"//首页底部collectionView
-#import "ProductCollectionCell.h"//首页底部collectionCell
+//#import "ProductCollectionView.h"//首页底部collectionView
+//#import "ProductCollectionCell.h"//首页底部collectionCell
 #import "LatestInfos.h"//首页－最新资讯
 #import "ProductTableView.h"
 #import "ProductTableViewCell.h"
@@ -86,8 +95,9 @@
 #import "ForgetDealPswdController.h"//忘记密码
 
 #import "LButton.h"//基础button
+#import "BuyButton.h"
 #import "LTextField.h"
-#import "UIImage+Tint.h"//改变图片颜色
+#import "LCategory.h"
 
 #import "LineChartDataView.h"
 #import "StockChartDataView.h"
@@ -121,6 +131,9 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "MJRefresh.h"
+#import "UPPaymentControl.h"
+
+
 //#import <PgySDK/PgyManager.h>
 //#import <PgyUpdate/PgyUpdateManager.h>
 

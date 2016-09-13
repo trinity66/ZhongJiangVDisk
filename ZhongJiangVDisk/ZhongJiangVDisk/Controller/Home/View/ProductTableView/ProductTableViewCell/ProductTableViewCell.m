@@ -9,8 +9,8 @@
 #import "ProductTableViewCell.h"
 
 @interface ProductTableViewCell ()
-@property (weak, nonatomic) IBOutlet UIButton *riseButton;
-@property (weak, nonatomic) IBOutlet UIButton *fallButton;
+@property (weak, nonatomic) IBOutlet BuyButton *riseButton;
+@property (weak, nonatomic) IBOutlet BuyButton *fallButton;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *detail;
 @property (weak, nonatomic) IBOutlet UIView *mainView;
@@ -37,36 +37,22 @@
 - (void)setSomeControl
 {
     _mainView.backgroundColor = LCoreCurrent.backgroundColor;
-    _riseButton.backgroundColor = LCoreCurrent.riseTextColor;
-    _fallButton.backgroundColor = LCoreCurrent.fallTextColor;
-    UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-2];
-    _riseButton.titleLabel.font = font;
-    _fallButton.titleLabel.font = font;
-    [_riseButton setTitleColor:LCoreCurrent.buttonTitleColor forState:UIControlStateNormal];
-    [_fallButton setTitleColor:LCoreCurrent.buttonTitleColor forState:UIControlStateNormal];
-    
-    _title.textColor = LCoreCurrent.labelTextColor;
+    UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-3];
+    UIColor *backColor = LCoreCurrent.topSegmentColor;
+    [_riseButton setTite:@"买涨" imageName:@"arrow_up_small" titleColor:LCoreCurrent.riseTextColor imageColor:LCoreCurrent.riseTextColor backColor:backColor font:font];
+    [_fallButton setTite:@"买跌" imageName:@"arrow_down_small" titleColor:LCoreCurrent.fallTextColor imageColor:LCoreCurrent.fallTextColor backColor:backColor font:font];
+    _title.textColor = LCoreCurrent.cellTextColor;
     _detail.textColor = LCoreCurrent.selectedLineColor;
     _detail.font = [UIFont systemFontOfSize:kCellLabelFont-4];
-    if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
-        _mainView.layer.borderColor = LCoreCurrent.personalTopColor.CGColor;
-        _detailTwo.textColor = LCoreCurrent.labelTextColor;
-        _detailTwo.font = [UIFont systemFontOfSize:kCellLabelFont-5];
-    }
+    _mainView.layer.borderColor = LCoreCurrent.topSegmentColor.CGColor;
+    _detailTwo.textColor = [UIColor lightGrayColor];
+    _detailTwo.font = [UIFont systemFontOfSize:kCellLabelFont-5];
 }
 - (void)setTitleWithTitle:(NSString *)title detail:(NSString *)detail
 {
-    if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
-        _title.font = [UIFont systemFontOfSize:kCellLabelFont-3];
-        _title.text = title;
-        _detailTwo.text = detail;
-        }else
-        {
-            NSMutableAttributedString *str1 = [[NSMutableAttributedString alloc] initWithString:title attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:kCellLabelFont-3]}];
-            NSMutableAttributedString *str2 = [[NSMutableAttributedString alloc] initWithString:detail attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:kCellLabelFont-5]}];
-            [str1 appendAttributedString:str2];
-            _title.attributedText = str1;
-        }
+    _title.font = [UIFont systemFontOfSize:kCellLabelFont-3];
+    _title.text = title;
+    _detailTwo.text = detail;
 }
 - (IBAction)riseAction:(id)sender {
     if (self.btnsActionBlock) {

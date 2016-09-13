@@ -9,6 +9,9 @@
 #import "Core.h"
 
 @interface Core (Data)
+
+
+
 - (void)saveUserInfo:(NSDictionary *)userInfo;
 - (void)saveUserInfoWithKey:(NSString *)key value:(id)value;
 - (NSDictionary *)getUserInfo;

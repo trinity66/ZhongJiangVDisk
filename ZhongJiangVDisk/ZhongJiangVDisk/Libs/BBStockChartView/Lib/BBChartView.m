@@ -25,7 +25,7 @@
     UIView* _toastView;
     UILabel* _toastLabel;
     float showWidth, showHeight, showX, showY;
-    BOOL showAnimationed;
+    BOOL isFirstTouch, isStock;
     
 }
 @property (nonatomic, strong)Series *series;
@@ -66,14 +66,15 @@
     [self addSubview:_chartView];
     [self _initToastView];
     
-//    UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-//    [self addGestureRecognizer:panGesture];
-//    UIPinchGestureRecognizer* pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
-//    [self addGestureRecognizer:pinchGesture];
+    //    UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+    //    [self addGestureRecognizer:panGesture];
+    //    UIPinchGestureRecognizer* pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
+    //    [self addGestureRecognizer:pinchGesture];
     
     _scaleFloor = 2;
     _currentScale = 1;
     _currentX = 0;
+    [self setSomeSubViews];
 }
 
 - (void)setScaleFloor:(CGFloat)scaleFloor{
@@ -123,8 +124,24 @@
     }
     if (area.theSeries.count == 1) {
         _series = area.theSeries.firstObject;
-        if (!_data) {
-            _data = [NSMutableArray arrayWithArray:_series.data];
+        //        if (!_data) {
+        _data = [NSMutableArray arrayWithArray:_series.data];
+        //        }
+        if (_data.count > 0 && [_data[0] isKindOfClass:[StockSeriesPoint class]]) {
+            showWidth = 140;
+            showHeight = 60;
+            isStock = YES;
+            [self addSubview:_lineY];
+            [self addSubview:_circle];
+            [self addSubview:_stockDataView];
+        }else
+        {
+            showWidth = 76;
+            showHeight = 40;
+            isStock = NO;
+            [self addSubview:_lineY];
+            [self addSubview:_circle];
+            [self addSubview:_lineDataView];
         }
     }
 }
@@ -168,6 +185,7 @@
     for (Area* area in _areas) {
         [area removeFromSuperlayer];
     }
+    [self subViewsHidden:YES];
     [_areas removeAllObjects];
     [_areaHeights removeAllObjects];
 }
@@ -252,46 +270,21 @@
         float x = point.x-axisYwidth;
         double itemWidth = self.series.pointWidth;
         NSInteger index = (NSInteger)x/itemWidth;
-        x = itemWidth*index;
-        if (!_lineY) {
-            _lineY = [[UIView alloc] init];
-            _lineY.backgroundColor = [UIColor lightGrayColor];
-            [self addSubview:_lineY];
-        }
-        if (!_circle) {
-            _circle = [[UIView alloc] init];
-            _circle.backgroundColor = LCoreCurrent.selectedLineColor;
-            _circle.layer.cornerRadius = 2;
-            [self addSubview:_circle];
-        }
-        showAnimationed = YES;
+        x = itemWidth*index + itemWidth/2.0;
         CGFloat f = 0;
         if (index>=0 && index < self.data.count) {
+            if (isFirstTouch) {
+                [self subViewsHidden:NO];
+            }
             id shujv = self.data[index];
-            if ([shujv isKindOfClass:[StockSeriesPoint class]]) {
+            if (isStock) {
                 StockSeriesPoint *p =shujv;
                 f = p.high;
-                if (!_stockDataView) {
-                    showWidth = 140;
-                    showHeight = 60;
-                    showAnimationed = NO;
-                    _stockDataView = [[NSBundle mainBundle] loadNibNamed:@"StockChartDataView" owner:nil options:nil].lastObject;
-                    [self addSubview:_stockDataView];
-                }
                 [_stockDataView setTime:@"未知" open:p.open close:p.close high:p.high low:p.low];
-                x += itemWidth/2.0;
             }else
             {
                 NSNumber *num = shujv;
                 f = [num doubleValue];
-                if (!_lineDataView) {
-                    _lineDataView = [[NSBundle mainBundle] loadNibNamed:@"LineChartDataView" owner:nil options:nil].lastObject;
-                    showWidth = 76;
-                    showHeight = 40;
-                    showAnimationed = NO;
-                    
-                    [self addSubview:_lineDataView];
-                }
                 [_lineDataView setTime:@"未知" data:f];
             }
             CGFloat height = self.series.bounds.size.height;
@@ -310,12 +303,13 @@
                 showY = y;
             }
             CGRect frame = CGRectMake(showX, showY, showWidth, showHeight);
-            if (_lineDataView) {
-                [self updateView:_lineDataView frame:frame];
+            if (isStock) {
+                [self updateView:_stockDataView frame:frame];
             }else
             {
-                [self updateView:_stockDataView frame:frame];
+               [self updateView:_lineDataView frame:frame];
             }
+            
             _lineY.frame = CGRectMake(axisYwidth + x, 0, 0.5, self.bounds.size.height-axisXheight);
             _circle.frame = CGRectMake(axisYwidth + x - 2, y-2, 4, 4);
         }
@@ -323,15 +317,63 @@
 }
 - (void)updateView:(UIView *)view frame:(CGRect)frame
 {
-    if (showAnimationed) {
+    if (isFirstTouch) {
+        isFirstTouch = NO;
+        view.frame = frame;
+    }else
+    {
         [UIView animateWithDuration:0.2 animations:^{
             view.frame = frame;
         }];
+    }
+}
+- (void)setSomeSubViews
+{
+    if (!_lineY) {
+        _lineY = [[UIView alloc] init];
+        _lineY.backgroundColor = [UIColor lightGrayColor];
+
+    }
+    if (!_circle) {
+        _circle = [[UIView alloc] init];
+        _circle.backgroundColor = LCoreCurrent.selectedLineColor;
+        _circle.layer.cornerRadius = 2;
+
+    }
+    if (!_lineDataView) {
+        _lineDataView = [[NSBundle mainBundle] loadNibNamed:@"LineChartDataView" owner:nil options:nil].lastObject;
+    }
+    if (!_stockDataView) {
+        _stockDataView = [[NSBundle mainBundle] loadNibNamed:@"StockChartDataView" owner:nil options:nil].lastObject;
+    }
+    [self subViewsHidden:YES];
+}
+- (void)subViewsHidden:(BOOL)isHidden
+{
+    _lineY.hidden = isHidden;
+    _circle.hidden = isHidden;
+    
+    _lineDataView.hidden = isHidden;
+    _stockDataView.hidden = isHidden;
+    if (!isHidden) {
+        if (isStock) {
+            _lineDataView.hidden = YES;
+        }else
+        {
+           _stockDataView.hidden = YES;
+        }
     }else
     {
-        view.frame = frame;
+        isFirstTouch = isHidden;
     }
     
+}
+- (void)removeSubViews
+{
+    [_lineY removeFromSuperview];
+    [_circle removeFromSuperview];
+    [_lineDataView removeFromSuperview];
+    [_stockDataView removeFromSuperview];
 }
 
 @end

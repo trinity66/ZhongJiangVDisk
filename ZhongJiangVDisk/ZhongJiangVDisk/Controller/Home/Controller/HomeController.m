@@ -12,7 +12,7 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) ChartView *chartSuperView;
 @property (nonatomic, strong) ChartViewTwo *chartSuperViewTwo;
-@property (nonatomic, strong) ProductCollectionView *collectionSuperView;
+//@property (nonatomic, strong) ProductCollectionView *collectionSuperView;
 @property (nonatomic, strong) ProductTableView *productTableSuperView;
 @property (nonatomic, strong) InputDealPswdView *put;
 @property (nonatomic, strong) LatestInfos *latestInfos;
@@ -44,11 +44,10 @@ __weak HomeController *_self;
     if (LCoreCurrent.isLogin && !self.segment) {
         [self addSegmentWithUserEnabled:YES];
         self.segment.btnsActionBlock = ^(NSInteger index) {
-            [_self.collectionSuperView setCollectionViewContentOffsetWithIndex:index];
+//            [_self.collectionSuperView setCollectionViewContentOffsetWithIndex:index];
         };
         [self set_scrollView];
     }
-    
 }
 - (void)goForgetDealPswd
 {
@@ -100,36 +99,27 @@ __weak HomeController *_self;
     }
     switch (LCoreCurrent.VDiskType) {
         case VDiskTypeZhongJiang:
-        {
-            if (!_chartSuperView) {
-                _chartSuperView = [[NSBundle mainBundle] loadNibNamed:@"ChartView" owner:nil options:nil].lastObject;
-                _chartSuperView.frame = CGRectMake(0, 0, width, 330);
-                [_scrollView addSubview:_chartSuperView];
-            }
-            if (!_collectionSuperView) {
-                _collectionSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductCollectionView" owner:nil options:nil].lastObject;
-                _collectionSuperView.btnsActionBlock = ^(NSInteger index) {
-                    _self.segment.selectedIndex = index;
-                };
-                _collectionSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, width, 160);
-                [_scrollView addSubview:_collectionSuperView];
-                _scrollView.contentSize = CGSizeMake(width, _chartSuperView.frame.size.height + _collectionSuperView.frame.size.height);
-            }
-        }
-        break;
         case VDiskTypeZhongHui:
         {
+            double height = 0;
             if (!_chartSuperView) {
                 _chartSuperView = [[NSBundle mainBundle] loadNibNamed:@"ChartView" owner:nil options:nil].lastObject;
                 _chartSuperView.frame = CGRectMake(0, 0, width, 330);
                 [_scrollView addSubview:_chartSuperView];
+            }
+            height += _chartSuperView.frame.size.height;
+            double tableHeight = 20;
+            for (NSDictionary *dict in LCoreCurrent.productsList) {
+                NSArray *list = dict[@"list"];
+                tableHeight += list.count * kTableViewCellHegiht;
             }
             if (!_productTableSuperView) {
                 _productTableSuperView = [[NSBundle mainBundle] loadNibNamed:@"ProductTableView" owner:nil options:nil].lastObject;
-                _productTableSuperView.frame = CGRectMake(0, _chartSuperView.frame.size.height, width, 160);
+                _productTableSuperView.frame = CGRectMake(0, height, width, tableHeight);
                 [_scrollView addSubview:_productTableSuperView];
-                _scrollView.contentSize = CGSizeMake(width, _chartSuperView.frame.size.height + _productTableSuperView.frame.size.height);
             }
+            height += tableHeight;
+            _scrollView.contentSize = CGSizeMake(width, height);
         }
         break;
         case VDiskTypeYinHe:

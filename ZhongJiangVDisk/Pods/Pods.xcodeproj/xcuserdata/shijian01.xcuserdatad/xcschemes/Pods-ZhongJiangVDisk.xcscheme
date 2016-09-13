@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07EEA84F981A56F3C052625134E4A323"
+               BlueprintIdentifier = "FF9AFC2A779B91D14EDF973C5111E6D6"
                BuildableName = "Pods_ZhongJiangVDisk.framework"
                BlueprintName = "Pods-ZhongJiangVDisk"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07EEA84F981A56F3C052625134E4A323"
+            BlueprintIdentifier = "FF9AFC2A779B91D14EDF973C5111E6D6"
             BuildableName = "Pods_ZhongJiangVDisk.framework"
             BlueprintName = "Pods-ZhongJiangVDisk"
             ReferencedContainer = "container:Pods.xcodeproj">

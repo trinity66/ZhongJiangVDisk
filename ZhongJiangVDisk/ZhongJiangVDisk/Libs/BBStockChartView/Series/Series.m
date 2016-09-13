@@ -17,6 +17,7 @@
     }
     return self;
 }
+
 -(void)drawPoint:(NSUInteger)idx animated:(BOOL)animated{
     
 }
