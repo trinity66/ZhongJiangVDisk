@@ -44,6 +44,7 @@
 #import "BaseNavigationController.h"
 #import "HomeController.h"//首页
 #import "PositionController.h"//持仓
+#import "DetailPositionController.h"//持仓详情
 #import "PersonalController.h"//我的
 
 #import "PersonalTopView.h"//顶部视图
@@ -52,6 +53,9 @@
 
 #import "PositionHead.h"
 #import "PositionCell.h"//持仓cell
+#import "DetailPositionCell1.h"//持仓详情cell
+#import "DetailPositionCell2.h"
+#import "DetailPositionCell3.h"
 
 
 #import "InfosController.h"//公告

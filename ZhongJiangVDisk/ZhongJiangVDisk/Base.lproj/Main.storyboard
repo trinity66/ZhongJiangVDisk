@@ -176,7 +176,58 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hbw-Xb-gZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-727" y="1709"/>
+            <point key="canvasLocation" x="-1103" y="1045"/>
+        </scene>
+        <!--Detail Position Controller-->
+        <scene sceneID="5Fe-L9-Og9">
+            <objects>
+                <viewController storyboardIdentifier="DetailPositionController" id="Z3E-E5-wl8" customClass="DetailPositionController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sal-ig-DOb"/>
+                        <viewControllerLayoutGuide type="bottom" id="i5t-c9-3PV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZkU-ff-P8g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6dC-2A-R4s">
+                                <rect key="frame" x="10" y="0.0" width="300" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="JmG-ze-6ZV"/>
+                                </constraints>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Z3E-E5-wl8" id="mAK-Jb-gDw"/>
+                                    <outlet property="delegate" destination="Z3E-E5-wl8" id="7VG-7m-y52"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6dC-2A-R4s" firstAttribute="leading" secondItem="ZkU-ff-P8g" secondAttribute="leading" constant="10" id="5cg-e0-Yyf"/>
+                            <constraint firstItem="6dC-2A-R4s" firstAttribute="top" secondItem="ZkU-ff-P8g" secondAttribute="topMargin" id="dcR-3F-IQp"/>
+                            <constraint firstAttribute="trailing" secondItem="6dC-2A-R4s" secondAttribute="trailing" constant="10" id="eBj-j3-rGH"/>
+                            <constraint firstItem="i5t-c9-3PV" firstAttribute="top" secondItem="6dC-2A-R4s" secondAttribute="bottom" id="sBD-Ga-wrO"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="6dC-2A-R4s" id="Ekb-Cq-dy8"/>
+                        <outlet property="topTableViewY" destination="dcR-3F-IQp" id="BSW-jX-beT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0u1-XR-rAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-399" y="1667"/>
         </scene>
         <!--公告-->
         <scene sceneID="yo5-iq-vGp">
@@ -580,7 +631,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLl-AA-eD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-727" y="2324"/>
+            <point key="canvasLocation" x="-1471" y="1056"/>
         </scene>
         <!--经纪人申请-->
         <scene sceneID="DPv-qc-fgm">

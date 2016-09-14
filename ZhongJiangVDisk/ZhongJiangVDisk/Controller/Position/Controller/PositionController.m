@@ -22,6 +22,7 @@ __weak PositionController *_positionSelf;
     [super viewDidLoad];
     _positionSelf = self;
     [self addSegmentWithUserEnabled:NO];
+    self.view.backgroundColor = LCoreCurrent.backgroundColor;
     _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     _tableView.separatorColor = LCoreCurrent.detailLightBackColor;
     _topTableViewY.constant = [self getTableViewY];

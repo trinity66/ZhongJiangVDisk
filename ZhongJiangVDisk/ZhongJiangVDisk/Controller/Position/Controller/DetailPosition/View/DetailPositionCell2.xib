@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DetailPositionCell2" id="KGk-i7-Jjw" customClass="DetailPositionCell2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0P-16-38i">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovv-G4-LGI">
+                        <rect key="frame" x="160" y="0.0" width="80" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4t-vD-bPf">
+                        <rect key="frame" x="256" y="0.0" width="64" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TT-OZ-OZN" customClass="LButton">
+                        <rect key="frame" x="266" y="18" width="46" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="g7z-D7-BpA"/>
+                            <constraint firstAttribute="height" constant="25" id="lPI-YW-EkI"/>
+                        </constraints>
+                        <state key="normal" title="调整"/>
+                        <connections>
+                            <action selector="clickButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1yc-Il-CHS"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijA-Tc-gQw">
+                        <rect key="frame" x="96" y="0.0" width="64" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="g0P-16-38i" secondAttribute="bottom" constant="-8" id="5ss-hF-M1V"/>
+                    <constraint firstItem="ijA-Tc-gQw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="AoM-ki-hra"/>
+                    <constraint firstItem="ovv-G4-LGI" firstAttribute="width" secondItem="g0P-16-38i" secondAttribute="width" id="Dxs-On-VMB"/>
+                    <constraint firstItem="z4t-vD-bPf" firstAttribute="leading" secondItem="ovv-G4-LGI" secondAttribute="trailing" constant="16" id="FWO-us-yAX"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ijA-Tc-gQw" secondAttribute="bottom" constant="-8" id="Qkd-fE-ZMd"/>
+                    <constraint firstItem="g0P-16-38i" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.25" id="QyY-nK-ego"/>
+                    <constraint firstItem="z4t-vD-bPf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="SyA-0T-wMD"/>
+                    <constraint firstItem="ijA-Tc-gQw" firstAttribute="leading" secondItem="g0P-16-38i" secondAttribute="trailing" constant="16" id="X8S-I9-Hx2"/>
+                    <constraint firstItem="z4t-vD-bPf" firstAttribute="width" secondItem="ijA-Tc-gQw" secondAttribute="width" id="aSZ-Qx-h75"/>
+                    <constraint firstItem="7TT-OZ-OZN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ect-rb-WiU"/>
+                    <constraint firstItem="g0P-16-38i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="gT0-1g-ea6"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ovv-G4-LGI" secondAttribute="bottom" constant="-8" id="iLs-Ek-QFI"/>
+                    <constraint firstItem="ovv-G4-LGI" firstAttribute="leading" secondItem="ijA-Tc-gQw" secondAttribute="trailing" id="n62-O7-Rgo"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="7TT-OZ-OZN" secondAttribute="bottom" constant="-7.5" id="nlZ-3z-UZM"/>
+                    <constraint firstItem="ovv-G4-LGI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="p23-Rk-OzQ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="z4t-vD-bPf" secondAttribute="trailing" constant="-8" id="qFL-Gm-J7A"/>
+                    <constraint firstItem="g0P-16-38i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="uIZ-D9-lzk"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="z4t-vD-bPf" secondAttribute="bottom" constant="-8" id="x67-DI-0Lf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="button" destination="7TT-OZ-OZN" id="nz3-gg-g6i"/>
+                <outlet property="detail1" destination="ijA-Tc-gQw" id="Blo-sn-Dey"/>
+                <outlet property="detail2" destination="7TT-OZ-OZN" id="rA4-gN-fF7"/>
+                <outlet property="title1" destination="g0P-16-38i" id="hAm-iE-g7D"/>
+                <outlet property="title2" destination="ovv-G4-LGI" id="8zO-Lg-2oC"/>
+            </connections>
+            <point key="canvasLocation" x="349" y="235"/>
+        </tableViewCell>
+    </objects>
+</document>

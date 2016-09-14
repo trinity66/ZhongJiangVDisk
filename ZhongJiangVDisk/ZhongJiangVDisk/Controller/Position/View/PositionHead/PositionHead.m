@@ -75,4 +75,20 @@
     [str appendAttributedString:image];
     _detail.attributedText = str;
 }
+- (void)setTitle:(NSString *)title detail:(NSString *)detail buttonTitle:(NSString *)buttonTite
+{
+    _title.text = title;
+    if (detail) {
+      _detail.text = detail;
+    }
+    if (buttonTite) {
+        [_button setTitle:buttonTite forState:UIControlStateNormal];
+    }else
+    {
+        _button.hidden = YES;
+    }
+    
+    
+}
+
 @end

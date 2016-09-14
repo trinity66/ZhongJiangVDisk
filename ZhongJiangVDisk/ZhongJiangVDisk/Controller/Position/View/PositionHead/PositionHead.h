@@ -11,4 +11,5 @@
 @interface PositionHead : UIView
 @property (nonatomic, copy)btnActionBlock btnActionBlock;
 - (void)setDetailWithNumber:(double)number isRise:(BOOL)isRise;
+- (void)setTitle:(NSString *)title detail:(NSString *)detail buttonTitle:(NSString *)buttonTite;
 @end
