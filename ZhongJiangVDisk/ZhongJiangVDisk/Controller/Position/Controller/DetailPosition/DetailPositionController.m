@@ -82,7 +82,33 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSInteger section = indexPath.section, row = indexPath.row;
+    if (section == 0) {
+        DetailPositionCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailPositionCell1"];
+        if (!cell) {
+            cell = [[NSBundle mainBundle] loadNibNamed:@"DetailPositionCell1" owner:nil options:nil].lastObject;
+        }
+        cell.title = _infos[section][row];
+        return cell;
+    }else if (section == 1) {
+        DetailPositionCell2 *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailPositionCell2"];
+        if (!cell) {
+            cell = [[NSBundle mainBundle] loadNibNamed:@"DetailPositionCell2" owner:nil options:nil].lastObject;
+        }
+        cell.title1 = _infos[section][row][0];
+        cell.title2 = _infos[section][row][1];
+        return cell;
+    }else if (section == 2) {
+        DetailPositionCell3 *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailPositionCell3"];
+        if (!cell) {
+            cell = [[NSBundle mainBundle] loadNibNamed:@"DetailPositionCell3" owner:nil options:nil].lastObject;
+        }
+        cell.title = _infos[section][row];
+        if (row == 2) {
+            cell
+        }
+        return cell;
+    }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

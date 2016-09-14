@@ -9,25 +9,6 @@
 #import "Core+Data.h"
 
 @implementation Core (Data)
-- (void)setIsLogin:(BOOL)isLogin
-{
-    if (isLogin) {
-        [LConfigCurrent set_object_for_key:@"isLogin" value:@"1"];
-    }else
-    {
-        [LConfigCurrent set_object_for_key:@"isLogin" value:@"0"];
-    }
-}
-- (BOOL)isLogin
-{
-    NSInteger l = [[LConfigCurrent object_value_with_key:@"isLogin"] integerValue];
-    if (l) {
-        return YES;
-    }else
-    {
-        return NO;
-    }
-}
 /*
  保存用户信息
  */
