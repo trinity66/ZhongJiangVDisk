@@ -85,6 +85,6 @@ __weak ProductTableView *productTabelSelf;
     NSArray *list = dict[@"list"];
     _buyView.model = [ProductModel modelWithDictionary:list[indexPath.row]];
     _buyView.isBuyRise = !index;
-    [_buyView showBuyViewAnimated:NO];
+    [_buyView showBuyViewAnimated:NO buyViewType:BuyViewTypeBuy];
 }
 @end

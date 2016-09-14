@@ -12,13 +12,14 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
 @property (nonatomic, strong) NSArray *infos, *datas;
+@property (nonatomic, strong) BuyView *buyView;
 @end
-
+__weak DetailPositionController *detailPositionSelf;
 @implementation DetailPositionController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    detailPositionSelf = self;
     _infos = @[
                @[
                    @{@"订单号:":_model._id,},
@@ -132,6 +133,9 @@
         cell.datas = _infos[section][row];
         if (row == 2) {
             cell.button.hidden = NO;
+            cell.btnActionBlock = ^(){
+                [detailPositionSelf candleProfit];
+            };
         }else
         {
             cell.button.hidden = YES;
@@ -150,6 +154,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+- (void)candleProfit
+{
+    if (!_buyView) {
+        _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;
+        __block BuyView *_buy = self.buyView;
+        _buyView.btnActionBlock = ^() {
+            [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:_buy];
+        };
+        _buyView.dealModel = _model;
+    }
+    [_buyView showBuyViewAnimated:NO buyViewType:BuyViewTypeAdjustProfit];
 }
 
 /*

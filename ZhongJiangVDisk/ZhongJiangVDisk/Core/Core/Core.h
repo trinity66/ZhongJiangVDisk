@@ -14,8 +14,6 @@ typedef NS_ENUM(NSUInteger, VDiskType) {
     VDiskTypeZhongJiang = 0,
     VDiskTypeZhongHui,
     VDiskTypeYinHe,
-    
-    
 };
 typedef void(^btnActionBlock)();
 typedef void(^btnsActionBlock)(NSInteger index);

@@ -17,12 +17,15 @@
 @property (weak, nonatomic) IBOutlet UIView *lOne;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainHeight;
+
 @property (nonatomic, assign) NSInteger maxProfit, maxLoss, maxCount;
 @property (nonatomic, assign) NSInteger currentProfitIndex, currentLossIndex, currentCountIndex;
 @property (nonatomic, strong) NSMutableArray *profits, *losses, *counts;
 @property (nonatomic, strong) LTextField *profitTf, *lossTf, *countTf, *priceTF, *contractPriceTF;
-@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) NSArray *titles, *texts;
 @property (nonatomic, assign) double poundage;
+@property (nonatomic, assign) BuyViewType buyViewType;
 
 @end
 __weak BuyView *buySelf;
@@ -39,6 +42,25 @@ __weak BuyView *buySelf;
     self.currentProfitIndex = 0;
     self.currentLossIndex = 0;
     self.currentCountIndex = 0;
+    self.texts = @[@"不设", @"不设", @"1", [NSString stringWithFormat:@"%.02f",_model.price], [NSString stringWithFormat:@"%.02f",_model.contractPrice]];
+}
+- (void)setBuyViewType:(BuyViewType)buyViewType
+{
+    _buyViewType = buyViewType;
+    if (_buyViewType == BuyViewTypeAdjustProfit) {
+        _title.text = @"调整盈亏比例";
+    }
+}
+- (void)setDealModel:(DealHistoryModel *)dealModel
+{
+    _dealModel = dealModel;
+    self.texts = @[dealModel.profit, dealModel.loss];
+    self.maxProfit = dealModel.productModel.maxProfit;
+    self.maxLoss = dealModel.productModel.maxLoss;
+    self.maxCount = 1000;
+    self.currentProfitIndex = [dealModel.profit isEqualToString:@"不设"]?0:[dealModel.profit integerValue]/10;
+    self.currentLossIndex = [dealModel.loss isEqualToString:@"不设"]?0:[dealModel.loss integerValue]/10;
+    _mainHeight.constant = 200;
 }
 - (void)setIsBuyRise:(BOOL)isBuyRise
 {
@@ -121,9 +143,10 @@ __weak BuyView *buySelf;
     }
     _profitTf.text = text;
 }
-- (void)showBuyViewAnimated:(BOOL)animated
+- (void)showBuyViewAnimated:(BOOL)animated buyViewType:(BuyViewType)buyViewType
 {
     self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+    self.buyViewType = buyViewType;
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:self];
     if (animated) {
@@ -140,45 +163,50 @@ __weak BuyView *buySelf;
     [self removeBuyViewAnimated:NO];
 }
 - (IBAction)buttonAction:(id)sender {
-    double balance = [LCoreCurrent.userInfo[@"balance"] doubleValue];
-    double money = [_priceTF.text doubleValue];
-    if (money > balance) {
-        [LCoreCurrent showAlertTitle:@"余额不足" timeCount:2 inView:self];
+    if (_buyViewType == BuyViewTypeBuy) {
+        double balance = [LCoreCurrent.userInfo[@"balance"] doubleValue];
+        double money = [_priceTF.text doubleValue];
+        if (money > balance) {
+            [LCoreCurrent showAlertTitle:@"余额不足" timeCount:2 inView:self];
+        }else
+        {
+            [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:self];
+            [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(balance-money)];
+            NSString *time = [NSString stringWithFormat:@"%@",[NSDate date]];
+#warning mark 买入
+            NSDictionary *dict = @{@"_id":time,
+                                   @"type":@200,
+                                   @"product":_model.modelDict,
+                                   @"time":time,
+                                   @"money":@(money),
+                                   @"balance":@(balance-money),
+                                   @"isFinsih":@0,
+                                   @"profit":_profitTf.text,
+                                   @"loss":_lossTf.text,
+                                   };
+            [LCoreCurrent saveDeal:dict];
+            NSDictionary *dict2 = @{
+                                    @"_id":time,
+                                    @"time":time,
+                                    @"productName":_model.productName,
+                                    @"countNumber":@([_countTf.text integerValue]),
+                                    @"money":@(money),
+                                    @"product":_model.modelDict,
+                                    @"isBuyRise":@(_isBuyRise),
+                                    @"profit":_profitTf.text,
+                                    @"loss":_lossTf.text,
+                                    };
+            [LCoreCurrent saveDealHistory:dict2];
+            BaseNavigationController *navc = ((BaseTabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController).viewControllers[0];
+            HomeController *vc = (HomeController*)navc.viewControllers[0];
+            [vc setBalance];
+            if (self.btnActionBlock) {
+                self.btnActionBlock();
+            }
+        }
     }else
     {
-        [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:self];
-        [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(balance-money)];
-        NSString *time = [NSString stringWithFormat:@"%@",[NSDate date]];
-#warning mark 买入
-        NSDictionary *dict = @{@"_id":time,
-                               @"type":@200,
-                               @"product":_model.modelDict,
-                               @"time":time,
-                               @"money":@(money),
-                               @"balance":@(balance-money),
-                               @"isFinsih":@0,
-                               @"profit":_profitTf.text,
-                               @"loss":_lossTf.text,
-                               };
-        [LCoreCurrent saveDeal:dict];
-        NSDictionary *dict2 = @{
-                                @"_id":time,
-                                @"time":time,
-                                @"productName":_model.productName,
-                                @"countNumber":@([_countTf.text integerValue]),
-                                @"money":@(money),
-                                @"product":_model.modelDict,
-                                @"isBuyRise":@(_isBuyRise),
-                                @"profit":_profitTf.text,
-                                @"loss":_lossTf.text,
-                                };
-        [LCoreCurrent saveDealHistory:dict2];
-        BaseNavigationController *navc = ((BaseTabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController).viewControllers[0];
-        HomeController *vc = (HomeController*)navc.viewControllers[0];
-        [vc setBalance];
-        if (self.btnActionBlock) {
-            self.btnActionBlock();
-        }
+        [LCoreCurrent showAlertTitle:@"调整成功" timeCount:2 inView:self];
     }
     
 }
@@ -226,7 +254,7 @@ __weak BuyView *buySelf;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return self.texts.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -246,33 +274,31 @@ __weak BuyView *buySelf;
         SelectDataCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SelectDataCell"];
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"SelectDataCell" owner:nil options:nil].lastObject;
-            cell.title.text = _titles[indexPath.row];
-            switch (indexPath.row) {
-                case 0:
+        }
+        switch (indexPath.row) {
+            case 0:
                 _profitTf = cell.textField;
-                _profitTf.text = @"不设";
                 cell.btnsActionBlock = ^(NSInteger index) {
                     [buySelf setProfitWithIndex:index];
                 };
                 break;
-                case 1:
+            case 1:
                 _lossTf = cell.textField;
-                _lossTf.text = @"不设";
                 cell.btnsActionBlock = ^(NSInteger index) {
                     [buySelf setLossWithIndex:index];
                 };
                 break;
-                case 2:
+            case 2:
                 _countTf = cell.textField;
-                _countTf.text = @"1";
                 cell.btnsActionBlock = ^(NSInteger index) {
                     [buySelf setCountWithIndex:index];
                 };
                 break;
-                default:
+            default:
                 break;
-            }
         }
+        cell.title.text = _titles[indexPath.row];
+        cell.textField.text = _texts[indexPath.row];
         return cell;
     }else
     {
@@ -280,16 +306,16 @@ __weak BuyView *buySelf;
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
             cell.textField.enabled = NO;
-            if (indexPath.row == 3) {
-                _priceTF = cell.textField;
-                _priceTF.text = [NSString stringWithFormat:@"%.02f",_model.price];
-            }else
-            {
-                _contractPriceTF = cell.textField;
-                _contractPriceTF.text = [NSString stringWithFormat:@"%.02f",_model.contractPrice];
-            }
+        }
+        if (indexPath.row == 3) {
+            _priceTF = cell.textField;
+            
+        }else
+        {
+            _contractPriceTF = cell.textField;
         }
         cell.title.text = _titles[indexPath.row];
+        cell.textField.text = _texts[indexPath.row];
         return cell;
     }
 }
