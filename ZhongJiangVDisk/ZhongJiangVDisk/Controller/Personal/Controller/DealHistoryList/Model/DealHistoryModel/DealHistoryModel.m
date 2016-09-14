@@ -14,6 +14,8 @@
     DealHistoryModel *model = [[DealHistoryModel alloc] init];
     model._id = dictionary[@"_id"];
     model.time = dictionary[@"time"];
+    model.profit = dictionary[@"profit"];
+    model.loss = dictionary[@"loss"];
     model.productName = dictionary[@"productName"];
     model.countNumber = [dictionary[@"countNumber"] integerValue];
     model.money = [dictionary[@"money"] doubleValue];

@@ -81,7 +81,6 @@
 		5E75AF6B1D73C4260051FB1D /* DealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6A1D73C4260051FB1D /* DealModel.m */; };
 		5E75AF6F1D73C5190051FB1D /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6E1D73C5190051FB1D /* ProductModel.m */; };
 		5E75AF731D73DEF70051FB1D /* DealHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF721D73DEF70051FB1D /* DealHistoryModel.m */; };
-		5E8F18751D88FD6B00D2E4DC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E8F18731D88FD6B00D2E4DC /* Info.plist */; };
 		5E8F18761D88FD6B00D2E4DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F18741D88FD6B00D2E4DC /* main.m */; };
 		5E99F2AC1D8002C4009863A9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99F2AB1D8002C4009863A9 /* CoreTelephony.framework */; };
 		5E99F2AE1D8002CC009863A9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99F2AD1D8002CC009863A9 /* OpenGLES.framework */; };
@@ -271,13 +270,13 @@
 		5E2387AD1D87F0F9008AF872 /* DetailPositionCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPositionCell3.h; sourceTree = "<group>"; };
 		5E2387AE1D87F0F9008AF872 /* DetailPositionCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPositionCell3.m; sourceTree = "<group>"; };
 		5E2387AF1D87F0F9008AF872 /* DetailPositionCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPositionCell3.xib; sourceTree = "<group>"; };
+		5E43939A1D89186E00470516 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E75AF691D73C4260051FB1D /* DealModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealModel.h; sourceTree = "<group>"; };
 		5E75AF6A1D73C4260051FB1D /* DealModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealModel.m; sourceTree = "<group>"; };
 		5E75AF6D1D73C5190051FB1D /* ProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
 		5E75AF6E1D73C5190051FB1D /* ProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
 		5E75AF711D73DEF70051FB1D /* DealHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealHistoryModel.h; sourceTree = "<group>"; };
 		5E75AF721D73DEF70051FB1D /* DealHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealHistoryModel.m; sourceTree = "<group>"; };
-		5E8F18731D88FD6B00D2E4DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E8F18741D88FD6B00D2E4DC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E99F2AB1D8002C4009863A9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		5E99F2AD1D8002CC009863A9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -448,7 +447,6 @@
 		5E1721B11D62FFD4003CA0AE /* ZhongJiangVDisk */ = {
 			isa = PBXGroup;
 			children = (
-				5E8F18721D88FD6B00D2E4DC /* Supporting Files */,
 				5E1721EE1D630082003CA0AE /* Controller */,
 				5E1722B21D63008A003CA0AE /* View */,
 				5E75AF671D73C3F50051FB1D /* Model */,
@@ -458,6 +456,8 @@
 				5E1722B01D63008A003CA0AE /* PCH */,
 				5E1721E51D630082003CA0AE /* AppDelegate */,
 				5E1721E81D630082003CA0AE /* Assets.xcassets */,
+				5E43939A1D89186E00470516 /* Info.plist */,
+				5E8F18721D88FD6B00D2E4DC /* Supporting Files */,
 				5E1721E91D630082003CA0AE /* Base.lproj */,
 			);
 			path = ZhongJiangVDisk;
@@ -1138,7 +1138,6 @@
 		5E8F18721D88FD6B00D2E4DC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5E8F18731D88FD6B00D2E4DC /* Info.plist */,
 				5E8F18741D88FD6B00D2E4DC /* main.m */,
 			);
 			path = "Supporting Files";
@@ -1455,7 +1454,7 @@
 		5E1721A71D62FFD4003CA0AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = liuxiaomin;
 				TargetAttributes = {
 					5E1721AE1D62FFD4003CA0AE = {
@@ -1517,7 +1516,6 @@
 				5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */,
 				5EAF824B1D6AEE9F00239CB5 /* RegisterButtonView.xib in Resources */,
 				5E99F46F1D81408D009863A9 /* SegmentView.xib in Resources */,
-				5E8F18751D88FD6B00D2E4DC /* Info.plist in Resources */,
 				5E1722911D630082003CA0AE /* DealCell.xib in Resources */,
 				5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */,
 				5EAF827C1D6AF51200239CB5 /* data.json in Resources */,
@@ -1749,8 +1747,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1794,8 +1794,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

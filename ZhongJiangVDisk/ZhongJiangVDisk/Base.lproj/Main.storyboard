@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Amm-jK-89I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Amm-jK-89I">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Base Tab Bar Controller-->
         <scene sceneID="DvB-fa-17t">
             <objects>
                 <tabBarController id="Amm-jK-89I" customClass="BaseTabBarController" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="O4o-gT-GOO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="v3g-Eh-EGs" kind="relationship" relationship="viewControllers" id="5Q6-Lx-jAc"/>
@@ -36,16 +36,15 @@
                         <viewControllerLayoutGuide type="bottom" id="Zz4-JQ-xkv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ts8-qe-im6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="fJP-Nq-JWD"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9p3-0k-kWI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-739" y="1056"/>
+            <point key="canvasLocation" x="-1220" y="1085"/>
         </scene>
         <!--持仓-->
         <scene sceneID="r3g-h6-qS1">
@@ -56,12 +55,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ima-WL-1hP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eQd-Yi-Bne">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iWa-hG-mrH">
-                                <rect key="frame" x="10" y="0.0" width="300" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="568" id="k4C-kt-sPo"/>
                                 </constraints>
@@ -79,24 +77,23 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iWa-hG-mrH" firstAttribute="top" secondItem="eQd-Yi-Bne" secondAttribute="topMargin" id="Lq2-5D-o3A"/>
-                            <constraint firstItem="iWa-hG-mrH" firstAttribute="leading" secondItem="eQd-Yi-Bne" secondAttribute="leading" constant="10" id="NEo-OY-fIn"/>
-                            <constraint firstAttribute="trailing" secondItem="iWa-hG-mrH" secondAttribute="trailing" constant="10" id="fUU-PS-HVW"/>
+                            <constraint firstItem="iWa-hG-mrH" firstAttribute="leading" secondItem="eQd-Yi-Bne" secondAttribute="leading" constant="10" id="6f8-Ag-CoI"/>
+                            <constraint firstItem="iWa-hG-mrH" firstAttribute="top" secondItem="eQd-Yi-Bne" secondAttribute="top" id="KL9-1F-D6t"/>
+                            <constraint firstAttribute="trailing" secondItem="iWa-hG-mrH" secondAttribute="trailing" constant="10" id="w9n-BN-j5i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="持仓" id="neD-PD-KHF"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableHeight" destination="k4C-kt-sPo" id="436-re-jZY"/>
                         <outlet property="tableView" destination="iWa-hG-mrH" id="6yA-CA-opm"/>
-                        <outlet property="topTableViewY" destination="Lq2-5D-o3A" id="wVk-tD-uru"/>
+                        <outlet property="topTableViewY" destination="KL9-1F-D6t" id="KCz-RL-gUg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lD-Yx-YEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-399" y="1056"/>
+            <point key="canvasLocation" x="-399" y="1085"/>
         </scene>
         <!--我的-->
         <scene sceneID="QIg-B8-K7C">
@@ -107,36 +104,34 @@
                         <viewControllerLayoutGuide type="bottom" id="N3t-nj-Ysh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zkI-tS-WPX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="trd-2E-3fb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="7fV-Yy-GoA" id="0F5-Uy-V4e"/>
                                     <outlet property="delegate" destination="7fV-Yy-GoA" id="dII-Oh-Uv5"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="trd-2E-3fb" firstAttribute="leading" secondItem="zkI-tS-WPX" secondAttribute="leading" id="Dae-0H-QkJ"/>
-                            <constraint firstAttribute="trailing" secondItem="trd-2E-3fb" secondAttribute="trailing" id="ZIL-48-XGv"/>
-                            <constraint firstItem="trd-2E-3fb" firstAttribute="top" secondItem="zkI-tS-WPX" secondAttribute="topMargin" id="s3P-zH-ybA"/>
-                            <constraint firstItem="trd-2E-3fb" firstAttribute="bottom" secondItem="zkI-tS-WPX" secondAttribute="bottomMargin" id="tms-e4-YD6"/>
+                            <constraint firstItem="trd-2E-3fb" firstAttribute="leading" secondItem="zkI-tS-WPX" secondAttribute="leading" id="667-DC-9Q4"/>
+                            <constraint firstItem="trd-2E-3fb" firstAttribute="top" secondItem="zkI-tS-WPX" secondAttribute="top" id="RDL-Vq-biY"/>
+                            <constraint firstAttribute="bottom" secondItem="trd-2E-3fb" secondAttribute="bottom" id="mI7-Hv-DvB"/>
+                            <constraint firstAttribute="trailing" secondItem="trd-2E-3fb" secondAttribute="trailing" id="nEb-kF-VVe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我的" id="mjE-sc-yzu"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="trd-2E-3fb" id="xoH-HX-EKr"/>
-                        <outlet property="topTableViewY" destination="s3P-zH-ybA" id="h6n-NU-eRo"/>
+                        <outlet property="topTableViewY" destination="RDL-Vq-biY" id="fZe-3v-d5R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EO5-04-eVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="1056"/>
+            <point key="canvasLocation" x="284" y="1084"/>
         </scene>
         <!--忘记交易密码-->
         <scene sceneID="Rar-Yu-4vy">
@@ -147,56 +142,52 @@
                         <viewControllerLayoutGuide type="bottom" id="j2S-cz-Ohg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Sze-n3-bEX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O6i-0l-rgj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="17c-XF-DqM" id="0dl-mU-1ZI"/>
                                     <outlet property="delegate" destination="17c-XF-DqM" id="aEe-LA-MJN"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="O6i-0l-rgj" firstAttribute="leading" secondItem="Sze-n3-bEX" secondAttribute="leading" id="1M0-2x-stp"/>
-                            <constraint firstItem="j2S-cz-Ohg" firstAttribute="top" secondItem="O6i-0l-rgj" secondAttribute="bottom" id="H7d-WB-6zA"/>
-                            <constraint firstItem="O6i-0l-rgj" firstAttribute="top" secondItem="Sze-n3-bEX" secondAttribute="topMargin" id="Lhs-E7-uRm"/>
-                            <constraint firstAttribute="trailing" secondItem="O6i-0l-rgj" secondAttribute="trailing" id="NhG-Xe-Xrr"/>
+                            <constraint firstItem="j2S-cz-Ohg" firstAttribute="top" secondItem="O6i-0l-rgj" secondAttribute="bottom" id="e8f-KU-X9v"/>
+                            <constraint firstAttribute="trailing" secondItem="O6i-0l-rgj" secondAttribute="trailing" id="fpe-At-x9D"/>
+                            <constraint firstItem="O6i-0l-rgj" firstAttribute="top" secondItem="Sze-n3-bEX" secondAttribute="top" id="jKM-on-urh"/>
+                            <constraint firstItem="O6i-0l-rgj" firstAttribute="leading" secondItem="Sze-n3-bEX" secondAttribute="leading" id="t1i-fP-2H4"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="O6i-0l-rgj" id="f3d-vz-BJE"/>
-                        <outlet property="topTableViewY" destination="Lhs-E7-uRm" id="rUk-xq-Wza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hbw-Xb-gZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1103" y="1045"/>
+            <point key="canvasLocation" x="-1916" y="1086"/>
         </scene>
-        <!--Detail Position Controller-->
+        <!--交易详情-->
         <scene sceneID="5Fe-L9-Og9">
             <objects>
-                <viewController storyboardIdentifier="DetailPositionController" id="Z3E-E5-wl8" customClass="DetailPositionController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailPositionController" title="交易详情" id="Z3E-E5-wl8" customClass="DetailPositionController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sal-ig-DOb"/>
                         <viewControllerLayoutGuide type="bottom" id="i5t-c9-3PV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZkU-ff-P8g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6dC-2A-R4s">
-                                <rect key="frame" x="10" y="0.0" width="300" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="568" id="JmG-ze-6ZV"/>
+                                    <constraint firstAttribute="height" constant="320" id="JmG-ze-6ZV"/>
                                 </constraints>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -211,23 +202,21 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6dC-2A-R4s" firstAttribute="leading" secondItem="ZkU-ff-P8g" secondAttribute="leading" constant="10" id="5cg-e0-Yyf"/>
-                            <constraint firstItem="6dC-2A-R4s" firstAttribute="top" secondItem="ZkU-ff-P8g" secondAttribute="topMargin" id="dcR-3F-IQp"/>
-                            <constraint firstAttribute="trailing" secondItem="6dC-2A-R4s" secondAttribute="trailing" constant="10" id="eBj-j3-rGH"/>
-                            <constraint firstItem="i5t-c9-3PV" firstAttribute="top" secondItem="6dC-2A-R4s" secondAttribute="bottom" id="sBD-Ga-wrO"/>
+                            <constraint firstItem="6dC-2A-R4s" firstAttribute="top" secondItem="ZkU-ff-P8g" secondAttribute="top" id="3EL-ff-p0t"/>
+                            <constraint firstItem="6dC-2A-R4s" firstAttribute="leading" secondItem="ZkU-ff-P8g" secondAttribute="leading" constant="10" id="6tb-I6-lrF"/>
+                            <constraint firstAttribute="trailing" secondItem="6dC-2A-R4s" secondAttribute="trailing" constant="10" id="pFJ-6r-cKt"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="6dC-2A-R4s" id="Ekb-Cq-dy8"/>
-                        <outlet property="topTableViewY" destination="dcR-3F-IQp" id="BSW-jX-beT"/>
+                        <outlet property="topTableViewY" destination="3EL-ff-p0t" id="6e5-WL-zja"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0u1-XR-rAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-399" y="1667"/>
+            <point key="canvasLocation" x="-399" y="1734"/>
         </scene>
         <!--公告-->
         <scene sceneID="yo5-iq-vGp">
@@ -238,35 +227,33 @@
                         <viewControllerLayoutGuide type="bottom" id="oS9-Oz-Qg5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xVL-Ia-krI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gw3-JD-mP9">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="nyc-r5-LZF" id="AKl-pf-wkZ"/>
                                     <outlet property="delegate" destination="nyc-r5-LZF" id="eaE-bu-VfA"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gw3-JD-mP9" firstAttribute="leading" secondItem="xVL-Ia-krI" secondAttribute="leading" id="Ez8-2T-Pku"/>
-                            <constraint firstAttribute="trailing" secondItem="gw3-JD-mP9" secondAttribute="trailing" id="a4O-vp-lql"/>
-                            <constraint firstItem="gw3-JD-mP9" firstAttribute="top" secondItem="xVL-Ia-krI" secondAttribute="topMargin" id="n5G-dS-1yS"/>
-                            <constraint firstItem="oS9-Oz-Qg5" firstAttribute="top" secondItem="gw3-JD-mP9" secondAttribute="bottom" id="zCW-Id-Dpz"/>
+                            <constraint firstItem="oS9-Oz-Qg5" firstAttribute="top" secondItem="gw3-JD-mP9" secondAttribute="bottom" id="Ghh-hH-RBe"/>
+                            <constraint firstAttribute="trailing" secondItem="gw3-JD-mP9" secondAttribute="trailing" id="LDg-Na-HIu"/>
+                            <constraint firstItem="gw3-JD-mP9" firstAttribute="top" secondItem="xVL-Ia-krI" secondAttribute="top" id="hyM-5F-a0K"/>
+                            <constraint firstItem="gw3-JD-mP9" firstAttribute="leading" secondItem="xVL-Ia-krI" secondAttribute="leading" id="wVt-ee-OD2"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="gw3-JD-mP9" id="KVh-qF-SMr"/>
-                        <outlet property="topTableViewY" destination="n5G-dS-1yS" id="1ER-UR-CZE"/>
+                        <outlet property="topTableViewY" destination="hyM-5F-a0K" id="Vfr-y9-KZ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XoK-9i-PQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="1662"/>
+            <point key="canvasLocation" x="940" y="2377"/>
         </scene>
         <!--充值-->
         <scene sceneID="aHY-P8-SFM">
@@ -277,19 +264,11 @@
                         <viewControllerLayoutGuide type="bottom" id="N2I-1T-3TW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="g9R-n4-36S">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMU-3B-vzZ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="kUM-pR-2DK"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rlp-fa-7lt">
-                                <rect key="frame" x="0.0" y="1" width="320" height="240"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="4BH-k2-tD3"/>
                                 </constraints>
@@ -306,43 +285,32 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3F9-th-11g">
-                                <rect key="frame" x="0.0" y="249" width="320" height="67"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="nw6-2t-vBO"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rlp-fa-7lt" firstAttribute="leading" secondItem="g9R-n4-36S" secondAttribute="leading" id="0M2-4W-LCO"/>
-                            <constraint firstItem="3F9-th-11g" firstAttribute="leading" secondItem="g9R-n4-36S" secondAttribute="leading" id="1vF-Ua-2vb"/>
-                            <constraint firstItem="vMU-3B-vzZ" firstAttribute="top" secondItem="g9R-n4-36S" secondAttribute="topMargin" id="9iL-IN-S4N"/>
-                            <constraint firstAttribute="trailing" secondItem="rlp-fa-7lt" secondAttribute="trailing" id="Y2s-RW-nr8"/>
-                            <constraint firstItem="vMU-3B-vzZ" firstAttribute="leading" secondItem="g9R-n4-36S" secondAttribute="leading" id="bQx-Xa-Yxm"/>
-                            <constraint firstAttribute="trailing" secondItem="vMU-3B-vzZ" secondAttribute="trailing" id="d7w-LH-hEH"/>
-                            <constraint firstItem="3F9-th-11g" firstAttribute="top" secondItem="rlp-fa-7lt" secondAttribute="bottom" constant="8" id="lh1-df-TWq"/>
-                            <constraint firstItem="rlp-fa-7lt" firstAttribute="top" secondItem="vMU-3B-vzZ" secondAttribute="bottom" id="opZ-oj-sL8"/>
-                            <constraint firstAttribute="trailing" secondItem="3F9-th-11g" secondAttribute="trailing" id="xHg-3t-G3F"/>
-                            <constraint firstItem="N2I-1T-3TW" firstAttribute="top" secondItem="rlp-fa-7lt" secondAttribute="bottom" id="xvG-Ug-VEO"/>
+                            <constraint firstItem="3F9-th-11g" firstAttribute="top" secondItem="rlp-fa-7lt" secondAttribute="bottom" constant="8" id="1U5-hJ-Dig"/>
+                            <constraint firstItem="rlp-fa-7lt" firstAttribute="leading" secondItem="g9R-n4-36S" secondAttribute="leading" id="9im-zx-BGz"/>
+                            <constraint firstAttribute="trailing" secondItem="3F9-th-11g" secondAttribute="trailing" id="GbD-KW-9hq"/>
+                            <constraint firstItem="3F9-th-11g" firstAttribute="leading" secondItem="g9R-n4-36S" secondAttribute="leading" id="P36-1V-hcB"/>
+                            <constraint firstItem="rlp-fa-7lt" firstAttribute="top" secondItem="g9R-n4-36S" secondAttribute="top" id="SD9-av-z7j"/>
+                            <constraint firstAttribute="trailing" secondItem="rlp-fa-7lt" secondAttribute="trailing" id="aFM-QW-1rv"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="xvG-Ug-VEO"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btnSuperView" destination="3F9-th-11g" id="SIw-Ek-uVI"/>
                         <outlet property="collectionView" destination="rlp-fa-7lt" id="b9g-X1-id1"/>
                         <outlet property="flowLayout" destination="XXY-cQ-LZh" id="iQ9-Pm-dPM"/>
-                        <outlet property="topCollectionViewY" destination="9iL-IN-S4N" id="mt7-x5-stC"/>
+                        <outlet property="topCollectionViewY" destination="SD9-av-z7j" id="pJ9-wn-iaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZV-or-31T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="1662"/>
+            <point key="canvasLocation" x="284" y="1734"/>
         </scene>
         <!--提现-->
         <scene sceneID="c34-LA-zxn">
@@ -353,36 +321,38 @@
                         <viewControllerLayoutGuide type="bottom" id="ll8-xc-oJe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bdd-xR-PCz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mls-gE-mjG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="qO7-Li-Evh" id="tjd-uu-XfU"/>
                                     <outlet property="delegate" destination="qO7-Li-Evh" id="Oh9-ZG-u3n"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mls-gE-mjG" firstAttribute="top" secondItem="Bdd-xR-PCz" secondAttribute="topMargin" id="JwN-9G-K8V"/>
-                            <constraint firstItem="mls-gE-mjG" firstAttribute="leading" secondItem="Bdd-xR-PCz" secondAttribute="leading" id="PR1-xj-Gc9"/>
-                            <constraint firstAttribute="trailing" secondItem="mls-gE-mjG" secondAttribute="trailing" id="W9Q-df-G36"/>
-                            <constraint firstItem="ll8-xc-oJe" firstAttribute="top" secondItem="mls-gE-mjG" secondAttribute="bottom" id="okY-Mf-6pw"/>
+                            <constraint firstItem="mls-gE-mjG" firstAttribute="top" secondItem="Bdd-xR-PCz" secondAttribute="top" id="6b2-IW-dAn"/>
+                            <constraint firstItem="mls-gE-mjG" firstAttribute="top" secondItem="Bdd-xR-PCz" secondAttribute="top" id="GhS-4u-E7e"/>
+                            <constraint firstItem="mls-gE-mjG" firstAttribute="leading" secondItem="Bdd-xR-PCz" secondAttribute="leading" id="Iqa-Q0-aTx"/>
+                            <constraint firstAttribute="trailing" secondItem="mls-gE-mjG" secondAttribute="trailing" id="Pep-bE-i5y"/>
+                            <constraint firstItem="ll8-xc-oJe" firstAttribute="top" secondItem="mls-gE-mjG" secondAttribute="bottom" id="eZ7-Z2-UgG"/>
+                            <constraint firstAttribute="trailing" secondItem="mls-gE-mjG" secondAttribute="trailing" id="fMY-Nt-KPU"/>
+                            <constraint firstItem="ll8-xc-oJe" firstAttribute="top" secondItem="mls-gE-mjG" secondAttribute="bottom" id="hjA-6q-TYW"/>
+                            <constraint firstItem="mls-gE-mjG" firstAttribute="leading" secondItem="Bdd-xR-PCz" secondAttribute="leading" id="wqt-av-spi"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="mls-gE-mjG" id="0i4-Np-JMo"/>
-                        <outlet property="topTableViewY" destination="JwN-9G-K8V" id="40J-qB-BkI"/>
+                        <outlet property="topTableViewY" destination="GhS-4u-E7e" id="egJ-lO-vw7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUY-g7-SP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="612" y="1662"/>
+            <point key="canvasLocation" x="1607" y="1084"/>
         </scene>
         <!--收支明细-->
         <scene sceneID="2hq-YS-7Y5">
@@ -393,35 +363,33 @@
                         <viewControllerLayoutGuide type="bottom" id="KHU-a3-mbU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rbz-Qz-VxZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tZW-AZ-Nof">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="5je-WQ-gmV" id="MFZ-cF-6mI"/>
                                     <outlet property="delegate" destination="5je-WQ-gmV" id="tnR-jA-hlh"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tZW-AZ-Nof" firstAttribute="top" secondItem="rbz-Qz-VxZ" secondAttribute="topMargin" id="4Uo-t8-1G4"/>
-                            <constraint firstItem="KHU-a3-mbU" firstAttribute="top" secondItem="tZW-AZ-Nof" secondAttribute="bottom" id="4hQ-w7-p5s"/>
-                            <constraint firstItem="tZW-AZ-Nof" firstAttribute="leading" secondItem="rbz-Qz-VxZ" secondAttribute="leading" id="CCf-jR-RCo"/>
-                            <constraint firstAttribute="trailing" secondItem="tZW-AZ-Nof" secondAttribute="trailing" id="oyE-PL-8Ln"/>
+                            <constraint firstItem="tZW-AZ-Nof" firstAttribute="top" secondItem="rbz-Qz-VxZ" secondAttribute="top" id="LWU-eK-d0O"/>
+                            <constraint firstAttribute="trailing" secondItem="tZW-AZ-Nof" secondAttribute="trailing" id="gVK-ks-7nR"/>
+                            <constraint firstItem="tZW-AZ-Nof" firstAttribute="leading" secondItem="rbz-Qz-VxZ" secondAttribute="leading" id="h2p-1V-Z2A"/>
+                            <constraint firstItem="KHU-a3-mbU" firstAttribute="top" secondItem="tZW-AZ-Nof" secondAttribute="bottom" id="nmc-b2-aQg"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="tZW-AZ-Nof" id="i9P-lz-yuw"/>
-                        <outlet property="topTableViewY" destination="4Uo-t8-1G4" id="8Gq-bA-p6f"/>
+                        <outlet property="topTableViewY" destination="LWU-eK-d0O" id="Eov-5F-nZ0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrz-9e-gbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="1662"/>
+            <point key="canvasLocation" x="940" y="1085"/>
         </scene>
         <!--首页-->
         <scene sceneID="FkO-M2-Crg">
@@ -429,7 +397,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v3g-Eh-EGs" customClass="BaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="tabBar_home" selectedImage="tabBar_home" id="skK-mu-rTS"/>
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IKG-do-4ZO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -441,7 +408,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dx0-nI-rty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-739" y="416"/>
+            <point key="canvasLocation" x="-1220" y="415"/>
         </scene>
         <!--持仓-->
         <scene sceneID="DH9-a3-74n">
@@ -449,7 +416,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gHy-kD-Jmy" customClass="BaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="持仓" image="tabBar_position" selectedImage="tabBar_position" id="3ym-e1-x2e"/>
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HEW-D3-Edj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -469,7 +435,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xjq-UE-3el" customClass="BaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="tabBar_personal" selectedImage="tabBar_personal" id="Ez3-3r-oyX"/>
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="v4b-BU-2hs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -481,7 +446,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JlN-fU-Tpo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="416"/>
+            <point key="canvasLocation" x="284" y="415"/>
         </scene>
         <!--注册-->
         <scene sceneID="ac1-rd-vOi">
@@ -492,35 +457,33 @@
                         <viewControllerLayoutGuide type="bottom" id="w0n-LO-Mkr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jtB-qC-OXK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YxH-dn-eHu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="w8k-wS-ERk" id="DHf-X2-gam"/>
                                     <outlet property="delegate" destination="w8k-wS-ERk" id="amx-Ge-buS"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="YxH-dn-eHu" secondAttribute="trailing" id="74q-7P-pXx"/>
-                            <constraint firstItem="w0n-LO-Mkr" firstAttribute="top" secondItem="YxH-dn-eHu" secondAttribute="bottom" id="B0Q-9a-T6I"/>
-                            <constraint firstItem="YxH-dn-eHu" firstAttribute="top" secondItem="jtB-qC-OXK" secondAttribute="topMargin" id="R2v-XI-Lfx"/>
-                            <constraint firstItem="YxH-dn-eHu" firstAttribute="leading" secondItem="jtB-qC-OXK" secondAttribute="leading" id="gWN-NY-a40"/>
+                            <constraint firstItem="YxH-dn-eHu" firstAttribute="leading" secondItem="jtB-qC-OXK" secondAttribute="leading" id="CpQ-h2-i5h"/>
+                            <constraint firstItem="YxH-dn-eHu" firstAttribute="top" secondItem="jtB-qC-OXK" secondAttribute="top" id="Reb-ZY-EQl"/>
+                            <constraint firstAttribute="trailing" secondItem="YxH-dn-eHu" secondAttribute="trailing" id="UgT-GZ-7jl"/>
+                            <constraint firstItem="w0n-LO-Mkr" firstAttribute="top" secondItem="YxH-dn-eHu" secondAttribute="bottom" id="h1T-FV-LM8"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="YxH-dn-eHu" id="Wds-99-7I8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zda-SL-DUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="315" y="422"/>
+            <point key="canvasLocation" x="940" y="414"/>
         </scene>
         <!--交易历史-->
         <scene sceneID="dP1-sn-hJm">
@@ -531,35 +494,33 @@
                         <viewControllerLayoutGuide type="bottom" id="j0Y-0y-Tik"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IFN-PE-NwP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="0WR-or-daW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="FjF-9R-ZJb" id="QzB-9Z-F7a"/>
                                     <outlet property="delegate" destination="FjF-9R-ZJb" id="OTB-iX-d9m"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="j0Y-0y-Tik" firstAttribute="top" secondItem="0WR-or-daW" secondAttribute="bottom" id="bZY-BU-tMb"/>
-                            <constraint firstItem="0WR-or-daW" firstAttribute="top" secondItem="IFN-PE-NwP" secondAttribute="topMargin" id="cPO-Z1-9fJ"/>
-                            <constraint firstAttribute="trailing" secondItem="0WR-or-daW" secondAttribute="trailing" id="eA8-vf-TeW"/>
-                            <constraint firstItem="0WR-or-daW" firstAttribute="leading" secondItem="IFN-PE-NwP" secondAttribute="leading" id="xbU-Jj-szJ"/>
+                            <constraint firstItem="0WR-or-daW" firstAttribute="top" secondItem="IFN-PE-NwP" secondAttribute="top" id="6I4-SY-GZS"/>
+                            <constraint firstItem="0WR-or-daW" firstAttribute="leading" secondItem="IFN-PE-NwP" secondAttribute="leading" id="hiZ-qz-nac"/>
+                            <constraint firstItem="j0Y-0y-Tik" firstAttribute="top" secondItem="0WR-or-daW" secondAttribute="bottom" id="rJ4-c9-gnS"/>
+                            <constraint firstAttribute="trailing" secondItem="0WR-or-daW" secondAttribute="trailing" id="xVp-kD-yZ6"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="0WR-or-daW" id="Rf0-fd-6d8"/>
-                        <outlet property="topTableViewY" destination="cPO-Z1-9fJ" id="bRC-zO-fKT"/>
+                        <outlet property="topTableViewY" destination="6I4-SY-GZS" id="OAs-qw-3UI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ClL-Bo-2js" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="1662"/>
+            <point key="canvasLocation" x="940" y="1734"/>
         </scene>
         <!--我的二维码-->
         <scene sceneID="jxx-sy-xTe">
@@ -570,31 +531,29 @@
                         <viewControllerLayoutGuide type="bottom" id="cjM-Js-OSy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9b8-PD-L9F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ibG-v0-LPt">
-                                <rect key="frame" x="66" y="120" width="188" height="188"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ibG-v0-LPt" secondAttribute="height" id="s0n-6I-IHs"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ibG-v0-LPt" firstAttribute="top" secondItem="Ivw-ZV-CMH" secondAttribute="bottom" constant="100" id="5RX-AK-Pwv"/>
-                            <constraint firstItem="ibG-v0-LPt" firstAttribute="leading" secondItem="9b8-PD-L9F" secondAttribute="leadingMargin" constant="50" id="WbI-jv-Lk0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ibG-v0-LPt" secondAttribute="trailing" constant="50" id="qzT-el-zvO"/>
+                            <constraint firstItem="ibG-v0-LPt" firstAttribute="leading" secondItem="9b8-PD-L9F" secondAttribute="leadingMargin" constant="50" id="4zv-iM-tak"/>
+                            <constraint firstItem="ibG-v0-LPt" firstAttribute="top" secondItem="Ivw-ZV-CMH" secondAttribute="bottom" constant="100" id="6t7-JU-kG9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ibG-v0-LPt" secondAttribute="trailing" constant="50" id="Xoh-Xc-9Yb"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="imageView" destination="ibG-v0-LPt" id="QNV-2I-REo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2x-7c-VMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1608" y="1662"/>
+            <point key="canvasLocation" x="2295" y="1084"/>
         </scene>
         <!--加载中···-->
         <scene sceneID="YyY-kM-CEh">
@@ -605,33 +564,27 @@
                         <viewControllerLayoutGuide type="bottom" id="Wfe-jE-Dxz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2IR-ei-cMR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HuQ-ZE-Aan">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HuQ-ZE-Aan">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="GAW-cC-yMz" id="b4V-bh-IVe"/>
                                 </connections>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="HuQ-ZE-Aan" firstAttribute="top" secondItem="2IR-ei-cMR" secondAttribute="topMargin" id="9Wx-sB-K1c"/>
-                            <constraint firstItem="Wfe-jE-Dxz" firstAttribute="top" secondItem="HuQ-ZE-Aan" secondAttribute="bottom" id="PQ0-kI-e4b"/>
-                            <constraint firstItem="HuQ-ZE-Aan" firstAttribute="leading" secondItem="2IR-ei-cMR" secondAttribute="leading" id="aOG-De-GK8"/>
-                            <constraint firstAttribute="trailing" secondItem="HuQ-ZE-Aan" secondAttribute="trailing" id="oAN-Ro-yCV"/>
-                        </constraints>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="webView" destination="HuQ-ZE-Aan" id="FyG-ga-aqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLl-AA-eD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1471" y="1056"/>
+            <point key="canvasLocation" x="-1916" y="415"/>
         </scene>
         <!--经纪人申请-->
         <scene sceneID="DPv-qc-fgm">
@@ -642,36 +595,34 @@
                         <viewControllerLayoutGuide type="bottom" id="OKs-fv-UKV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fBw-Sm-nFr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wth-uX-ak7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="tFX-ij-9zX" id="RP2-vg-9iC"/>
                                     <outlet property="delegate" destination="tFX-ij-9zX" id="tbC-11-7QX"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Wth-uX-ak7" firstAttribute="leading" secondItem="fBw-Sm-nFr" secondAttribute="leading" id="KWK-pp-dbr"/>
-                            <constraint firstItem="OKs-fv-UKV" firstAttribute="top" secondItem="Wth-uX-ak7" secondAttribute="bottom" id="RfN-gk-dNB"/>
-                            <constraint firstItem="Wth-uX-ak7" firstAttribute="top" secondItem="fBw-Sm-nFr" secondAttribute="topMargin" id="j38-BK-liO"/>
-                            <constraint firstAttribute="trailing" secondItem="Wth-uX-ak7" secondAttribute="trailing" id="r2I-wa-i49"/>
+                            <constraint firstItem="Wth-uX-ak7" firstAttribute="leading" secondItem="fBw-Sm-nFr" secondAttribute="leading" id="Adp-k8-osb"/>
+                            <constraint firstItem="OKs-fv-UKV" firstAttribute="top" secondItem="Wth-uX-ak7" secondAttribute="bottom" id="O4n-eQ-bz6"/>
+                            <constraint firstItem="Wth-uX-ak7" firstAttribute="top" secondItem="fBw-Sm-nFr" secondAttribute="top" id="UDc-vB-w7F"/>
+                            <constraint firstAttribute="trailing" secondItem="Wth-uX-ak7" secondAttribute="trailing" id="snY-Ul-4wF"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="Wth-uX-ak7" id="leq-Sn-IAn"/>
-                        <outlet property="topTableViewY" destination="j38-BK-liO" id="3Q5-mZ-qpL"/>
+                        <outlet property="topTableViewY" destination="UDc-vB-w7F" id="kcP-Tk-B33"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ez-Eg-lsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="2279"/>
+            <point key="canvasLocation" x="-399" y="2376"/>
         </scene>
         <!--修改交易密码-->
         <scene sceneID="VOE-CZ-4Rw">
@@ -682,36 +633,34 @@
                         <viewControllerLayoutGuide type="bottom" id="9eP-ei-hny"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uAZ-az-OAh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OvN-3n-4yl">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Hlh-IU-1MB" id="Dq6-6V-2Jd"/>
                                     <outlet property="delegate" destination="Hlh-IU-1MB" id="q9M-Iq-w34"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="OvN-3n-4yl" firstAttribute="leading" secondItem="uAZ-az-OAh" secondAttribute="leading" id="GCV-Dg-QDK"/>
-                            <constraint firstItem="9eP-ei-hny" firstAttribute="top" secondItem="OvN-3n-4yl" secondAttribute="bottom" id="Rqm-uZ-oNf"/>
-                            <constraint firstAttribute="trailing" secondItem="OvN-3n-4yl" secondAttribute="trailing" id="gBJ-EY-JvK"/>
-                            <constraint firstItem="OvN-3n-4yl" firstAttribute="top" secondItem="uAZ-az-OAh" secondAttribute="topMargin" id="ygC-Qv-Vwe"/>
+                            <constraint firstItem="OvN-3n-4yl" firstAttribute="top" secondItem="uAZ-az-OAh" secondAttribute="top" id="7E9-yt-beN"/>
+                            <constraint firstItem="OvN-3n-4yl" firstAttribute="leading" secondItem="uAZ-az-OAh" secondAttribute="leading" id="EZz-gc-rhc"/>
+                            <constraint firstAttribute="trailing" secondItem="OvN-3n-4yl" secondAttribute="trailing" id="Msz-3L-6m0"/>
+                            <constraint firstItem="9eP-ei-hny" firstAttribute="top" secondItem="OvN-3n-4yl" secondAttribute="bottom" id="a7Y-Rx-4hB"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="OvN-3n-4yl" id="1iB-0J-hkA"/>
-                        <outlet property="topTableViewY" destination="ygC-Qv-Vwe" id="9Bo-E5-psV"/>
+                        <outlet property="topTableViewY" destination="7E9-yt-beN" id="QTk-3e-zHi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBZ-kA-tZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="2279"/>
+            <point key="canvasLocation" x="284" y="2376"/>
         </scene>
     </scenes>
     <resources>

@@ -11,19 +11,44 @@
 @interface DetailPositionController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
-@property (nonatomic, strong) NSArray *infos;
+@property (nonatomic, strong) NSArray *infos, *datas;
 @end
 
 @implementation DetailPositionController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _infos = @[@[@"订单号:", @"合同成立时间:", @"产品:"],
-               @[@[@"方向:", @"数量:"], @[@"合同立价:", @"转让价:"], @[@"止盈:", @"止损:"]],
-               @[@"订单总价值:", @"建仓支付金额:", @"交易服务费:", @"盈亏资金:"]];
+    
+    _infos = @[
+               @[
+                   @{@"订单号:":_model._id,},
+                   @{@"合同成立时间:":_model.time,},
+                   @{@"产品:":_model.productName,},
+                   ],
+               @[
+                   @[
+                       @{@"方向:":(_model.isBuyRise?@"买涨":@"买跌"),},
+                       @{@"数量:":[NSString stringWithFormat:@"%ld",(long)_model.countNumber],}
+                       ],
+                   @[
+                       @{@"合同立价:":[NSString stringWithFormat:@"%.02lf",_model.productModel.contractPrice],},
+                       @{@"转让价:":@"0.00"}
+                       ],
+                   @[
+                       @{@"止盈:":[NSString stringWithFormat:@"%@%%",_model.profit],},
+                       @{@"止损:":[NSString stringWithFormat:@"%@%%",_model.loss],}
+                       ]
+                   ],
+               @[
+                   @{@"订单总价值:":[NSString stringWithFormat:@"%.02lf",_model.productModel.contractPrice/10],},
+                   @{@"建仓支付金额:":[NSString stringWithFormat:@"%.02lf",_model.productModel.price],},
+                   @{@"交易服务费:":@"0.00"},
+                   @{@"盈亏资金:":@"0.00"},
+                   ]
+               ];
+    
     self.view.backgroundColor = LCoreCurrent.backgroundColor;
     _tableView.backgroundColor = LCoreCurrent.backgroundColor;
-    _tableView.separatorColor = LCoreCurrent.detailLightBackColor;
     _topTableViewY.constant = [self getTableViewY];
     if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
         _topTableViewY.constant += 10;
@@ -32,7 +57,6 @@
     {
         _tableView.layer.borderColor = [UIColor clearColor].CGColor;
     }
-
     // Do any additional setup after loading the view.
 }
 
@@ -50,35 +74,45 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return kTableViewCellHegiht;
+    return 28;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 10;
+    if (section != _infos.count-1) {
+        return 5;
+    }
+    return kTableViewFootHeight;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor clearColor];
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 9.5, _tableView.frame.size.width, 0.5)];
-    line.backgroundColor = LCoreCurrent.topSegmentColor;
-    [view addSubview:line];
-    return view;
+    if (section != _infos.count-1) {
+        UIView *view = [[UIView alloc] init];
+        view.backgroundColor = [UIColor clearColor];
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 4.5, _tableView.frame.size.width, 0.5)];
+        line.backgroundColor = LCoreCurrent.topSegmentColor;
+        [view addSubview:line];
+        return view;
+    }
+    return nil;
+    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 26;
+        return 30;
     }else
     {
-        return kTableViewCellHegiht;
+        return kTableViewFootHeight;
     }
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    PositionHead *head = [[NSBundle mainBundle] loadNibNamed:@"PositionHead" owner:nil options:nil].lastObject;
-    [head setTitle:@"交易详情" detail:nil buttonTitle:nil];
-    return head;
+    if (section == 0) {
+        PositionHead *head = [[NSBundle mainBundle] loadNibNamed:@"PositionHead" owner:nil options:nil].lastObject;
+        [head setTitle:@"交易详情" detail:nil buttonTitle:nil];
+        return head;
+    }
+    return nil;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -88,27 +122,30 @@
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"DetailPositionCell1" owner:nil options:nil].lastObject;
         }
-        cell.title = _infos[section][row];
+        cell.dict = (NSDictionary*)_infos[section][row];
         return cell;
     }else if (section == 1) {
         DetailPositionCell2 *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailPositionCell2"];
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"DetailPositionCell2" owner:nil options:nil].lastObject;
         }
-        cell.title1 = _infos[section][row][0];
-        cell.title2 = _infos[section][row][1];
+        cell.datas = _infos[section][row];
+        if (row == 2) {
+            cell.button.hidden = NO;
+        }else
+        {
+            cell.button.hidden = YES;
+        }
         return cell;
     }else if (section == 2) {
         DetailPositionCell3 *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailPositionCell3"];
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"DetailPositionCell3" owner:nil options:nil].lastObject;
         }
-        cell.title = _infos[section][row];
-        if (row == 2) {
-            cell
-        }
+        cell.dict = _infos[section][row];
         return cell;
     }
+    return nil;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -116,13 +153,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

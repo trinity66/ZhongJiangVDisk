@@ -107,6 +107,14 @@ __weak PositionController *_positionSelf;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self goDetailPositionWithIndex:indexPath.row];
+}
+/*push到交易详情*/
+- (void)goDetailPositionWithIndex:(NSInteger)index
+{
+    DetailPositionController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailPositionController"];
+    vc.model = [DealHistoryModel modelWithDictionary:_list[index]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 /*点击一键平仓的操作*/
 - (void)clickButtonAction

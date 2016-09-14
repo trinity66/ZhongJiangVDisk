@@ -157,6 +157,8 @@ __weak BuyView *buySelf;
                                @"money":@(money),
                                @"balance":@(balance-money),
                                @"isFinsih":@0,
+                               @"profit":_profitTf.text,
+                               @"loss":_lossTf.text,
                                };
         [LCoreCurrent saveDeal:dict];
         NSDictionary *dict2 = @{
@@ -167,6 +169,8 @@ __weak BuyView *buySelf;
                                 @"money":@(money),
                                 @"product":_model.modelDict,
                                 @"isBuyRise":@(_isBuyRise),
+                                @"profit":_profitTf.text,
+                                @"loss":_lossTf.text,
                                 };
         [LCoreCurrent saveDealHistory:dict2];
         BaseNavigationController *navc = ((BaseTabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController).viewControllers[0];

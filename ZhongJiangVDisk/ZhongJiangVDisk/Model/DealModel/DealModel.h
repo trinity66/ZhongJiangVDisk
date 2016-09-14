@@ -17,9 +17,11 @@
  "money":金额
  "balance":余额
  "isFinsih":
+ "profit":
+ "loss":
  */
 +(DealModel*)modelWithDictionary:(NSDictionary *)dictionary;
-@property (nonatomic,copy) NSString *_id, *time;
+@property (nonatomic,copy) NSString *_id, *time, *profit, *loss;
 @property (nonatomic, assign) double money, balance;
 @property (nonatomic, assign) NSInteger type;
 @property (nonatomic, assign) BOOL isFinsih;

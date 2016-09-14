@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DealHistoryModel.h"
+#import "LButton.h"
 @interface DetailPositionCell2 : UITableViewCell
-@property (nonatomic, strong)DealHistoryModel *model;
-@property (weak, nonatomic) IBOutlet UILabel *title1;
-@property (weak, nonatomic) IBOutlet UILabel *title2;
+@property (nonatomic, strong) NSArray *datas;
+@property (weak, nonatomic) IBOutlet LButton *button;
+@property (nonatomic, copy) btnActionBlock btnActionBlock;
 @end

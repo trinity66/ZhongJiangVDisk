@@ -21,6 +21,8 @@
 {
     DealModel *model = [[DealModel alloc] init];
     model._id = dictionary[@"_id"];
+    model.profit = dictionary[@"profit"];
+    model.loss = dictionary[@"loss"];
     model.type = [dictionary[@"type"] integerValue];
     model.time = dictionary[@"time"];
     model.product = dictionary[@"product"];
@@ -29,6 +31,7 @@
     model.balance = [dictionary[@"balance"] doubleValue];
     model.isFinsih = [dictionary[@"isFinsih"] boolValue];
     model.modelDict = dictionary;
+    
     return model;
 }
 

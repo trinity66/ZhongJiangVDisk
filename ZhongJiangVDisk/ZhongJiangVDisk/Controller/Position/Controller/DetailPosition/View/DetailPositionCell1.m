@@ -9,7 +9,7 @@
 #import "DetailPositionCell1.h"
 
 @interface DetailPositionCell1 ()
-
+@property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *detail;
 
 @end
@@ -19,6 +19,12 @@
     [super awakeFromNib];
     [self setSomeControl];
     // Initialization code
+}
+- (void)setDict:(NSDictionary *)dict
+{
+    _dict = dict;
+    _title.text = [[dict allKeys] firstObject];
+    _detail.text = dict[_title.text];
 }
 - (void)setSomeControl
 {

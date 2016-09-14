@@ -17,8 +17,11 @@
  money:钱数
  product:
  isBuyRise:是否是买涨
+ 
+profit:
+loss:
  */
-@property (nonatomic, copy) NSString *_id, *time, *productName;
+@property (nonatomic, copy) NSString *_id, *time, *productName, *profit, *loss;
 @property (nonatomic, assign) NSInteger countNumber;
 @property (nonatomic, assign) double money;
 @property (nonatomic, strong) ProductModel *productModel;

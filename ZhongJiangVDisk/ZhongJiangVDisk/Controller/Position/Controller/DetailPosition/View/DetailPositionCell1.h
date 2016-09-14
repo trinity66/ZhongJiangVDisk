@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "DealHistoryModel.h"
 @interface DetailPositionCell1 : UITableViewCell
-@property (nonatomic, strong)DealHistoryModel *model;
-@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (nonatomic, strong) NSDictionary *dict;
 @end
