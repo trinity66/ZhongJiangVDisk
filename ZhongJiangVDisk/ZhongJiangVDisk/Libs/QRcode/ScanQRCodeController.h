@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define IS_VAILABLE_IOS8  ([[[UIDevice currentDevice] systemVersion] intValue] >= 8)
+
 
 @interface ScanQRCodeController : UIViewController
 typedef void (^QRCodeDidReceiveBlock)(NSString *rst);

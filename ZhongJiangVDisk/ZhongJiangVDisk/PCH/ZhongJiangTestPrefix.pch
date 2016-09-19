@@ -18,9 +18,12 @@
 
 #define LCoreCurrent              [Core current]
 #define LConfigCurrent            [LConfig current]
+#define IS_VAILABLE_IOS8  ([[[UIDevice currentDevice] systemVersion] intValue] >= 8)
+
 #define APP_KEY                   @"77d7ysgdfd374677453j5h5h"
 #define kBaseURL                  @"http://baidu.com"
 #define kTimeOutCount             60
+
 #define kScreenWidth              [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight             [UIScreen mainScreen].bounds.size.height
 #define kPersonalTopViewHeight    60

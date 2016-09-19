@@ -70,20 +70,5 @@
     webVC.url = url;
     [navigationController pushViewController:webVC animated:YES];
 }
-/*
- 提示信息展示
- */
-- (void)showAlertTitle:(NSString *)title timeCount:(NSInteger)timeCount inView:(UIView *)view
-{
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.bezelView.color = [UIColor colorWithRed:1.00 green:0.97 blue:0.86 alpha:1.00];
-    hud.bezelView.layer.borderWidth = 1;
-    hud.bezelView.layer.borderColor = hud.bezelView.color.CGColor;
-    hud.label.text = title;
-    hud.label.numberOfLines = 0;
-    hud.contentColor = LCoreCurrent.selectedLineColor;
-    hud.label.font = [UIFont systemFontOfSize:kCellLabelFont-2];
-    hud.mode = MBProgressHUDModeText;
-    [hud hideAnimated:YES afterDelay:timeCount];
-}
+
 @end

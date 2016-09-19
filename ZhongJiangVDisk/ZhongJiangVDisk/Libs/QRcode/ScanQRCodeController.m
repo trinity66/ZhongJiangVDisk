@@ -284,7 +284,7 @@ __weak ScanQRCodeController *scanQRSelf;
     if (isRunning) {
         UIView *line = [self.view viewWithTag:line_tag];
         line.hidden = NO;
-        [UIView animateWithDuration:4 animations:^{
+        [UIView animateWithDuration:2 animations:^{
             CGPoint point = line.center;
             point.y += kScreenWidth-kSpace * 2-2;
             line.center = point;

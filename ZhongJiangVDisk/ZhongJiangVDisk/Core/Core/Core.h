@@ -21,6 +21,7 @@ typedef void(^btnsActionBlock)(NSInteger index);
 +(Core *)current;
 @property (nonatomic, strong) NSArray *productsList;
 @property (nonatomic, assign)BOOL isLogin;
+@property (nonatomic, copy) btnsActionBlock alertBtnsBlock;
 //基准色
 @property (nonatomic, strong)UIColor *riseColor, *fallColor, *backgroundColor, *riseTextColor, *fallTextColor;
 @property (nonatomic, strong)UIColor *labelTextColor, *buttonTitleColor, *positionCellTextColor, *detailLightBackColor, *detailBackColor;
