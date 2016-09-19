@@ -14,4 +14,5 @@ typedef void (^QRCodeDidReceiveBlock)(NSString *rst);
 @property (nonatomic, copy, readonly) QRCodeDidReceiveBlock didReceiveBlock;
 - (void)setDidReceiveBlock:(QRCodeDidReceiveBlock)didReceiveBlock;
 - (void)selfRemoveFromSuperview;
+- (void)selfAddToParentController:(UIViewController *)parentController;
 @end

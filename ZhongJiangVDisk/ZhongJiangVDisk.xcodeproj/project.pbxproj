@@ -16,8 +16,6 @@
 		5E1721D81D62FFD4003CA0AE /* ZhongJiangVDiskUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721D71D62FFD4003CA0AE /* ZhongJiangVDiskUITests.m */; };
 		5E17227A1D630082003CA0AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721E71D630082003CA0AE /* AppDelegate.m */; };
 		5E17227B1D630082003CA0AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1721E81D630082003CA0AE /* Assets.xcassets */; };
-		5E17227C1D630082003CA0AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1721EA1D630082003CA0AE /* LaunchScreen.storyboard */; };
-		5E17227D1D630082003CA0AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1721EC1D630082003CA0AE /* Main.storyboard */; };
 		5E17227E1D630082003CA0AE /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721F21D630082003CA0AE /* BaseNavigationController.m */; };
 		5E17227F1D630082003CA0AE /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721F51D630082003CA0AE /* BaseTabBarController.m */; };
 		5E1722801D630082003CA0AE /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721F81D630082003CA0AE /* BaseViewController.m */; };
@@ -78,6 +76,8 @@
 		5E2387AC1D87EF25008AF872 /* DetailPositionCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2387AA1D87EF25008AF872 /* DetailPositionCell2.xib */; };
 		5E2387B01D87F0F9008AF872 /* DetailPositionCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2387AE1D87F0F9008AF872 /* DetailPositionCell3.m */; };
 		5E2387B11D87F0F9008AF872 /* DetailPositionCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2387AF1D87F0F9008AF872 /* DetailPositionCell3.xib */; };
+		5E4BEA8D1D8B7C6200A4E71D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4BEA891D8B7C6200A4E71D /* LaunchScreen.storyboard */; };
+		5E4BEA8E1D8B7C6200A4E71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4BEA8B1D8B7C6200A4E71D /* Main.storyboard */; };
 		5E75AF6B1D73C4260051FB1D /* DealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6A1D73C4260051FB1D /* DealModel.m */; };
 		5E75AF6F1D73C5190051FB1D /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6E1D73C5190051FB1D /* ProductModel.m */; };
 		5E75AF731D73DEF70051FB1D /* DealHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF721D73DEF70051FB1D /* DealHistoryModel.m */; };
@@ -166,8 +166,6 @@
 		5E1721E61D630082003CA0AE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E1721E71D630082003CA0AE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5E1721E81D630082003CA0AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5E1721EB1D630082003CA0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5E1721ED1D630082003CA0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		5E1721F11D630082003CA0AE /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		5E1721F21D630082003CA0AE /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		5E1721F41D630082003CA0AE /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
@@ -270,7 +268,10 @@
 		5E2387AD1D87F0F9008AF872 /* DetailPositionCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPositionCell3.h; sourceTree = "<group>"; };
 		5E2387AE1D87F0F9008AF872 /* DetailPositionCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPositionCell3.m; sourceTree = "<group>"; };
 		5E2387AF1D87F0F9008AF872 /* DetailPositionCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPositionCell3.xib; sourceTree = "<group>"; };
+		5E2FD43E1D8F6DBA00C9D59B /* ZhongJiangVDisk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZhongJiangVDisk.entitlements; sourceTree = "<group>"; };
 		5E43939A1D89186E00470516 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E4BEA8A1D8B7C6200A4E71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5E4BEA8C1D8B7C6200A4E71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		5E75AF691D73C4260051FB1D /* DealModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealModel.h; sourceTree = "<group>"; };
 		5E75AF6A1D73C4260051FB1D /* DealModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealModel.m; sourceTree = "<group>"; };
 		5E75AF6D1D73C5190051FB1D /* ProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
@@ -447,6 +448,7 @@
 		5E1721B11D62FFD4003CA0AE /* ZhongJiangVDisk */ = {
 			isa = PBXGroup;
 			children = (
+				5E2FD43E1D8F6DBA00C9D59B /* ZhongJiangVDisk.entitlements */,
 				5E1721EE1D630082003CA0AE /* Controller */,
 				5E1722B21D63008A003CA0AE /* View */,
 				5E75AF671D73C3F50051FB1D /* Model */,
@@ -493,8 +495,8 @@
 		5E1721E91D630082003CA0AE /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				5E1721EA1D630082003CA0AE /* LaunchScreen.storyboard */,
-				5E1721EC1D630082003CA0AE /* Main.storyboard */,
+				5E4BEA891D8B7C6200A4E71D /* LaunchScreen.storyboard */,
+				5E4BEA8B1D8B7C6200A4E71D /* Main.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -1460,6 +1462,11 @@
 					5E1721AE1D62FFD4003CA0AE = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6PP8VHCW4W;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					5E1721C71D62FFD4003CA0AE = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1496,7 +1503,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E17227D1D630082003CA0AE /* Main.storyboard in Resources */,
 				5EAF82871D6AF51200239CB5 /* 扫描线@2x.png in Resources */,
 				5EAF82881D6AF51200239CB5 /* 白色返回_想去@2x.png in Resources */,
 				5E23879D1D87DEF7008AF872 /* PositionHead.xib in Resources */,
@@ -1512,9 +1518,11 @@
 				5EAF828A1D6AF51200239CB5 /* VDiskTypes.json in Resources */,
 				5EAF83E21D6FD3D000239CB5 /* Products.json in Resources */,
 				5E1722991D630082003CA0AE /* RechargeCell.xib in Resources */,
+				5E4BEA8E1D8B7C6200A4E71D /* Main.storyboard in Resources */,
 				5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */,
 				5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */,
 				5EAF824B1D6AEE9F00239CB5 /* RegisterButtonView.xib in Resources */,
+				5E4BEA8D1D8B7C6200A4E71D /* LaunchScreen.storyboard in Resources */,
 				5E99F46F1D81408D009863A9 /* SegmentView.xib in Resources */,
 				5E1722911D630082003CA0AE /* DealCell.xib in Resources */,
 				5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */,
@@ -1522,7 +1530,6 @@
 				5EEB44D11D81478900A40AA6 /* PersonalTopView.xib in Resources */,
 				5EAF82931D6BDEC700239CB5 /* DisabledView.xib in Resources */,
 				5E17227B1D630082003CA0AE /* Assets.xcassets in Resources */,
-				5E17227C1D630082003CA0AE /* LaunchScreen.storyboard in Resources */,
 				5E23878A1D87A05D008AF872 /* PositionCell.xib in Resources */,
 				5E1722DC1D63008A003CA0AE /* InputDealPswdView.xib in Resources */,
 				5E17228E1D630082003CA0AE /* DealHistoryHeadView.xib in Resources */,
@@ -1714,18 +1721,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5E1721EA1D630082003CA0AE /* LaunchScreen.storyboard */ = {
+		5E4BEA891D8B7C6200A4E71D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5E1721EB1D630082003CA0AE /* Base */,
+				5E4BEA8A1D8B7C6200A4E71D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		5E1721EC1D630082003CA0AE /* Main.storyboard */ = {
+		5E4BEA8B1D8B7C6200A4E71D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5E1721ED1D630082003CA0AE /* Base */,
+				5E4BEA8C1D8B7C6200A4E71D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1753,7 +1760,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1800,7 +1808,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1826,8 +1835,9 @@
 			baseConfigurationReference = D97CD79017D820D8BE1EEC6F /* Pods-ZhongJiangVDisk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Ningbo Time Micro Information Technology co., LTD (6PP8VHCW4W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ningbo Time Micro Information Technology co., LTD (6PP8VHCW4W)";
+				CODE_SIGN_ENTITLEMENTS = ZhongJiangVDisk/ZhongJiangVDisk.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yanyun Chen (NBP5RHM2EX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yanyun Chen (NBP5RHM2EX)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ZhongJiangVDisk/PCH/ZhongJiangTestPrefix.pch";
 				INFOPLIST_FILE = ZhongJiangVDisk/Info.plist;
@@ -1837,9 +1847,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZhongJiangVDisk/Libs/paymentcontrol/libs",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shijian.VDisk;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shijiantest.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73cc33e8-7f91-4e62-b576-f3b9ee2b1ba5";
+				PROVISIONING_PROFILE = "dbd25449-c8c0-4e83-9cf8-2d5e7b090006";
 			};
 			name = Debug;
 		};
@@ -1848,8 +1858,9 @@
 			baseConfigurationReference = 2FC96D50A9163C9FB43FB0C5 /* Pods-ZhongJiangVDisk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Ningbo Time Micro Information Technology co., LTD (6PP8VHCW4W)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ningbo Time Micro Information Technology co., LTD (6PP8VHCW4W)";
+				CODE_SIGN_ENTITLEMENTS = ZhongJiangVDisk/ZhongJiangVDisk.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yanyun Chen (NBP5RHM2EX)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Yanyun Chen (NBP5RHM2EX)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ZhongJiangVDisk/PCH/ZhongJiangTestPrefix.pch";
 				INFOPLIST_FILE = ZhongJiangVDisk/Info.plist;
@@ -1859,9 +1870,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZhongJiangVDisk/Libs/paymentcontrol/libs",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shijian.VDisk;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shijiantest.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73cc33e8-7f91-4e62-b576-f3b9ee2b1ba5";
+				PROVISIONING_PROFILE = "dbd25449-c8c0-4e83-9cf8-2d5e7b090006";
 			};
 			name = Release;
 		};
@@ -1921,7 +1932,7 @@
 				5E1721DB1D62FFD4003CA0AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5E1721DC1D62FFD4003CA0AE /* Build configuration list for PBXNativeTarget "ZhongJiangVDisk" */ = {
 			isa = XCConfigurationList;
@@ -1930,7 +1941,7 @@
 				5E1721DE1D62FFD4003CA0AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5E1721DF1D62FFD4003CA0AE /* Build configuration list for PBXNativeTarget "ZhongJiangVDiskTests" */ = {
 			isa = XCConfigurationList;
@@ -1939,7 +1950,7 @@
 				5E1721E11D62FFD4003CA0AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5E1721E21D62FFD4003CA0AE /* Build configuration list for PBXNativeTarget "ZhongJiangVDiskUITests" */ = {
 			isa = XCConfigurationList;
@@ -1948,7 +1959,7 @@
 				5E1721E41D62FFD4003CA0AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

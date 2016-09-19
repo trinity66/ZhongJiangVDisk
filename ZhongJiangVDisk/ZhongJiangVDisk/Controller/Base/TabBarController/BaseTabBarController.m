@@ -17,11 +17,9 @@ __weak BaseTabBarController *baseTabSelf;
 {
     [super awakeFromNib];
     baseTabSelf = self;
-    static int i = 0;
     for (UITabBarItem *item in self.tabBar.items) {
         item.image = [item.image imageWithTintColor:LCoreCurrent.tabBarTextColor];
         item.selectedImage = [item.selectedImage imageWithTintColor:LCoreCurrent.tabBarSelectTextColor];
-        i +=1;
     }
 }
 - (void)viewDidLoad {

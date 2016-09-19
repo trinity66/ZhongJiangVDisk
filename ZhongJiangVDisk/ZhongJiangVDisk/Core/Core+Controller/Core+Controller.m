@@ -31,6 +31,17 @@
     BaseNavigationController *homeNav = topVc.viewControllers.firstObject;
     [homeNav pushViewController:vc animated:YES];
 }
+/*!
+ *  扫一扫
+ */
+- (ScanQRCodeController *)goScanQRCodeVC
+{
+    BaseTabBarController *root = (BaseTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    BaseNavigationController *firstNavc = root.viewControllers.firstObject;
+    ScanQRCodeController *qrcodeVC = [[ScanQRCodeController alloc] init];
+    [qrcodeVC selfAddToParentController:firstNavc];
+    return qrcodeVC;
+}
 /*
  去注册
  */
@@ -40,11 +51,12 @@
 }
 - (void)goRegisterVCDelay
 {
-    BaseTabBarController *topVc = (BaseTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    BaseTabBarController *root = (BaseTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    BaseNavigationController *firstNavc = root.viewControllers.firstObject;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     RegisterController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RegisterController"];
     BaseNavigationController *nacv = [[BaseNavigationController alloc] initWithRootViewController:vc];
-    [topVc presentViewController:nacv animated:NO completion:nil];
+    [firstNavc presentViewController:nacv animated:NO completion:nil];
 }
 /*
  去webController

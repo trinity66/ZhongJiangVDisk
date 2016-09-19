@@ -1,0 +1,54 @@
+
+/* Class = "UIViewController"; title = "忘记交易密码"; ObjectID = "17c-XF-DqM"; */
+"17c-XF-DqM.title" = "忘记交易密码";
+
+/* Class = "UITabBarItem"; title = "持仓"; ObjectID = "3ym-e1-x2e"; */
+"3ym-e1-x2e.title" = "持仓";
+
+/* Class = "UIViewController"; title = "收支明细"; ObjectID = "5je-WQ-gmV"; */
+"5je-WQ-gmV.title" = "收支明细";
+
+/* Class = "UIViewController"; title = "我的二维码"; ObjectID = "AZN-60-W1e"; */
+"AZN-60-W1e.title" = "我的二维码";
+
+/* Class = "UITabBarItem"; title = "我的"; ObjectID = "Ez3-3r-oyX"; */
+"Ez3-3r-oyX.title" = "我的";
+
+/* Class = "UIViewController"; title = "交易历史"; ObjectID = "FjF-9R-ZJb"; */
+"FjF-9R-ZJb.title" = "交易历史";
+
+/* Class = "UIViewController"; title = "加载中···"; ObjectID = "GAW-cC-yMz"; */
+"GAW-cC-yMz.title" = "加载中···";
+
+/* Class = "UIViewController"; title = "修改交易密码"; ObjectID = "Hlh-IU-1MB"; */
+"Hlh-IU-1MB.title" = "修改交易密码";
+
+/* Class = "UIViewController"; title = "充值"; ObjectID = "WBJ-hh-CT4"; */
+"WBJ-hh-CT4.title" = "充值";
+
+/* Class = "UIViewController"; title = "交易详情"; ObjectID = "Z3E-E5-wl8"; */
+"Z3E-E5-wl8.title" = "交易详情";
+
+/* Class = "UINavigationItem"; title = "首页"; ObjectID = "fJP-Nq-JWD"; */
+"fJP-Nq-JWD.title" = "首页";
+
+/* Class = "UINavigationItem"; title = "我的"; ObjectID = "mjE-sc-yzu"; */
+"mjE-sc-yzu.title" = "我的";
+
+/* Class = "UINavigationItem"; title = "持仓"; ObjectID = "neD-PD-KHF"; */
+"neD-PD-KHF.title" = "持仓";
+
+/* Class = "UIViewController"; title = "公告"; ObjectID = "nyc-r5-LZF"; */
+"nyc-r5-LZF.title" = "公告";
+
+/* Class = "UIViewController"; title = "提现"; ObjectID = "qO7-Li-Evh"; */
+"qO7-Li-Evh.title" = "提现";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "skK-mu-rTS"; */
+"skK-mu-rTS.title" = "首页";
+
+/* Class = "UIViewController"; title = "经纪人申请"; ObjectID = "tFX-ij-9zX"; */
+"tFX-ij-9zX.title" = "经纪人申请";
+
+/* Class = "UIViewController"; title = "注册"; ObjectID = "w8k-wS-ERk"; */
+"w8k-wS-ERk.title" = "注册";

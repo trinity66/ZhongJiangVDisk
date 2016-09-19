@@ -7,11 +7,12 @@
 //
 
 #import "Core.h"
-
+#import "ScanQRCodeController.h"
 @interface Core (Controller)
 - (void)goRechargeVC;
 - (void)goForgetDealPswdVC;
 - (void)goRegisterVC;
+- (ScanQRCodeController *)goScanQRCodeVC;
 - (void)showAlertTitle:(NSString *)title timeCount:(NSInteger)timeCount inView:(UIView *)view;
 - (void)goWebVCWithUrl:(NSString *)url inNavigationController:(UINavigationController *)navigationController;
 @end

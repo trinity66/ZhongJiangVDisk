@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-
+{
+    ScanQRCodeController *qrcodeVC;
+}
 @end
 
 @implementation AppDelegate
@@ -19,14 +21,13 @@
     // Override point for customization after application launch.
     LCoreCurrent.VDiskType = VDiskTypeYinHe;//VDiskTypeZhongJiang////VDiskTypeZhongHui
     if (!LCoreCurrent.isLogin) {
-//        [self intoQRCodeVC];
-        [self performSelector:@selector(goRegister) withObject:nil afterDelay:0.01];
+    [self performSelector:@selector(goRegister) withObject:nil afterDelay:0.01];
     }else
     {
         
-        
+        LCoreCurrent.isLogin = NO;
     }
-//    [self registerPgy];//bee4d9bffbc6cd5e5aa43e468fadc972
+    //    [self registerPgy];//bee4d9bffbc6cd5e5aa43e468fadc972
     return YES;
 }
 //- (void)registerPgy
@@ -37,36 +38,27 @@
 //    //启动更新检查SDK
 //    [[PgyUpdateManager sharedPgyManager] startManagerWithAppId:@"bee4d9bffbc6cd5e5aa43e468fadc972"];
 //    [[PgyUpdateManager sharedPgyManager] checkUpdate];
-//    
+//
 //}
 
 
-/*!
- *  扫一扫
- */
-- (void)intoQRCodeVC {
-    ScanQRCodeController *qrcodeVC = [[ScanQRCodeController alloc] init];
-    __block ScanQRCodeController*qr = qrcodeVC;
-    BaseTabBarController *root = (BaseTabBarController *)self.window.rootViewController;
-    __block AppDelegate *weakSelf = self;
-    [qrcodeVC setDidReceiveBlock:^(NSString *rst) {
-        NSLog(@"------------%@", rst);
-        [weakSelf scanQRCodeWithURL:rst];
-        [qr selfRemoveFromSuperview];
-    }];
-    [root addChildViewController:qrcodeVC];
-    [root.view addSubview:qrcodeVC.view];
-    
-}
+
 - (void)scanQRCodeWithURL:(NSString *)url
 {
 #warning 扫描二维码之后的处理
     [LCoreCurrent goRegisterVC];
+    [qrcodeVC selfRemoveFromSuperview];
+    qrcodeVC = nil;
 }
 //模拟机测试时的通道
 - (void)goRegister
 {
-    [LCoreCurrent goRegisterVC];
+//    [LCoreCurrent goRegisterVC];
+    qrcodeVC = [LCoreCurrent goScanQRCodeVC];
+    __block AppDelegate *weakSelf = self;
+    qrcodeVC.didReceiveBlock = ^(NSString *rst) {
+        [weakSelf scanQRCodeWithURL:rst];
+    };
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

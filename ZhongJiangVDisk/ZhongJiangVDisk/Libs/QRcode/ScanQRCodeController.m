@@ -12,12 +12,13 @@
 #import "ScanQRCodeController.h"
 #import <AVFoundation/AVFoundation.h>
 __weak ScanQRCodeController *scanQRSelf;
-@interface ScanQRCodeController ()<AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate>
+@interface ScanQRCodeController ()<AVCaptureMetadataOutputObjectsDelegate, UIAlertViewDelegate, CAAnimationDelegate>
 {
     AVCaptureSession * session;//输入输出的中间桥梁
     int line_tag;
     UIView *highlightView;
     DisabledView *disabledView;
+    BOOL isRunning;
 }
 
 @end
@@ -146,12 +147,15 @@ __weak ScanQRCodeController *scanQRSelf;
                         change:(NSDictionary *)change
                        context:(void *)context{
     if ([object isKindOfClass:[AVCaptureSession class]]) {
-        BOOL isRunning = ((AVCaptureSession *)object).isRunning;
-        if (isRunning) {
-            [self addAnimation];
-        }else{
-            [self removeAnimation];
-        }
+        isRunning = ((AVCaptureSession *)object).isRunning;
+        [self animationStart];
+        /*
+         if (isRunning) {
+         [self addAnimation];
+         }else{
+         [self removeAnimation];
+         }
+         */
     }
 }
 
@@ -275,6 +279,27 @@ __weak ScanQRCodeController *scanQRSelf;
  *
  *  添加扫码动画
  */
+- (void)animationStart
+{
+    if (isRunning) {
+        UIView *line = [self.view viewWithTag:line_tag];
+        line.hidden = NO;
+        [UIView animateWithDuration:4 animations:^{
+            CGPoint point = line.center;
+            point.y += kScreenWidth-kSpace * 2-2;
+            line.center = point;
+        } completion:^(BOOL finished) {
+            CGPoint point = line.center;
+            point.y -= (kScreenWidth-kSpace * 2-2);
+            line.center = point;
+            [self animationStart];
+        }];
+    }else
+    {
+        UIView *line = [self.view viewWithTag:line_tag];
+        line.hidden = YES;
+    }
+}
 - (void)addAnimation{
     UIView *line = [self.view viewWithTag:line_tag];
     line.hidden = NO;
@@ -326,13 +351,15 @@ __weak ScanQRCodeController *scanQRSelf;
  */
 - (void)selfRemoveFromSuperview{
     [session removeObserver:self forKeyPath:@"running" context:nil];
-    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.view.alpha = 0;
-    } completion:^(BOOL finished) {
-        [self.view removeFromSuperview];
-        [self removeFromParentViewController];
-    }];
+    [self dismissViewControllerAnimated:NO completion:nil];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+}
+/*
+ 加入父视图
+ */
+- (void)selfAddToParentController:(UINavigationController *)parentController
+{
+    [parentController presentViewController:self animated:NO completion:nil];
 }
 
 /*!
