@@ -91,8 +91,9 @@
         return YES;
     }else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"当前网络不可用，请检查网络设置" delegate:self cancelButtonTitle:nil otherButtonTitles:@"好的", nil];
-        [alert show];
+        [LCoreCurrent showAlertTitle:@"温馨提示" message:@"无法连接到服务器，请检查网络设置" buttons:@[@"好的"] inVC:[LCoreCurrent currentTopViewController] btnsActionBlock:^(NSInteger index) {
+            
+        }];
         return NO;
     }
 }

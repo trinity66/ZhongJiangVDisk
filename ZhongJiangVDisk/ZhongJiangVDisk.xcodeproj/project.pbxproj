@@ -77,6 +77,9 @@
 		5E2387B01D87F0F9008AF872 /* DetailPositionCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2387AE1D87F0F9008AF872 /* DetailPositionCell3.m */; };
 		5E2387B11D87F0F9008AF872 /* DetailPositionCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2387AF1D87F0F9008AF872 /* DetailPositionCell3.xib */; };
 		5E2FD4421D8F84C600C9D59B /* Core+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FD4411D8F84C600C9D59B /* Core+Alert.m */; };
+		5E2FD4471D8F904400C9D59B /* RegisterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FD4451D8F904400C9D59B /* RegisterButtonView.m */; };
+		5E2FD4481D8F904400C9D59B /* RegisterButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2FD4461D8F904400C9D59B /* RegisterButtonView.xib */; };
+		5E2FD44C1D8F907600C9D59B /* LConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FD44B1D8F907600C9D59B /* LConfig.m */; };
 		5E4BEA8D1D8B7C6200A4E71D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4BEA891D8B7C6200A4E71D /* LaunchScreen.storyboard */; };
 		5E4BEA8E1D8B7C6200A4E71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4BEA8B1D8B7C6200A4E71D /* Main.storyboard */; };
 		5E75AF6B1D73C4260051FB1D /* DealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6A1D73C4260051FB1D /* DealModel.m */; };
@@ -96,8 +99,6 @@
 		5EAF82381D6AE3C100239CB5 /* LButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82341D6AE3C100239CB5 /* LButton.m */; };
 		5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82371D6AE3C100239CB5 /* LTextField.m */; };
 		5EAF823B1D6AE4BE00239CB5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */; };
-		5EAF824A1D6AEE9F00239CB5 /* RegisterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82481D6AEE9F00239CB5 /* RegisterButtonView.m */; };
-		5EAF824B1D6AEE9F00239CB5 /* RegisterButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82491D6AEE9F00239CB5 /* RegisterButtonView.xib */; };
 		5EAF824F1D6AEEC800239CB5 /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF824E1D6AEEC800239CB5 /* RegisterController.m */; };
 		5EAF82791D6AF51200239CB5 /* Area.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82541D6AF51200239CB5 /* Area.m */; };
 		5EAF827A1D6AF51200239CB5 /* AxisX.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82571D6AF51200239CB5 /* AxisX.m */; };
@@ -117,7 +118,6 @@
 		5EAF82881D6AF51200239CB5 /* 白色返回_想去@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82731D6AF51200239CB5 /* 白色返回_想去@2x.png */; };
 		5EAF82891D6AF51200239CB5 /* QRCodeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82761D6AF51200239CB5 /* QRCodeImage.m */; };
 		5EAF828A1D6AF51200239CB5 /* VDiskTypes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82771D6AF51200239CB5 /* VDiskTypes.json */; };
-		5EAF828E1D6AF54600239CB5 /* LConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF828D1D6AF54600239CB5 /* LConfig.m */; };
 		5EAF82911D6BDEBD00239CB5 /* DisabledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82901D6BDEBD00239CB5 /* DisabledView.m */; };
 		5EAF82931D6BDEC700239CB5 /* DisabledView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82921D6BDEC700239CB5 /* DisabledView.xib */; };
 		5EAF83CF1D6E864400239CB5 /* WebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF83CE1D6E864400239CB5 /* WebController.m */; };
@@ -272,6 +272,11 @@
 		5E2FD43E1D8F6DBA00C9D59B /* ZhongJiangVDisk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZhongJiangVDisk.entitlements; sourceTree = "<group>"; };
 		5E2FD4401D8F84C600C9D59B /* Core+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core+Alert.h"; sourceTree = "<group>"; };
 		5E2FD4411D8F84C600C9D59B /* Core+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Core+Alert.m"; sourceTree = "<group>"; };
+		5E2FD4441D8F904400C9D59B /* RegisterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterButtonView.h; sourceTree = "<group>"; };
+		5E2FD4451D8F904400C9D59B /* RegisterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterButtonView.m; sourceTree = "<group>"; };
+		5E2FD4461D8F904400C9D59B /* RegisterButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterButtonView.xib; sourceTree = "<group>"; };
+		5E2FD44A1D8F907600C9D59B /* LConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LConfig.h; sourceTree = "<group>"; };
+		5E2FD44B1D8F907600C9D59B /* LConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LConfig.m; sourceTree = "<group>"; };
 		5E43939A1D89186E00470516 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E4BEA8A1D8B7C6200A4E71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E4BEA8C1D8B7C6200A4E71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
@@ -300,9 +305,6 @@
 		5EAF82361D6AE3C100239CB5 /* LTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTextField.h; sourceTree = "<group>"; };
 		5EAF82371D6AE3C100239CB5 /* LTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTextField.m; sourceTree = "<group>"; };
 		5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		5EAF82471D6AEE9F00239CB5 /* RegisterButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterButtonView.h; sourceTree = "<group>"; };
-		5EAF82481D6AEE9F00239CB5 /* RegisterButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterButtonView.m; sourceTree = "<group>"; };
-		5EAF82491D6AEE9F00239CB5 /* RegisterButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterButtonView.xib; sourceTree = "<group>"; };
 		5EAF824D1D6AEEC800239CB5 /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
 		5EAF824E1D6AEEC800239CB5 /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
 		5EAF82531D6AF51200239CB5 /* Area.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Area.h; sourceTree = "<group>"; };
@@ -337,8 +339,6 @@
 		5EAF82751D6AF51200239CB5 /* QRCodeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeImage.h; sourceTree = "<group>"; };
 		5EAF82761D6AF51200239CB5 /* QRCodeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeImage.m; sourceTree = "<group>"; };
 		5EAF82771D6AF51200239CB5 /* VDiskTypes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VDiskTypes.json; sourceTree = "<group>"; };
-		5EAF828C1D6AF54600239CB5 /* LConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LConfig.h; sourceTree = "<group>"; };
-		5EAF828D1D6AF54600239CB5 /* LConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LConfig.m; sourceTree = "<group>"; };
 		5EAF828F1D6BDEBD00239CB5 /* DisabledView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisabledView.h; sourceTree = "<group>"; };
 		5EAF82901D6BDEBD00239CB5 /* DisabledView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisabledView.m; sourceTree = "<group>"; };
 		5EAF82921D6BDEC700239CB5 /* DisabledView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DisabledView.xib; sourceTree = "<group>"; };
@@ -456,7 +456,6 @@
 				5E1722B21D63008A003CA0AE /* View */,
 				5E75AF671D73C3F50051FB1D /* Model */,
 				5E1722511D630082003CA0AE /* Core */,
-				5EAF82781D6AF51200239CB5 /* LLibs */,
 				5EAF82501D6AF51200239CB5 /* Libs */,
 				5E1722B01D63008A003CA0AE /* PCH */,
 				5E1721E51D630082003CA0AE /* AppDelegate */,
@@ -873,6 +872,7 @@
 		5E1722511D630082003CA0AE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5E2FD4491D8F907600C9D59B /* LConfig */,
 				5E23877B1D868EAB008AF872 /* LCategory */,
 				5E2FD43F1D8F84B000C9D59B /* Core+Alert */,
 				5E2387771D868C15008AF872 /* Core+Network */,
@@ -914,7 +914,6 @@
 		5E1722B21D63008A003CA0AE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5EAF82461D6AEE9F00239CB5 /* RegisterButtonView */,
 				5EAF82321D6AE3C100239CB5 /* LButton */,
 				5EAF82351D6AE3C100239CB5 /* LTextField */,
 				5E1722B31D63008A003CA0AE /* ButtonView */,
@@ -1115,6 +1114,25 @@
 			path = "Core+Alert";
 			sourceTree = "<group>";
 		};
+		5E2FD4431D8F904400C9D59B /* RegisterButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				5E2FD4441D8F904400C9D59B /* RegisterButtonView.h */,
+				5E2FD4451D8F904400C9D59B /* RegisterButtonView.m */,
+				5E2FD4461D8F904400C9D59B /* RegisterButtonView.xib */,
+			);
+			path = RegisterButtonView;
+			sourceTree = "<group>";
+		};
+		5E2FD4491D8F907600C9D59B /* LConfig */ = {
+			isa = PBXGroup;
+			children = (
+				5E2FD44A1D8F907600C9D59B /* LConfig.h */,
+				5E2FD44B1D8F907600C9D59B /* LConfig.m */,
+			);
+			path = LConfig;
+			sourceTree = "<group>";
+		};
 		5E75AF671D73C3F50051FB1D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1197,19 +1215,10 @@
 			path = LTextField;
 			sourceTree = "<group>";
 		};
-		5EAF82461D6AEE9F00239CB5 /* RegisterButtonView */ = {
-			isa = PBXGroup;
-			children = (
-				5EAF82471D6AEE9F00239CB5 /* RegisterButtonView.h */,
-				5EAF82481D6AEE9F00239CB5 /* RegisterButtonView.m */,
-				5EAF82491D6AEE9F00239CB5 /* RegisterButtonView.xib */,
-			);
-			path = RegisterButtonView;
-			sourceTree = "<group>";
-		};
 		5EAF824C1D6AEEC800239CB5 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				5E2FD4431D8F904400C9D59B /* RegisterButtonView */,
 				5EAF824D1D6AEEC800239CB5 /* RegisterController.h */,
 				5EAF824E1D6AEEC800239CB5 /* RegisterController.m */,
 			);
@@ -1314,23 +1323,6 @@
 				5EAF82761D6AF51200239CB5 /* QRCodeImage.m */,
 			);
 			path = "QRCodeImage-生成二维码";
-			sourceTree = "<group>";
-		};
-		5EAF82781D6AF51200239CB5 /* LLibs */ = {
-			isa = PBXGroup;
-			children = (
-				5EAF828B1D6AF54600239CB5 /* LConfig */,
-			);
-			path = LLibs;
-			sourceTree = "<group>";
-		};
-		5EAF828B1D6AF54600239CB5 /* LConfig */ = {
-			isa = PBXGroup;
-			children = (
-				5EAF828C1D6AF54600239CB5 /* LConfig.h */,
-				5EAF828D1D6AF54600239CB5 /* LConfig.m */,
-			);
-			path = LConfig;
 			sourceTree = "<group>";
 		};
 		5EAF83CC1D6E862800239CB5 /* Web */ = {
@@ -1534,7 +1526,6 @@
 				5E4BEA8E1D8B7C6200A4E71D /* Main.storyboard in Resources */,
 				5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */,
 				5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */,
-				5EAF824B1D6AEE9F00239CB5 /* RegisterButtonView.xib in Resources */,
 				5E4BEA8D1D8B7C6200A4E71D /* LaunchScreen.storyboard in Resources */,
 				5E99F46F1D81408D009863A9 /* SegmentView.xib in Resources */,
 				5E1722911D630082003CA0AE /* DealCell.xib in Resources */,
@@ -1552,6 +1543,7 @@
 				5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */,
 				5E2387AC1D87EF25008AF872 /* DetailPositionCell2.xib in Resources */,
 				5E1722831D630082003CA0AE /* ChartView.xib in Resources */,
+				5E2FD4481D8F904400C9D59B /* RegisterButtonView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1634,6 +1626,7 @@
 				5EAF82791D6AF51200239CB5 /* Area.m in Sources */,
 				5EAF824F1D6AEEC800239CB5 /* RegisterController.m in Sources */,
 				5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */,
+				5E2FD44C1D8F907600C9D59B /* LConfig.m in Sources */,
 				5E75AF731D73DEF70051FB1D /* DealHistoryModel.m in Sources */,
 				5E1350DB1D6FF3F400D673E1 /* SelectDataCell.m in Sources */,
 				5EAF82911D6BDEBD00239CB5 /* DisabledView.m in Sources */,
@@ -1651,14 +1644,13 @@
 				5E17229A1D630082003CA0AE /* RechargeHeadView.m in Sources */,
 				5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */,
 				5EAF827D1D6AF51200239CB5 /* BaseLayer.m in Sources */,
-				5EAF824A1D6AEE9F00239CB5 /* RegisterButtonView.m in Sources */,
 				5EEB44D91D8158C200A40AA6 /* LatestInfos.m in Sources */,
 				5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */,
 				5E1722D51D63008A003CA0AE /* ButtonView.m in Sources */,
 				5EAF83D41D6E896400239CB5 /* Core+Controller.m in Sources */,
+				5E2FD4471D8F904400C9D59B /* RegisterButtonView.m in Sources */,
 				5E17228D1D630082003CA0AE /* DealHistoryHeadView.m in Sources */,
 				5E99F45A1D813964009863A9 /* ChartViewTwo.m in Sources */,
-				5EAF828E1D6AF54600239CB5 /* LConfig.m in Sources */,
 				5EAF83CF1D6E864400239CB5 /* WebController.m in Sources */,
 				5E17227A1D630082003CA0AE /* AppDelegate.m in Sources */,
 				5E1722DB1D63008A003CA0AE /* InputDealPswdView.m in Sources */,

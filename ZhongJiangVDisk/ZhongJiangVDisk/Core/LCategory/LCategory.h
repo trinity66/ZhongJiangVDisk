@@ -16,8 +16,8 @@
 @end
 
 @interface UIImage (extend)
-- (UIImage *) imageWithTintColor:(UIColor *)tintColor;
-- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor;
+- (UIImage *)imageWithTintColor:(UIColor *)tintColor;
+- (UIImage *)imageWithGradientTintColor:(UIColor *)tintColor;
 @end
 
 @interface NSDate (extend)

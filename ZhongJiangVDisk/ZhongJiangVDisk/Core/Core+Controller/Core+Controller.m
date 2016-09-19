@@ -10,6 +10,32 @@
 
 @implementation Core (Controller)
 /*
+ 获取当前正在显示的ViewController
+ */
+- (UIViewController *)currentTopViewController
+{
+    UIViewController *result = nil;
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    if (window.windowLevel != UIWindowLevelNormal) {
+        NSArray *windows = [UIApplication sharedApplication].windows;
+        for (UIWindow *tmpWindow in windows) {
+            if (tmpWindow.windowLevel == UIWindowLevelNormal) {
+                window = tmpWindow;
+                break;
+            }
+        }
+    }
+    UIView *frontView = [window subviews].firstObject;
+    id nextResponder = [frontView nextResponder];
+    if ([nextResponder isKindOfClass:[UIViewController class]]) {
+        result = nextResponder;
+    }else
+    {
+        result = window.rootViewController;
+    }
+    return result;
+}
+/*
  去充值
  */
 - (void)goRechargeVC
