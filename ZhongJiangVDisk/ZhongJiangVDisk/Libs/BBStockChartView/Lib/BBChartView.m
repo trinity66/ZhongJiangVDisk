@@ -66,12 +66,12 @@
     [self addSubview:_chartView];
     [self _initToastView];
     
-    //    UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-    //    [self addGestureRecognizer:panGesture];
-    //    UIPinchGestureRecognizer* pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
-    //    [self addGestureRecognizer:pinchGesture];
+    UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+    [self addGestureRecognizer:panGesture];
+    UIPinchGestureRecognizer* pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
+    [self addGestureRecognizer:pinchGesture];
     
-    _scaleFloor = 2;
+    _scaleFloor = 1.5;
     _currentScale = 1;
     _currentX = 0;
     [self setSomeSubViews];
@@ -185,6 +185,7 @@
     for (Area* area in _areas) {
         [area removeFromSuperlayer];
     }
+    _currentX = 0;
     [self subViewsHidden:YES];
     [_areas removeAllObjects];
     [_areaHeights removeAllObjects];
@@ -215,6 +216,7 @@
 }
 // TODO: the axisX should be fixed when dragging the view
 - (void) handlePanGesture:(UIPanGestureRecognizer* )recognizer{
+    [self subViewsHidden:YES];
     CGPoint trans = [recognizer translationInView:_chartView];
     CGFloat newX = _currentX + trans.x;
     if (newX > 0) {
@@ -235,6 +237,8 @@
     }];
 }
 - (void) handlePinchGesture:(UIPinchGestureRecognizer* )recognizer{
+    _currentX = 0;
+    [self subViewsHidden:YES];
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         [self addSubview:_toastView];
         return;
@@ -261,16 +265,22 @@
     }
     _toastLabel.text = [NSString stringWithFormat:@"x %.1f", scale];
 }
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     if (touches.count == 1) {
         NSArray *ts = [touches allObjects];
         UITouch *touch = ts.firstObject;
         CGPoint point = [touch locationInView:self];
         float x = point.x-axisYwidth;
+        if (_currentX < 0) {
+            x -= _currentX;
+        }
         double itemWidth = self.series.pointWidth;
         NSInteger index = (NSInteger)x/itemWidth;
-        x = itemWidth*index + itemWidth/2.0;
+        x = itemWidth*index + _currentX;
+        if (isStock) {
+            x += itemWidth/2.0;
+        }
         CGFloat f = 0;
         if (index>=0 && index < self.data.count) {
             if (isFirstTouch) {
@@ -307,7 +317,7 @@
                 [self updateView:_stockDataView frame:frame];
             }else
             {
-               [self updateView:_lineDataView frame:frame];
+                [self updateView:_lineDataView frame:frame];
             }
             
             _lineY.frame = CGRectMake(axisYwidth + x, 0, 0.5, self.bounds.size.height-axisXheight);
@@ -332,13 +342,13 @@
     if (!_lineY) {
         _lineY = [[UIView alloc] init];
         _lineY.backgroundColor = [UIColor lightGrayColor];
-
+        
     }
     if (!_circle) {
         _circle = [[UIView alloc] init];
         _circle.backgroundColor = LCoreCurrent.selectedLineColor;
         _circle.layer.cornerRadius = 2;
-
+        
     }
     if (!_lineDataView) {
         _lineDataView = [[NSBundle mainBundle] loadNibNamed:@"LineChartDataView" owner:nil options:nil].lastObject;
@@ -360,7 +370,7 @@
             _lineDataView.hidden = YES;
         }else
         {
-           _stockDataView.hidden = YES;
+            _stockDataView.hidden = YES;
         }
     }else
     {

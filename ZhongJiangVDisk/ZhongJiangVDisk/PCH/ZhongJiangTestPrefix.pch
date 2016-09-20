@@ -94,6 +94,7 @@
 
 #import "ChartView.h"//首页分时图
 #import "ChartViewTwo.h"//首页分时图样式2
+#import "ChartViewSuper.h"
 //#import "ProductCollectionView.h"//首页底部collectionView
 //#import "ProductCollectionCell.h"//首页底部collectionCell
 #import "LatestInfos.h"//首页－最新资讯

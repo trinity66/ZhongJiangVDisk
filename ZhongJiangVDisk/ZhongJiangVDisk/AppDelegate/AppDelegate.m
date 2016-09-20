@@ -53,12 +53,12 @@
 //模拟机测试时的通道
 - (void)goRegister
 {
-//    [LCoreCurrent goRegisterVC];
-    qrcodeVC = [LCoreCurrent goScanQRCodeVC];
-    __block AppDelegate *weakSelf = self;
-    qrcodeVC.didReceiveBlock = ^(NSString *rst) {
-        [weakSelf scanQRCodeWithURL:rst];
-    };
+    [LCoreCurrent goRegisterVC];
+//    qrcodeVC = [LCoreCurrent goScanQRCodeVC];
+//    __block AppDelegate *weakSelf = self;
+//    qrcodeVC.didReceiveBlock = ^(NSString *rst) {
+//        [weakSelf scanQRCodeWithURL:rst];
+//    };
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

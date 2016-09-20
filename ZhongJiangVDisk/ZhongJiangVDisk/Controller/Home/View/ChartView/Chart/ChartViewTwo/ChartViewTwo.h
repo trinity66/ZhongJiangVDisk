@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ChartViewSuper.h"
 @interface ChartViewTwo : UIView
-
-
+@property (strong, nonatomic) ChartViewSuper *cS;
+- (void)setSelFrame:(CGRect)frame;
 @end

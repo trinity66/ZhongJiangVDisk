@@ -12,42 +12,58 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) ChartView *chartSuperView;
 @property (nonatomic, strong) ChartViewTwo *chartSuperViewTwo;
-//@property (nonatomic, strong) ProductCollectionView *collectionSuperView;
 @property (nonatomic, strong) ProductTableView *productTableSuperView;
 @property (nonatomic, strong) InputDealPswdView *put;
 @property (nonatomic, strong) LatestInfos *latestInfos;
 
-@property (nonatomic, strong) LineSeries *line;
-@property (nonatomic, strong) StockSeries *stock;
 @end
-__weak HomeController *_self;
+__weak HomeController *_homeSelf;
 @implementation HomeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _self = self;
-    if (LCoreCurrent.isLogin) {
-        _put = [[NSBundle mainBundle] loadNibNamed:@"InputDealPswdView" owner:nil options:nil].lastObject;
-        _put.btnsActionBlock = ^(NSInteger index) {
-            if (index == 0) {
-                [_self goForgetDealPswd];
-            }else
-            {
-                [_self putBtnAction];
-            }
-        };
-    }
+    _homeSelf = self;
+    [self addSegmentWithUserEnabled:YES];
+    self.segment.btnsActionBlock = ^(NSInteger index) {
+        [_homeSelf candleTopButtonWithIndex:index];
+    };
+    [self set_scrollView];
+    [self showInput];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     if (LCoreCurrent.isLogin && !self.segment) {
-        [self addSegmentWithUserEnabled:YES];
-        self.segment.btnsActionBlock = ^(NSInteger index) {
-//            [_self.collectionSuperView setCollectionViewContentOffsetWithIndex:index];
-        };
-        [self set_scrollView];
+        
     }
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (_put) {
+        [_put showInputDealPswdViewAnimated:NO];
+    }
+}
+/*
+ 每次重新启动APP之后，如果当前是登录状态，则验证登录密码
+ */
+- (void)showInput
+{
+    if (LCoreCurrent.isLogin) {
+        _put = [[NSBundle mainBundle] loadNibNamed:@"InputDealPswdView" owner:nil options:nil].lastObject;
+        _put.btnsActionBlock = ^(NSInteger index) {
+            if (index == 0) {
+                [_homeSelf goForgetDealPswd];
+            }else
+            {
+                [_homeSelf putBtnAction];
+            }
+        };
+    }
+}
+- (void)candleTopButtonWithIndex:(NSInteger)index
+{
+    
 }
 - (void)goForgetDealPswd
 {
@@ -73,13 +89,6 @@ __weak HomeController *_self;
     }
     _put = nil;
 }
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    if (_put) {
-        [_put showInputDealPswdViewAnimated:NO];
-    }
-}
 #pragma mark 设置scrollView
 - (void)set_scrollView
 {
@@ -104,8 +113,9 @@ __weak HomeController *_self;
             double height = 0;
             if (!_chartSuperView) {
                 _chartSuperView = [[NSBundle mainBundle] loadNibNamed:@"ChartView" owner:nil options:nil].lastObject;
-                _chartSuperView.frame = CGRectMake(0, 0, width, 330);
+                [_chartSuperView setSelFrame:CGRectMake(0, 0, width, 330)];
                 [_scrollView addSubview:_chartSuperView];
+                
             }
             height += _chartSuperView.frame.size.height;
             double tableHeight = 20;
@@ -138,14 +148,14 @@ __weak HomeController *_self;
             }
             if (!_chartSuperViewTwo) {
                 _chartSuperViewTwo = [[NSBundle mainBundle] loadNibNamed:@"ChartViewTwo" owner:nil options:nil].lastObject;
-                _chartSuperViewTwo.frame = CGRectMake(0, space + height, width, 340);
+                [_chartSuperViewTwo setSelFrame:CGRectMake(0, space + height, width, 340)];
                 [_scrollView addSubview:_chartSuperViewTwo];
                 height += (space + 340);
             }
             if (!_latestInfos) {
                 _latestInfos = [[NSBundle mainBundle] loadNibNamed:@"LatestInfos" owner:nil options:nil].lastObject;
                 _latestInfos.btnsActionBlock = ^(NSInteger index) {
-                    [_self goWebWithIndex:index];
+                    [_homeSelf goWebWithIndex:index];
                 };
                 _latestInfos.frame = CGRectMake(0, space + height, width, 25+kTableViewCellHegiht*3);
                 [_scrollView addSubview:_latestInfos];

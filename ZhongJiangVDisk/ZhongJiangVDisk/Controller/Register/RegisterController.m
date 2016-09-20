@@ -10,7 +10,7 @@
 
 @interface RegisterController ()<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) NSArray *titles, *details;
 @property (nonatomic, strong) RegisterButtonView *foot;
 @property (nonatomic, strong) LTextField *dealPswdTF, *nameTF, *numberTF, *phoneTF, *codeTF;
 @end
@@ -21,6 +21,7 @@ __weak RegisterController *registerSelf;
     [super viewDidLoad];
     registerSelf = self;
     _titles = @[@"交易密码：", @"真实姓名：", @"身份证号码：", @"手机号码："];
+    _details = @[@"w", @"刘晓敏", @"41232619930616754X", @"13732249640"];
     _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     // Do any additional setup after loading the view.
@@ -81,6 +82,7 @@ __weak RegisterController *registerSelf;
             break;
     }
     cell.title.text = _titles[indexPath.row];
+    cell.textField.text = _details[indexPath.row];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

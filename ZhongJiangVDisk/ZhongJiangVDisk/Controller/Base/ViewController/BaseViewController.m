@@ -53,6 +53,9 @@
         [self.view addSubview:view];
     }
 }
+/*
+ 添加顶部的交易类型
+ */
 - (void)addSegmentWithUserEnabled:(BOOL)userEnabled
 {
     double space = 0;
@@ -69,6 +72,7 @@
         if (userEnabled) {
             _segment.selectedIndex = 0;
         }
+        /*模拟数据*/
         [_segment setValueWithIndex:0 title:@"中江银" number:4295.00 isRise:YES];
         [_segment setValueWithIndex:1 title:@"中江油" number:279.17 isRise:NO];
         [_segment setValueWithIndex:2 title:@"中江铜" number:32076 isRise:YES];
@@ -77,6 +81,7 @@
     
     
 }
+/*显示提示语*/
 - (void)showAlert:(NSString *)string
 {
     [LCoreCurrent showAlertTitle:string timeCount:2 inView:self.view];

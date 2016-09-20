@@ -47,12 +47,16 @@
 {
     if (!dataY) {
         dataY = [NSMutableArray array];
+    }else
+    {
+        [dataY removeAllObjects];
     }
     for (int i = 0; i < self.data.count; i ++) {
         float y = self.bounds.size.height - [self.axisAttached heighForVal:((NSNumber*)self.data[i]).floatValue];
         float x = i*self.pointWidth;
         [dataY addObject:@[[NSNumber numberWithFloat:x], [NSNumber numberWithFloat:y]]];
     }
+    NSLog(@"%@",dataY);
     CALayer* back = [BaseLayer backWithPoints:dataY height:_height];
     [self addSublayer:back];
 }

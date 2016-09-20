@@ -20,8 +20,6 @@
 		5E17227F1D630082003CA0AE /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721F51D630082003CA0AE /* BaseTabBarController.m */; };
 		5E1722801D630082003CA0AE /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721F81D630082003CA0AE /* BaseViewController.m */; };
 		5E1722811D630082003CA0AE /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1721FC1D630082003CA0AE /* HomeController.m */; };
-		5E1722821D630082003CA0AE /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722011D630082003CA0AE /* ChartView.m */; };
-		5E1722831D630082003CA0AE /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1722021D630082003CA0AE /* ChartView.xib */; };
 		5E1722881D630082003CA0AE /* ApplyForBrokerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E17220F1D630082003CA0AE /* ApplyForBrokerController.m */; };
 		5E1722891D630082003CA0AE /* ChangeDealPswdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722121D630082003CA0AE /* ChangeDealPswdController.m */; };
 		5E17228A1D630082003CA0AE /* DealHistoryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1722151D630082003CA0AE /* DealHistoryListController.m */; };
@@ -91,8 +89,6 @@
 		5E99F2B01D8002D8009863A9 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99F2AF1D8002D8009863A9 /* CoreMotion.framework */; };
 		5E99F2B21D8002E2009863A9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99F2B11D8002E2009863A9 /* AudioToolbox.framework */; };
 		5E99F2B41D8002EF009863A9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99F2B31D8002EF009863A9 /* SystemConfiguration.framework */; };
-		5E99F45A1D813964009863A9 /* ChartViewTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E99F4581D813964009863A9 /* ChartViewTwo.m */; };
-		5E99F45B1D813964009863A9 /* ChartViewTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E99F4591D813964009863A9 /* ChartViewTwo.xib */; };
 		5E99F46D1D81408D009863A9 /* Segment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E99F4681D81408D009863A9 /* Segment.m */; };
 		5E99F46E1D81408D009863A9 /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E99F46A1D81408D009863A9 /* SegmentView.m */; };
 		5E99F46F1D81408D009863A9 /* SegmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E99F46B1D81408D009863A9 /* SegmentView.xib */; };
@@ -126,6 +122,11 @@
 		5EAF83DC1D6E95DE00239CB5 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF83DB1D6E95DE00239CB5 /* JavaScriptCore.framework */; };
 		5EAF83E01D6EC23600239CB5 /* Core+CheckData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF83DF1D6EC23600239CB5 /* Core+CheckData.m */; };
 		5EAF83E21D6FD3D000239CB5 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF83E11D6FD3D000239CB5 /* Products.json */; };
+		5EBA9CB81D911BFB008FB992 /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA9CAF1D911BFB008FB992 /* ChartView.m */; };
+		5EBA9CB91D911BFB008FB992 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBA9CB01D911BFB008FB992 /* ChartView.xib */; };
+		5EBA9CBA1D911BFB008FB992 /* ChartViewSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA9CB31D911BFB008FB992 /* ChartViewSuper.m */; };
+		5EBA9CBB1D911BFB008FB992 /* ChartViewTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA9CB61D911BFB008FB992 /* ChartViewTwo.m */; };
+		5EBA9CBC1D911BFB008FB992 /* ChartViewTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBA9CB71D911BFB008FB992 /* ChartViewTwo.xib */; };
 		5EEB44D01D81478900A40AA6 /* PersonalTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB44CE1D81478900A40AA6 /* PersonalTopView.m */; };
 		5EEB44D11D81478900A40AA6 /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EEB44CF1D81478900A40AA6 /* PersonalTopView.xib */; };
 		5EEB44D91D8158C200A40AA6 /* LatestInfos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB44D81D8158C200A40AA6 /* LatestInfos.m */; };
@@ -175,9 +176,6 @@
 		5E1721F81D630082003CA0AE /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		5E1721FB1D630082003CA0AE /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		5E1721FC1D630082003CA0AE /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
-		5E1722001D630082003CA0AE /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
-		5E1722011D630082003CA0AE /* ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartView.m; sourceTree = "<group>"; };
-		5E1722021D630082003CA0AE /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
 		5E17220E1D630082003CA0AE /* ApplyForBrokerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyForBrokerController.h; sourceTree = "<group>"; };
 		5E17220F1D630082003CA0AE /* ApplyForBrokerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyForBrokerController.m; sourceTree = "<group>"; };
 		5E1722111D630082003CA0AE /* ChangeDealPswdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeDealPswdController.h; sourceTree = "<group>"; };
@@ -292,9 +290,6 @@
 		5E99F2AF1D8002D8009863A9 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		5E99F2B11D8002E2009863A9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5E99F2B31D8002EF009863A9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		5E99F4571D813964009863A9 /* ChartViewTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewTwo.h; sourceTree = "<group>"; };
-		5E99F4581D813964009863A9 /* ChartViewTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewTwo.m; sourceTree = "<group>"; };
-		5E99F4591D813964009863A9 /* ChartViewTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartViewTwo.xib; sourceTree = "<group>"; };
 		5E99F4671D81408D009863A9 /* Segment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Segment.h; sourceTree = "<group>"; };
 		5E99F4681D81408D009863A9 /* Segment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Segment.m; sourceTree = "<group>"; };
 		5E99F4691D81408D009863A9 /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
@@ -352,6 +347,14 @@
 		5EAF83DE1D6EC23600239CB5 /* Core+CheckData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core+CheckData.h"; sourceTree = "<group>"; };
 		5EAF83DF1D6EC23600239CB5 /* Core+CheckData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Core+CheckData.m"; sourceTree = "<group>"; };
 		5EAF83E11D6FD3D000239CB5 /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		5EBA9CAE1D911BFB008FB992 /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
+		5EBA9CAF1D911BFB008FB992 /* ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartView.m; sourceTree = "<group>"; };
+		5EBA9CB01D911BFB008FB992 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
+		5EBA9CB21D911BFB008FB992 /* ChartViewSuper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewSuper.h; sourceTree = "<group>"; };
+		5EBA9CB31D911BFB008FB992 /* ChartViewSuper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewSuper.m; sourceTree = "<group>"; };
+		5EBA9CB51D911BFB008FB992 /* ChartViewTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewTwo.h; sourceTree = "<group>"; };
+		5EBA9CB61D911BFB008FB992 /* ChartViewTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewTwo.m; sourceTree = "<group>"; };
+		5EBA9CB71D911BFB008FB992 /* ChartViewTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartViewTwo.xib; sourceTree = "<group>"; };
 		5EEB44CD1D81478900A40AA6 /* PersonalTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTopView.h; sourceTree = "<group>"; };
 		5EEB44CE1D81478900A40AA6 /* PersonalTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTopView.m; sourceTree = "<group>"; };
 		5EEB44CF1D81478900A40AA6 /* PersonalTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTopView.xib; sourceTree = "<group>"; };
@@ -595,12 +598,7 @@
 		5E1721FF1D630082003CA0AE /* ChartView */ = {
 			isa = PBXGroup;
 			children = (
-				5E1722001D630082003CA0AE /* ChartView.h */,
-				5E1722011D630082003CA0AE /* ChartView.m */,
-				5E1722021D630082003CA0AE /* ChartView.xib */,
-				5E99F4571D813964009863A9 /* ChartViewTwo.h */,
-				5E99F4581D813964009863A9 /* ChartViewTwo.m */,
-				5E99F4591D813964009863A9 /* ChartViewTwo.xib */,
+				5EBA9CAC1D911BFB008FB992 /* Chart */,
 				5E1723151D66E0B1003CA0AE /* LineChartDataView */,
 				5E17230F1D66E090003CA0AE /* StockChartDataView */,
 			);
@@ -1361,6 +1359,45 @@
 			path = "Core+CheckData";
 			sourceTree = "<group>";
 		};
+		5EBA9CAC1D911BFB008FB992 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				5EBA9CAD1D911BFB008FB992 /* ChartView */,
+				5EBA9CB11D911BFB008FB992 /* ChartViewSuper */,
+				5EBA9CB41D911BFB008FB992 /* ChartViewTwo */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		5EBA9CAD1D911BFB008FB992 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				5EBA9CAE1D911BFB008FB992 /* ChartView.h */,
+				5EBA9CAF1D911BFB008FB992 /* ChartView.m */,
+				5EBA9CB01D911BFB008FB992 /* ChartView.xib */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
+		5EBA9CB11D911BFB008FB992 /* ChartViewSuper */ = {
+			isa = PBXGroup;
+			children = (
+				5EBA9CB21D911BFB008FB992 /* ChartViewSuper.h */,
+				5EBA9CB31D911BFB008FB992 /* ChartViewSuper.m */,
+			);
+			path = ChartViewSuper;
+			sourceTree = "<group>";
+		};
+		5EBA9CB41D911BFB008FB992 /* ChartViewTwo */ = {
+			isa = PBXGroup;
+			children = (
+				5EBA9CB51D911BFB008FB992 /* ChartViewTwo.h */,
+				5EBA9CB61D911BFB008FB992 /* ChartViewTwo.m */,
+				5EBA9CB71D911BFB008FB992 /* ChartViewTwo.xib */,
+			);
+			path = ChartViewTwo;
+			sourceTree = "<group>";
+		};
 		5EEB44CC1D81478900A40AA6 /* PersonalTopView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1526,6 +1563,7 @@
 				5E4BEA8E1D8B7C6200A4E71D /* Main.storyboard in Resources */,
 				5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */,
 				5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */,
+				5EBA9CB91D911BFB008FB992 /* ChartView.xib in Resources */,
 				5E4BEA8D1D8B7C6200A4E71D /* LaunchScreen.storyboard in Resources */,
 				5E99F46F1D81408D009863A9 /* SegmentView.xib in Resources */,
 				5E1722911D630082003CA0AE /* DealCell.xib in Resources */,
@@ -1535,14 +1573,13 @@
 				5EAF82931D6BDEC700239CB5 /* DisabledView.xib in Resources */,
 				5E17227B1D630082003CA0AE /* Assets.xcassets in Resources */,
 				5E23878A1D87A05D008AF872 /* PositionCell.xib in Resources */,
+				5EBA9CBC1D911BFB008FB992 /* ChartViewTwo.xib in Resources */,
 				5E1722DC1D63008A003CA0AE /* InputDealPswdView.xib in Resources */,
 				5E17228E1D630082003CA0AE /* DealHistoryHeadView.xib in Resources */,
-				5E99F45B1D813964009863A9 /* ChartViewTwo.xib in Resources */,
 				5EAF82861D6AF51200239CB5 /* 扫描框@2x.png in Resources */,
 				5E1350DC1D6FF3F400D673E1 /* SelectDataCell.xib in Resources */,
 				5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */,
 				5E2387AC1D87EF25008AF872 /* DetailPositionCell2.xib in Resources */,
-				5E1722831D630082003CA0AE /* ChartView.xib in Resources */,
 				5E2FD4481D8F904400C9D59B /* RegisterButtonView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1642,6 +1679,7 @@
 				5E17229C1D630082003CA0AE /* WithdrawController.m in Sources */,
 				5E1722801D630082003CA0AE /* BaseViewController.m in Sources */,
 				5E17229A1D630082003CA0AE /* RechargeHeadView.m in Sources */,
+				5EBA9CBB1D911BFB008FB992 /* ChartViewTwo.m in Sources */,
 				5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */,
 				5EAF827D1D6AF51200239CB5 /* BaseLayer.m in Sources */,
 				5EEB44D91D8158C200A40AA6 /* LatestInfos.m in Sources */,
@@ -1650,7 +1688,6 @@
 				5EAF83D41D6E896400239CB5 /* Core+Controller.m in Sources */,
 				5E2FD4471D8F904400C9D59B /* RegisterButtonView.m in Sources */,
 				5E17228D1D630082003CA0AE /* DealHistoryHeadView.m in Sources */,
-				5E99F45A1D813964009863A9 /* ChartViewTwo.m in Sources */,
 				5EAF83CF1D6E864400239CB5 /* WebController.m in Sources */,
 				5E17227A1D630082003CA0AE /* AppDelegate.m in Sources */,
 				5E1722DB1D63008A003CA0AE /* InputDealPswdView.m in Sources */,
@@ -1662,9 +1699,9 @@
 				5E1722DF1D63008A003CA0AE /* SecurityCodeView.m in Sources */,
 				5EAF83D71D6E896C00239CB5 /* Core+Data.m in Sources */,
 				5EAF82841D6AF51200239CB5 /* StockSeries.m in Sources */,
-				5E1722821D630082003CA0AE /* ChartView.m in Sources */,
 				5E1722891D630082003CA0AE /* ChangeDealPswdController.m in Sources */,
 				5E17228A1D630082003CA0AE /* DealHistoryListController.m in Sources */,
+				5EBA9CB81D911BFB008FB992 /* ChartView.m in Sources */,
 				5E17228F1D630082003CA0AE /* DealListController.m in Sources */,
 				5E1722A01D630082003CA0AE /* Core.m in Sources */,
 				5E2387B01D87F0F9008AF872 /* DetailPositionCell3.m in Sources */,
@@ -1672,6 +1709,7 @@
 				5E1723181D66E0BA003CA0AE /* LineChartDataView.m in Sources */,
 				5E1722921D630082003CA0AE /* InfosController.m in Sources */,
 				5E1350D81D6FF3F400D673E1 /* BuyView.m in Sources */,
+				5EBA9CBA1D911BFB008FB992 /* ChartViewSuper.m in Sources */,
 				5EAF82821D6AF51200239CB5 /* LineSeries.m in Sources */,
 				5E75AF6F1D73C5190051FB1D /* ProductModel.m in Sources */,
 				5E1722811D630082003CA0AE /* HomeController.m in Sources */,
