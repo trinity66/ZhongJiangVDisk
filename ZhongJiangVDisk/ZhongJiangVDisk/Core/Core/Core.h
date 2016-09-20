@@ -6,10 +6,6 @@
 //  Copyright © 2016年 liuxiaomin. All rights reserved.
 //
 
-
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
 typedef NS_ENUM(NSUInteger, VDiskType) {
     VDiskTypeZhongJiang = 0,
     VDiskTypeZhongHui,
@@ -17,10 +13,17 @@ typedef NS_ENUM(NSUInteger, VDiskType) {
 };
 typedef void(^btnActionBlock)();
 typedef void(^btnsActionBlock)(NSInteger index);
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "Segment.h"
 @interface Core : NSObject
 +(Core *)current;
-@property (nonatomic, strong) NSArray *productsList;
+
+@property (nonatomic, strong) NSArray *productsList, *homeTopTitles;
+@property (nonatomic, strong) NSDictionary *userInfo;
 @property (nonatomic, assign)BOOL isLogin;
+@property (nonatomic, strong) Segment *segment;
 @property (nonatomic, copy) btnsActionBlock alertBtnsBlock;
 //基准色
 @property (nonatomic, strong)UIColor *riseColor, *fallColor, *backgroundColor, *riseTextColor, *fallTextColor;
@@ -33,5 +36,4 @@ typedef void(^btnsActionBlock)(NSInteger index);
 //初始化视图类型
 @property (nonatomic, assign)VDiskType VDiskType;
 @property (nonatomic, copy)NSString *VDiskTypeString;
-@property (nonatomic, strong) NSDictionary *userInfo;
 @end

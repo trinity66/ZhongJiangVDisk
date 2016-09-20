@@ -46,7 +46,7 @@
 - (void)setValueWithIndex:(NSInteger)index title:(NSString *)title number:(double)number isRise:(BOOL)isRise {
     if (index < views.count) {
         SegmentView *view = views[index];
-        [view setDataWithTitle:title Number:number isRise:isRise];
+        [view setDataWithTitle:LCoreCurrent.homeTopTitles[index] Number:number isRise:isRise];
     }
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

@@ -11,7 +11,6 @@
 @interface SegmentView ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLabelHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLineHeight;
-
 @end
 @implementation SegmentView
 

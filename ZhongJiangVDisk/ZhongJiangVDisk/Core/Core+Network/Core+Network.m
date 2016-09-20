@@ -38,7 +38,22 @@
     [common_params setObject:[[[UIDevice currentDevice]identifierForVendor] UUIDString] forKey:@"device_udid"];
     return common_params;
 }
-
+- (NSURLSessionDataTask *)requestWithURL:(NSString *)url resultBlock:(networkResultBlock)resultBlock
+{
+    if ([self networkEnabled]) {
+        NSError* err = nil;
+        NSMutableURLRequest* request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:nil error:&err];
+        request.timeoutInterval = kTimeOutCount;
+        AFURLSessionManager* manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        
+        NSURLSessionDataTask* task = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id response_object, NSError *error) {
+            [self candleHandlerWithReaponse:response response_object:response_object error:error resultBlock:resultBlock];
+        }];
+        [task resume];
+        return task;
+    }
+    return nil;
+}
 - (NSURLSessionDataTask *)requestWithMethod:(NSString *)method module:(NSString *)module params:(NSDictionary *)params resultBlock:(networkResultBlock)resultBlock {
     if ([self networkEnabled]) {
         NSString *url = [kBaseURL stringByAppendingPathComponent:module];
@@ -49,7 +64,7 @@
         AFURLSessionManager* manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         
         NSURLSessionDataTask* task = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id response_object, NSError *error) {
-            
+            [self candleHandlerWithReaponse:response response_object:response_object error:error resultBlock:resultBlock];
         }];
         [task resume];
         return task;
@@ -83,20 +98,21 @@
 }
 - (void)candleHandlerWithReaponse:(NSURLResponse *)response response_object:(id)response_object error:(NSError*)error resultBlock:(networkResultBlock)resultBlock
 {
-    resultBlock((error ? NO : YES), nil, error, response);
+    resultBlock((error ? NO : YES), response_object, error, response);
 }
 - (BOOL)networkEnabled
 {
-    if ([AFNetworkReachabilityManager sharedManager].reachable) {
-        return YES;
-    }else
-    {
-        [LCoreCurrent showAlertTitle:@"温馨提示" message:@"无法连接到服务器，请检查网络设置" buttons:@[@"好的"] inVC:[LCoreCurrent currentTopViewController] btnsActionBlock:^(NSInteger index) {
-            
-        }];
-        return NO;
-    }
+//    if ([AFNetworkReachabilityManager sharedManager].reachable) {
+//        return YES;
+//    }else
+//    {
+//        
+//        [self showAlertTitle:@"无法连接服务器，请检查网络设置" timeCount:2 inView:[self currentTopViewController].view];
+//        return NO;
+//    }
+    return YES;
 }
+
 
 
 @end

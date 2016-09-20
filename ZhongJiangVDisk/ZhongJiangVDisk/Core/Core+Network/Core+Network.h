@@ -11,5 +11,5 @@
 typedef void(^networkResultBlock)(BOOL success, id result, NSError* error, NSURLResponse* response);
 typedef void(^networkProgressBlock)(NSProgress *uploadProgress);
 @interface Core (Network)
-
+- (NSURLSessionDataTask *)requestWithURL:(NSString *)url resultBlock:(networkResultBlock)resultBlock;
 @end

@@ -26,4 +26,7 @@
 
 - (void)saveDealHistory:(NSDictionary *)dictionary;
 - (NSArray *)getDealHistoryList;
+
+- (void)saveHomeTopData:(NSDictionary *)homeTopData;
+- (NSMutableArray *)getHomeTopDatas;
 @end

@@ -49,16 +49,19 @@
         case VDiskTypeZhongJiang:
         {
             self.VDiskTypeString = @"VDiskTypeZhongJiang";
+            self.homeTopTitles = @[@"中江银", @"中江油", @"中江铜"];
         }
             break;
         case VDiskTypeZhongHui:
         {
             self.VDiskTypeString = @"VDiskTypeZhongHui";
+            self.homeTopTitles = @[@"中汇银", @"中汇油", @"中汇铜"];
         }
             break;
         case VDiskTypeYinHe:
         {
             self.VDiskTypeString = @"VDiskTypeYinHe";
+            self.homeTopTitles = @[@"银河银", @"银河油", @"银河铜"];
         }
             break;
         default:

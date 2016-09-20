@@ -35,6 +35,11 @@ __weak PositionController *_positionSelf;
     }
     // Do any additional setup after loading the view.
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    LCoreCurrent.segment = self.segment;
+}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

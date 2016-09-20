@@ -11,6 +11,7 @@
 @interface AppDelegate ()
 {
     ScanQRCodeController *qrcodeVC;
+    NSTimer *timer;
 }
 @end
 
@@ -20,6 +21,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     LCoreCurrent.VDiskType = VDiskTypeYinHe;//VDiskTypeZhongJiang////VDiskTypeZhongHui
+    if (!timer) {
+      timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loadHomeTopDatas) userInfo:nil repeats:YES];
+    }
+    
     if (!LCoreCurrent.isLogin) {
     [self performSelector:@selector(goRegister) withObject:nil afterDelay:0.01];
     }else
@@ -30,6 +35,7 @@
     //    [self registerPgy];//bee4d9bffbc6cd5e5aa43e468fadc972
     return YES;
 }
+
 //- (void)registerPgy
 //{
 //    [[PgyManager sharedPgyManager] setEnableFeedback:NO];
@@ -42,7 +48,17 @@
 //}
 
 
-
+/*
+ 加载数据
+ */
+- (void)loadHomeTopDatas
+{
+    [LCoreCurrent requestWithURL:@"http://123.206.194.14:18081/HQ/AllGoods" resultBlock:^(BOOL success, id result, NSError *error, NSURLResponse *response) {
+        if (result && [result isKindOfClass:[NSDictionary class]]) {
+            [LCoreCurrent saveHomeTopData:result];
+        }
+    }];
+}
 - (void)scanQRCodeWithURL:(NSString *)url
 {
 #warning 扫描二维码之后的处理
@@ -64,6 +80,8 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    [timer invalidate];
+    timer = nil;
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

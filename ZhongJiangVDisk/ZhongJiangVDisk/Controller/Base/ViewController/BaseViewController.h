@@ -8,12 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PersonalTopView.h"
-#import "Segment.h"
-
 @interface BaseViewController : UIViewController
-
-@property (nonatomic, strong) PersonalTopView *personalTopView;
 @property (nonatomic, strong) Segment *segment;
+@property (nonatomic, strong) PersonalTopView *personalTopView;
 - (void)addSegmentWithUserEnabled:(BOOL)userEnabled;
 - (CGFloat)getTableViewY;
 - (void)addPersonalTopView;

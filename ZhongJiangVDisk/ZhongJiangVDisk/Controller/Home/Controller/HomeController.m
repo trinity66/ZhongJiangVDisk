@@ -24,7 +24,7 @@ __weak HomeController *_homeSelf;
     [super viewDidLoad];
     _homeSelf = self;
     [self addSegmentWithUserEnabled:YES];
-    self.segment.btnsActionBlock = ^(NSInteger index) {
+    LCoreCurrent.segment.btnsActionBlock = ^(NSInteger index) {
         [_homeSelf candleTopButtonWithIndex:index];
     };
     [self set_scrollView];
@@ -33,13 +33,14 @@ __weak HomeController *_homeSelf;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (LCoreCurrent.isLogin && !self.segment) {
+    if (LCoreCurrent.isLogin && !LCoreCurrent.segment) {
         
     }
 }
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    LCoreCurrent.segment = self.segment;
     if (_put) {
         [_put showInputDealPswdViewAnimated:NO];
     }
@@ -63,7 +64,6 @@ __weak HomeController *_homeSelf;
 }
 - (void)candleTopButtonWithIndex:(NSInteger)index
 {
-    
 }
 - (void)goForgetDealPswd
 {

@@ -93,6 +93,56 @@
     NSError* err = nil;
     self.productsList = (NSArray*)[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&err];
 }
+/*
+ 保存home顶端的数据
+ 
+ [LCoreCurrent requestWithURL:@"http://123.206.194.14:18081/HQ/AllGoods" resultBlock:^(BOOL success, id result, NSError *error, NSURLResponse *response) {
+ 
+ }];
+ */
+- (void)saveHomeTopData:(NSDictionary *)homeTopData
+{
+    NSMutableArray *homeTopDatas = [self getHomeTopDatas];
+    BOOL isHavePreData = YES;
+    if (!homeTopDatas) {
+        homeTopDatas = [NSMutableArray array];
+        isHavePreData = NO;
+    }
+    for (int i = 0; i < LCoreCurrent.homeTopTitles.count; i ++) {
+        NSString *key = @"";
+        switch (i) {
+                case 0:
+                key = @"AG";
+                break;
+                case 1:
+                key = @"CO";
+                break;
+                case 2:
+                key = @"CU";
+                break;
+            default:
+                break;
+        }
+        double number = [homeTopData[key] doubleValue], preNumber = 0;
+        BOOL isRise = YES;
+        if (isHavePreData) {
+            preNumber = [homeTopDatas.lastObject[key] doubleValue];
+            if (preNumber>number) {
+                isRise = NO;
+            }
+        }
+      [self.segment setValueWithIndex:i title:nil number:number isRise:isRise];
+    }
+    [homeTopDatas addObject:homeTopData];
+     [LConfigCurrent set_object_for_key:@"homeTopDatas" value:homeTopDatas];
+}
+/*
+ 获取home顶端的数据
+ */
+- (NSMutableArray *)getHomeTopDatas
+{
+    return [LConfigCurrent object_value_with_key:@"homeTopDatas"];
+}
 
 
 
