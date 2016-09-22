@@ -23,7 +23,7 @@ typedef void(^btnsActionBlock)(NSInteger index);
 @property (nonatomic, strong) NSArray *productsList, *homeTopTitles;
 @property (nonatomic, strong) NSDictionary *userInfo;
 @property (nonatomic, assign)BOOL isLogin;
-@property (nonatomic, strong) Segment *segment;
+@property (nonatomic, strong) Segment *segmentHome, *segmentPosition;
 @property (nonatomic, copy) btnsActionBlock alertBtnsBlock;
 //基准色
 @property (nonatomic, strong)UIColor *riseColor, *fallColor, *backgroundColor, *riseTextColor, *fallTextColor;

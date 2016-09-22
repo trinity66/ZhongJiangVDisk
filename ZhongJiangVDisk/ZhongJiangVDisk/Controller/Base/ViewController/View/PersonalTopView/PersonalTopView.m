@@ -21,7 +21,9 @@
 - (void)setSomeControl
 {
     self.backgroundColor = LCoreCurrent.personalTopColor;
-    _imageView.layer.borderColor = LCoreCurrent.detailBackColor.CGColor;
+    UIColor *imageColor = LCoreCurrent.detailBackColor;
+    _imageView.layer.borderColor = imageColor.CGColor;
+    _imageView.image = [[UIImage imageNamed:@"user_head_image"] imageWithTintColor:imageColor];
     _recharge.backgroundColor = LCoreCurrent.riseTextColor;
     _balance.font = [UIFont systemFontOfSize:kCellLabelFont-4];
     if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {

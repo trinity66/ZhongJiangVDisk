@@ -59,19 +59,22 @@
 - (void)_init{
     _areas = [[NSMutableArray alloc] init];
     _areaHeights = [[NSMutableArray alloc] init];
-    _chartView = [[UIView alloc] initWithFrame:self.frame];
+    _chartView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, _chartWidth, self.frame.size.height)];
     self.userInteractionEnabled = YES;
     self.multipleTouchEnabled = YES;
     self.clipsToBounds = YES;
     [self addSubview:_chartView];
-    [self _initToastView];
+    /*
+     当缩放时，显示缩放比例
+     */
+//    [self _initToastView];
     
     UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     [self addGestureRecognizer:panGesture];
     UIPinchGestureRecognizer* pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinchGesture:)];
     [self addGestureRecognizer:pinchGesture];
     
-    _scaleFloor = 1.5;
+    _scaleFloor = 2;
     _currentScale = 1;
     _currentX = 0;
     [self setSomeSubViews];
@@ -87,16 +90,13 @@
 
 - (void)_initToastView{
     _toastView = [[UIView alloc] init];
-    _toastLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 61.8)];
+    _toastLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 20)];
     UILabel* label = _toastLabel;
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"x1.3";
-    label.font = [UIFont systemFontOfSize:24];
-    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont systemFontOfSize:kCellLabelFont-2];
+    label.textColor = LCoreCurrent.riseTextColor;
     [_toastView addSubview:label];
-    _toastView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.4];
-    _toastView.layer.cornerRadius = 6;
-    _toastView.layer.masksToBounds = YES;
     
 }
 
@@ -127,28 +127,25 @@
         //        if (!_data) {
         _data = [NSMutableArray arrayWithArray:_series.data];
         //        }
-        if (_data.count > 0 && [_data[0] isKindOfClass:[StockSeriesPoint class]]) {
-            showWidth = 140;
-            showHeight = 60;
-            isStock = YES;
-            [self addSubview:_lineY];
-            [self addSubview:_circle];
-            [self addSubview:_stockDataView];
-        }else
-        {
-            showWidth = 76;
-            showHeight = 40;
-            isStock = NO;
-            [self addSubview:_lineY];
-            [self addSubview:_circle];
-            [self addSubview:_lineDataView];
+        if (_data.count > 0) {
+            if ([_data[0] isKindOfClass:[StockSeriesPoint class]]) {
+                showWidth = 140;
+                showHeight = 60;
+                isStock = YES;
+            }else
+            {
+                showWidth = 76;
+                showHeight = 40;
+                isStock = NO;
+            }
+            [self addSubviews];
         }
     }
 }
 
 - (void)prepareForDraw{
-    _toastView.frame = CGRectMake(self.frame.size.width / 2 - axisYwidth, 0, 100, 61.8);
-    _chartView.frame = CGRectMake(0, 0, self.frame.size.width * _currentScale, self.frame.size.height);
+    _toastView.frame = CGRectMake(self.frame.size.width / 2 - axisYwidth, 0, 60, 20);
+    _chartView.frame = CGRectMake(0, 0, _chartWidth * _currentScale, self.frame.size.height);
     CGFloat width = _chartView.layer.bounds.size.width;
     //    CGFloat height = self.layer.bounds.size.height;
     
@@ -164,19 +161,33 @@
     }
     
 }
-- (void)drawAnimated:(BOOL)animated{
+/*
+ 画图
+ */
+- (void)drawAnimated:(BOOL)animated {
     self.backgroundColor = [UIColor clearColor];
     [self prepareForDraw];
     for (Area* a in _areas) {
+        for (Series *series in a.theSeries) {
+            if ([series isKindOfClass:[LineSeries class]]) {
+                ((LineSeries *)series).superViewWidth = _chartView.frame.size.width;
+            }
+        }
         [a drawAnimated:animated];
     }
-    //    self.layer.borderWidth = 1;
-    //    self.layer.borderColor = [BBTheme defTheme].borderColor.CGColor;
 }
+/*
+ 重新画图
+ */
 - (void)redraw{
     self.backgroundColor = [UIColor clearColor];
     [self prepareForDraw];
     for (Area* a in _areas) {
+        for (Series *series in a.theSeries) {
+            if ([series isKindOfClass:[LineSeries class]]) {
+                ((LineSeries *)series).superViewWidth = _chartView.frame.size.width;
+            }
+        }
         [a redrawAnimated:NO];
     }
 }
@@ -193,7 +204,7 @@
 
 #pragma mark panGesture
 - (void) scaleWith:(float)ratio{
-    CGRect newFrame = CGRectMake(_chartView.frame.origin.x, _chartView.frame.origin.y, self.frame.size.width, self.frame.size.height);
+    CGRect newFrame = CGRectMake(_chartView.frame.origin.x, _chartView.frame.origin.y, _chartWidth, self.frame.size.height);
     newFrame.size.width = newFrame.size.width * ratio;
     _chartView.frame = newFrame;
     [self redraw];
@@ -362,7 +373,6 @@
 {
     _lineY.hidden = isHidden;
     _circle.hidden = isHidden;
-    
     _lineDataView.hidden = isHidden;
     _stockDataView.hidden = isHidden;
     if (!isHidden) {
@@ -377,6 +387,17 @@
         isFirstTouch = isHidden;
     }
     
+}
+- (void)addSubviews
+{
+    [self addSubview:_lineY];
+    [self addSubview:_circle];
+    if (isStock) {
+      [self addSubview:_stockDataView];
+    }else
+    {
+        [self addSubview:_lineDataView];
+    }
 }
 - (void)removeSubViews
 {

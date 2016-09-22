@@ -44,7 +44,8 @@
             [self addSubview:_label2];
         }
         if (!_chartView) {
-            _chartView = [[BBChartView alloc] initWithFrame:CGRectMake(0, 36, kScreenWidth-10, frame.size.height-36)];
+            _chartView = [[BBChartView alloc] initWithFrame:CGRectMake(0, 36, (kScreenWidth-10), frame.size.height-36)];
+            _chartView.chartWidth = (kScreenWidth-10)*2;
             [self addSubview:_chartView];
             [BBTheme theme].barBorderColor = [UIColor clearColor];
             [BBTheme theme].xAxisFontSize = 11;
@@ -66,7 +67,8 @@
     _areaup.bottomAxis.labelProvider = self;
     if (index == 0) {
         _lineSeries = [[LineSeries alloc] init];
-        _lineSeries.height = self.bounds.size.height-64;
+        _lineSeries.superViewheight = self.bounds.size.height-64;
+        _lineSeries.superViewWidth = self.bounds.size.width;
         _lineSeries.color = LCoreCurrent.selectedLineColor;
         [_areaup addSeries:_lineSeries];
         for (NSArray* arr in _chartData) {

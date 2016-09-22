@@ -9,9 +9,6 @@
 #import "Series.h"
 
 @interface BarSeries : Series
-
-
-
 -(void) addPoint:(float)p;
 
 @end

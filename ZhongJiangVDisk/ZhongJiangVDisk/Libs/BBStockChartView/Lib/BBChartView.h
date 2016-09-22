@@ -16,6 +16,7 @@
 @property (nonatomic,strong) NSMutableArray *data;
 //when pinch the view, scale it in-time, not after. Default is NO.
 @property (nonatomic) BOOL realTimeScale;
+@property (nonatomic, assign) double chartWidth;
 
 -(void)setHeighRatio:(CGFloat)heightRatio forArea:(Area*)area;
 -(void)addArea:(Area *)area;

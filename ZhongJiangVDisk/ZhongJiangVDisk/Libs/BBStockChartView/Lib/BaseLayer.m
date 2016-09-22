@@ -19,7 +19,6 @@
 -(void)prepareForDraw{
     
 }
-
 + (CALayer *)layerOfLineFrom:(CGPoint)from to:(CGPoint)to withColor:(UIColor*)color andWidth:(CGFloat)width animated:(BOOL)animated {
     CAShapeLayer *line = [CAShapeLayer layer];
     UIBezierPath *linePath = [UIBezierPath bezierPath];
@@ -41,27 +40,38 @@
         drawAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         [line addAnimation:drawAnimation forKey:@"drawCircleAnimation"];
     }
-    
     return line;
 }
++(CALayer *)lineWithPoints:(NSArray *)points color:(UIColor *)color height:(float)height width:(float)width animated:(BOOL)animated
+{
+    //画线
+    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+    for (int index = 0; index < points.count; index ++) {
+        NSArray *currentP = points[index];
+        CGPoint currentPoint = CGPointMake([currentP[0] doubleValue], [currentP[1] doubleValue]);
+        if (index != 0) {
+           [bezierPath addLineToPoint:currentPoint];
+        }[bezierPath moveToPoint:currentPoint];
+    }
+    [bezierPath closePath];
 
-+(CALayer *)backWithPoints:(NSArray*)points height:(float)height
+    CAShapeLayer *shapelayer = [CAShapeLayer layer];
+    shapelayer.fillColor = [UIColor clearColor].CGColor;
+    shapelayer.lineCap = kCALineCapRound;
+    shapelayer.lineJoin = kCALineCapRound;
+    shapelayer.lineWidth = 1.0f;
+    shapelayer.strokeStart = 0;
+    shapelayer.strokeEnd = 1;
+    shapelayer.strokeColor = color.CGColor;
+    shapelayer.path = bezierPath.CGPath;
+    
+
+    return shapelayer;
+}
++(CALayer *)backWithPoints:(NSArray *)points height:(float)height width:(float)width
 {
     //绘制渐变色层
-    height = height;
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame =CGRectMake(0, 0, 500, 400) ;// self.view.frame;
-    NSDictionary *dict = [LCoreCurrent colorsDictionary][LCoreCurrent.VDiskTypeString];
-    NSArray *rgba = dict[@"selectedLineColor"];
-    CGFloat R = [rgba[0] floatValue];
-    CGFloat G = [rgba[1] floatValue];
-    CGFloat B = [rgba[2] floatValue];
-    gradientLayer.colors = @[(__bridge id)[UIColor colorWithRed:R green:G blue:B alpha:0.8].CGColor,
-                             (__bridge id)[UIColor colorWithRed:R green:G blue:B alpha:0.2].CGColor,
-                             (__bridge id)[UIColor colorWithRed:R green:G blue:B alpha:0.05].CGColor];
-    gradientLayer.locations=@[@0.0,@0.5,@1.0];
     UIBezierPath * path=[[UIBezierPath alloc] init];
-    
     for (int index = 0; index < points.count; index ++) {
         NSArray *currentP = points[index];
         double currentPX = [currentP[0] doubleValue], currentPY = [currentP[1] doubleValue];
@@ -76,14 +86,25 @@
             [path addLineToPoint:CGPointMake(currentPX, height)];
             [path addLineToPoint:CGPointMake(prePX, height)];
         }
-        
-        
     }
-
     [path closePath];
+    
     CAShapeLayer *arc = [CAShapeLayer layer];
     arc.path =path.CGPath;
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = CGRectMake(0, 0, width, height);// self.view.frame;
     gradientLayer.mask=arc;
+    NSDictionary *dict = [LCoreCurrent colorsDictionary][LCoreCurrent.VDiskTypeString];
+    NSArray *rgba = dict[@"selectedLineColor"];
+    CGFloat R = [rgba[0] floatValue];
+    CGFloat G = [rgba[1] floatValue];
+    CGFloat B = [rgba[2] floatValue];
+    gradientLayer.colors = @[(__bridge id)[UIColor colorWithRed:R green:G blue:B alpha:0.8].CGColor,
+                             (__bridge id)[UIColor colorWithRed:R green:G blue:B alpha:0.2].CGColor,
+                             (__bridge id)[UIColor colorWithRed:R green:G blue:B alpha:0.05].CGColor];
+    gradientLayer.locations=@[@0.0,@0.5,@1.0];
+    
     return gradientLayer;
 }
 + (CATextLayer *)layerOfText:(NSString *)text withFont:(NSString*)font fontSize:(CGFloat)fontSize andColor:(UIColor *)color{

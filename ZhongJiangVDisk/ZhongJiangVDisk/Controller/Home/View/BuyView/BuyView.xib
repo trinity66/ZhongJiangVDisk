@@ -53,7 +53,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="SGu-JJ-ccp" secondAttribute="height" multiplier="1:1" id="kK0-H8-ark"/>
                             </constraints>
-                            <state key="normal" image="buyCancel"/>
+                            <state key="normal" image="buy_cancel"/>
                             <connections>
                                 <action selector="cancelAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="gwM-YX-V6X"/>
                             </connections>
@@ -129,6 +129,6 @@
         </view>
     </objects>
     <resources>
-        <image name="buyCancel" width="13" height="13"/>
+        <image name="buy_cancel" width="13" height="13"/>
     </resources>
 </document>

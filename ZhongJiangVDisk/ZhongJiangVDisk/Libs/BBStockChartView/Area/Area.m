@@ -65,7 +65,6 @@
 
 
 - (void)drawAnimated:(BOOL)animated{
-    
     for (Series* s in _theSeries) {
         [s drawAnimated:animated];
     }

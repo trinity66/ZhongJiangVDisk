@@ -28,7 +28,7 @@
     self.backgroundColor = LCoreCurrent.detailBackColor;
     [self setSomeControl];
 }
-- (void)setSelFrame:(CGRect)frame
+- (void)setSelfFrame:(CGRect)frame
 {
     self.frame = frame;
     double y = _topSegHeight.constant + _topSegSpace.constant;

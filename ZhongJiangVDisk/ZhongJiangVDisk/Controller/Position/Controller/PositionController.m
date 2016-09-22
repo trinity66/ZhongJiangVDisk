@@ -38,7 +38,6 @@ __weak PositionController *_positionSelf;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    LCoreCurrent.segment = self.segment;
 }
 - (void)viewWillAppear:(BOOL)animated
 {

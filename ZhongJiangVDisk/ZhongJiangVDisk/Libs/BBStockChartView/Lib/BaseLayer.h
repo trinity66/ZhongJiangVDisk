@@ -18,5 +18,6 @@
 - (void)redrawAnimated:(BOOL)animated;
 + (CALayer*) layerOfLineFrom:(CGPoint)from to:(CGPoint)to withColor:(UIColor*)color andWidth:(CGFloat)width animated:(BOOL)animated;
 + (CATextLayer *)layerOfText:(NSString *)text withFont:(NSString*)font fontSize:(CGFloat)fontSize andColor:(UIColor *)color;
-+(CALayer *)backWithPoints:(NSArray*)points height:(float)height;
++(CALayer *)backWithPoints:(NSArray *)points height:(float)height width:(float)width;
++(CALayer *)lineWithPoints:(NSArray *)points color:(UIColor *)color height:(float)height width:(float)width animated:(BOOL)animated;
 @end

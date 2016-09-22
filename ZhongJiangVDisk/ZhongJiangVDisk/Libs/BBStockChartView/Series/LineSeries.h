@@ -11,6 +11,11 @@
 @interface LineSeries : Series
 
 @property (nonatomic, strong) UIColor* color;
-@property (nonatomic) float width, height;
+/*
+ 因项目需求，用自己写的方法实现折线图及折线背景色的方法
+ superViewheight 折线图的高度
+ superViewWidth 折线图的总宽度
+ */
+@property (nonatomic) float width, superViewheight, superViewWidth;
 - (void)addBackLayer;
 @end

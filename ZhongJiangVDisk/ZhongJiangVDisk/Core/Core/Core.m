@@ -49,19 +49,25 @@
         case VDiskTypeZhongJiang:
         {
             self.VDiskTypeString = @"VDiskTypeZhongJiang";
-            self.homeTopTitles = @[@"中江银", @"中江油", @"中江铜"];
+            self.homeTopTitles = @[@{@"title":@"中江银", @"key":@"AG"},
+                                   @{@"title":@"中江油", @"key":@"CO"},
+                                   @{@"title":@"中江铜", @"key":@"CU"}];
         }
             break;
         case VDiskTypeZhongHui:
         {
             self.VDiskTypeString = @"VDiskTypeZhongHui";
-            self.homeTopTitles = @[@"中汇银", @"中汇油", @"中汇铜"];
+            self.homeTopTitles = @[@{@"title":@"中汇银", @"key":@"AG"},
+                                  @{@"title":@"中汇油", @"key":@"CO"},
+                                  @{@"title":@"中汇铜", @"key":@"CU"}];
         }
             break;
         case VDiskTypeYinHe:
         {
             self.VDiskTypeString = @"VDiskTypeYinHe";
-            self.homeTopTitles = @[@"银河银", @"银河油", @"银河铜"];
+            self.homeTopTitles = @[@{@"title":@"银河银", @"key":@"AG"},
+                                   @{@"title":@"银河油", @"key":@"CO"},
+                                   @{@"title":@"银河铜", @"key":@"CU"}];
         }
             break;
         default:

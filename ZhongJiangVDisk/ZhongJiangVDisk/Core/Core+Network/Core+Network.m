@@ -10,7 +10,7 @@
 
 
 @implementation Core (Network)
-- (NSDictionary *)candleParams:(NSDictionary*)params
+- (NSDictionary *)handleParams:(NSDictionary*)params
 {
     NSString* _params = [[LConfigCurrent toJsonWithParams:params] base64_encode];
     NSUInteger str_length = 10;
@@ -47,7 +47,7 @@
         AFURLSessionManager* manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         
         NSURLSessionDataTask* task = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id response_object, NSError *error) {
-            [self candleHandlerWithReaponse:response response_object:response_object error:error resultBlock:resultBlock];
+            [self handleHandlerWithReaponse:response response_object:response_object error:error resultBlock:resultBlock];
         }];
         [task resume];
         return task;
@@ -57,14 +57,14 @@
 - (NSURLSessionDataTask *)requestWithMethod:(NSString *)method module:(NSString *)module params:(NSDictionary *)params resultBlock:(networkResultBlock)resultBlock {
     if ([self networkEnabled]) {
         NSString *url = [kBaseURL stringByAppendingPathComponent:module];
-        NSDictionary *candledParams = [self candleParams:params];
+        NSDictionary *handledParams = [self handleParams:params];
         NSError* err = nil;
-        NSMutableURLRequest* request = [[AFHTTPRequestSerializer serializer] requestWithMethod:method URLString:url parameters:candledParams error:&err];
+        NSMutableURLRequest* request = [[AFHTTPRequestSerializer serializer] requestWithMethod:method URLString:url parameters:handledParams error:&err];
         request.timeoutInterval = kTimeOutCount;
         AFURLSessionManager* manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         
         NSURLSessionDataTask* task = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id response_object, NSError *error) {
-            [self candleHandlerWithReaponse:response response_object:response_object error:error resultBlock:resultBlock];
+            [self handleHandlerWithReaponse:response response_object:response_object error:error resultBlock:resultBlock];
         }];
         [task resume];
         return task;
@@ -74,13 +74,13 @@
 - (NSURLSessionDataTask *)requestWithMethod:(NSString *)method module:(NSString *)module params:(NSDictionary *)params filePath:(NSString *)filePath fileRequestName:(NSString *)fileRequestName mime_type:(NSString*)mime_type  progressBlock:(networkProgressBlock)progressBlock resultBlock:(networkResultBlock)resultBlock {
     if ([self networkEnabled]) {
         NSString *url = [kBaseURL stringByAppendingPathComponent:module];
-        NSDictionary *candledParams = [self candleParams:params];
+        NSDictionary *handledParams = [self handleParams:params];
         NSError* err = nil;
         if(mime_type == nil)
         {
             mime_type = @"image/jpeg";
         }
-        NSMutableURLRequest* request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:method URLString:url parameters:candledParams constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        NSMutableURLRequest* request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:method URLString:url parameters:handledParams constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
             [formData appendPartWithFileURL:[NSURL fileURLWithPath:filePath] name:fileRequestName fileName:[filePath lastPathComponent] mimeType:mime_type error:nil];
         } error:&err];
         request.timeoutInterval = kTimeOutCount;
@@ -89,14 +89,14 @@
                                         uploadTaskWithStreamedRequest:request
                                         progress:progressBlock
                                         completionHandler:^(NSURLResponse *response, id response_object, NSError *error) {
-                                            [self candleHandlerWithReaponse:response response_object:response_object error:error resultBlock:resultBlock];
+                                            [self handleHandlerWithReaponse:response response_object:response_object error:error resultBlock:resultBlock];
                                         }];
         [task resume];
         return task;
     }
     return nil;
 }
-- (void)candleHandlerWithReaponse:(NSURLResponse *)response response_object:(id)response_object error:(NSError*)error resultBlock:(networkResultBlock)resultBlock
+- (void)handleHandlerWithReaponse:(NSURLResponse *)response response_object:(id)response_object error:(NSError*)error resultBlock:(networkResultBlock)resultBlock
 {
     resultBlock((error ? NO : YES), response_object, error, response);
 }

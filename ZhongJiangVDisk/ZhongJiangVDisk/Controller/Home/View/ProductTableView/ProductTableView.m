@@ -64,7 +64,7 @@ __weak ProductTableView *productTabelSelf;
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ProductTableViewCell" owner:nil options:nil].lastObject;
         cell.btnsActionBlock = ^(NSInteger index) {
-            [productTabelSelf candleBuyViewWithIndex:index indexpath:indexPath];
+            [productTabelSelf handleBuyViewWithIndex:index indexpath:indexPath];
         };
     }
     NSDictionary *dict = LCoreCurrent.productsList[indexPath.section];
@@ -72,7 +72,7 @@ __weak ProductTableView *productTabelSelf;
     cell.model = [ProductModel modelWithDictionary:list[indexPath.row]];
     return cell;
 }
-- (void)candleBuyViewWithIndex:(NSInteger)index indexpath:(NSIndexPath *)indexPath
+- (void)handleBuyViewWithIndex:(NSInteger)index indexpath:(NSIndexPath *)indexPath
 {
     if (!_buyView) {
         _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;

@@ -134,7 +134,7 @@ __weak DetailPositionController *detailPositionSelf;
         if (row == 2) {
             cell.button.hidden = NO;
             cell.btnActionBlock = ^(){
-                [detailPositionSelf candleProfit];
+                [detailPositionSelf handleProfit];
             };
         }else
         {
@@ -155,7 +155,7 @@ __weak DetailPositionController *detailPositionSelf;
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-- (void)candleProfit
+- (void)handleProfit
 {
     if (!_buyView) {
         _buyView = [[NSBundle mainBundle] loadNibNamed:@"BuyView" owner:nil options:nil].lastObject;

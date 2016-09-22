@@ -10,5 +10,7 @@
 #import "ChartViewSuper.h"
 @interface ChartView : UIView
 @property (strong, nonatomic) ChartViewSuper *cS;
-- (void)setSelFrame:(CGRect)frame;
+@property (nonatomic, assign) NSInteger segSelectedIndex;
+- (void)setSelfFrame:(CGRect)frame;
+
 @end

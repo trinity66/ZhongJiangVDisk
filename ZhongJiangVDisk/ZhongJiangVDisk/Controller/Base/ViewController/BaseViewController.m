@@ -24,6 +24,9 @@
 {
     [super viewWillAppear:animated];
     [self setBalance];
+    if (_segment) {
+        [LCoreCurrent saveHomeTopData:nil];
+    }
 }
 - (void)setBalance
 {
@@ -68,12 +71,17 @@
             y += _personalTopView.frame.size.height + _personalTopView.frame.origin.y;
         }
         _segment = [[Segment alloc] initWithFrame:CGRectMake(space, y+space*0.5, kScreenWidth-space*2, kSegmentHeight)];
-        LCoreCurrent.segment = _segment;
         [_segment setUserInteractionEnabled:userEnabled];
+        [self.view addSubview:_segment];
+        
         if (userEnabled) {
-            LCoreCurrent.segment.selectedIndex = 0;
+            LCoreCurrent.segmentHome = _segment;
+            _segment.selectedIndex = 0;
+        }else
+        {
+            LCoreCurrent.segmentPosition = _segment;
         }
-        [self.view addSubview:LCoreCurrent.segment];
+        [LCoreCurrent saveHomeTopData:nil];
     }
 }
 

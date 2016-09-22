@@ -21,8 +21,6 @@
 -(void)drawPoint:(NSUInteger)idx animated:(BOOL)animated{
     
 }
-
-
 - (void)drawAnimated:(BOOL)animated{
     NSUInteger cnt = [BBTheme theme].defYLabelGap;
     for (int i = 0; i < cnt; i++) {
@@ -30,11 +28,17 @@
         CALayer* dash = [BaseLayer layerOfLineFrom:CGPointMake(0, curHei) to:CGPointMake(self.bounds.size.width, curHei) withColor:LCoreCurrent.chartLinesColor andWidth:0.5 animated:NO];
         [self addSublayer:dash];
     }
-    for (int i = 0; i < self.data.count; ++i) {
-        [self drawPoint:i animated:animated];
+    /*
+     因项目需求，当画折现图的时候，使用自己写的代码,
+     此时：
+     不再实现
+          [self drawPoint:i animated:animated];  方法
+     */
+    if (![self isKindOfClass:[LineSeries class]]) {
+        for (int i = 0; i < self.data.count; ++i) {
+            [self drawPoint:i animated:animated];
+        }
     }
-    
-    
 }
 - (void)redrawAnimated:(BOOL)animated{
     self.sublayers = nil;

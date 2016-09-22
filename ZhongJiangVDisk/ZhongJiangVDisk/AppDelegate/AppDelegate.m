@@ -14,17 +14,18 @@
     NSTimer *timer;
 }
 @end
-
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    LCoreCurrent.VDiskType = VDiskTypeYinHe;//VDiskTypeZhongJiang////VDiskTypeZhongHui
-    if (!timer) {
-      timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loadHomeTopDatas) userInfo:nil repeats:YES];
-    }
     
+    // Override point for customization after application launch.
+    LCoreCurrent.VDiskType = VDiskTypeZhongJiang;////VDiskTypeYinHe//VDiskTypeZhongHui
+//    [self loadHomeTopDatas];
+//    if (!timer) {
+//      timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(loadHomeTopDatas) userInfo:nil repeats:YES];
+//        [timer fire];
+//    }
     if (!LCoreCurrent.isLogin) {
     [self performSelector:@selector(goRegister) withObject:nil afterDelay:0.01];
     }else
@@ -56,6 +57,7 @@
     [LCoreCurrent requestWithURL:@"http://123.206.194.14:18081/HQ/AllGoods" resultBlock:^(BOOL success, id result, NSError *error, NSURLResponse *response) {
         if (result && [result isKindOfClass:[NSDictionary class]]) {
             [LCoreCurrent saveHomeTopData:result];
+//            [(AppDelegate *)[UIApplication sharedApplication].delegate loadHomeTopDatas];
         }
     }];
 }

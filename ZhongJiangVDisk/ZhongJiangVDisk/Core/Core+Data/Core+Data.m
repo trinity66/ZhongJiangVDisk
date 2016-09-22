@@ -109,32 +109,37 @@
         isHavePreData = NO;
     }
     for (int i = 0; i < LCoreCurrent.homeTopTitles.count; i ++) {
-        NSString *key = @"";
-        switch (i) {
-                case 0:
-                key = @"AG";
-                break;
-                case 1:
-                key = @"CO";
-                break;
-                case 2:
-                key = @"CU";
-                break;
-            default:
-                break;
-        }
-        double number = [homeTopData[key] doubleValue], preNumber = 0;
+        double number = 0, preNumber = 0;
         BOOL isRise = YES;
-        if (isHavePreData) {
-            preNumber = [homeTopDatas.lastObject[key] doubleValue];
-            if (preNumber>number) {
-                isRise = NO;
+        if (!isHavePreData && !homeTopData) {
+            //之前无数据，当前也无数据
+            number = 0.00;
+        }else
+        {
+            NSString *key = self.homeTopTitles[i][@"key"];
+            if (isHavePreData) {
+                //之前有数据
+                preNumber = [homeTopDatas.lastObject[key] doubleValue];
+                if (homeTopData) {
+                    //当前有数据
+                    number = [homeTopData[key] doubleValue];
+                    if (preNumber>number) {
+                        isRise = NO;
+                    }
+                }else
+                {
+                    //当前无数据，填写之前数据
+                    number = preNumber;
+                }
             }
         }
-      [self.segment setValueWithIndex:i title:nil number:number isRise:isRise];
+        [self.segmentHome setValueWithIndex:i title:nil number:number isRise:isRise];
+        [self.segmentPosition setValueWithIndex:i title:nil number:number isRise:isRise];
     }
-    [homeTopDatas addObject:homeTopData];
-     [LConfigCurrent set_object_for_key:@"homeTopDatas" value:homeTopDatas];
+    if (homeTopData) {
+        [homeTopDatas addObject:homeTopData];
+        [LConfigCurrent set_object_for_key:@"homeTopDatas" value:homeTopDatas];
+    }
 }
 /*
  获取home顶端的数据

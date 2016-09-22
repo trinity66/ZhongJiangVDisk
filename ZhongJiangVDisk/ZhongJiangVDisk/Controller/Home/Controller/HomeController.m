@@ -24,8 +24,8 @@ __weak HomeController *_homeSelf;
     [super viewDidLoad];
     _homeSelf = self;
     [self addSegmentWithUserEnabled:YES];
-    LCoreCurrent.segment.btnsActionBlock = ^(NSInteger index) {
-        [_homeSelf candleTopButtonWithIndex:index];
+    self.segment.btnsActionBlock = ^(NSInteger index) {
+        [_homeSelf handleTopButtonWithIndex:index];
     };
     [self set_scrollView];
     [self showInput];
@@ -33,14 +33,10 @@ __weak HomeController *_homeSelf;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (LCoreCurrent.isLogin && !LCoreCurrent.segment) {
-        
-    }
 }
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    LCoreCurrent.segment = self.segment;
     if (_put) {
         [_put showInputDealPswdViewAnimated:NO];
     }
@@ -62,7 +58,7 @@ __weak HomeController *_homeSelf;
         };
     }
 }
-- (void)candleTopButtonWithIndex:(NSInteger)index
+- (void)handleTopButtonWithIndex:(NSInteger)index
 {
 }
 - (void)goForgetDealPswd
@@ -113,7 +109,7 @@ __weak HomeController *_homeSelf;
             double height = 0;
             if (!_chartSuperView) {
                 _chartSuperView = [[NSBundle mainBundle] loadNibNamed:@"ChartView" owner:nil options:nil].lastObject;
-                [_chartSuperView setSelFrame:CGRectMake(0, 0, width, 330)];
+                [_chartSuperView setSelfFrame:CGRectMake(0, 0, width, 330)];
                 [_scrollView addSubview:_chartSuperView];
                 
             }
@@ -148,7 +144,7 @@ __weak HomeController *_homeSelf;
             }
             if (!_chartSuperViewTwo) {
                 _chartSuperViewTwo = [[NSBundle mainBundle] loadNibNamed:@"ChartViewTwo" owner:nil options:nil].lastObject;
-                [_chartSuperViewTwo setSelFrame:CGRectMake(0, space + height, width, 340)];
+                [_chartSuperViewTwo setSelfFrame:CGRectMake(0, space + height, width, 340)];
                 [_scrollView addSubview:_chartSuperViewTwo];
                 height += (space + 340);
             }
