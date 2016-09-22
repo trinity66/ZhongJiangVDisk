@@ -159,7 +159,6 @@
         [area prepareForDraw];
         curY += curHeight;
     }
-    
 }
 /*
  画图
