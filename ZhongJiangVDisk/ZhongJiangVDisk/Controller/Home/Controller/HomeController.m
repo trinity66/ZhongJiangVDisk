@@ -12,6 +12,7 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) ChartView *chartSuperView;
 @property (nonatomic, strong) ChartViewTwo *chartSuperViewTwo;
+@property (nonatomic, strong) LChartView *lChartView;
 @property (nonatomic, strong) ProductTableView *productTableSuperView;
 @property (nonatomic, strong) InputDealPswdView *put;
 @property (nonatomic, strong) LatestInfos *latestInfos;
@@ -110,6 +111,12 @@ __weak HomeController *_homeSelf;
             if (!_chartSuperView) {
                 _chartSuperView = [[NSBundle mainBundle] loadNibNamed:@"ChartView" owner:nil options:nil].lastObject;
                 [_chartSuperView setSelfFrame:CGRectMake(0, 0, width, 330)];
+                if (!_lChartView) {
+                    _lChartView = _chartSuperView.lChart;
+                    _lChartView.topView.btnsActionBlock = ^(NSInteger index) {
+                        [_homeSelf handleScaleWithIndex:index];
+                    };
+                }
                 [_scrollView addSubview:_chartSuperView];
                 
             }
@@ -145,6 +152,12 @@ __weak HomeController *_homeSelf;
             if (!_chartSuperViewTwo) {
                 _chartSuperViewTwo = [[NSBundle mainBundle] loadNibNamed:@"ChartViewTwo" owner:nil options:nil].lastObject;
                 [_chartSuperViewTwo setSelfFrame:CGRectMake(0, space + height, width, 340)];
+                if (!_lChartView) {
+                    _lChartView = _chartSuperView.lChart;
+                    _lChartView.topView.btnsActionBlock = ^(NSInteger index) {
+                         [_homeSelf handleScaleWithIndex:index];
+                    };
+                }
                 [_scrollView addSubview:_chartSuperViewTwo];
                 height += (space + 340);
             }
@@ -163,6 +176,26 @@ __weak HomeController *_homeSelf;
         default:
         break;
     }
+}
+//chartView缩放
+- (void)handleScaleWithIndex:(NSInteger)index
+{
+    [_lChartView subShowViewsHidden:YES];
+    double width = kItemWidth;
+    switch (index) {
+        case 0:
+            width *= 1.0;
+            break;
+        case 1:
+            width *= 1.5;
+            break;
+        case 2:
+            width *= 2.0;
+            break;
+        default:
+            break;
+    }
+    _lChartView.item_width = width;
 }
 - (void)goWebWithIndex:(NSInteger)index
 {

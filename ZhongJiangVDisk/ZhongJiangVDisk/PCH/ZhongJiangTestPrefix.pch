@@ -32,6 +32,7 @@
 #define kTableViewHeadHegiht      5
 #define kTableViewFootHeight      0.0000001
 #define kCellLabelFont            15
+#define kItemWidth                6
 
 
 #import <JavaScriptCore/JavaScriptCore.h>
@@ -92,9 +93,9 @@
 #import "BuyView.h"//购买
 #import "SelectDataCell.h"//购买时选择数据view
 
-#import "ChartView.h"//首页分时图
+#import "LChartView.h"//首页分时图
 #import "ChartViewTwo.h"//首页分时图样式2
-#import "ChartViewSuper.h"
+#import "ChartView.h"
 //#import "ProductCollectionView.h"//首页底部collectionView
 //#import "ProductCollectionCell.h"//首页底部collectionCell
 #import "LatestInfos.h"//首页－最新资讯
@@ -119,21 +120,7 @@
 #import "WebController.h"//网页
 
 //分时图，k图
-#import "Area.h"
 
-#import "AxisX.h"
-#import "AxisY.h"
-
-#import "BaseLayer.h"
-#import "BBChartView.h"
-#import "BBChartUtils.h"
-#import "BBStockChart.h"
-#import "BBTheme.h"
-
-#import "Series.h"
-#import "BarSeries.h"
-#import "LineSeries.h"
-#import "StockSeries.h"
 
 //三方框架
 #import "HMSegmentedControl.h"

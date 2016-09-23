@@ -55,10 +55,6 @@
 		5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723001D65AB52003CA0AE /* ProductTableView.xib */; };
 		5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */; };
 		5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */; };
-		5E1723131D66E090003CA0AE /* StockChartDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723111D66E090003CA0AE /* StockChartDataView.m */; };
-		5E1723141D66E090003CA0AE /* StockChartDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723121D66E090003CA0AE /* StockChartDataView.xib */; };
-		5E1723181D66E0BA003CA0AE /* LineChartDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1723171D66E0BA003CA0AE /* LineChartDataView.m */; };
-		5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */; };
 		5E23876C1D867937008AF872 /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E23876B1D867937008AF872 /* libPaymentControl.a */; };
 		5E23877A1D868C2C008AF872 /* Core+Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2387791D868C2C008AF872 /* Core+Network.m */; };
 		5E23877E1D868EB8008AF872 /* LCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E23877D1D868EB8008AF872 /* LCategory.m */; };
@@ -78,6 +74,29 @@
 		5E2FD4471D8F904400C9D59B /* RegisterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FD4451D8F904400C9D59B /* RegisterButtonView.m */; };
 		5E2FD4481D8F904400C9D59B /* RegisterButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2FD4461D8F904400C9D59B /* RegisterButtonView.xib */; };
 		5E2FD44C1D8F907600C9D59B /* LConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FD44B1D8F907600C9D59B /* LConfig.m */; };
+		5E3C31CE1D95230A006245CB /* CALayer+BackLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31A61D95230A006245CB /* CALayer+BackLayer.m */; };
+		5E3C31CF1D95230A006245CB /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31A91D95230A006245CB /* UIScrollView+UITouch.m */; };
+		5E3C31D01D95230A006245CB /* LChartBottomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31AE1D95230A006245CB /* LChartBottomCell.m */; };
+		5E3C31D11D95230A006245CB /* LChartBottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31AF1D95230A006245CB /* LChartBottomCell.xib */; };
+		5E3C31D21D95230A006245CB /* LChartBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31B11D95230A006245CB /* LChartBottomView.m */; };
+		5E3C31D31D95230A006245CB /* LChartBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31B21D95230A006245CB /* LChartBottomView.xib */; };
+		5E3C31D41D95230A006245CB /* LChartLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31B61D95230A006245CB /* LChartLeftCell.m */; };
+		5E3C31D51D95230A006245CB /* LChartLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31B71D95230A006245CB /* LChartLeftCell.xib */; };
+		5E3C31D61D95230A006245CB /* LChartLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31B91D95230A006245CB /* LChartLeftView.m */; };
+		5E3C31D71D95230A006245CB /* LChartLeftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31BA1D95230A006245CB /* LChartLeftView.xib */; };
+		5E3C31D81D95230A006245CB /* LChartTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31BD1D95230A006245CB /* LChartTopView.m */; };
+		5E3C31D91D95230A006245CB /* LChartTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31BE1D95230A006245CB /* LChartTopView.xib */; };
+		5E3C31DA1D95230A006245CB /* LChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31C01D95230A006245CB /* LChartView.m */; };
+		5E3C31DB1D95230A006245CB /* LineChartDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31C41D95230A006245CB /* LineChartDataView.m */; };
+		5E3C31DC1D95230A006245CB /* LineChartDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31C51D95230A006245CB /* LineChartDataView.xib */; };
+		5E3C31DD1D95230A006245CB /* StockChartDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31C91D95230A006245CB /* StockChartDataView.m */; };
+		5E3C31DE1D95230A006245CB /* StockChartDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31CA1D95230A006245CB /* StockChartDataView.xib */; };
+		5E3C31DF1D95230A006245CB /* StockData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31CD1D95230A006245CB /* StockData.m */; };
+		5E3C31E81D9523AA006245CB /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31E21D9523AA006245CB /* ChartView.m */; };
+		5E3C31E91D9523AA006245CB /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31E31D9523AA006245CB /* ChartView.xib */; };
+		5E3C31EA1D9523AA006245CB /* ChartViewTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31E61D9523AA006245CB /* ChartViewTwo.m */; };
+		5E3C31EB1D9523AA006245CB /* ChartViewTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31E71D9523AA006245CB /* ChartViewTwo.xib */; };
+		5E3C31ED1D952999006245CB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31EC1D952999006245CB /* data.json */; };
 		5E4BEA8D1D8B7C6200A4E71D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4BEA891D8B7C6200A4E71D /* LaunchScreen.storyboard */; };
 		5E4BEA8E1D8B7C6200A4E71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4BEA8B1D8B7C6200A4E71D /* Main.storyboard */; };
 		5E75AF6B1D73C4260051FB1D /* DealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6A1D73C4260051FB1D /* DealModel.m */; };
@@ -96,18 +115,6 @@
 		5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82371D6AE3C100239CB5 /* LTextField.m */; };
 		5EAF823B1D6AE4BE00239CB5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */; };
 		5EAF824F1D6AEEC800239CB5 /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF824E1D6AEEC800239CB5 /* RegisterController.m */; };
-		5EAF82791D6AF51200239CB5 /* Area.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82541D6AF51200239CB5 /* Area.m */; };
-		5EAF827A1D6AF51200239CB5 /* AxisX.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82571D6AF51200239CB5 /* AxisX.m */; };
-		5EAF827B1D6AF51200239CB5 /* AxisY.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82591D6AF51200239CB5 /* AxisY.m */; };
-		5EAF827C1D6AF51200239CB5 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF825A1D6AF51200239CB5 /* data.json */; };
-		5EAF827D1D6AF51200239CB5 /* BaseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF825D1D6AF51200239CB5 /* BaseLayer.m */; };
-		5EAF827E1D6AF51200239CB5 /* BBChartUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF825F1D6AF51200239CB5 /* BBChartUtils.m */; };
-		5EAF827F1D6AF51200239CB5 /* BBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82611D6AF51200239CB5 /* BBChartView.m */; };
-		5EAF82801D6AF51200239CB5 /* BBTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82641D6AF51200239CB5 /* BBTheme.m */; };
-		5EAF82811D6AF51200239CB5 /* BarSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82671D6AF51200239CB5 /* BarSeries.m */; };
-		5EAF82821D6AF51200239CB5 /* LineSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82691D6AF51200239CB5 /* LineSeries.m */; };
-		5EAF82831D6AF51200239CB5 /* Series.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF826B1D6AF51200239CB5 /* Series.m */; };
-		5EAF82841D6AF51200239CB5 /* StockSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF826D1D6AF51200239CB5 /* StockSeries.m */; };
 		5EAF82851D6AF51200239CB5 /* ScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF82701D6AF51200239CB5 /* ScanQRCodeController.m */; };
 		5EAF82861D6AF51200239CB5 /* 扫描框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82711D6AF51200239CB5 /* 扫描框@2x.png */; };
 		5EAF82871D6AF51200239CB5 /* 扫描线@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF82721D6AF51200239CB5 /* 扫描线@2x.png */; };
@@ -122,11 +129,6 @@
 		5EAF83DC1D6E95DE00239CB5 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAF83DB1D6E95DE00239CB5 /* JavaScriptCore.framework */; };
 		5EAF83E01D6EC23600239CB5 /* Core+CheckData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF83DF1D6EC23600239CB5 /* Core+CheckData.m */; };
 		5EAF83E21D6FD3D000239CB5 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EAF83E11D6FD3D000239CB5 /* Products.json */; };
-		5EBA9CB81D911BFB008FB992 /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA9CAF1D911BFB008FB992 /* ChartView.m */; };
-		5EBA9CB91D911BFB008FB992 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBA9CB01D911BFB008FB992 /* ChartView.xib */; };
-		5EBA9CBA1D911BFB008FB992 /* ChartViewSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA9CB31D911BFB008FB992 /* ChartViewSuper.m */; };
-		5EBA9CBB1D911BFB008FB992 /* ChartViewTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA9CB61D911BFB008FB992 /* ChartViewTwo.m */; };
-		5EBA9CBC1D911BFB008FB992 /* ChartViewTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBA9CB71D911BFB008FB992 /* ChartViewTwo.xib */; };
 		5EEB44D01D81478900A40AA6 /* PersonalTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB44CE1D81478900A40AA6 /* PersonalTopView.m */; };
 		5EEB44D11D81478900A40AA6 /* PersonalTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EEB44CF1D81478900A40AA6 /* PersonalTopView.xib */; };
 		5EEB44D91D8158C200A40AA6 /* LatestInfos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB44D81D8158C200A40AA6 /* LatestInfos.m */; };
@@ -236,12 +238,6 @@
 		5E1723021D65ACA5003CA0AE /* ProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		5E1723031D65ACA5003CA0AE /* ProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		5E1723041D65ACA5003CA0AE /* ProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
-		5E1723101D66E090003CA0AE /* StockChartDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockChartDataView.h; sourceTree = "<group>"; };
-		5E1723111D66E090003CA0AE /* StockChartDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockChartDataView.m; sourceTree = "<group>"; };
-		5E1723121D66E090003CA0AE /* StockChartDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockChartDataView.xib; sourceTree = "<group>"; };
-		5E1723161D66E0BA003CA0AE /* LineChartDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartDataView.h; sourceTree = "<group>"; };
-		5E1723171D66E0BA003CA0AE /* LineChartDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartDataView.m; sourceTree = "<group>"; };
-		5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChartDataView.xib; sourceTree = "<group>"; };
 		5E2387691D867937008AF872 /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
 		5E23876B1D867937008AF872 /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
 		5E2387781D868C2C008AF872 /* Core+Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core+Network.h"; sourceTree = "<group>"; };
@@ -275,6 +271,42 @@
 		5E2FD4461D8F904400C9D59B /* RegisterButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterButtonView.xib; sourceTree = "<group>"; };
 		5E2FD44A1D8F907600C9D59B /* LConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LConfig.h; sourceTree = "<group>"; };
 		5E2FD44B1D8F907600C9D59B /* LConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LConfig.m; sourceTree = "<group>"; };
+		5E3C31A51D95230A006245CB /* CALayer+BackLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+BackLayer.h"; sourceTree = "<group>"; };
+		5E3C31A61D95230A006245CB /* CALayer+BackLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BackLayer.m"; sourceTree = "<group>"; };
+		5E3C31A81D95230A006245CB /* UIScrollView+UITouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UITouch.h"; sourceTree = "<group>"; };
+		5E3C31A91D95230A006245CB /* UIScrollView+UITouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UITouch.m"; sourceTree = "<group>"; };
+		5E3C31AD1D95230A006245CB /* LChartBottomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LChartBottomCell.h; sourceTree = "<group>"; };
+		5E3C31AE1D95230A006245CB /* LChartBottomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LChartBottomCell.m; sourceTree = "<group>"; };
+		5E3C31AF1D95230A006245CB /* LChartBottomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LChartBottomCell.xib; sourceTree = "<group>"; };
+		5E3C31B01D95230A006245CB /* LChartBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LChartBottomView.h; sourceTree = "<group>"; };
+		5E3C31B11D95230A006245CB /* LChartBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LChartBottomView.m; sourceTree = "<group>"; };
+		5E3C31B21D95230A006245CB /* LChartBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LChartBottomView.xib; sourceTree = "<group>"; };
+		5E3C31B51D95230A006245CB /* LChartLeftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LChartLeftCell.h; sourceTree = "<group>"; };
+		5E3C31B61D95230A006245CB /* LChartLeftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LChartLeftCell.m; sourceTree = "<group>"; };
+		5E3C31B71D95230A006245CB /* LChartLeftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LChartLeftCell.xib; sourceTree = "<group>"; };
+		5E3C31B81D95230A006245CB /* LChartLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LChartLeftView.h; sourceTree = "<group>"; };
+		5E3C31B91D95230A006245CB /* LChartLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LChartLeftView.m; sourceTree = "<group>"; };
+		5E3C31BA1D95230A006245CB /* LChartLeftView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LChartLeftView.xib; sourceTree = "<group>"; };
+		5E3C31BC1D95230A006245CB /* LChartTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LChartTopView.h; sourceTree = "<group>"; };
+		5E3C31BD1D95230A006245CB /* LChartTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LChartTopView.m; sourceTree = "<group>"; };
+		5E3C31BE1D95230A006245CB /* LChartTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LChartTopView.xib; sourceTree = "<group>"; };
+		5E3C31BF1D95230A006245CB /* LChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LChartView.h; sourceTree = "<group>"; };
+		5E3C31C01D95230A006245CB /* LChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LChartView.m; sourceTree = "<group>"; };
+		5E3C31C31D95230A006245CB /* LineChartDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartDataView.h; sourceTree = "<group>"; };
+		5E3C31C41D95230A006245CB /* LineChartDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartDataView.m; sourceTree = "<group>"; };
+		5E3C31C51D95230A006245CB /* LineChartDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChartDataView.xib; sourceTree = "<group>"; };
+		5E3C31C81D95230A006245CB /* StockChartDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockChartDataView.h; sourceTree = "<group>"; };
+		5E3C31C91D95230A006245CB /* StockChartDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockChartDataView.m; sourceTree = "<group>"; };
+		5E3C31CA1D95230A006245CB /* StockChartDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StockChartDataView.xib; sourceTree = "<group>"; };
+		5E3C31CC1D95230A006245CB /* StockData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockData.h; sourceTree = "<group>"; };
+		5E3C31CD1D95230A006245CB /* StockData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockData.m; sourceTree = "<group>"; };
+		5E3C31E11D9523AA006245CB /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
+		5E3C31E21D9523AA006245CB /* ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartView.m; sourceTree = "<group>"; };
+		5E3C31E31D9523AA006245CB /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
+		5E3C31E51D9523AA006245CB /* ChartViewTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewTwo.h; sourceTree = "<group>"; };
+		5E3C31E61D9523AA006245CB /* ChartViewTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewTwo.m; sourceTree = "<group>"; };
+		5E3C31E71D9523AA006245CB /* ChartViewTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartViewTwo.xib; sourceTree = "<group>"; };
+		5E3C31EC1D952999006245CB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		5E43939A1D89186E00470516 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E4BEA8A1D8B7C6200A4E71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E4BEA8C1D8B7C6200A4E71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
@@ -302,30 +334,6 @@
 		5EAF823A1D6AE4BE00239CB5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5EAF824D1D6AEEC800239CB5 /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
 		5EAF824E1D6AEEC800239CB5 /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
-		5EAF82531D6AF51200239CB5 /* Area.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Area.h; sourceTree = "<group>"; };
-		5EAF82541D6AF51200239CB5 /* Area.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Area.m; sourceTree = "<group>"; };
-		5EAF82561D6AF51200239CB5 /* AxisX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisX.h; sourceTree = "<group>"; };
-		5EAF82571D6AF51200239CB5 /* AxisX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisX.m; sourceTree = "<group>"; };
-		5EAF82581D6AF51200239CB5 /* AxisY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxisY.h; sourceTree = "<group>"; };
-		5EAF82591D6AF51200239CB5 /* AxisY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxisY.m; sourceTree = "<group>"; };
-		5EAF825A1D6AF51200239CB5 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		5EAF825C1D6AF51200239CB5 /* BaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLayer.h; sourceTree = "<group>"; };
-		5EAF825D1D6AF51200239CB5 /* BaseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLayer.m; sourceTree = "<group>"; };
-		5EAF825E1D6AF51200239CB5 /* BBChartUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChartUtils.h; sourceTree = "<group>"; };
-		5EAF825F1D6AF51200239CB5 /* BBChartUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChartUtils.m; sourceTree = "<group>"; };
-		5EAF82601D6AF51200239CB5 /* BBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChartView.h; sourceTree = "<group>"; };
-		5EAF82611D6AF51200239CB5 /* BBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChartView.m; sourceTree = "<group>"; };
-		5EAF82621D6AF51200239CB5 /* BBStockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBStockChart.h; sourceTree = "<group>"; };
-		5EAF82631D6AF51200239CB5 /* BBTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTheme.h; sourceTree = "<group>"; };
-		5EAF82641D6AF51200239CB5 /* BBTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTheme.m; sourceTree = "<group>"; };
-		5EAF82661D6AF51200239CB5 /* BarSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarSeries.h; sourceTree = "<group>"; };
-		5EAF82671D6AF51200239CB5 /* BarSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarSeries.m; sourceTree = "<group>"; };
-		5EAF82681D6AF51200239CB5 /* LineSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSeries.h; sourceTree = "<group>"; };
-		5EAF82691D6AF51200239CB5 /* LineSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineSeries.m; sourceTree = "<group>"; };
-		5EAF826A1D6AF51200239CB5 /* Series.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Series.h; sourceTree = "<group>"; };
-		5EAF826B1D6AF51200239CB5 /* Series.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Series.m; sourceTree = "<group>"; };
-		5EAF826C1D6AF51200239CB5 /* StockSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockSeries.h; sourceTree = "<group>"; };
-		5EAF826D1D6AF51200239CB5 /* StockSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockSeries.m; sourceTree = "<group>"; };
 		5EAF826F1D6AF51200239CB5 /* ScanQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeController.h; sourceTree = "<group>"; };
 		5EAF82701D6AF51200239CB5 /* ScanQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeController.m; sourceTree = "<group>"; };
 		5EAF82711D6AF51200239CB5 /* 扫描框@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫描框@2x.png"; sourceTree = "<group>"; };
@@ -347,14 +355,6 @@
 		5EAF83DE1D6EC23600239CB5 /* Core+CheckData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core+CheckData.h"; sourceTree = "<group>"; };
 		5EAF83DF1D6EC23600239CB5 /* Core+CheckData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Core+CheckData.m"; sourceTree = "<group>"; };
 		5EAF83E11D6FD3D000239CB5 /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
-		5EBA9CAE1D911BFB008FB992 /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
-		5EBA9CAF1D911BFB008FB992 /* ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartView.m; sourceTree = "<group>"; };
-		5EBA9CB01D911BFB008FB992 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
-		5EBA9CB21D911BFB008FB992 /* ChartViewSuper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewSuper.h; sourceTree = "<group>"; };
-		5EBA9CB31D911BFB008FB992 /* ChartViewSuper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewSuper.m; sourceTree = "<group>"; };
-		5EBA9CB51D911BFB008FB992 /* ChartViewTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewTwo.h; sourceTree = "<group>"; };
-		5EBA9CB61D911BFB008FB992 /* ChartViewTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewTwo.m; sourceTree = "<group>"; };
-		5EBA9CB71D911BFB008FB992 /* ChartViewTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartViewTwo.xib; sourceTree = "<group>"; };
 		5EEB44CD1D81478900A40AA6 /* PersonalTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTopView.h; sourceTree = "<group>"; };
 		5EEB44CE1D81478900A40AA6 /* PersonalTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTopView.m; sourceTree = "<group>"; };
 		5EEB44CF1D81478900A40AA6 /* PersonalTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalTopView.xib; sourceTree = "<group>"; };
@@ -587,22 +587,12 @@
 		5E1721FE1D630082003CA0AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5E3C31A21D95230A006245CB /* Chart */,
 				5EEB44D31D81587F00A40AA6 /* LatestInfos */,
 				5E1350CD1D6FF3F400D673E1 /* BuyView */,
 				5E1722FB1D65AB15003CA0AE /* ProductTableView */,
-				5E1721FF1D630082003CA0AE /* ChartView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		5E1721FF1D630082003CA0AE /* ChartView */ = {
-			isa = PBXGroup;
-			children = (
-				5EBA9CAC1D911BFB008FB992 /* Chart */,
-				5E1723151D66E0B1003CA0AE /* LineChartDataView */,
-				5E17230F1D66E090003CA0AE /* StockChartDataView */,
-			);
-			path = ChartView;
 			sourceTree = "<group>";
 		};
 		5E17220B1D630082003CA0AE /* Personal */ = {
@@ -994,26 +984,6 @@
 			path = ProductTableViewCell;
 			sourceTree = "<group>";
 		};
-		5E17230F1D66E090003CA0AE /* StockChartDataView */ = {
-			isa = PBXGroup;
-			children = (
-				5E1723101D66E090003CA0AE /* StockChartDataView.h */,
-				5E1723111D66E090003CA0AE /* StockChartDataView.m */,
-				5E1723121D66E090003CA0AE /* StockChartDataView.xib */,
-			);
-			path = StockChartDataView;
-			sourceTree = "<group>";
-		};
-		5E1723151D66E0B1003CA0AE /* LineChartDataView */ = {
-			isa = PBXGroup;
-			children = (
-				5E1723161D66E0BA003CA0AE /* LineChartDataView.h */,
-				5E1723171D66E0BA003CA0AE /* LineChartDataView.m */,
-				5E1723191D66E0C1003CA0AE /* LineChartDataView.xib */,
-			);
-			path = LineChartDataView;
-			sourceTree = "<group>";
-		};
 		5E2387671D867937008AF872 /* paymentcontrol */ = {
 			isa = PBXGroup;
 			children = (
@@ -1131,6 +1101,177 @@
 			path = LConfig;
 			sourceTree = "<group>";
 		};
+		5E3C31A21D95230A006245CB /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31EC1D952999006245CB /* data.json */,
+				5E3C31E01D9523AA006245CB /* ChartView */,
+				5E3C31E41D9523AA006245CB /* ChartViewTwo */,
+				5E3C31A31D95230A006245CB /* Category */,
+				5E3C31AA1D95230A006245CB /* LChartView */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		5E3C31A31D95230A006245CB /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31A41D95230A006245CB /* CALayer+BackLayer */,
+				5E3C31A71D95230A006245CB /* UIScrollView+UITouch */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5E3C31A41D95230A006245CB /* CALayer+BackLayer */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31A51D95230A006245CB /* CALayer+BackLayer.h */,
+				5E3C31A61D95230A006245CB /* CALayer+BackLayer.m */,
+			);
+			path = "CALayer+BackLayer";
+			sourceTree = "<group>";
+		};
+		5E3C31A71D95230A006245CB /* UIScrollView+UITouch */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31A81D95230A006245CB /* UIScrollView+UITouch.h */,
+				5E3C31A91D95230A006245CB /* UIScrollView+UITouch.m */,
+			);
+			path = "UIScrollView+UITouch";
+			sourceTree = "<group>";
+		};
+		5E3C31AA1D95230A006245CB /* LChartView */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31AB1D95230A006245CB /* LChartBottomView */,
+				5E3C31B31D95230A006245CB /* LChartLeftView */,
+				5E3C31BB1D95230A006245CB /* LChartTopView */,
+				5E3C31BF1D95230A006245CB /* LChartView.h */,
+				5E3C31C01D95230A006245CB /* LChartView.m */,
+				5E3C31C11D95230A006245CB /* LineView */,
+				5E3C31C61D95230A006245CB /* StockView */,
+			);
+			path = LChartView;
+			sourceTree = "<group>";
+		};
+		5E3C31AB1D95230A006245CB /* LChartBottomView */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31AC1D95230A006245CB /* LChartBottomCell */,
+				5E3C31B01D95230A006245CB /* LChartBottomView.h */,
+				5E3C31B11D95230A006245CB /* LChartBottomView.m */,
+				5E3C31B21D95230A006245CB /* LChartBottomView.xib */,
+			);
+			path = LChartBottomView;
+			sourceTree = "<group>";
+		};
+		5E3C31AC1D95230A006245CB /* LChartBottomCell */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31AD1D95230A006245CB /* LChartBottomCell.h */,
+				5E3C31AE1D95230A006245CB /* LChartBottomCell.m */,
+				5E3C31AF1D95230A006245CB /* LChartBottomCell.xib */,
+			);
+			path = LChartBottomCell;
+			sourceTree = "<group>";
+		};
+		5E3C31B31D95230A006245CB /* LChartLeftView */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31B41D95230A006245CB /* LChartLeftCell */,
+				5E3C31B81D95230A006245CB /* LChartLeftView.h */,
+				5E3C31B91D95230A006245CB /* LChartLeftView.m */,
+				5E3C31BA1D95230A006245CB /* LChartLeftView.xib */,
+			);
+			path = LChartLeftView;
+			sourceTree = "<group>";
+		};
+		5E3C31B41D95230A006245CB /* LChartLeftCell */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31B51D95230A006245CB /* LChartLeftCell.h */,
+				5E3C31B61D95230A006245CB /* LChartLeftCell.m */,
+				5E3C31B71D95230A006245CB /* LChartLeftCell.xib */,
+			);
+			path = LChartLeftCell;
+			sourceTree = "<group>";
+		};
+		5E3C31BB1D95230A006245CB /* LChartTopView */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31BC1D95230A006245CB /* LChartTopView.h */,
+				5E3C31BD1D95230A006245CB /* LChartTopView.m */,
+				5E3C31BE1D95230A006245CB /* LChartTopView.xib */,
+			);
+			path = LChartTopView;
+			sourceTree = "<group>";
+		};
+		5E3C31C11D95230A006245CB /* LineView */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31C21D95230A006245CB /* LineChartDataView */,
+			);
+			path = LineView;
+			sourceTree = "<group>";
+		};
+		5E3C31C21D95230A006245CB /* LineChartDataView */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31C31D95230A006245CB /* LineChartDataView.h */,
+				5E3C31C41D95230A006245CB /* LineChartDataView.m */,
+				5E3C31C51D95230A006245CB /* LineChartDataView.xib */,
+			);
+			path = LineChartDataView;
+			sourceTree = "<group>";
+		};
+		5E3C31C61D95230A006245CB /* StockView */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31C71D95230A006245CB /* StockChartDataView */,
+				5E3C31CB1D95230A006245CB /* StockData */,
+			);
+			path = StockView;
+			sourceTree = "<group>";
+		};
+		5E3C31C71D95230A006245CB /* StockChartDataView */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31C81D95230A006245CB /* StockChartDataView.h */,
+				5E3C31C91D95230A006245CB /* StockChartDataView.m */,
+				5E3C31CA1D95230A006245CB /* StockChartDataView.xib */,
+			);
+			path = StockChartDataView;
+			sourceTree = "<group>";
+		};
+		5E3C31CB1D95230A006245CB /* StockData */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31CC1D95230A006245CB /* StockData.h */,
+				5E3C31CD1D95230A006245CB /* StockData.m */,
+			);
+			path = StockData;
+			sourceTree = "<group>";
+		};
+		5E3C31E01D9523AA006245CB /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31E11D9523AA006245CB /* ChartView.h */,
+				5E3C31E21D9523AA006245CB /* ChartView.m */,
+				5E3C31E31D9523AA006245CB /* ChartView.xib */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
+		5E3C31E41D9523AA006245CB /* ChartViewTwo */ = {
+			isa = PBXGroup;
+			children = (
+				5E3C31E51D9523AA006245CB /* ChartViewTwo.h */,
+				5E3C31E61D9523AA006245CB /* ChartViewTwo.m */,
+				5E3C31E71D9523AA006245CB /* ChartViewTwo.xib */,
+			);
+			path = ChartViewTwo;
+			sourceTree = "<group>";
+		};
 		5E75AF671D73C3F50051FB1D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1228,75 +1369,11 @@
 			children = (
 				5E2387671D867937008AF872 /* paymentcontrol */,
 				5EAF83E11D6FD3D000239CB5 /* Products.json */,
-				5EAF82511D6AF51200239CB5 /* BBStockChartView */,
 				5EAF826E1D6AF51200239CB5 /* QRcode */,
 				5EAF82741D6AF51200239CB5 /* QRCodeImage-生成二维码 */,
 				5EAF82771D6AF51200239CB5 /* VDiskTypes.json */,
 			);
 			path = Libs;
-			sourceTree = "<group>";
-		};
-		5EAF82511D6AF51200239CB5 /* BBStockChartView */ = {
-			isa = PBXGroup;
-			children = (
-				5EAF82521D6AF51200239CB5 /* Area */,
-				5EAF82551D6AF51200239CB5 /* Axis */,
-				5EAF825A1D6AF51200239CB5 /* data.json */,
-				5EAF825B1D6AF51200239CB5 /* Lib */,
-				5EAF82651D6AF51200239CB5 /* Series */,
-			);
-			path = BBStockChartView;
-			sourceTree = "<group>";
-		};
-		5EAF82521D6AF51200239CB5 /* Area */ = {
-			isa = PBXGroup;
-			children = (
-				5EAF82531D6AF51200239CB5 /* Area.h */,
-				5EAF82541D6AF51200239CB5 /* Area.m */,
-			);
-			path = Area;
-			sourceTree = "<group>";
-		};
-		5EAF82551D6AF51200239CB5 /* Axis */ = {
-			isa = PBXGroup;
-			children = (
-				5EAF82561D6AF51200239CB5 /* AxisX.h */,
-				5EAF82571D6AF51200239CB5 /* AxisX.m */,
-				5EAF82581D6AF51200239CB5 /* AxisY.h */,
-				5EAF82591D6AF51200239CB5 /* AxisY.m */,
-			);
-			path = Axis;
-			sourceTree = "<group>";
-		};
-		5EAF825B1D6AF51200239CB5 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				5EAF825C1D6AF51200239CB5 /* BaseLayer.h */,
-				5EAF825D1D6AF51200239CB5 /* BaseLayer.m */,
-				5EAF825E1D6AF51200239CB5 /* BBChartUtils.h */,
-				5EAF825F1D6AF51200239CB5 /* BBChartUtils.m */,
-				5EAF82601D6AF51200239CB5 /* BBChartView.h */,
-				5EAF82611D6AF51200239CB5 /* BBChartView.m */,
-				5EAF82621D6AF51200239CB5 /* BBStockChart.h */,
-				5EAF82631D6AF51200239CB5 /* BBTheme.h */,
-				5EAF82641D6AF51200239CB5 /* BBTheme.m */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		5EAF82651D6AF51200239CB5 /* Series */ = {
-			isa = PBXGroup;
-			children = (
-				5EAF82661D6AF51200239CB5 /* BarSeries.h */,
-				5EAF82671D6AF51200239CB5 /* BarSeries.m */,
-				5EAF82681D6AF51200239CB5 /* LineSeries.h */,
-				5EAF82691D6AF51200239CB5 /* LineSeries.m */,
-				5EAF826A1D6AF51200239CB5 /* Series.h */,
-				5EAF826B1D6AF51200239CB5 /* Series.m */,
-				5EAF826C1D6AF51200239CB5 /* StockSeries.h */,
-				5EAF826D1D6AF51200239CB5 /* StockSeries.m */,
-			);
-			path = Series;
 			sourceTree = "<group>";
 		};
 		5EAF826E1D6AF51200239CB5 /* QRcode */ = {
@@ -1357,45 +1434,6 @@
 				5EAF83DF1D6EC23600239CB5 /* Core+CheckData.m */,
 			);
 			path = "Core+CheckData";
-			sourceTree = "<group>";
-		};
-		5EBA9CAC1D911BFB008FB992 /* Chart */ = {
-			isa = PBXGroup;
-			children = (
-				5EBA9CAD1D911BFB008FB992 /* ChartView */,
-				5EBA9CB11D911BFB008FB992 /* ChartViewSuper */,
-				5EBA9CB41D911BFB008FB992 /* ChartViewTwo */,
-			);
-			path = Chart;
-			sourceTree = "<group>";
-		};
-		5EBA9CAD1D911BFB008FB992 /* ChartView */ = {
-			isa = PBXGroup;
-			children = (
-				5EBA9CAE1D911BFB008FB992 /* ChartView.h */,
-				5EBA9CAF1D911BFB008FB992 /* ChartView.m */,
-				5EBA9CB01D911BFB008FB992 /* ChartView.xib */,
-			);
-			path = ChartView;
-			sourceTree = "<group>";
-		};
-		5EBA9CB11D911BFB008FB992 /* ChartViewSuper */ = {
-			isa = PBXGroup;
-			children = (
-				5EBA9CB21D911BFB008FB992 /* ChartViewSuper.h */,
-				5EBA9CB31D911BFB008FB992 /* ChartViewSuper.m */,
-			);
-			path = ChartViewSuper;
-			sourceTree = "<group>";
-		};
-		5EBA9CB41D911BFB008FB992 /* ChartViewTwo */ = {
-			isa = PBXGroup;
-			children = (
-				5EBA9CB51D911BFB008FB992 /* ChartViewTwo.h */,
-				5EBA9CB61D911BFB008FB992 /* ChartViewTwo.m */,
-				5EBA9CB71D911BFB008FB992 /* ChartViewTwo.xib */,
-			);
-			path = ChartViewTwo;
 			sourceTree = "<group>";
 		};
 		5EEB44CC1D81478900A40AA6 /* PersonalTopView */ = {
@@ -1547,38 +1585,43 @@
 			files = (
 				5EAF82871D6AF51200239CB5 /* 扫描线@2x.png in Resources */,
 				5EAF82881D6AF51200239CB5 /* 白色返回_想去@2x.png in Resources */,
+				5E3C31D91D95230A006245CB /* LChartTopView.xib in Resources */,
 				5E23879D1D87DEF7008AF872 /* PositionHead.xib in Resources */,
 				5E1723011D65AB52003CA0AE /* ProductTableView.xib in Resources */,
 				5E17228C1D630082003CA0AE /* DealHistoryCell.xib in Resources */,
 				5EEB44DB1D815D9F00A40AA6 /* LatestInfos.xib in Resources */,
+				5E3C31ED1D952999006245CB /* data.json in Resources */,
 				5E1350D91D6FF3F400D673E1 /* BuyView.xib in Resources */,
 				5E2387B11D87F0F9008AF872 /* DetailPositionCell3.xib in Resources */,
 				5E17229B1D630082003CA0AE /* RechargeHeadView.xib in Resources */,
 				5E1722E01D63008A003CA0AE /* SecurityCodeView.xib in Resources */,
-				5E1723141D66E090003CA0AE /* StockChartDataView.xib in Resources */,
+				5E3C31DC1D95230A006245CB /* LineChartDataView.xib in Resources */,
+				5E3C31E91D9523AA006245CB /* ChartView.xib in Resources */,
 				5E2387A71D87EE8B008AF872 /* DetailPositionCell1.xib in Resources */,
 				5EAF828A1D6AF51200239CB5 /* VDiskTypes.json in Resources */,
+				5E3C31DE1D95230A006245CB /* StockChartDataView.xib in Resources */,
+				5E3C31EB1D9523AA006245CB /* ChartViewTwo.xib in Resources */,
 				5EAF83E21D6FD3D000239CB5 /* Products.json in Resources */,
 				5E1722991D630082003CA0AE /* RechargeCell.xib in Resources */,
 				5E4BEA8E1D8B7C6200A4E71D /* Main.storyboard in Resources */,
+				5E3C31D71D95230A006245CB /* LChartLeftView.xib in Resources */,
+				5E3C31D31D95230A006245CB /* LChartBottomView.xib in Resources */,
 				5E1722E51D63008A003CA0AE /* TextFieldCell.xib in Resources */,
 				5E1722D61D63008A003CA0AE /* ButtonView.xib in Resources */,
-				5EBA9CB91D911BFB008FB992 /* ChartView.xib in Resources */,
 				5E4BEA8D1D8B7C6200A4E71D /* LaunchScreen.storyboard in Resources */,
 				5E99F46F1D81408D009863A9 /* SegmentView.xib in Resources */,
 				5E1722911D630082003CA0AE /* DealCell.xib in Resources */,
 				5E1723061D65ACA5003CA0AE /* ProductTableViewCell.xib in Resources */,
-				5EAF827C1D6AF51200239CB5 /* data.json in Resources */,
 				5EEB44D11D81478900A40AA6 /* PersonalTopView.xib in Resources */,
 				5EAF82931D6BDEC700239CB5 /* DisabledView.xib in Resources */,
 				5E17227B1D630082003CA0AE /* Assets.xcassets in Resources */,
+				5E3C31D11D95230A006245CB /* LChartBottomCell.xib in Resources */,
+				5E3C31D51D95230A006245CB /* LChartLeftCell.xib in Resources */,
 				5E23878A1D87A05D008AF872 /* PositionCell.xib in Resources */,
-				5EBA9CBC1D911BFB008FB992 /* ChartViewTwo.xib in Resources */,
 				5E1722DC1D63008A003CA0AE /* InputDealPswdView.xib in Resources */,
 				5E17228E1D630082003CA0AE /* DealHistoryHeadView.xib in Resources */,
 				5EAF82861D6AF51200239CB5 /* 扫描框@2x.png in Resources */,
 				5E1350DC1D6FF3F400D673E1 /* SelectDataCell.xib in Resources */,
-				5E17231A1D66E0C1003CA0AE /* LineChartDataView.xib in Resources */,
 				5E2387AC1D87EF25008AF872 /* DetailPositionCell2.xib in Resources */,
 				5E2FD4481D8F904400C9D59B /* RegisterButtonView.xib in Resources */,
 			);
@@ -1656,11 +1699,9 @@
 				5E23879C1D87DEF7008AF872 /* PositionHead.m in Sources */,
 				5E2387A61D87EE8B008AF872 /* DetailPositionCell1.m in Sources */,
 				5E2387A11D87EE28008AF872 /* DetailPositionController.m in Sources */,
-				5EAF827E1D6AF51200239CB5 /* BBChartUtils.m in Sources */,
-				5EAF827B1D6AF51200239CB5 /* AxisY.m in Sources */,
 				5E1722981D630082003CA0AE /* RechargeCell.m in Sources */,
 				5E1722951D630082003CA0AE /* RechargeController.m in Sources */,
-				5EAF82791D6AF51200239CB5 /* Area.m in Sources */,
+				5E3C31DA1D95230A006245CB /* LChartView.m in Sources */,
 				5EAF824F1D6AEEC800239CB5 /* RegisterController.m in Sources */,
 				5EAF82391D6AE3C100239CB5 /* LTextField.m in Sources */,
 				5E2FD44C1D8F907600C9D59B /* LConfig.m in Sources */,
@@ -1670,63 +1711,62 @@
 				5EEB44D01D81478900A40AA6 /* PersonalTopView.m in Sources */,
 				5E1723051D65ACA5003CA0AE /* ProductTableViewCell.m in Sources */,
 				5E1722A11D630082003CA0AE /* Core+Color.m in Sources */,
+				5E3C31D41D95230A006245CB /* LChartLeftCell.m in Sources */,
 				5E1722941D630082003CA0AE /* QRCodeController.m in Sources */,
-				5EAF827A1D6AF51200239CB5 /* AxisX.m in Sources */,
 				5E17227F1D630082003CA0AE /* BaseTabBarController.m in Sources */,
 				5E23878D1D87D424008AF872 /* BuyButton.m in Sources */,
-				5E1723131D66E090003CA0AE /* StockChartDataView.m in Sources */,
 				5E1722881D630082003CA0AE /* ApplyForBrokerController.m in Sources */,
+				5E3C31CE1D95230A006245CB /* CALayer+BackLayer.m in Sources */,
 				5E17229C1D630082003CA0AE /* WithdrawController.m in Sources */,
 				5E1722801D630082003CA0AE /* BaseViewController.m in Sources */,
+				5E3C31D81D95230A006245CB /* LChartTopView.m in Sources */,
 				5E17229A1D630082003CA0AE /* RechargeHeadView.m in Sources */,
-				5EBA9CBB1D911BFB008FB992 /* ChartViewTwo.m in Sources */,
 				5E1722E91D64121B003CA0AE /* ForgetDealPswdController.m in Sources */,
-				5EAF827D1D6AF51200239CB5 /* BaseLayer.m in Sources */,
 				5EEB44D91D8158C200A40AA6 /* LatestInfos.m in Sources */,
+				5E3C31DB1D95230A006245CB /* LineChartDataView.m in Sources */,
 				5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */,
 				5E1722D51D63008A003CA0AE /* ButtonView.m in Sources */,
 				5EAF83D41D6E896400239CB5 /* Core+Controller.m in Sources */,
 				5E2FD4471D8F904400C9D59B /* RegisterButtonView.m in Sources */,
+				5E3C31DD1D95230A006245CB /* StockChartDataView.m in Sources */,
+				5E3C31E81D9523AA006245CB /* ChartView.m in Sources */,
 				5E17228D1D630082003CA0AE /* DealHistoryHeadView.m in Sources */,
 				5EAF83CF1D6E864400239CB5 /* WebController.m in Sources */,
 				5E17227A1D630082003CA0AE /* AppDelegate.m in Sources */,
 				5E1722DB1D63008A003CA0AE /* InputDealPswdView.m in Sources */,
+				5E3C31D01D95230A006245CB /* LChartBottomCell.m in Sources */,
 				5EAF82381D6AE3C100239CB5 /* LButton.m in Sources */,
 				5E1722FF1D65AB49003CA0AE /* ProductTableView.m in Sources */,
+				5E3C31D61D95230A006245CB /* LChartLeftView.m in Sources */,
 				5E8F18761D88FD6B00D2E4DC /* main.m in Sources */,
+				5E3C31CF1D95230A006245CB /* UIScrollView+UITouch.m in Sources */,
 				5E75AF6B1D73C4260051FB1D /* DealModel.m in Sources */,
 				5E2387891D87A05D008AF872 /* PositionCell.m in Sources */,
+				5E3C31EA1D9523AA006245CB /* ChartViewTwo.m in Sources */,
 				5E1722DF1D63008A003CA0AE /* SecurityCodeView.m in Sources */,
 				5EAF83D71D6E896C00239CB5 /* Core+Data.m in Sources */,
-				5EAF82841D6AF51200239CB5 /* StockSeries.m in Sources */,
 				5E1722891D630082003CA0AE /* ChangeDealPswdController.m in Sources */,
 				5E17228A1D630082003CA0AE /* DealHistoryListController.m in Sources */,
-				5EBA9CB81D911BFB008FB992 /* ChartView.m in Sources */,
 				5E17228F1D630082003CA0AE /* DealListController.m in Sources */,
 				5E1722A01D630082003CA0AE /* Core.m in Sources */,
 				5E2387B01D87F0F9008AF872 /* DetailPositionCell3.m in Sources */,
-				5EAF82831D6AF51200239CB5 /* Series.m in Sources */,
-				5E1723181D66E0BA003CA0AE /* LineChartDataView.m in Sources */,
 				5E1722921D630082003CA0AE /* InfosController.m in Sources */,
 				5E1350D81D6FF3F400D673E1 /* BuyView.m in Sources */,
-				5EBA9CBA1D911BFB008FB992 /* ChartViewSuper.m in Sources */,
-				5EAF82821D6AF51200239CB5 /* LineSeries.m in Sources */,
 				5E75AF6F1D73C5190051FB1D /* ProductModel.m in Sources */,
+				5E3C31D21D95230A006245CB /* LChartBottomView.m in Sources */,
 				5E1722811D630082003CA0AE /* HomeController.m in Sources */,
 				5E17229D1D630082003CA0AE /* PositionController.m in Sources */,
-				5EAF82811D6AF51200239CB5 /* BarSeries.m in Sources */,
-				5EAF82801D6AF51200239CB5 /* BBTheme.m in Sources */,
 				5E99F46D1D81408D009863A9 /* Segment.m in Sources */,
 				5E1722901D630082003CA0AE /* DealCell.m in Sources */,
 				5EAF83E01D6EC23600239CB5 /* Core+CheckData.m in Sources */,
 				5E17227E1D630082003CA0AE /* BaseNavigationController.m in Sources */,
 				5E17228B1D630082003CA0AE /* DealHistoryCell.m in Sources */,
-				5EAF827F1D6AF51200239CB5 /* BBChartView.m in Sources */,
 				5E23877E1D868EB8008AF872 /* LCategory.m in Sources */,
 				5EAF82851D6AF51200239CB5 /* ScanQRCodeController.m in Sources */,
 				5E1722931D630082003CA0AE /* PersonalController.m in Sources */,
 				5E2FD4421D8F84C600C9D59B /* Core+Alert.m in Sources */,
 				5E99F46E1D81408D009863A9 /* SegmentView.m in Sources */,
+				5E3C31DF1D95230A006245CB /* StockData.m in Sources */,
 				5EAF82891D6AF51200239CB5 /* QRCodeImage.m in Sources */,
 				5E2387AB1D87EF25008AF872 /* DetailPositionCell2.m in Sources */,
 				5E23877A1D868C2C008AF872 /* Core+Network.m in Sources */,
