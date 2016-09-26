@@ -9,7 +9,7 @@
 #import "SecurityCodeView.h"
 
 @interface SecurityCodeView ()
-@property (weak, nonatomic) IBOutlet LButton *codeButton;
+
 @property (weak, nonatomic) IBOutlet LButton *CIAButton;
 @property (weak, nonatomic) IBOutlet LButton *button;
 @property (weak, nonatomic) IBOutlet UILabel *codeLabel;

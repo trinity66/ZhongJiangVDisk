@@ -19,18 +19,30 @@ __weak RegisterController *registerSelf;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    registerSelf = self;
-    _titles = @[@"交易密码：", @"真实姓名：", @"身份证号码：", @"手机号码："];
-    _details = @[@"w", @"刘晓敏", @"41232619930616754X", @"13732249640"];
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self _init];
     // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [_foot.codeButton stopTimer];
+}
+/*
+ 设置一些初始化数据
+ */
+- (void)_init
+{
+    registerSelf = self;
+    _titles = @[@"交易密码：", @"真实姓名：", @"身份证号码：", @"手机号码："];
+    _details = @[@"w", @"刘晓敏", @"41232619930616754X", @"13732249640"];
+    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+}
 /*
  tableView delegate
  */
@@ -211,8 +223,12 @@ __weak RegisterController *registerSelf;
             [self showAlert:@"手机号码输入不正确，请检查"];
             return;
         }
+    [_foot.codeButton startWithTimerCount:60];
     [self showAlert:@"验证码发送成功"];
 }
+/*
+ 显示提示信息
+ */
 - (void)showAlert:(NSString *)string
 {
     [LCoreCurrent showAlertTitle:string timeCount:2 inView:self.view];

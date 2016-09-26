@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LButton : UIButton
-
+- (void)startWithTimerCount:(NSInteger)count;
+- (void)stopTimer;
 @end

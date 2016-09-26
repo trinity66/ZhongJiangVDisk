@@ -10,7 +10,6 @@
 #import "ScanQRCodeController.h"
 @interface Core (Controller)
 - (UIViewController *)currentTopViewController;
-
 - (void)goRechargeVC;
 - (void)goForgetDealPswdVC;
 - (void)goRegisterVC;

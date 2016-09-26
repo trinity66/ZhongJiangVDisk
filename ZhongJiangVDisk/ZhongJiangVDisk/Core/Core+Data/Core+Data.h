@@ -16,9 +16,7 @@
 - (void)saveUserInfoWithKey:(NSString *)key value:(id)value;
 - (NSDictionary *)getUserInfo;
 
-
 - (void)products;
-
 
 - (void)saveDeal:(NSDictionary *)dictionary;
 - (void)saveDealWithList:(NSMutableArray *)list;

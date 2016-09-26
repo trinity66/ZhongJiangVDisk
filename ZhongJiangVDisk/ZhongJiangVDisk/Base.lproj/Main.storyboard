@@ -563,9 +563,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HuQ-ZE-Aan">
-                                <frame key="frameInset" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HuQ-ZE-Aan">
                                 <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="GAW-cC-yMz" id="b4V-bh-IVe"/>
@@ -573,6 +571,12 @@
                             </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HuQ-ZE-Aan" secondAttribute="trailing" id="14B-rC-1Pj"/>
+                            <constraint firstItem="HuQ-ZE-Aan" firstAttribute="top" secondItem="2IR-ei-cMR" secondAttribute="top" id="BgY-Cn-lCl"/>
+                            <constraint firstItem="HuQ-ZE-Aan" firstAttribute="leading" secondItem="2IR-ei-cMR" secondAttribute="leading" id="Sp3-bn-sDk"/>
+                            <constraint firstItem="Wfe-jE-Dxz" firstAttribute="top" secondItem="HuQ-ZE-Aan" secondAttribute="bottom" id="UoM-Er-K9Q"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="webView" destination="HuQ-ZE-Aan" id="FyG-ga-aqh"/>

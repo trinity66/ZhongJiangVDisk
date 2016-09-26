@@ -32,6 +32,11 @@ __weak ApplyForBrokerController *_applySelf;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [_foot.codeButton stopTimer];
+}
 /*
  tableView delegate
  */
@@ -178,6 +183,7 @@ __weak ApplyForBrokerController *_applySelf;
  */
 - (void)sendCodeActionWithIndex:(NSInteger)index
 {
+    [_foot.codeButton startWithTimerCount:60];
     if (index == 0) {
         //短信验证码
         [self showAlert:@"验证码发送成功"];

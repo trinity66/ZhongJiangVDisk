@@ -9,7 +9,6 @@
 #import "RegisterButtonView.h"
 
 @interface RegisterButtonView ()
-@property (weak, nonatomic) IBOutlet LButton *codeButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *propertyBtn;
 @property (weak, nonatomic) IBOutlet LButton *button;

@@ -11,5 +11,6 @@
 @interface RegisterButtonView : UIView
 @property (weak, nonatomic) IBOutlet LTextField *securityCodeTF;
 @property (weak, nonatomic) IBOutlet UIButton *isAgreeBtn;
+@property (weak, nonatomic) IBOutlet LButton *codeButton;
 @property (nonatomic, copy) btnsActionBlock btnsActionBlock;
 @end

@@ -31,6 +31,14 @@ __weak ForgetDealPswdController *_forgetDealSelf;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [_foot.codeButton stopTimer];
+}
+/*
+ tableView delagate
+ */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -155,6 +163,7 @@ __weak ForgetDealPswdController *_forgetDealSelf;
  */
 - (void)sendCodeActionWithIndex:(NSInteger)index
 {
+    [_foot.codeButton startWithTimerCount:60];
     if (index == 0) {
         //短信验证码
         [self showAlert:@"验证码发送成功"];
