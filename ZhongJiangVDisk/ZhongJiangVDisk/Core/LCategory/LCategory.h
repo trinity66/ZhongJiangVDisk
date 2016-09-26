@@ -13,6 +13,7 @@
 - (NSString*)base64_encode;
 - (NSString*)base64_decode;
 + (NSString*)app_version;
++ (NSString *)stringWithDate:(NSDate *)date dateFormat:(NSString *)dateFormat;
 @end
 
 @interface UIImage (extend)
@@ -21,5 +22,17 @@
 @end
 
 @interface NSDate (extend)
-+ (NSString*)get_current_time;
++ (NSDate *)dateWithString:(NSString *)string dateFormat:(NSString *)dateFormat;
+@end
+
+@interface UIScrollView (extend)
+
+@end
+
+@interface CALayer (extend)
++ (CALayer *)layerOfLineFrom:(CGPoint)from to:(CGPoint)to withColor:(UIColor*)color andWidth:(CGFloat)width;
++(CALayer *)backGradientWithPoints:(NSArray*)points height:(double)height width:(double)width colors:(NSArray<UIColor *> *)colors;
+
++(CALayer *)lineWithPoints:(NSArray*)points lineColor:(UIColor *)lineColor height:(double)height width:(double)width isGradient:(BOOL)isGradient isShowFillColor:(BOOL)isShowFillColor fillColor:(UIColor*)fillColor;
+
 @end

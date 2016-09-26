@@ -18,11 +18,8 @@
     stockData.low = low;
     stockData.high = high;
     if (time) {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyyMMddHHmmss"];
-        NSDate *date = [formatter dateFromString:time];
-        [formatter setDateFormat:@"HH:mm:ss"];
-        stockData.time = [formatter stringFromDate:date];
+        NSDate *date = [NSDate dateWithString:time dateFormat:@"yyyyMMddHHmmss"];
+        stockData.time = [NSString stringWithDate:date dateFormat:@"HH:mm:ss"];
     }
     return stockData;
 }

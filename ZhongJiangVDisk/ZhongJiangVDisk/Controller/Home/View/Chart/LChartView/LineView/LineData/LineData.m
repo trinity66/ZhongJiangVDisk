@@ -13,13 +13,8 @@
 {
     LineData *lineData = [[LineData alloc] init];
     lineData.data = data;
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyyMMddHHmmss"];
-    NSDate *date = [formatter dateFromString:time];
-    [formatter setDateFormat:@"HH:mm:ss"];
-    lineData.time = [formatter stringFromDate:date];
-    
+    NSDate *date = [NSDate dateWithString:time dateFormat:@"yyyyMMddHHmmss"];
+    lineData.time = [NSString stringWithDate:date dateFormat:@"HH:mm:ss"];
     return lineData;
 }
 @end

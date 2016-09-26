@@ -120,8 +120,8 @@
 
 //分时图，k图
 #import "LChartView.h"
-#import "CALayer+BackLayer.h"
-#import "UIScrollView+UITouch.h"
+//#import "CALayer+BackLayer.h"
+//#import "UIScrollView+UITouch.h"
 
 #import "StockChartDataView.h"
 #import "StockData.h"

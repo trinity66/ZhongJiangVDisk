@@ -74,8 +74,6 @@
 		5E2FD4471D8F904400C9D59B /* RegisterButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FD4451D8F904400C9D59B /* RegisterButtonView.m */; };
 		5E2FD4481D8F904400C9D59B /* RegisterButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2FD4461D8F904400C9D59B /* RegisterButtonView.xib */; };
 		5E2FD44C1D8F907600C9D59B /* LConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FD44B1D8F907600C9D59B /* LConfig.m */; };
-		5E3C31CE1D95230A006245CB /* CALayer+BackLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31A61D95230A006245CB /* CALayer+BackLayer.m */; };
-		5E3C31CF1D95230A006245CB /* UIScrollView+UITouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31A91D95230A006245CB /* UIScrollView+UITouch.m */; };
 		5E3C31D01D95230A006245CB /* LChartBottomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31AE1D95230A006245CB /* LChartBottomCell.m */; };
 		5E3C31D11D95230A006245CB /* LChartBottomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31AF1D95230A006245CB /* LChartBottomCell.xib */; };
 		5E3C31D21D95230A006245CB /* LChartBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C31B11D95230A006245CB /* LChartBottomView.m */; };
@@ -272,10 +270,6 @@
 		5E2FD4461D8F904400C9D59B /* RegisterButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterButtonView.xib; sourceTree = "<group>"; };
 		5E2FD44A1D8F907600C9D59B /* LConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LConfig.h; sourceTree = "<group>"; };
 		5E2FD44B1D8F907600C9D59B /* LConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LConfig.m; sourceTree = "<group>"; };
-		5E3C31A51D95230A006245CB /* CALayer+BackLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+BackLayer.h"; sourceTree = "<group>"; };
-		5E3C31A61D95230A006245CB /* CALayer+BackLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BackLayer.m"; sourceTree = "<group>"; };
-		5E3C31A81D95230A006245CB /* UIScrollView+UITouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UITouch.h"; sourceTree = "<group>"; };
-		5E3C31A91D95230A006245CB /* UIScrollView+UITouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UITouch.m"; sourceTree = "<group>"; };
 		5E3C31AD1D95230A006245CB /* LChartBottomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LChartBottomCell.h; sourceTree = "<group>"; };
 		5E3C31AE1D95230A006245CB /* LChartBottomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LChartBottomCell.m; sourceTree = "<group>"; };
 		5E3C31AF1D95230A006245CB /* LChartBottomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LChartBottomCell.xib; sourceTree = "<group>"; };
@@ -1110,37 +1104,9 @@
 				5E3C31EC1D952999006245CB /* data.json */,
 				5E3C31E01D9523AA006245CB /* ChartView */,
 				5E3C31E41D9523AA006245CB /* ChartViewTwo */,
-				5E3C31A31D95230A006245CB /* Category */,
 				5E3C31AA1D95230A006245CB /* LChartView */,
 			);
 			path = Chart;
-			sourceTree = "<group>";
-		};
-		5E3C31A31D95230A006245CB /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				5E3C31A41D95230A006245CB /* CALayer+BackLayer */,
-				5E3C31A71D95230A006245CB /* UIScrollView+UITouch */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		5E3C31A41D95230A006245CB /* CALayer+BackLayer */ = {
-			isa = PBXGroup;
-			children = (
-				5E3C31A51D95230A006245CB /* CALayer+BackLayer.h */,
-				5E3C31A61D95230A006245CB /* CALayer+BackLayer.m */,
-			);
-			path = "CALayer+BackLayer";
-			sourceTree = "<group>";
-		};
-		5E3C31A71D95230A006245CB /* UIScrollView+UITouch */ = {
-			isa = PBXGroup;
-			children = (
-				5E3C31A81D95230A006245CB /* UIScrollView+UITouch.h */,
-				5E3C31A91D95230A006245CB /* UIScrollView+UITouch.m */,
-			);
-			path = "UIScrollView+UITouch";
 			sourceTree = "<group>";
 		};
 		5E3C31AA1D95230A006245CB /* LChartView */ = {
@@ -1729,7 +1695,6 @@
 				5E17227F1D630082003CA0AE /* BaseTabBarController.m in Sources */,
 				5E23878D1D87D424008AF872 /* BuyButton.m in Sources */,
 				5E1722881D630082003CA0AE /* ApplyForBrokerController.m in Sources */,
-				5E3C31CE1D95230A006245CB /* CALayer+BackLayer.m in Sources */,
 				5E17229C1D630082003CA0AE /* WithdrawController.m in Sources */,
 				5E1722801D630082003CA0AE /* BaseViewController.m in Sources */,
 				5E3C31D81D95230A006245CB /* LChartTopView.m in Sources */,
@@ -1753,7 +1718,6 @@
 				5E1722FF1D65AB49003CA0AE /* ProductTableView.m in Sources */,
 				5E3C31D61D95230A006245CB /* LChartLeftView.m in Sources */,
 				5E8F18761D88FD6B00D2E4DC /* main.m in Sources */,
-				5E3C31CF1D95230A006245CB /* UIScrollView+UITouch.m in Sources */,
 				5E75AF6B1D73C4260051FB1D /* DealModel.m in Sources */,
 				5E2387891D87A05D008AF872 /* PositionCell.m in Sources */,
 				5E3C31EA1D9523AA006245CB /* ChartViewTwo.m in Sources */,

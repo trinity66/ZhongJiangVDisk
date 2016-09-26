@@ -26,7 +26,7 @@
     NSMutableDictionary* common_params = [NSMutableDictionary dictionary];
     
     [common_params setObject:@101 forKey:@"source"];//101
-    NSString* current_time = [NSDate get_current_time];
+    NSString* current_time = [NSString stringWithDate:[NSDate date] dateFormat:@"yyyyMMddHHmmss"];
     [common_params setObject:current_time forKey:@"time"];
     [common_params setObject:@"zh_CN" forKey:@"lang"];
     [common_params setObject:full_params forKey:@"params"];
