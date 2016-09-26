@@ -50,7 +50,7 @@
     _record.font = [UIFont systemFontOfSize:kCellLabelFont];
     
 }
-- (void)setDataWithTitle:(NSString *)title Number:(double)number isRise:(BOOL)isRise
+- (void)setDataWithTitle:(NSString *)title Number:(NSString *)number isRise:(BOOL)isRise
 {
     UIColor *color;
     NSString *imageName;
@@ -85,7 +85,7 @@
         }
             break;
     }
-    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.02f",number] attributes:@{
+    NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:number attributes:@{
                                                                                                                                              NSForegroundColorAttributeName:color
                                                                                                                                              }];
     NSTextAttachment *im = [[NSTextAttachment alloc] init];

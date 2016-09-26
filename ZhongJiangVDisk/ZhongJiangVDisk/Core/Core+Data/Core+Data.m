@@ -109,21 +109,21 @@
         isHavePreData = NO;
     }
     for (int i = 0; i < LCoreCurrent.homeTopTitles.count; i ++) {
-        double number = 0, preNumber = 0;
+        NSString * number, *preNumber;
         BOOL isRise = YES;
         if (!isHavePreData && !homeTopData) {
             //之前无数据，当前也无数据
-            number = 0.00;
+            number = @"0.00";
         }else
         {
             NSString *key = self.homeTopTitles[i][@"key"];
             if (isHavePreData) {
                 //之前有数据
-                preNumber = [homeTopDatas.lastObject[key] doubleValue];
+                preNumber = [NSString stringWithFormat:@"%@",homeTopDatas.lastObject[key]];
                 if (homeTopData) {
                     //当前有数据
-                    number = [homeTopData[key] doubleValue];
-                    if (preNumber>number) {
+                    number = [NSString stringWithFormat:@"%@",homeTopData[key]];
+                    if ([preNumber doubleValue]>[number doubleValue]) {
                         isRise = NO;
                     }
                 }else

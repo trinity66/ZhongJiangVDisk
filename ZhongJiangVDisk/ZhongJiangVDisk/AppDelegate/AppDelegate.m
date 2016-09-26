@@ -22,10 +22,10 @@
     // Override point for customization after application launch.
     LCoreCurrent.VDiskType = VDiskTypeZhongHui;//VDiskTypeZhongJiang//VDiskTypeYinHe//
 //    [self loadHomeTopDatas];
-//    if (!timer) {
-//      timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(loadHomeTopDatas) userInfo:nil repeats:YES];
-//        [timer fire];
-//    }
+    if (!timer) {
+      timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(loadHomeTopDatas) userInfo:nil repeats:YES];
+        [timer fire];
+    }
     if (!LCoreCurrent.isLogin) {
     [self performSelector:@selector(goRegister) withObject:nil afterDelay:0.01];
     }else
@@ -54,7 +54,7 @@
  */
 - (void)loadHomeTopDatas
 {
-    [LCoreCurrent requestWithURL:@"http://123.206.194.14:18081/HQ/AllGoods" resultBlock:^(BOOL success, id result, NSError *error, NSURLResponse *response) {
+    [LCoreCurrent requestWithURL:@"http://mhq.sh.1251421153.clb.myqcloud.com/HQ/AllGoods" resultBlock:^(BOOL success, id result, NSError *error, NSURLResponse *response) {
         if (result && [result isKindOfClass:[NSDictionary class]]) {
             [LCoreCurrent saveHomeTopData:result];
 //            [(AppDelegate *)[UIApplication sharedApplication].delegate loadHomeTopDatas];

@@ -12,6 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIView *bottom;
 @property (weak, nonatomic) IBOutlet UILabel *record;
-- (void)setDataWithTitle:(NSString *)title Number:(double)number isRise:(BOOL)isRise;
+- (void)setDataWithTitle:(NSString *)title Number:(NSString *)number isRise:(BOOL)isRise;
 
 @end

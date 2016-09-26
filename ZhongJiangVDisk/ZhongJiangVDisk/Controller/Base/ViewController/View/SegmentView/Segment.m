@@ -43,7 +43,7 @@
     }
     return self;
 }
-- (void)setValueWithIndex:(NSInteger)index title:(NSString *)title number:(double)number isRise:(BOOL)isRise {
+- (void)setValueWithIndex:(NSInteger)index title:(NSString *)title number:(NSString *)number isRise:(BOOL)isRise {
     if (index < views.count) {
         SegmentView *view = views[index];
         [view setDataWithTitle:LCoreCurrent.homeTopTitles[index][@"title"] Number:number isRise:isRise];
