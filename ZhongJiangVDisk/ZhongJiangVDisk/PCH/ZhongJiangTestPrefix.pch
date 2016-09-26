@@ -93,7 +93,6 @@
 #import "BuyView.h"//购买
 #import "SelectDataCell.h"//购买时选择数据view
 
-#import "LChartView.h"//首页分时图
 #import "ChartViewTwo.h"//首页分时图样式2
 #import "ChartView.h"
 //#import "ProductCollectionView.h"//首页底部collectionView
@@ -120,6 +119,20 @@
 #import "WebController.h"//网页
 
 //分时图，k图
+#import "LChartView.h"
+#import "CALayer+BackLayer.h"
+#import "UIScrollView+UITouch.h"
+
+#import "StockChartDataView.h"
+#import "StockData.h"
+#import "LineChartDataView.h"
+#import "LineData.h"
+
+#import "LChartTopView.h"
+#import "LChartLeftView.h"
+#import "LChartLeftCell.h"
+#import "LChartBottomView.h"
+#import "LChartBottomCell.h"
 
 
 //三方框架

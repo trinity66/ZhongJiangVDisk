@@ -39,12 +39,15 @@
     _mainView.backgroundColor = LCoreCurrent.backgroundColor;
     UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-3];
     UIColor *backColor = LCoreCurrent.topSegmentColor;
+    if (LCoreCurrent.VDiskType == VDiskTypeZhongHui) {
+        backColor = [UIColor whiteColor];
+    }
+    _mainView.layer.borderColor = backColor.CGColor;
     [_riseButton setTite:@"买涨" imageName:@"arrow_up_small" titleColor:LCoreCurrent.riseTextColor imageColor:LCoreCurrent.riseTextColor backColor:backColor font:font];
     [_fallButton setTite:@"买跌" imageName:@"arrow_down_small" titleColor:LCoreCurrent.fallTextColor imageColor:LCoreCurrent.fallTextColor backColor:backColor font:font];
     _title.textColor = LCoreCurrent.cellTextColor;
     _detail.textColor = LCoreCurrent.selectedLineColor;
     _detail.font = [UIFont systemFontOfSize:kCellLabelFont-4];
-    _mainView.layer.borderColor = LCoreCurrent.topSegmentColor.CGColor;
     _detailTwo.textColor = [UIColor lightGrayColor];
     _detailTwo.font = [UIFont systemFontOfSize:kCellLabelFont-5];
 }

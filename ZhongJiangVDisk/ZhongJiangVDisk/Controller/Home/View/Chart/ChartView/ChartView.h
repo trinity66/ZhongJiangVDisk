@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "LChartView.h"
 @interface ChartView : UIView
-@property (nonatomic, assign) NSInteger segSelectedIndex;
 @property (nonatomic, strong)LChartView *lChart;
 - (void)setSelfFrame:(CGRect)frame;
+@property (nonatomic, assign) NSInteger topSegSelectedIndex;
 
 @end

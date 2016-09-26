@@ -18,7 +18,7 @@
         "chartLinesColor":[0.88, 0.88, 0.88, 1.00],
         "chartYTextColor":[0.80, 0.80, 0.80, 1.00],
         "chartXTextColor":[0.80, 0.80, 0.80, 1.00],
-        "chartBackColor":[1.00, 1.00, 1.00, 1.00],
+        "chartBackColor":[0.84, 0.72, 0.53, 1.00],
         
         "selectedLineColor":[0.84, 0.72, 0.53, 1.00],
         "tabBarSelectTextColor":[0.64, 0.52, 0.38, 1.00],
@@ -49,10 +49,10 @@
         "positionCellTextColor":[1.00, 1.00, 1.00, 1.00],
         
         "chartLineColor":[0.84, 0.84, 0.84, 1.00],
-        "chartLinesColor":[1.00, 1.00, 1.00, 0.00],
-        "chartYTextColor":[0.80, 0.80, 0.80, 1.00],
+        "chartLinesColor":[0.3, 0.3, 0.3, 1.00],
+        "chartYTextColor":[1.00, 0.50, 0.00, 1.00],
         "chartXTextColor":[0.80, 0.80, 0.80, 1.00],
-        "chartBackColor":[0.20, 0.20, 0.20, 1.00],
+        "chartBackColor":[0.84, 0.72, 0.53, 1.00],
         
         "selectedLineColor":[0.84, 0.72, 0.53, 1.00],
         "tabBarSelectTextColor":[1.00, 1.00, 1.00, 1.00],

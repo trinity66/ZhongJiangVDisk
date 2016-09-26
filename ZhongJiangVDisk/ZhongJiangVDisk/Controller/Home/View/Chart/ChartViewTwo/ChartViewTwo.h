@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "LChartView.h"
 @interface ChartViewTwo : UIView
-- (void)setSelfFrame:(CGRect)frame;
 @property (nonatomic, strong)LChartView *lChart;
+- (void)setSelfFrame:(CGRect)frame;
 @end

@@ -7,11 +7,6 @@
 //
 
 #import "LChartView.h"
-#import "CALayer+BackLayer.h"
-#import "StockData.h"
-#import "LineChartDataView.h"
-#import "StockChartDataView.h"
-#import "UIScrollView+UITouch.h"
 @interface LChartView ()<UIScrollViewDelegate>
 {
     BOOL isFirstTouch;
@@ -24,10 +19,11 @@
 }
 /*
  dataPoints:对于真实数据处理之后的CGPoint--用于画填充色
- myData:提取data.json中的某一列数据
+ loadDatas:提取data.json中的数据
+ datas:存储数据，用于显示当前点击数据
  ---minValue、maxValue用于计算真实的CGPoint中的y
- minValue:真实数据中最大的数据
- maxValue:真实数据中最小的数据
+ minValue:数据中最大的数据
+ maxValue:数据中最小的数据
  */
 @property (nonatomic, strong)NSMutableArray *dataPoints, *datas;
 @property (nonatomic, strong)NSArray *loadDatas;
@@ -35,38 +31,32 @@
 @property (nonatomic, strong)CALayer *backLayer, *lineLayer, *stockLayer, *linesLayer;
 @end
 @implementation LChartView
-
+/*
+ 初始化一些数据
+ */
 -(void)initWithFrame:(CGRect)frame itemWidth:(double)itemWidth leftLabelCount:(NSInteger)leftLabelCount bottomLabelCount:(NSInteger)bottomLabelCount leftViewWidth:(double)leftViewWith bottomViewHeight:(double)bottomViewHight isStock:(BOOL)isStock isGradient:(BOOL)isGradient
 {
-    self.frame = frame;
-    self.isStock = isStock;
-    _item_width = itemWidth;
-    _isGradient = isGradient;
-    topViewHeight = 25;
-    leftViewWidth = leftViewWith;
-    bottomViewHeight = bottomViewHight;
-    _leftLabelCount = leftLabelCount;
-    
-    _bottomLabelCount = bottomLabelCount;
-   
+    self.frame = frame;//行情图的superView的frame
+    _item_width = itemWidth;//每个行情所占宽度
+    _isGradient = isGradient;//折线图是否显示渐变背景
+    topViewHeight = 25;//topView高度
+    leftViewWidth = leftViewWith;//leftView宽度
+    bottomViewHeight = bottomViewHight;//bottomView高度
+    _leftLabelCount = leftLabelCount;//左视图共划分为几段
+    _bottomLabelCount = bottomLabelCount;//bottomView共划分成几段，当前暂未用到
+   /*
+    行情图frame
+    */
     _mainOriginX = leftViewWith;
     _mainOriginY = topViewHeight;
     _mainSizeWidth = frame.size.width -leftViewWith;
-    _mainSizeHeight = frame.size.height - topViewHeight - bottomViewHight;
+    _mainSizeHeight = frame.size.height - topViewHeight;
     [self _init];
+    self.isStock = isStock;
 }
-- (void)setIsStock:(BOOL)isStock
-{
-    _isStock = isStock;
-    if (isStock) {
-        showViewWidth = 140;
-        showViewHeight = 60;
-    }else
-    {
-        showViewWidth = 76;
-        showViewHeight = 40;
-    }
-}
+/*
+ 初始化views
+ */
 - (void)_init{
     //图
     _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(_mainOriginX, _mainOriginY, _mainSizeWidth, _mainSizeHeight)];
@@ -85,17 +75,42 @@
     [self addSubview:_mainView];
     [self addSubview:_leftView];
     [self addSubview:_topView];
+    
     [self _initSubShowViews];
-    [self loadData];
     self.backgroundColor = [UIColor clearColor];
     _leftView.backgroundColor = [UIColor clearColor];
     _bottomView.backgroundColor = [UIColor clearColor];
+}
+/*
+ 设置当前图是否为k图
+ */
+- (void)setIsStock:(BOOL)isStock
+{
+    _isStock = isStock;
+    if (isStock) {
+        /*
+         k图显示数据View的宽高
+         */
+        showViewWidth = 140;
+        showViewHeight = 60;
+    }else
+    {
+        /*
+         折线图显示数据view的宽高
+         */
+        showViewWidth = 76;
+        showViewHeight = 40;
+    }
+    [self loadData];
 }
 - (void)setItem_width:(double)item_width
 {
     _item_width = item_width;
     [self scaleWidth];
 }
+/*
+ 计算图的宽度，重新画图
+ */
 - (void)scaleWidth {
     _mainSizeWidth = _item_width * _datas.count;
     _mainView.contentSize = CGSizeMake(_mainSizeWidth, _mainSizeHeight);
@@ -107,6 +122,9 @@
         [self addLineLayer];
     }
 }
+/*
+ 初始化显示某个行情的数据View
+ */
 - (void)_initSubShowViews
 {
     if (!lineY) {
@@ -132,6 +150,9 @@
     [self subShowViewsHidden:YES];
     
 }
+/*
+ 是否显示某个行情的数据
+ */
 - (void)subShowViewsHidden:(BOOL)isHidden
 {
     lineY.hidden = isHidden;
@@ -149,6 +170,9 @@
         isFirstTouch = isHidden;
     }
 }
+/*
+ 移除显示视图
+ */
 - (void)removeSubShowViews
 {
     [lineY removeFromSuperview];
@@ -159,7 +183,7 @@
 
 /*
  加载数据，现在是加载的本地数据
- 同时处理myData minValue maxValue bkVWidth
+ 同时处理datas、minValue、maxValue、mainSizeWidth、顶部显示数据
  */
 - (void)loadData{
     [self subShowViewsHidden:YES];
@@ -183,23 +207,24 @@
             _minValue = [data[4] doubleValue];
         }
         if (_isStock) {
-            StockData *d = [[StockData alloc] init];
-            [d setOpen:[data[2] doubleValue] close:[data[5] doubleValue] low:[data[4] doubleValue] high:[data[3] doubleValue]];
+            StockData *d = [StockData setOpen:[data[2] doubleValue] close:[data[5] doubleValue] low:[data[4] doubleValue] high:[data[3] doubleValue] time:[NSString stringWithFormat:@"%@",data[0]]];
             [_datas addObject:d];
         }else
         {
-            [_datas addObject:data[2]];
+            LineData *d = [LineData setData:[data[2] doubleValue] time:[NSString stringWithFormat:@"%@",data[0]]];
+            [_datas addObject:d];
         }
     }
     [self scaleWidth];
-    StockData *data = [[StockData alloc] init];
-    [data setOpen:2222.00 close:3333.00 low:_minValue high:_maxValue];
+    /*
+     设置顶部数据 昨收，今开，最高，最低
+     */
+    StockData *data = [StockData setOpen:2222.00 close:3333.00 low:_minValue high:_maxValue time:nil];
     _topView.data = data;
     [_leftView setMaxValue:_maxValue minValue:_minValue itemCount:_leftLabelCount];
 }
-
 /*
- 画好的渐变layer层并添加到backView中
+设置画图位置数组dataPoints
  */
 - (void)resetDataPointsWithArray:(NSArray *)datas
 {
@@ -216,13 +241,17 @@
             f = data.high;
         }else
         {
-            f = [datas[i] floatValue];
+            LineData *data = datas[i];
+            f = data.data;
         }
         float y = (_mainSizeHeight -bottomViewHeight) - [self heightForValue:f];
         float x = i*_item_width;
         [_dataPoints addObject:@[[NSNumber numberWithFloat:x], [NSNumber numberWithFloat:y]]];
     }
 }
+/*
+ 当点击事件结束后，若为单击，则显示当前点击行情的数据
+ */
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     if (touches.count == 1) {
@@ -234,21 +263,9 @@
             return;
         }
         NSInteger index = (NSInteger)x/(NSInteger)_item_width;
-        CGFloat f = 0;
         if (index>=0 && index < self.datas.count) {
             if (isFirstTouch) {
                 [self subShowViewsHidden:NO];
-            }
-            id shujv = self.datas[index];
-            if (_isStock) {
-                StockData *p =shujv;
-                f = p.high;
-                [showStockView setTime:@"未知" open:p.open close:p.close high:p.high low:p.low];
-            }else
-            {
-                NSNumber *num = shujv;
-                f = [num doubleValue];
-                [showLineView setTime:@"未知" data:f];
             }
             x = [_dataPoints[index][0] doubleValue]-_mainView.contentOffset.x;
             if (_isStock) {
@@ -270,9 +287,13 @@
             }
             CGRect frame = CGRectMake(showViewX, showViewY+topViewHeight, showViewWidth, showViewHeight);
             if (_isStock) {
+                StockData *p =self.datas[index];
+                [showStockView setTime:p.time open:p.open close:p.close high:p.high low:p.low];
                 [self updateView:showStockView frame:frame];
             }else
             {
+                LineData *p = self.datas[index];
+                [showLineView setTime:p.time data:p.data];
                 [self updateView:showLineView frame:frame];
             }
             lineY.frame = CGRectMake(leftViewWidth + x, topViewHeight, 0.5, _mainSizeHeight-bottomViewHeight);
@@ -280,6 +301,9 @@
         }
     }
 }
+/*
+ 显示视图frame移动时的动画效果
+ */
 - (void)updateView:(UIView *)view frame:(CGRect)frame
 {
     if (isFirstTouch) {
@@ -301,14 +325,18 @@
     [self removeSubLayers];
     [self add_linesLayer];
     if (_isGradient) {
-        NSArray *rgba =@[@0.84, @0.72, @0.54];
-        CGFloat R = [rgba[0] floatValue];
-        CGFloat G = [rgba[1] floatValue];
-        CGFloat B = [rgba[2] floatValue];
-        NSArray *colors = @[[UIColor colorWithRed:R green:G blue:B alpha:1.0],
-                            [UIColor colorWithRed:R green:G blue:B alpha:0.6],
-                            [UIColor colorWithRed:R green:G blue:B alpha:0.2]];
-        _backLayer = [CALayer backGradientWithPoints:_dataPoints height:_mainSizeHeight- bottomViewHeight width:_mainSizeWidth colors:colors];
+        
+        const CGFloat *rgba =CGColorGetComponents(LCoreCurrent.chartBackColor.CGColor);
+        if (CGColorGetNumberOfComponents(LCoreCurrent.chartBackColor.CGColor) == 4) {
+            CGFloat R = rgba[0];
+            CGFloat G = rgba[1];
+            CGFloat B = rgba[2];
+            NSArray *colors = @[[UIColor colorWithRed:R green:G blue:B alpha:0.9],
+                                [UIColor colorWithRed:R green:G blue:B alpha:0.6],
+                                [UIColor colorWithRed:R green:G blue:B alpha:0.3]
+                                ];
+            _backLayer = [CALayer backGradientWithPoints:_dataPoints height:_mainSizeHeight- bottomViewHeight width:_mainSizeWidth colors:colors];
+        }
         [_mainView.layer addSublayer:_backLayer];
     }
     _lineLayer = [CALayer lineWithPoints:_dataPoints lineColor:LCoreCurrent.selectedLineColor height:_mainSizeHeight- bottomViewHeight width:_mainSizeWidth isGradient:_isGradient isShowFillColor:NO fillColor:[UIColor brownColor]];
@@ -371,6 +399,7 @@
     }
     [_mainView.layer addSublayer:_linesLayer];
 }
+//移除layers
 - (void)removeSubLayers
 {
     if (_backLayer) {

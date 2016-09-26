@@ -7,7 +7,6 @@
 //
 
 #import "LChartLeftView.h"
-#import "LChartLeftCell.h"
 @interface LChartLeftView ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

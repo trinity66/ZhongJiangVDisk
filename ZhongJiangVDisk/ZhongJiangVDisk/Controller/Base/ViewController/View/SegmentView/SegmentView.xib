@@ -13,10 +13,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="vB4-Dw-pdq">
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="zUQ-aa-vRm"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="GIm-LJ-cv2">
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -26,22 +28,17 @@
                         <constraint firstAttribute="height" constant="2" id="BIA-nt-84b"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="GIm-LJ-cv2">
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Gqx-ZP-bFL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1hv-iu-ZQm"/>
                 <constraint firstAttribute="bottom" secondItem="GIm-LJ-cv2" secondAttribute="bottom" id="6JS-sI-plG"/>
-                <constraint firstItem="vB4-Dw-pdq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="7oR-2Z-w4J"/>
-                <constraint firstItem="GIm-LJ-cv2" firstAttribute="top" secondItem="vB4-Dw-pdq" secondAttribute="bottom" id="Ljs-ok-b11"/>
-                <constraint firstItem="GIm-LJ-cv2" firstAttribute="top" secondItem="vB4-Dw-pdq" secondAttribute="bottom" id="Vet-CR-1J1"/>
+                <constraint firstItem="vB4-Dw-pdq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7oR-2Z-w4J"/>
+                <constraint firstItem="GIm-LJ-cv2" firstAttribute="top" secondItem="vB4-Dw-pdq" secondAttribute="bottom" constant="-8" id="Vet-CR-1J1"/>
                 <constraint firstAttribute="trailing" secondItem="vB4-Dw-pdq" secondAttribute="trailing" id="aA1-Eg-7gf"/>
                 <constraint firstItem="GIm-LJ-cv2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cf4-As-ebt"/>
                 <constraint firstAttribute="bottom" secondItem="Gqx-ZP-bFL" secondAttribute="bottom" id="eld-m6-2Zs"/>
+                <constraint firstItem="vB4-Dw-pdq" firstAttribute="height" secondItem="GIm-LJ-cv2" secondAttribute="height" id="nvo-JX-YHZ"/>
                 <constraint firstItem="vB4-Dw-pdq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rVd-zF-ZZC"/>
                 <constraint firstAttribute="trailing" secondItem="Gqx-ZP-bFL" secondAttribute="trailing" id="w1y-nf-qK5"/>
                 <constraint firstAttribute="trailing" secondItem="GIm-LJ-cv2" secondAttribute="trailing" id="zny-dZ-aRN"/>
@@ -52,7 +49,6 @@
                 <outlet property="bottomLineHeight" destination="BIA-nt-84b" id="EOJ-2I-RVU"/>
                 <outlet property="record" destination="GIm-LJ-cv2" id="RFD-hi-EzW"/>
                 <outlet property="title" destination="vB4-Dw-pdq" id="hlB-g1-XrW"/>
-                <outlet property="topLabelHeight" destination="zUQ-aa-vRm" id="HFm-rp-OXC"/>
             </connections>
             <point key="canvasLocation" x="125" y="207"/>
         </view>

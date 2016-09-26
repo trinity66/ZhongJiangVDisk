@@ -59,8 +59,12 @@ __weak HomeController *_homeSelf;
         };
     }
 }
+/*
+ 顶部选择变化时
+ */
 - (void)handleTopButtonWithIndex:(NSInteger)index
 {
+    _chartSuperView.topSegSelectedIndex = index;
 }
 - (void)goForgetDealPswd
 {

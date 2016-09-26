@@ -12,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentC;
 @property (weak, nonatomic) IBOutlet UIView *segBottomLine;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *segBottomLineLeftX;
-
 //@property (nonatomic, strong) HMSegmentedControl *segmentC;
 
 @end
@@ -57,18 +56,21 @@
     [_segmentC setTitleTextAttributes:selected forState:UIControlStateSelected];
     _segmentC.selectedSegmentIndex = 0;
 }
-- (void)setSegSelectedIndex:(NSInteger)segSelectedIndex
+- (void)setTopSegSelectedIndex:(NSInteger)topSegSelectedIndex
 {
-    _segmentC.selectedSegmentIndex = segSelectedIndex;
-    [self handleSelf];
+    if (_topSegSelectedIndex != topSegSelectedIndex) {
+        _segmentC.selectedSegmentIndex = 0;
+        [self handleChart];
+    }
+    _topSegSelectedIndex = topSegSelectedIndex;
 }
-- (IBAction)segment_change_valued:(id)sender {
-    [self handleSelf];
-}
-- (void)handleSelf
+- (void)handleChart
 {
-    _segBottomLineLeftX.constant = kScreenWidth/5.0*_segmentC.selectedSegmentIndex;
+    _segBottomLineLeftX.constant = kScreenWidth/(_segmentC.numberOfSegments)*_segmentC.selectedSegmentIndex;
     _lChart.isStock = _segmentC.selectedSegmentIndex;
     [_lChart loadData];
+}
+- (IBAction)segment_change_valued:(id)sender {
+    [self handleChart];
 }
 @end

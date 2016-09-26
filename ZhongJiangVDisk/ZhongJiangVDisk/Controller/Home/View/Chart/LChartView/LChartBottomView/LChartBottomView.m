@@ -7,7 +7,6 @@
 //
 
 #import "LChartBottomView.h"
-#import "LChartBottomCell.h"
 @interface LChartBottomView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UIView *line;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

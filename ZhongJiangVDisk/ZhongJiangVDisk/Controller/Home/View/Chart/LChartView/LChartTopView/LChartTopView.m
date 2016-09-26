@@ -18,6 +18,10 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    [self setSomeControl];
+}
+- (void)setSomeControl
+{
     _scaleSeg.tintColor = LCoreCurrent.selectedLineColor;
     UIColor *color = LCoreCurrent.chartXTextColor;
     _scaleLabel.textColor = color;

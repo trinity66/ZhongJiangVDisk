@@ -10,5 +10,6 @@
 
 @interface StockData : NSObject
 @property (nonatomic)double open, close, high, low;
-- (void)setOpen:(double)open close:(double)close low:(double)low high:(double)high;
+@property (nonatomic, copy) NSString *time;
++ (StockData *)setOpen:(double)open close:(double)close low:(double)low high:(double)high time:(NSString *)time;
 @end

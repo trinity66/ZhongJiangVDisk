@@ -99,6 +99,7 @@
 		5E3C31ED1D952999006245CB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E3C31EC1D952999006245CB /* data.json */; };
 		5E4BEA8D1D8B7C6200A4E71D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4BEA891D8B7C6200A4E71D /* LaunchScreen.storyboard */; };
 		5E4BEA8E1D8B7C6200A4E71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4BEA8B1D8B7C6200A4E71D /* Main.storyboard */; };
+		5E54F36F1D98AF8100425D84 /* LineData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54F36E1D98AF8100425D84 /* LineData.m */; };
 		5E75AF6B1D73C4260051FB1D /* DealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6A1D73C4260051FB1D /* DealModel.m */; };
 		5E75AF6F1D73C5190051FB1D /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF6E1D73C5190051FB1D /* ProductModel.m */; };
 		5E75AF731D73DEF70051FB1D /* DealHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E75AF721D73DEF70051FB1D /* DealHistoryModel.m */; };
@@ -310,6 +311,8 @@
 		5E43939A1D89186E00470516 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E4BEA8A1D8B7C6200A4E71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E4BEA8C1D8B7C6200A4E71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		5E54F36D1D98AF8100425D84 /* LineData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineData.h; sourceTree = "<group>"; };
+		5E54F36E1D98AF8100425D84 /* LineData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineData.m; sourceTree = "<group>"; };
 		5E75AF691D73C4260051FB1D /* DealModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealModel.h; sourceTree = "<group>"; };
 		5E75AF6A1D73C4260051FB1D /* DealModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealModel.m; sourceTree = "<group>"; };
 		5E75AF6D1D73C5190051FB1D /* ProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
@@ -1209,6 +1212,7 @@
 		5E3C31C11D95230A006245CB /* LineView */ = {
 			isa = PBXGroup;
 			children = (
+				5E54F36C1D98AF7500425D84 /* LineData */,
 				5E3C31C21D95230A006245CB /* LineChartDataView */,
 			);
 			path = LineView;
@@ -1270,6 +1274,15 @@
 				5E3C31E71D9523AA006245CB /* ChartViewTwo.xib */,
 			);
 			path = ChartViewTwo;
+			sourceTree = "<group>";
+		};
+		5E54F36C1D98AF7500425D84 /* LineData */ = {
+			isa = PBXGroup;
+			children = (
+				5E54F36D1D98AF8100425D84 /* LineData.h */,
+				5E54F36E1D98AF8100425D84 /* LineData.m */,
+			);
+			path = LineData;
 			sourceTree = "<group>";
 		};
 		5E75AF671D73C3F50051FB1D /* Model */ = {
@@ -1725,6 +1738,7 @@
 				5EEB44D91D8158C200A40AA6 /* LatestInfos.m in Sources */,
 				5E3C31DB1D95230A006245CB /* LineChartDataView.m in Sources */,
 				5E1722E41D63008A003CA0AE /* TextFieldCell.m in Sources */,
+				5E54F36F1D98AF8100425D84 /* LineData.m in Sources */,
 				5E1722D51D63008A003CA0AE /* ButtonView.m in Sources */,
 				5EAF83D41D6E896400239CB5 /* Core+Controller.m in Sources */,
 				5E2FD4471D8F904400C9D59B /* RegisterButtonView.m in Sources */,
