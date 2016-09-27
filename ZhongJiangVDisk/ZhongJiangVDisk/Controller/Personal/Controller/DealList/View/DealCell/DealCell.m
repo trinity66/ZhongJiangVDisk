@@ -19,11 +19,12 @@
 @implementation DealCell
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
     // Initialization code
 }
-- (void)setSomeControl
+- (void)_init
 {
+    [super _init];
     UIColor *color = LCoreCurrent.cellTextColor;
     _idNumber.textColor = color;
     _balance.textColor = color;
@@ -31,7 +32,6 @@
     _product.textColor = color;
     _amount.textColor = color;
     _time.textColor = color;
-    self.backgroundColor = LCoreCurrent.backgroundColor;
     UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-5];
     _idNumber.font = font;
     _balance.font = font;

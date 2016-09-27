@@ -39,7 +39,6 @@ __weak RegisterController *registerSelf;
     registerSelf = self;
     _titles = @[@"交易密码：", @"真实姓名：", @"身份证号码：", @"手机号码："];
     _details = @[@"w", @"刘晓敏", @"41232619930616754X", @"13732249640"];
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
 }
@@ -72,10 +71,7 @@ __weak RegisterController *registerSelf;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
-    }
+    TextFieldCell *cell = [tableView cellFromNibWithClass:[TextFieldCell class]];
     cell.textField.delegate = self;
     switch (indexPath.row) {
         case 0:

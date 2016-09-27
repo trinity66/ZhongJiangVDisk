@@ -69,17 +69,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
-        cell.backgroundColor = LCoreCurrent.detailBackColor;
-        cell.textLabel.textColor = LCoreCurrent.cellTextColor;
-        cell.textLabel.font = [UIFont systemFontOfSize:kCellLabelFont-2];
-        UIView *view = [UIView new];
-        view.backgroundColor = LCoreCurrent.selectedLineColor;
-        cell.selectedBackgroundView = view;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+    UITableViewCell *cell = [tableView cellWithStyle:UITableViewCellStyleValue1];
     cell.textLabel.text = _list[indexPath.row];
     return cell;
 }

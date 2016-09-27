@@ -25,7 +25,7 @@ __weak RechargeController *rechargeSelf;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setSomeControl];
+    [self _init];
     [self setSomethingForCollectionView];
     [self addButtonView];
     // Do any additional setup after loading the view.
@@ -40,12 +40,10 @@ __weak RechargeController *rechargeSelf;
     };
     [_btnSuperView addSubview:_buttonView];
 }
-- (void)setSomeControl
+- (void)_init
 {
     rechargeSelf = self;
-    self.view.backgroundColor = [LCoreCurrent backgroundColor];
     _topCollectionViewY.constant = [self getTableViewY] -1;
-    _collectionView.backgroundColor = LCoreCurrent.backgroundColor;
     [self.personalTopView setRechargeEnabled:NO];
     _titles = @[
                 @[@"50", @"500", @"1000", @"5000", @"", @"10000"],
@@ -65,9 +63,9 @@ __weak RechargeController *rechargeSelf;
 {
     _flowLayout.headerReferenceSize = CGSizeMake(kScreenWidth, 44);
     //注册cell
-    [_collectionView registerNib:[UINib nibWithNibName:@"RechargeCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"RechargeCell"];
+    [_collectionView registerCellWithNibName:@"RechargeCell"];
     //注册表头
-    [_collectionView registerNib:[UINib nibWithNibName:@"RechargeHeadView" bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"RechargeHeadView"];
+    [_collectionView registerHeadWithNibName:@"RechargeHeadView"];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

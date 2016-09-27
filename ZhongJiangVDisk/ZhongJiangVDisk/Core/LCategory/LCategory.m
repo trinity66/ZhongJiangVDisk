@@ -42,6 +42,10 @@
     [formatter setDateFormat:dateFormat];
     return [formatter stringFromDate:date];
 }
++ (NSString *)className:(Class)_class
+{
+    return [NSString stringWithUTF8String:object_getClassName(_class)];
+}
 @end
 
 
@@ -212,6 +216,85 @@
 }
 
 @end
+
+@implementation UICollectionView(extend)
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.backgroundColor = LCoreCurrent.backgroundColor;
+}
+- (void)registerCellWithNibName:(NSString *)nibName
+{
+    [self registerNib:[UINib nibWithNibName:nibName bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:nibName];
+}
+- (void)registerHeadWithNibName:(NSString *)nibName
+{
+    [self registerNib:[UINib nibWithNibName:nibName bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:nibName];
+}
+- (void)registerFootWithNibName:(NSString *)nibName
+{
+    [self registerNib:[UINib nibWithNibName:nibName bundle:[NSBundle mainBundle]] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:nibName];
+}
+
+@end
+
+@implementation UITableView(extend)
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.backgroundColor = LCoreCurrent.backgroundColor;
+}
+- (void)registerCellWithNibName:(NSString *)nibName
+{
+    [self registerNib:[UINib nibWithNibName:nibName bundle:[NSBundle mainBundle]] forCellReuseIdentifier:nibName];
+}
+- (id)cellFromNibWithClass:(Class)_class
+{
+    NSString *className = [NSString className:_class];
+    id cell = [self dequeueReusableCellWithIdentifier:className];
+    if (!cell) {
+        cell = [[NSBundle mainBundle] loadNibNamed:className owner:nil options:nil].lastObject;
+    }
+    return cell;
+}
+- (UITableViewCell *)cellWithStyle:(UITableViewCellStyle)style
+{
+    NSString *className = [NSString className:[UITableViewCell class]];
+    UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:className];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:style reuseIdentifier:className];
+        cell.backgroundColor = LCoreCurrent.detailBackColor;
+        cell.textLabel.textColor = LCoreCurrent.cellTextColor;
+        cell.textLabel.font = [UIFont systemFontOfSize:kCellLabelFont];
+        UIView *view = [UIView new];
+        view.backgroundColor = LCoreCurrent.selectedLineColor;
+        cell.selectedBackgroundView = view;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    return cell;
+}
+@end
+
+@implementation UIView(extend)
+- (void)_init
+{
+    self.backgroundColor = LCoreCurrent.backgroundColor;
+}
+@end
+@implementation UITableViewCell(extend)
+- (void)_init
+{
+    self.backgroundColor = LCoreCurrent.backgroundColor;
+}
+@end
+
+
+
+
+
+
+
+
 
 
 

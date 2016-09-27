@@ -20,19 +20,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
     // Initialization code
 }
-- (void)setDatas:(NSArray *)datas{
-    _datas = datas;
-    _title1.text = [(NSDictionary *)datas[0] allKeys].firstObject;
-    _detail1.text = datas[0][_title1.text];
-    _title2.text = [(NSDictionary *)datas[1] allKeys].firstObject;
-    _detail2.text = datas[1][_title2.text];
-}
-- (void)setSomeControl
+- (void)_init
 {
-    self.backgroundColor = LCoreCurrent.backgroundColor;
+    [super _init];
     NSArray *controls = @[_title1, _title2, _detail1, _detail2];
     UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-4];
     for (UILabel *label in controls) {
@@ -41,6 +34,13 @@
     }
     _button.titleLabel.font = font;
     _button.backgroundColor = LCoreCurrent.buttonBackColor;
+}
+- (void)setDatas:(NSArray *)datas{
+    _datas = datas;
+    _title1.text = [(NSDictionary *)datas[0] allKeys].firstObject;
+    _detail1.text = datas[0][_title1.text];
+    _title2.text = [(NSDictionary *)datas[1] allKeys].firstObject;
+    _detail2.text = datas[1][_title2.text];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

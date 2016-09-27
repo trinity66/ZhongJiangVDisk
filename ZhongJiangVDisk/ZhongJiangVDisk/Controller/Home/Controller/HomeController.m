@@ -104,7 +104,7 @@ __weak HomeController *_homeSelf;
         _scrollView = [[UIScrollView alloc] initWithFrame: rect];
         _scrollView.scrollEnabled = YES;
         _scrollView.delegate = self;
-        _scrollView.backgroundColor = LCoreCurrent.backgroundColor;
+        _scrollView.backgroundColor = [UIColor clearColor];
         [self.view addSubview:_scrollView];
     }
     switch (LCoreCurrent.VDiskType) {

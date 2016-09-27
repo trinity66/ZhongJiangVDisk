@@ -30,7 +30,7 @@
 {
     [super awakeFromNib];
     _line.backgroundColor = LCoreCurrent.chartLineColor;
-    [_collectionView registerNib:[UINib nibWithNibName:@"LChartBottomCell" bundle:nil] forCellWithReuseIdentifier:@"LChartBottomCell"];
+    [_collectionView registerCellWithNibName:@"LChartBottomCell"];
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {

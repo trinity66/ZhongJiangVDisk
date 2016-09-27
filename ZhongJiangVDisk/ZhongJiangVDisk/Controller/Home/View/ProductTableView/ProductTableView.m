@@ -17,7 +17,6 @@ __weak ProductTableView *productTabelSelf;
 {
     [super awakeFromNib];
     productTabelSelf = self;
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
         _tableView.bounces = NO;
         _tableView.layer.cornerRadius = 5;
@@ -60,13 +59,10 @@ __weak ProductTableView *productTabelSelf;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductTableViewCell"];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"ProductTableViewCell" owner:nil options:nil].lastObject;
-        cell.btnsActionBlock = ^(NSInteger index) {
-            [productTabelSelf handleBuyViewWithIndex:index indexpath:indexPath];
-        };
-    }
+    ProductCell *cell = [tableView cellFromNibWithClass:[ProductCell class]];
+    cell.btnsActionBlock = ^(NSInteger index) {
+        [productTabelSelf handleBuyViewWithIndex:index indexpath:indexPath];
+    };
     NSDictionary *dict = LCoreCurrent.productsList[indexPath.section];
     NSArray *list = dict[@"list"];
     cell.model = [ProductModel modelWithDictionary:list[indexPath.row]];

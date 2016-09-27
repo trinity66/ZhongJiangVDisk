@@ -22,10 +22,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
     // Initialization code
 }
-- (void)setSomeControl
+- (void)_init
 {
     UIColor *color = LCoreCurrent.cellTextColor;
     _buyCount.textColor = color;

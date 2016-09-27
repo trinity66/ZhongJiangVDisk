@@ -24,7 +24,6 @@ __weak ForgetDealPswdController *_forgetDealSelf;
     _forgetDealSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"手机号码：", @"新密码："];
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning {
@@ -65,11 +64,8 @@ __weak ForgetDealPswdController *_forgetDealSelf;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
-        cell.textField.delegate = self;
-    }
+    TextFieldCell *cell = [tableView cellFromNibWithClass:[TextFieldCell class]];
+    cell.textField.delegate = self;
     if (indexPath.row == 0) {
         _phoneTF = cell.textField;
         NSString *phone = LCoreCurrent.userInfo[@"phone"];

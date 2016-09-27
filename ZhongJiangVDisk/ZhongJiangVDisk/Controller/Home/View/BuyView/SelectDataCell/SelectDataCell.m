@@ -16,15 +16,15 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
     // Initialization code
 }
-- (void)setSomeControl
+- (void)_init
 {
+    [super _init];
     UIColor *color = LCoreCurrent.buttonBackColor;
     _addBtn.backgroundColor = color;
     _subtractBtn.backgroundColor = color;
-    self.backgroundColor = LCoreCurrent.backgroundColor;
     _title.textColor = LCoreCurrent.cellTextColor;
     _textField.enabled = NO;
     UIFont *font = [UIFont systemFontOfSize:kCellLabelFont];

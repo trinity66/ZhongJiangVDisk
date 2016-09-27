@@ -26,7 +26,11 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.backgroundColor = LCoreCurrent.backgroundColor;
+    [self _init];
+}
+- (void)_init
+{
+    [super _init];
     UIColor *color = LCoreCurrent.cellTextColor;
     _titleOne.textColor = color;
     _titleTwo.textColor = color;

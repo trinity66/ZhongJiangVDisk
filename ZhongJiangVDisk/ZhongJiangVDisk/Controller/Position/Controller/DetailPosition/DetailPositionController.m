@@ -47,9 +47,6 @@ __weak DetailPositionController *detailPositionSelf;
                    @{@"盈亏资金:":@"0.00"},
                    ]
                ];
-    
-    self.view.backgroundColor = LCoreCurrent.backgroundColor;
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     _topTableViewY.constant = [self getTableViewY];
     if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
         _topTableViewY.constant += 10;
@@ -119,17 +116,11 @@ __weak DetailPositionController *detailPositionSelf;
 {
     NSInteger section = indexPath.section, row = indexPath.row;
     if (section == 0) {
-        DetailPositionCell1 *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailPositionCell1"];
-        if (!cell) {
-            cell = [[NSBundle mainBundle] loadNibNamed:@"DetailPositionCell1" owner:nil options:nil].lastObject;
-        }
+        DetailPositionCell1 *cell = [tableView cellFromNibWithClass:[DetailPositionCell1 class]];
         cell.dict = (NSDictionary*)_infos[section][row];
         return cell;
     }else if (section == 1) {
-        DetailPositionCell2 *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailPositionCell2"];
-        if (!cell) {
-            cell = [[NSBundle mainBundle] loadNibNamed:@"DetailPositionCell2" owner:nil options:nil].lastObject;
-        }
+        DetailPositionCell2 *cell = [tableView cellFromNibWithClass:[DetailPositionCell2 class]];
         cell.datas = _infos[section][row];
         if (row == 2) {
             cell.button.hidden = NO;

@@ -23,32 +23,26 @@
 */
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self _init];
+}
+- (void)_init
+{
     if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
-        [self setSomeControlTwo];
+        _title.textColor = [UIColor whiteColor];
+        [_bottom removeFromSuperview];
+        _topLabelHeight.constant = 15;
+        UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-3];
+        _title.font = font;
+        _record.font = font;
     }else
     {
-      [self setSomeControl];
+        self.backgroundColor = LCoreCurrent.topSegmentColor;
+        _bottom.hidden = YES;
+        self.title.textColor = LCoreCurrent.cellTextColor;
+        self.bottom.backgroundColor = LCoreCurrent.selectedLineColor;
+        _title.font = [UIFont systemFontOfSize:kCellLabelFont-4];
+        _record.font = [UIFont systemFontOfSize:kCellLabelFont];
     }
-    
-}
-- (void)setSomeControlTwo
-{
-    _title.textColor = [UIColor whiteColor];
-    [_bottom removeFromSuperview];
-    _topLabelHeight.constant = 15;
-    UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-3];
-    _title.font = font;
-    _record.font = font;
-}
-- (void)setSomeControl
-{
-    self.backgroundColor = LCoreCurrent.topSegmentColor;
-    _bottom.hidden = YES;
-    self.title.textColor = LCoreCurrent.cellTextColor;
-    self.bottom.backgroundColor = LCoreCurrent.selectedLineColor;
-    _title.font = [UIFont systemFontOfSize:kCellLabelFont-4];
-    _record.font = [UIFont systemFontOfSize:kCellLabelFont];
-    
 }
 - (void)setDataWithTitle:(NSString *)title Number:(NSString *)number isRise:(BOOL)isRise
 {

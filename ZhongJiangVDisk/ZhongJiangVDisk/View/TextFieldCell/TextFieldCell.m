@@ -12,14 +12,14 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
     // Initialization code
 }
-- (void)setSomeControl
+- (void)_init
 {
+    [super _init];
     _title.textColor = LCoreCurrent.cellTextColor;
     _title.font = [UIFont systemFontOfSize:kCellLabelFont];
-    self.backgroundColor = LCoreCurrent.backgroundColor;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

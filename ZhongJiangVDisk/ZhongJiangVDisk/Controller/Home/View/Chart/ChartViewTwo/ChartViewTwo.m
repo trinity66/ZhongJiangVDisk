@@ -24,8 +24,20 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    [self _init];
+}
+- (void)_init
+{
     self.backgroundColor = LCoreCurrent.detailBackColor;
-    [self setSomeControl];
+    UIColor *color = LCoreCurrent.topSegmentColor;
+    self.layer.borderColor = color.CGColor;
+    _line.backgroundColor = color;
+    _lineSub.backgroundColor = color;
+    self.backgroundColor = LCoreCurrent.detailBackColor;
+    _title.textColor = LCoreCurrent.cellTextColor;
+    _title.font = [UIFont systemFontOfSize:kCellLabelFont-4];
+    _topSeg.tintColor = LCoreCurrent.riseColor;
+    _bottomSeg.tintColor = LCoreCurrent.riseColor;
 }
 - (void)setSelfFrame:(CGRect)frame
 {
@@ -36,18 +48,6 @@
         [_lChart initWithFrame:CGRectMake(0, y, frame.size.width, frame.size.height-y-_topSegHeight.constant-20) itemWidth:kItemWidth leftLabelCount:5 bottomLabelCount:4 leftViewWidth:50 bottomViewHeight:20 isStock:NO isGradient:YES];
         [self addSubview:_lChart];
     }
-}
-- (void)setSomeControl
-{
-    UIColor *color = LCoreCurrent.topSegmentColor;
-    self.layer.borderColor = color.CGColor;
-    _line.backgroundColor = color;
-    _lineSub.backgroundColor = color;
-    self.backgroundColor = LCoreCurrent.detailBackColor;
-    _title.textColor = LCoreCurrent.cellTextColor;
-    _title.font = [UIFont systemFontOfSize:kCellLabelFont-4];
-    _topSeg.tintColor = LCoreCurrent.riseColor;
-    _bottomSeg.tintColor = LCoreCurrent.riseColor;
 }
 #pragma mark - AxisDataProvider
 - (NSString *)textForIdx:(NSUInteger)idx{

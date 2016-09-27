@@ -23,7 +23,6 @@ __weak ChangeDealPswdController *changeDealSelf;
     changeDealSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"原交易密码：", @"新交易密码：", @"再次确认："];
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
 
@@ -57,10 +56,7 @@ __weak ChangeDealPswdController *changeDealSelf;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
-    }
+    TextFieldCell *cell = [tableView cellFromNibWithClass:[TextFieldCell class]];
     switch (indexPath.row) {
         case 0:
             _pswdTFOld = cell.textField;

@@ -27,17 +27,17 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
 }
-- (void)setSomeControl
+- (void)_init
 {
+    [super _init];
     UIColor *color = LCoreCurrent.buttonBackColor;
     _codeButton.backgroundColor = color;
     _CIAButton.backgroundColor = color;
     _button.backgroundColor = color;
     _codeLabel.textColor = LCoreCurrent.cellTextColor;
     _codeLabel.font = [UIFont systemFontOfSize:kCellLabelFont];
-    self.backgroundColor = LCoreCurrent.backgroundColor;
 }
 - (IBAction)codeButtonAction:(id)sender {
     if (self.btnsActionBlock) {

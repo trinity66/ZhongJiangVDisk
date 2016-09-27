@@ -17,23 +17,23 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
     // Initialization code
+}
+- (void)_init
+{
+    [super _init];
+    NSArray *controls = @[_title, _detail];
+    for (UILabel *label in controls) {
+        label.font = [UIFont systemFontOfSize:kCellLabelFont-4];
+        label.textColor = LCoreCurrent.cellTextColor;
+    }
 }
 - (void)setDict:(NSDictionary *)dict
 {
     _dict = dict;
     _title.text = [[dict allKeys] firstObject];
     _detail.text = dict[_title.text];
-}
-- (void)setSomeControl
-{
-    self.backgroundColor = LCoreCurrent.backgroundColor;
-    NSArray *controls = @[_title, _detail];
-    for (UILabel *label in controls) {
-        label.font = [UIFont systemFontOfSize:kCellLabelFont-4];
-        label.textColor = LCoreCurrent.cellTextColor;
-    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

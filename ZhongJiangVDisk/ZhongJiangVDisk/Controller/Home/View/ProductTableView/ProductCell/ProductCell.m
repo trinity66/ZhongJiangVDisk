@@ -1,14 +1,14 @@
 //
-//  ProductTableViewCell.m
+//  ProductCell.m
 //  ZhongJiangVDisk
 //
 //  Created by shijian01 on 16/8/18.
 //  Copyright © 2016年 liuxiaomin. All rights reserved.
 //
 
-#import "ProductTableViewCell.h"
+#import "ProductCell.h"
 
-@interface ProductTableViewCell ()
+@interface ProductCell ()
 @property (weak, nonatomic) IBOutlet BuyButton *riseButton;
 @property (weak, nonatomic) IBOutlet BuyButton *fallButton;
 @property (weak, nonatomic) IBOutlet UILabel *title;
@@ -18,23 +18,14 @@
 
 
 @end
-@implementation ProductTableViewCell
+@implementation ProductCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
     // Initialization code
 }
-- (void)setModel:(ProductModel *)model
-{
-    _model = model;
-    _model = model;
-    NSString *title = _model.productName;
-    NSString *detail = [NSString stringWithFormat:@"波动盈亏:%.03f元",_model.fluctuations];
-    [self setTitleWithTitle:title detail:detail];
-    _detail.text = [NSString stringWithFormat:@"%.02f元/手",_model.price];
-}
-- (void)setSomeControl
+- (void)_init
 {
     _mainView.backgroundColor = LCoreCurrent.backgroundColor;
     UIFont *font = [UIFont systemFontOfSize:kCellLabelFont-3];
@@ -50,6 +41,16 @@
     _detail.font = [UIFont systemFontOfSize:kCellLabelFont-4];
     _detailTwo.textColor = [UIColor lightGrayColor];
     _detailTwo.font = [UIFont systemFontOfSize:kCellLabelFont-5];
+}
+
+- (void)setModel:(ProductModel *)model
+{
+    _model = model;
+    _model = model;
+    NSString *title = _model.productName;
+    NSString *detail = [NSString stringWithFormat:@"波动盈亏:%.03f元",_model.fluctuations];
+    [self setTitleWithTitle:title detail:detail];
+    _detail.text = [NSString stringWithFormat:@"%.02f元/手",_model.price];
 }
 - (void)setTitleWithTitle:(NSString *)title detail:(NSString *)detail
 {

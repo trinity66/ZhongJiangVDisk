@@ -27,10 +27,11 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
 }
-- (void)setSomeControl
+- (void)_init
 {
+    [super _init];
     UIColor *color = LCoreCurrent.buttonBackColor;
     _codeButton.backgroundColor = color;
     _button.backgroundColor = color;
@@ -39,7 +40,6 @@
     _codeLabel.font = [UIFont systemFontOfSize:kCellLabelFont];
     _propertyLabel.font = [UIFont systemFontOfSize:kCellLabelFont-4];
     _propertyBtn.titleLabel.font = [UIFont systemFontOfSize:kCellLabelFont-4];
-    self.backgroundColor = LCoreCurrent.backgroundColor;
     [_isAgreeBtn setImage:[[UIImage imageNamed:@"disagree"] imageWithTintColor:LCoreCurrent.tabBarSelectTextColor] forState:UIControlStateSelected];
 }
 - (IBAction)codeButtonAction:(id)sender {

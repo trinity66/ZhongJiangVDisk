@@ -26,10 +26,10 @@
  */
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
     // Initialization code
 }
-- (void)setSomeControl
+-(void)_init
 {
     _button.backgroundColor = LCoreCurrent.buttonBackColor;
     self.backgroundColor = LCoreCurrent.detailBackColor;

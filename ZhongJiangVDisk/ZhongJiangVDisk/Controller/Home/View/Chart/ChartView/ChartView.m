@@ -27,6 +27,10 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    [self _init];
+}
+- (void)_init
+{
     self.backgroundColor = LCoreCurrent.detailBackColor;
     [self setSegmentC];
 }

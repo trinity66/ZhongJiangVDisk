@@ -1,5 +1,5 @@
 //
-//  ProductTableViewCell.h
+//  ProductCell.h
 //  ZhongJiangVDisk
 //
 //  Created by shijian01 on 16/8/18.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProductTableViewCell : UITableViewCell
+@interface ProductCell : UITableViewCell
 @property (nonatomic, copy) btnsActionBlock btnsActionBlock;
 @property (nonatomic, strong)ProductModel *model;
 @end

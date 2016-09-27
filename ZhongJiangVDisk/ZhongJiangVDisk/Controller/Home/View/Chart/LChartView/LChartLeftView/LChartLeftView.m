@@ -33,7 +33,7 @@
 {
     [super awakeFromNib];
     _line.backgroundColor = LCoreCurrent.chartLineColor;
-    [_tableView registerNib:[UINib nibWithNibName:@"LChartLeftCell" bundle:nil] forCellReuseIdentifier:@"LChartLeftCell"];
+    [_tableView registerCellWithNibName:@"LChartLeftCell"];
 }
 - (void)setMaxValue:(double)maxValue minValue:(double)minValue itemCount:(NSInteger)itemCount
 {

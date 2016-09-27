@@ -22,8 +22,6 @@ __weak PositionController *_positionSelf;
     [super viewDidLoad];
     _positionSelf = self;
     [self addSegmentWithUserEnabled:NO];
-    self.view.backgroundColor = LCoreCurrent.backgroundColor;
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     _tableView.separatorColor = LCoreCurrent.detailLightBackColor;
     _topTableViewY.constant = [self getTableViewY];
     if (LCoreCurrent.VDiskType == VDiskTypeYinHe) {
@@ -98,13 +96,10 @@ __weak PositionController *_positionSelf;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PositionCell*cell = [tableView dequeueReusableCellWithIdentifier:@"PositionCell"];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"PositionCell" owner:nil options:nil].lastObject;
-        cell.btnActionBlock = ^(){
-            //转让操作
-        };
-    }
+    PositionCell*cell = [tableView cellFromNibWithClass:[PositionCell class]];
+    cell.btnActionBlock = ^(){
+        //转让操作
+    };
     cell.model = [DealHistoryModel modelWithDictionary:_list[indexPath.row]];
     return cell;
 }

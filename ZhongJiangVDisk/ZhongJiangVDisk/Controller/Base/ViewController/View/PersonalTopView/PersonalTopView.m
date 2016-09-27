@@ -16,9 +16,9 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
 }
-- (void)setSomeControl
+- (void)_init
 {
     self.backgroundColor = LCoreCurrent.personalTopColor;
     UIColor *imageColor = LCoreCurrent.detailBackColor;

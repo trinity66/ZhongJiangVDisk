@@ -231,9 +231,9 @@ __weak BuyView *buySelf;
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    [self setSomeControl];
+    [self _init];
 }
-- (void)setSomeControl
+- (void)_init
 {
     buySelf = self;
     _lHeight.constant = 0.5;
@@ -242,12 +242,10 @@ __weak BuyView *buySelf;
     _title.textColor = LCoreCurrent.cellTextColor;
     _mainView.backgroundColor = LCoreCurrent.backgroundColor;
     _mainView.layer.borderColor = LCoreCurrent.buttonBorderColor.CGColor;
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     _lOne.backgroundColor = LCoreCurrent.detailLightBackColor;
     _lTwo.backgroundColor = LCoreCurrent.detailLightBackColor;
     [_cancel setImage:[[UIImage imageNamed:@"buy_cancel"] imageWithTintColor:[UIColor lightGrayColor]] forState:UIControlStateNormal];
 }
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -271,10 +269,7 @@ __weak BuyView *buySelf;
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < 3) {
-        SelectDataCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SelectDataCell"];
-        if (!cell) {
-            cell = [[NSBundle mainBundle] loadNibNamed:@"SelectDataCell" owner:nil options:nil].lastObject;
-        }
+        SelectDataCell *cell = [tableView cellFromNibWithClass:[SelectDataCell class]];
         switch (indexPath.row) {
             case 0:
                 _profitTf = cell.textField;

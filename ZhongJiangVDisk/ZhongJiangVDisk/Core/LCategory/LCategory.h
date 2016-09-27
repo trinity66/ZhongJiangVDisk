@@ -14,6 +14,7 @@
 - (NSString*)base64_decode;
 + (NSString*)app_version;
 + (NSString *)stringWithDate:(NSDate *)date dateFormat:(NSString *)dateFormat;
++ (NSString *)className:(Class)_class;
 @end
 
 @interface UIImage (extend)
@@ -35,4 +36,23 @@
 
 +(CALayer *)lineWithPoints:(NSArray*)points lineColor:(UIColor *)lineColor height:(double)height width:(double)width isGradient:(BOOL)isGradient isShowFillColor:(BOOL)isShowFillColor fillColor:(UIColor*)fillColor;
 
+@end
+
+@interface UICollectionView(extend)
+- (void)registerCellWithNibName:(NSString *)nibName;
+- (void)registerHeadWithNibName:(NSString *)nibName;
+- (void)registerFootWithNibName:(NSString *)nibName;
+@end
+
+@interface UITableView(extend)
+- (void)registerCellWithNibName:(NSString *)nibName;
+- (id)cellFromNibWithClass:(Class)_class;
+- (UITableViewCell *)cellWithStyle:(UITableViewCellStyle)style;
+
+@end
+@interface UIView(extend)
+- (void)_init;
+@end
+@interface UITableViewCell(extend)
+- (void)_init;
 @end

@@ -39,10 +39,6 @@
     _lineBottom.constant = (height-1)/2.0;
     _labelBottom.constant = (height-18)/2.0;
 }
-//- (void)reBottomFrame
-//{
-//    
-//}
 - (void)reTopFrameWithHeight:(double)height
 {
     _lineBottom.constant = height-1;

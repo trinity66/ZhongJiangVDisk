@@ -24,7 +24,6 @@ __weak WithdrawController *_withdrawSelf;
     _withdrawSelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"提现金额：", @"提现银行：", @"姓名：", @"银行账号：", @"交易密码："];
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
 
@@ -66,10 +65,7 @@ __weak WithdrawController *_withdrawSelf;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
-    }
+    TextFieldCell *cell = [tableView cellFromNibWithClass:[TextFieldCell class]];
     cell.textField.delegate = self;
     switch (indexPath.row) {
         case 0:

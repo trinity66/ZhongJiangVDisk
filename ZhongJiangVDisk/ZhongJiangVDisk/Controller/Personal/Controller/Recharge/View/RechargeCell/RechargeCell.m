@@ -12,7 +12,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.backgroundColor = [UIColor clearColor];
     _textField.enabled = NO;
     _textField.textAlignment = NSTextAlignmentCenter;
     // Initialization code

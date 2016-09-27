@@ -22,7 +22,6 @@
     
     _titles = @[@"8月12日中江数据日历", @"关于提现手续费调整通知", @"公告", @"关于数据恢复公告", @"关于白银，原油暂停建仓公告", @"关于调整交易时间的公告"];
     _topTableViewY.constant = [self getTableViewY];
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     _tableView.separatorColor = LCoreCurrent.detailLightBackColor;
     // Do any additional setup after loading the view.
 }
@@ -52,17 +51,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"UITableViewCell"];
-        cell.textLabel.textColor = LCoreCurrent.cellTextColor;
-        cell.backgroundColor = LCoreCurrent.detailBackColor;
-        cell.textLabel.font = [UIFont systemFontOfSize:kCellLabelFont];
-        UIView *view = [UIView new];
-        view.backgroundColor = LCoreCurrent.selectedLineColor;
-        cell.selectedBackgroundView = view;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+    UITableViewCell *cell = [tableView cellWithStyle:UITableViewCellStyleValue1];
     cell.textLabel.text = _titles[indexPath.row];
     return cell;
 }

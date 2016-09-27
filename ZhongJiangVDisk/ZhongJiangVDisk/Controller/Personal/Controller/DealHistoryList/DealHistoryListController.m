@@ -21,7 +21,6 @@
     [super viewDidLoad];
     
     _topTableViewY.constant = [self getTableViewY];
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     _tableView.separatorColor = LCoreCurrent.detailLightBackColor;
     [self addHeadTableView];
     // Do any additional setup after loading the view.
@@ -70,10 +69,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DealHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DealHistoryCell"];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"DealHistoryCell" owner:nil options:nil].lastObject;
-    }
+    DealHistoryCell *cell = [tableView cellFromNibWithClass:[DealHistoryCell class]];
     BOOL isRise = indexPath.row % 2;
     if (isRise != 0) {
         cell.backgroundColor = LCoreCurrent.backgroundColor;

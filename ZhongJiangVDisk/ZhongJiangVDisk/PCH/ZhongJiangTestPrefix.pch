@@ -99,7 +99,7 @@
 //#import "ProductCollectionCell.h"//首页底部collectionCell
 #import "LatestInfos.h"//首页－最新资讯
 #import "ProductTableView.h"
-#import "ProductTableViewCell.h"
+#import "ProductCell.h"
 
 #import "ForgetDealPswdController.h"//忘记密码
 

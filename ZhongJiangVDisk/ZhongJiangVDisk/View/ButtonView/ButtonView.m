@@ -26,9 +26,14 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    self.backgroundColor = LCoreCurrent.backgroundColor;
+    [self _init];
+}
+- (void)_init
+{
+    [super _init];
     _button.backgroundColor = LCoreCurrent.buttonBackColor;
 }
+
 - (void)setBtnTitle:(NSString *)btnTitle
 {
     [_button setTitle:btnTitle forState:UIControlStateNormal];

@@ -20,11 +20,9 @@ __weak ApplyForBrokerController *_applySelf;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _applySelf = self;
     _topTableViewY.constant = [self getTableViewY];
     _titles = @[@"经纪人名称：", @"登录密码：", @"经纪人手机：", @"机构编号："];
-    _tableView.backgroundColor = LCoreCurrent.backgroundColor;
     // Do any additional setup after loading the view.
 }
 
@@ -66,10 +64,7 @@ __weak ApplyForBrokerController *_applySelf;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldCell"];
-    if (!cell) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"TextFieldCell" owner:nil options:nil].lastObject;
-    }
+    TextFieldCell *cell = [tableView cellFromNibWithClass:[TextFieldCell class]];
     cell.textField.delegate = self;
     switch (indexPath.row) {
         case 0:

@@ -20,6 +20,27 @@
 
 @end
 @implementation InputDealPswdView
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self _init];
+}
+- (void)_init
+{
+    _lHeight.constant = 0.5;
+    [_forgetPswdBtn setTitleColor:LCoreCurrent.selectedLineColor forState:UIControlStateNormal];
+    _button.backgroundColor = LCoreCurrent.buttonBackColor;
+    _mainView.backgroundColor = LCoreCurrent.backgroundColor;
+    _mainView.layer.borderColor = LCoreCurrent.buttonBorderColor.CGColor;
+    _title.textColor = LCoreCurrent.cellTextColor;
+    _lOne.backgroundColor = LCoreCurrent.detailLightBackColor;
+    _lTwo.backgroundColor = LCoreCurrent.detailLightBackColor;
+    _textField.delegate = self;
+    _textField.returnKeyType = UIReturnKeyDone;
+}
+
+
+
 - (void)showInputDealPswdViewAnimated:(BOOL)animated
 {
     self.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
@@ -66,25 +87,7 @@
         self.btnsActionBlock(1);
     }
 }
--(void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self setSomeControl];
-}
-- (void)setSomeControl
-{
-    _lHeight.constant = 0.5;
-    [_forgetPswdBtn setTitleColor:LCoreCurrent.selectedLineColor forState:UIControlStateNormal];
-    _button.backgroundColor = LCoreCurrent.buttonBackColor;
-    _mainView.backgroundColor = LCoreCurrent.backgroundColor;
-    _mainView.layer.borderColor = LCoreCurrent.buttonBorderColor.CGColor;
-    _title.textColor = LCoreCurrent.cellTextColor;
-    _lOne.backgroundColor = LCoreCurrent.detailLightBackColor;
-    _lTwo.backgroundColor = LCoreCurrent.detailLightBackColor;
-    _textField.delegate = self;
-    _textField.returnKeyType = UIReturnKeyDone;
-    
-}
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [_textField startLayerColor];
