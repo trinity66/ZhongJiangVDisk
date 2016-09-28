@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Override point for customization after application launch.
-    LCoreCurrent.VDiskType = VDiskTypeZhongHui;//VDiskTypeZhongJiang//VDiskTypeYinHe//
+    LCoreCurrent.VDiskType = VDiskTypeZhongJiang;////VDiskTypeYinHe//VDiskTypeZhongHui
 //    [self loadHomeTopDatas];
     if (!timer) {
       timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(loadHomeTopDatas) userInfo:nil repeats:YES];
