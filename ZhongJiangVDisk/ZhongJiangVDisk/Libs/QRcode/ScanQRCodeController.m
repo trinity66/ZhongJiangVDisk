@@ -300,6 +300,7 @@ __weak ScanQRCodeController *scanQRSelf;
         line.hidden = YES;
     }
 }
+/*
 - (void)addAnimation{
     UIView *line = [self.view viewWithTag:line_tag];
     line.hidden = NO;
@@ -320,6 +321,7 @@ __weak ScanQRCodeController *scanQRSelf;
     animationMove.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     return animationMove;
 }
+ */
 
 
 /**

@@ -63,7 +63,7 @@
 }
 - (void)scanQRCodeWithURL:(NSString *)url
 {
-#warning 扫描二维码之后的处理
+#warning mark 扫描二维码之后的处理
     [LCoreCurrent goRegisterVC];
     [qrcodeVC selfRemoveFromSuperview];
     qrcodeVC = nil;
