@@ -47,8 +47,12 @@
 - (void)setData:(StockData *)data
 {
     _data = data;
-    _lable1.text = [NSString stringWithFormat:@"昨收：%.02lf 最高：%.02lf", data.close, data.high];
-    _label2.text = [NSString stringWithFormat:@"今开：%.02lf 最低：%.02lf", data.open, data.low];
+    _lable1.text = [[self str:@"昨收：" num:data.low] stringByAppendingString:[self str:@"最高：" num:data.high]];
+    _label2.text = [[self str:@"今开：" num:data.open] stringByAppendingString:[self str:@"最低：" num:data.low]];;
+}
+- (NSString *)str:(NSString *)str num:(double)num
+{
+    return [str stringByAppendingString:[NSString strWithDoubNum:num]];
 }
 
 /*

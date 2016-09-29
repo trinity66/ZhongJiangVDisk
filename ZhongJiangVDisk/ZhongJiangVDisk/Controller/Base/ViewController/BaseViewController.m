@@ -24,9 +24,6 @@
 {
     [super viewWillAppear:animated];
     [self setBalance];
-    if (_segment) {
-        [LCoreCurrent saveHomeTopData:nil];
-    }
 }
 - (void)setBalance
 {
@@ -81,7 +78,7 @@
         {
             LCoreCurrent.segmentPosition = _segment;
         }
-        [LCoreCurrent saveHomeTopData:nil];
+         [LCoreCurrent saveHomeTopData:[LCoreCurrent getHomeTopData]];
     }
 }
 

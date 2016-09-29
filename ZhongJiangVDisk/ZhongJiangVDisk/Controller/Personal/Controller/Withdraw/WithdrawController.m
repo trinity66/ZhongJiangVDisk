@@ -188,10 +188,11 @@ __weak WithdrawController *_withdrawSelf;
 #warning mark 提现
     balance -= money;
     //提现
-    [LCoreCurrent saveDeal:@{@"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+    NSString *time = [NSString strWithObj:[NSDate date]];
+    [LCoreCurrent saveDeal:@{@"_id":time,
                              @"type":@400,
                              @"product":@{
-                                     @"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+                                     @"_id":time,
                                      @"productName":_bankTF.text,
                                      @"bankNumber":_bankNumberTF.text,
                                      @"bankTitle":_bankTF.text,
@@ -205,16 +206,16 @@ __weak WithdrawController *_withdrawSelf;
     //提现手续费
     double poundage = money *0.01;
     balance -= poundage;
-    [LCoreCurrent saveDeal:@{@"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+    [LCoreCurrent saveDeal:@{@"_id":time,
                              @"type":@401,
                              @"product":@{
-                                     @"_id":[NSString stringWithFormat:@"%@",[NSDate date]],
+                                     @"_id":time,
                                      @"productName":_bankTF.text,
                                      @"bankNumber":_bankNumberTF.text,
                                      @"bankTitle":_bankTF.text,
                                      @"name":_nameTF.text,
                                      },
-                             @"time":[NSString stringWithFormat:@"%@",[NSDate date]],
+                             @"time":time,
                              @"money":@(poundage),
                              @"balance":@(balance),
                              @"isFinsih":@1,

@@ -37,15 +37,14 @@
 - (void)setModel:(DealHistoryModel *)model
 {
     _model = model;
-    NSString *str = [model.time substringToIndex:10];
-    _time.text = [NSString stringWithFormat:@"%@",str];
+    _time.text = [model.time substringToIndex:10];
     _title.text = model.productName;
-    _money.text = [NSString stringWithFormat:@"%.02lf",model.money];
+    _money.text = [NSString strWithDoubNum:model.money];
     [self setDetailWithNumber:model.countNumber isRise:model.isBuyRise];
 }
 - (void)setDetailWithNumber:(NSInteger)num isRise:(BOOL)isRise
 {
-    NSMutableAttributedString *str1 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%ld手 ",(long)num]];
+    NSMutableAttributedString *str1 = [[NSMutableAttributedString alloc] initWithString:[[NSString strWithIntNum:num] stringByAppendingString:@"手"]];
     NSMutableAttributedString *str2;
     if (isRise) {
         str2 = [[NSMutableAttributedString alloc] initWithString:@"买涨" attributes:@{NSForegroundColorAttributeName:LCoreCurrent.riseTextColor}];

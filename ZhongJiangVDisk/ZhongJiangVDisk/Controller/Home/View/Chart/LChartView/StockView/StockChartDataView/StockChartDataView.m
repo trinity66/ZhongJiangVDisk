@@ -33,13 +33,9 @@
 - (void)setTime:(NSString *)time open:(double)open close:(double)close high:(double)high low:(double)low
 {
     _time.text = time;
-    _open.text = [self data:open];
-    _close.text = [self data:close];
-    _high.text = [self data:high];
-    _low.text = [self data:low];
-}
-- (NSString *)data:(double)data
-{
-    return [NSString stringWithFormat:@"%.02f",data];
+    _open.text = [NSString strWithDoubNum:open];
+    _close.text = [NSString strWithDoubNum:close];
+    _high.text = [NSString strWithDoubNum:high];
+    _low.text = [NSString strWithDoubNum:low];
 }
 @end

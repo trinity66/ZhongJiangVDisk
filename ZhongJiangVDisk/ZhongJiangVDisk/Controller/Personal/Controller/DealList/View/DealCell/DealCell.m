@@ -46,63 +46,31 @@
     NSString *kindStr;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss +0000"];
-    NSDate *date = [formatter dateFromString:model._id];
-    [formatter setDateFormat:@"yyyyMMddHHmmss"];
-    _idNumber.text = [NSString stringWithFormat:@"交易号：%@",[formatter stringFromDate:date]];
-    _balance.text = [NSString stringWithFormat:@"余额：%.02lf",model.balance];
-    _amount.text = [NSString stringWithFormat:@"金额%.02lf",model.money];
-    NSString *str = [model.time substringToIndex:19];
-    _time.text = [NSString stringWithFormat:@"时间：%@",str];
-    str = model.product[@"productName"];
-    if (str.length > 0) {
-        _product.text = [NSString stringWithFormat:@"商品：%@",str];
+    NSDate *date = [NSDate dateWithString:model._id dateFormat:@"yyyy-MM-dd hh:mm:ss +0000"];
+    _idNumber.text = [@"交易号：" stringByAppendingString:[NSString stringWithDate:date dateFormat:@"yyyyMMddHHmmss"]];
+    _balance.text = [@"余额：" stringByAppendingString:[NSString strWithDoubNum:model.balance]];
+    _amount.text = [@"金额：" stringByAppendingString:[NSString strWithDoubNum:model.money]];
+    _time.text = [@"时间：" stringByAppendingString:[model.time substringToIndex:19]];
+    _product.text = [@"商品：" stringByAppendingString:model.product[@"productName"]];
+    switch (model.type) {
+        case 100: kindStr = @"充值"; break;
+        case 200: kindStr = @"买入"; break;
+        case 300: kindStr = @"卖出"; break;
+        case 301: kindStr = @"卖出手续费"; break;
+        case 400: kindStr = @"提现"; break;
+        case 401: kindStr = @"提现手续费"; break;
+        case 500: kindStr = @"亏损"; break;
+        case 600: kindStr = @"盈利"; break;
+        default: break;
     }
+    _kind.text = [@"类型：" stringByAppendingString:kindStr];
     if (model.type == 100 || model.type == 300 || model.type == 600) {
         [self setAmountWithNumber:model.money isRise:YES];
     }else
     {
         [self setAmountWithNumber:model.money isRise:NO];
     }
-    switch (model.type) {
-        case 100:
-           //充值
-            kindStr = @"充值";
-            break;
-        case 200:
-           //买入
-            kindStr = @"买入";
-            break;
-        case 300:
-            //卖出
-            kindStr = @"卖出";
-            break;
-        case 301:
-            //卖出手续费
-            kindStr = @"卖出手续费";
-            break;
-        case 400:
-            //提现
-            kindStr = @"提现";
-            break;
-        case 401:
-            //提现手续费
-            kindStr = @"提现手续费";
-            break;
-        case 500:
-            //亏损
-            kindStr = @"亏损";
-            break;
-        case 600:
-            //盈利
-            kindStr = @"盈利";
-            break;
-        default:
-            break;
-    }
-    _kind.text = [NSString stringWithFormat:@"类型：%@",kindStr];
-    
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -112,10 +80,11 @@
 {
     UIColor *color = LCoreCurrent.fallColor;
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:@"金额："];
-    NSString *num = [NSString stringWithFormat:@"-%.02lf",number];
+    NSString *_number = [NSString strWithDoubNum:number];
+    NSString *num = [@"-" stringByAppendingString:_number];
     if (isRise) {
         color = LCoreCurrent.riseTextColor;
-        num = [NSString stringWithFormat:@"+%.02lf",number];
+        num = [@"+" stringByAppendingString:_number];
     }
     NSMutableAttributedString *str2 = [[NSMutableAttributedString alloc] initWithString:num attributes:@{NSForegroundColorAttributeName:color}];
     [str appendAttributedString:str2];

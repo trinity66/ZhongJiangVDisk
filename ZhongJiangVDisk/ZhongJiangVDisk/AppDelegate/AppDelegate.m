@@ -28,10 +28,6 @@
     }
     if (!LCoreCurrent.isLogin) {
     [self performSelector:@selector(goRegister) withObject:nil afterDelay:0.01];
-    }else
-    {
-        
-        LCoreCurrent.isLogin = NO;
     }
     //    [self registerPgy];//bee4d9bffbc6cd5e5aa43e468fadc972
     return YES;

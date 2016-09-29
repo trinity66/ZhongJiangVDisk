@@ -53,17 +53,16 @@
 - (void)setDetailWithNumber:(double)number isRise:(BOOL)isRise
 {
     UIColor *color;
-    NSString *imageName;
-    NSString *num;
+    NSString *imageName=@"", *num=@"", *_number=[NSString strWithDoubNum:number];
     if (isRise) {
         color = LCoreCurrent.riseTextColor;
         imageName = @"arrow_up";
-        num = [NSString stringWithFormat:@"+%.02f",number];
+        num = [@"+" stringByAppendingString:_number];
     }else
     {
         color = LCoreCurrent.fallTextColor;
         imageName = @"arrow_down";
-        num = [NSString stringWithFormat:@"-%.02f",number];
+        num = [@"-" stringByAppendingString:_number];
     }
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:num attributes:@{
                                                                                                         NSForegroundColorAttributeName:color

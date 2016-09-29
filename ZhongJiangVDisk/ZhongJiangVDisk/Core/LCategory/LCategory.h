@@ -15,6 +15,11 @@
 + (NSString*)app_version;
 + (NSString *)stringWithDate:(NSDate *)date dateFormat:(NSString *)dateFormat;
 + (NSString *)className:(Class)_class;
++ (NSString *)strWithDoubNum:(double)doubleNumber;
++ (NSString *)strWithIntNum:(NSInteger)intNumber;
++ (NSString *)strWithObj:(id)idObject;
++ (NSString *)phoneHide:(NSString *)phone;
+
 @end
 
 @interface UIImage (extend)

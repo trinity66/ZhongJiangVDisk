@@ -60,7 +60,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LChartLeftCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LChartLeftCell"];
-    NSString *str = [NSString stringWithFormat:@"%.02lf",(_maxValue-_minValue)/(double)_itemCount*(_itemCount-indexPath.row)+_minValue];
+    
+    NSString *str = [NSString strWithDoubNum:(_maxValue-_minValue)/(double)_itemCount*(_itemCount-indexPath.row)+_minValue];
     if (indexPath.row == 0) {
         [cell reTopFrameWithHeight:self.frame.size.height/(double)_itemCount/2.0];
     }else if (indexPath.row < _itemCount) {

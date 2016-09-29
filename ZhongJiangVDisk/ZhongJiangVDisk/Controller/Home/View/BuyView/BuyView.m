@@ -42,7 +42,8 @@ __weak BuyView *buySelf;
     self.currentProfitIndex = 0;
     self.currentLossIndex = 0;
     self.currentCountIndex = 0;
-    self.texts = @[@"不设", @"不设", @"1", [NSString stringWithFormat:@"%.02f",_model.price], [NSString stringWithFormat:@"%.02f",_model.contractPrice]];
+    
+    self.texts = @[@"不设", @"不设", @"1", [NSString strWithDoubNum:_model.price], [NSString strWithDoubNum:_model.contractPrice]];
 }
 - (void)setBuyViewType:(BuyViewType)buyViewType
 {
@@ -90,7 +91,7 @@ __weak BuyView *buySelf;
         text = @"不设";
     }else
     {
-        text = [NSString stringWithFormat:@"%ld",(long)[_losses[currentLossIndex] integerValue]];
+        text = [NSString strWithIntNum:[_losses[currentLossIndex] integerValue]];
     }
     self.lossTf.text = text;
 }
@@ -112,7 +113,7 @@ __weak BuyView *buySelf;
 - (void)setCurrentCountIndex:(NSInteger)currentCountIndex
 {
     _currentCountIndex = currentCountIndex;
-    NSString *text = [NSString stringWithFormat:@"%ld",(long)[_counts[currentCountIndex] integerValue]];
+    NSString *text = [NSString strWithIntNum:[_counts[currentCountIndex] integerValue]];
     _countTf.text = text;
     [self setSomeData];
 }
@@ -139,7 +140,7 @@ __weak BuyView *buySelf;
         text = @"不设";
     }else
     {
-        text = [NSString stringWithFormat:@"%ld",(long)[_profits[currentProfitIndex] integerValue]];
+        text = [NSString strWithIntNum:[_profits[currentProfitIndex] integerValue]];
     }
     _profitTf.text = text;
 }
@@ -172,7 +173,7 @@ __weak BuyView *buySelf;
         {
             [LCoreCurrent showAlertTitle:@"购买成功" timeCount:2 inView:self];
             [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(balance-money)];
-            NSString *time = [NSString stringWithFormat:@"%@",[NSDate date]];
+            NSString *time = [NSString strWithObj:[NSDate date]];
 #warning mark 买入
             NSDictionary *dict = @{@"_id":time,
                                    @"type":@200,
@@ -385,9 +386,10 @@ __weak BuyView *buySelf;
         str = @"买跌";
     }
     NSInteger count = _currentCountIndex + 1;
-    NSString *title = [NSString stringWithFormat:@"%@ %@, 手续费:%.0f", _model.productName, str, _model.price*count*_poundage];
+    NSString *poundageStr = [NSString strWithIntNum:(NSInteger)(_model.price*count*_poundage)];
+    NSString *title = [NSString stringWithFormat:@"%@ %@, 手续费:%@", _model.productName, str,poundageStr];
     _title.text = title;
-    _priceTF.text = [NSString stringWithFormat:@"%.2f",count*_model.price];
-    _contractPriceTF.text = [NSString stringWithFormat:@"%.2f",count*_model.contractPrice];
+    _priceTF.text = [NSString strWithDoubNum:count*_model.price];
+    _contractPriceTF.text = [NSString strWithDoubNum:count*_model.contractPrice];
 }
 @end

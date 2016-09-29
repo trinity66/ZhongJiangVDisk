@@ -8,7 +8,7 @@
 
 #import "DealHistoryListController.h"
 
-@interface DealHistoryListController ()
+@interface DealHistoryListController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTableViewY;
 @property (nonatomic, strong) DealHistoryHeadView *head;
@@ -22,20 +22,20 @@
     
     _topTableViewY.constant = [self getTableViewY];
     _tableView.separatorColor = LCoreCurrent.detailLightBackColor;
-    [self addHeadTableView];
+    
     // Do any additional setup after loading the view.
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     _list = [LCoreCurrent getDealHistoryList];
-    _head.tfOne.text = [NSString stringWithFormat:@"%lu",(unsigned long)_list.count];
+    _head.tfOne.text = [NSString strWithIntNum:_list.count];
     int totalCount = 0;
     for (NSDictionary *dict in _list) {
         DealHistoryModel *model = [DealHistoryModel modelWithDictionary:dict];
         totalCount += model.countNumber;
     }
-    _head.tfTwo.text = [NSString stringWithFormat:@"%d",totalCount];
+    _head.tfTwo.text = [NSString strWithIntNum:totalCount];
     [_tableView reloadData];
 }
 
@@ -66,6 +66,12 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     return [UIView new];
+}
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        [self addHeadTableView];
+    }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

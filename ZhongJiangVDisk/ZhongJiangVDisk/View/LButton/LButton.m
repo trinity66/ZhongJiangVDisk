@@ -35,7 +35,7 @@
 - (void)startWithTimerCount:(NSInteger)count
 {
     [self stopTimer];
-    NSString *buttonTitle = [NSString stringWithFormat:@"%ld秒重发",count];
+    NSString *buttonTitle = [[NSString strWithIntNum:count] stringByAppendingString:@"秒后重发"];
     [self setButtonTitle:buttonTitle];
     self.buttonEnabled = NO;
     timerCount = count-1;
@@ -51,7 +51,7 @@
 }
 - (void)timerAction {
     if (timerCount > 0) {
-        NSString *title = [NSString stringWithFormat:@"%ld秒后重发",(long)timerCount];
+        NSString *title = [[NSString strWithIntNum:timerCount] stringByAppendingString:@"秒后重发"];
         [self setButtonTitle:title];
     }else
     {

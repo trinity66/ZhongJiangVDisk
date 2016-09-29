@@ -66,9 +66,9 @@
         _isBuyRise.text = @"买跌";
         _isBuyRise.textColor = LCoreCurrent.fallTextColor;
     }
-    _buyCount.text = [NSString stringWithFormat:@"%ld手",(long)model.countNumber];
+    _buyCount.text = [[NSString strWithIntNum:model.countNumber] stringByAppendingString:@"手"];
     _productName.text = model.productName;
-    _contractMoney.text = [NSString stringWithFormat:@"%.02lf",model.productModel.contractPrice];
+    _contractMoney.text = [NSString strWithDoubNum:model.productModel.contractPrice];
     
 }
 - (IBAction)buttonAction:(id)sender {

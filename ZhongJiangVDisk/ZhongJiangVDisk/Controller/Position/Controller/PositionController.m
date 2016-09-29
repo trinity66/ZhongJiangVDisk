@@ -130,7 +130,7 @@ __weak PositionController *_positionSelf;
             double poundageMoney = money*poundage;
             double balance = [LCoreCurrent.userInfo[@"balance"] doubleValue];
             balance += money;
-            NSString *time = [NSString stringWithFormat:@"%@",[NSDate date]];
+            NSString *time = [NSString strWithObj:[NSDate date]];
             [list addObject:@{@"_id":time,
                                  @"type":@300,
                                  @"product":deal[@"product"],

@@ -28,11 +28,13 @@ __weak DetailPositionController *detailPositionSelf;
                    ],
                @[
                    @[
+                       
                        @{@"方向:":(_model.isBuyRise?@"买涨":@"买跌"),},
-                       @{@"数量:":[NSString stringWithFormat:@"%ld",(long)_model.countNumber],}
+                       @{@"数量:":[NSString strWithIntNum:_model.countNumber],}
                        ],
                    @[
-                       @{@"合同立价:":[NSString stringWithFormat:@"%.02lf",_model.productModel.contractPrice],},
+                       
+                       @{@"合同立价:":[NSString strWithDoubNum:_model.productModel.contractPrice],},
                        @{@"转让价:":@"0.00"}
                        ],
                    @[
@@ -41,8 +43,9 @@ __weak DetailPositionController *detailPositionSelf;
                        ]
                    ],
                @[
-                   @{@"订单总价值:":[NSString stringWithFormat:@"%.02lf",_model.productModel.contractPrice/10],},
-                   @{@"建仓支付金额:":[NSString stringWithFormat:@"%.02lf",_model.productModel.price],},
+                   @{@"订单总价值:":[NSString strWithDoubNum:_model.productModel.contractPrice/10],},
+                   
+                   @{@"建仓支付金额:":[NSString strWithDoubNum:_model.productModel.price],},
                    @{@"交易服务费:":@"0.00"},
                    @{@"盈亏资金:":@"0.00"},
                    ]

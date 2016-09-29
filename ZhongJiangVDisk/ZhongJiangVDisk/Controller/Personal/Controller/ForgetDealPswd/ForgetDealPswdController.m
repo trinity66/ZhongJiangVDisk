@@ -69,7 +69,7 @@ __weak ForgetDealPswdController *_forgetDealSelf;
     if (indexPath.row == 0) {
         _phoneTF = cell.textField;
         NSString *phone = LCoreCurrent.userInfo[@"phone"];
-        _phoneTF.text = [NSString stringWithFormat:@"%@****%@",[phone substringToIndex:3],[phone substringFromIndex:7]];
+        _phoneTF.text = [NSString phoneHide:phone];
         _phoneTF.enabled = NO;
     }else
     {

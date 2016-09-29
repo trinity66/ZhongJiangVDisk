@@ -204,7 +204,7 @@ __weak RechargeController *rechargeSelf;
     double oldMoney = [LCoreCurrent.userInfo[@"balance"] doubleValue];
     [LCoreCurrent saveUserInfoWithKey:@"balance" value:@(money+oldMoney)];
 #warning mark 充值
-    NSString *time = [NSString stringWithFormat:@"%@",[NSDate date]];
+    NSString *time = [NSString strWithObj:[NSDate date]];
     NSDictionary *dict = @{@"_id":time,
                            @"type":@100,
                            @"product":@{

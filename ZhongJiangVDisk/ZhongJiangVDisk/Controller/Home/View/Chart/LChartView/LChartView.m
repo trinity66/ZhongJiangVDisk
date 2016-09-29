@@ -207,11 +207,11 @@
             _minValue = [data[4] doubleValue];
         }
         if (_isStock) {
-            StockData *d = [StockData setOpen:[data[2] doubleValue] close:[data[5] doubleValue] low:[data[4] doubleValue] high:[data[3] doubleValue] time:[NSString stringWithFormat:@"%@",data[0]]];
+            StockData *d = [StockData setOpen:[data[2] doubleValue] close:[data[5] doubleValue] low:[data[4] doubleValue] high:[data[3] doubleValue] time:[NSString strWithObj:data[0]]];
             [_datas addObject:d];
         }else
         {
-            LineData *d = [LineData setData:[data[2] doubleValue] time:[NSString stringWithFormat:@"%@",data[0]]];
+            LineData *d = [LineData setData:[data[2] doubleValue] time:[NSString strWithObj:data[0]]];
             [_datas addObject:d];
         }
     }

@@ -93,60 +93,91 @@
     NSError* err = nil;
     self.productsList = (NSArray*)[NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&err];
 }
+
+///*
+// 保存home顶端的数据
+// */
+//- (void)saveHomeTopData:(NSDictionary *)homeTopData
+//{
+//    NSMutableArray *homeTopDatas = [self getHomeTopDatas];
+//    BOOL isHavePreData = YES;
+//    if (!homeTopDatas) {
+//        homeTopDatas = [NSMutableArray array];
+//        isHavePreData = NO;
+//    }
+//    for (int i = 0; i < LCoreCurrent.homeTopTitles.count; i ++) {
+//        NSString * number, *preNumber;
+//        BOOL isRise = YES;
+//        if (!isHavePreData && !homeTopData) {
+//            //之前无数据，当前也无数据
+//            number = @"0.00";
+//        }else
+//        {
+//            NSString *key = self.homeTopTitles[i][@"key"];
+//            if (isHavePreData) {
+//                //之前有数据
+//                preNumber = [NSString stringWithFormat:@"%@",homeTopDatas.lastObject[key]];
+//                if (homeTopData) {
+//                    //当前有数据
+//                    number = [NSString stringWithFormat:@"%@",homeTopData[key]];
+//                    if ([preNumber doubleValue]>[number doubleValue]) {
+//                        isRise = NO;
+//                    }
+//                }else
+//                {
+//                    //当前无数据，填写之前数据
+//                    number = preNumber;
+//                }
+//            }
+//        }
+//        [self.segmentHome setValueWithIndex:i title:nil number:number isRise:isRise];
+//        [self.segmentPosition setValueWithIndex:i title:nil number:number isRise:isRise];
+//    }
+//    if (homeTopData) {
+//        [homeTopDatas addObject:homeTopData];
+//        [LConfigCurrent set_object_for_key:@"homeTopDatas" value:homeTopDatas];
+//    }
+//}
+///*
+// 获取home顶端的数据
+// */
+//- (NSMutableArray *)getHomeTopDatas
+//{
+//    return [LConfigCurrent object_value_with_key:@"homeTopDatas"];
+//}
 /*
- 保存home顶端的数据
- 
- [LCoreCurrent requestWithURL:@"http://123.206.194.14:18081/HQ/AllGoods" resultBlock:^(BOOL success, id result, NSError *error, NSURLResponse *response) {
- 
- }];
+ 保存home顶端数据
  */
 - (void)saveHomeTopData:(NSDictionary *)homeTopData
 {
-    NSMutableArray *homeTopDatas = [self getHomeTopDatas];
-    BOOL isHavePreData = YES;
-    if (!homeTopDatas) {
-        homeTopDatas = [NSMutableArray array];
-        isHavePreData = NO;
-    }
-    for (int i = 0; i < LCoreCurrent.homeTopTitles.count; i ++) {
-        NSString * number, *preNumber;
-        BOOL isRise = YES;
-        if (!isHavePreData && !homeTopData) {
-            //之前无数据，当前也无数据
-            number = @"0.00";
-        }else
-        {
+    NSDictionary *preHomeTopData = [self getHomeTopData];
+    NSString *number=@"0.00", *preNumber=@"0.00";
+    BOOL isRise = YES;
+    if (preHomeTopData || homeTopData) {
+        for (int i = 0; i < self.homeTopTitles.count; i ++) {
             NSString *key = self.homeTopTitles[i][@"key"];
-            if (isHavePreData) {
-                //之前有数据
-                preNumber = [NSString stringWithFormat:@"%@",homeTopDatas.lastObject[key]];
-                if (homeTopData) {
-                    //当前有数据
-                    number = [NSString stringWithFormat:@"%@",homeTopData[key]];
-                    if ([preNumber doubleValue]>[number doubleValue]) {
-                        isRise = NO;
-                    }
-                }else
-                {
-                    //当前无数据，填写之前数据
-                    number = preNumber;
+            preNumber = [NSString strWithObj:preHomeTopData[key]];
+            if (homeTopData) {
+                number = [NSString strWithObj:homeTopData[key]];
+                if ([preNumber doubleValue]>[number doubleValue]) {
+                    isRise = NO;
                 }
+            }else
+            {
+                //现在无数据
+                number = preNumber;
             }
+            [self.segmentHome setValueWithIndex:i title:nil number:number isRise:isRise];
+            [self.segmentPosition setValueWithIndex:i title:nil number:number isRise:isRise];
         }
-        [self.segmentHome setValueWithIndex:i title:nil number:number isRise:isRise];
-        [self.segmentPosition setValueWithIndex:i title:nil number:number isRise:isRise];
     }
     if (homeTopData) {
-        [homeTopDatas addObject:homeTopData];
-        [LConfigCurrent set_object_for_key:@"homeTopDatas" value:homeTopDatas];
+        [LConfigCurrent set_object_for_key:@"homeTopData" value:homeTopData];
     }
 }
-/*
- 获取home顶端的数据
- */
-- (NSMutableArray *)getHomeTopDatas
+- (NSDictionary *)getHomeTopData
 {
-    return [LConfigCurrent object_value_with_key:@"homeTopDatas"];
+    return [LConfigCurrent object_value_with_key:@"homeTopData"];
 }
 
 

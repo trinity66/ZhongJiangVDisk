@@ -30,6 +30,6 @@
 - (void)setTime:(NSString *)time data:(double)data
 {
     _time.text = time;
-    _data.text = [NSString stringWithFormat:@"数值:%.02f",data];
+    _data.text = [@"数值:" stringByAppendingString:[NSString strWithDoubNum:data]];
 }
 @end

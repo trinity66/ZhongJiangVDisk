@@ -46,6 +46,25 @@
 {
     return [NSString stringWithUTF8String:object_getClassName(_class)];
 }
++ (NSString *)strWithDoubNum:(double)doubleNumber
+{
+    return [NSString stringWithFormat:@"%.02lf",doubleNumber];
+}
++ (NSString *)strWithIntNum:(NSInteger)intNumber
+{
+    return [NSString stringWithFormat:@"%ld",intNumber];
+}
++ (NSString *)strWithObj:(id)idObject
+{
+    return [NSString stringWithFormat:@"%@",idObject];
+}
++ (NSString *)phoneHide:(NSString *)phone
+{
+    if (phone.length == 11) {
+        return [NSString stringWithFormat:@"%@****%@",[phone substringToIndex:3], [phone substringFromIndex:7]];
+    }
+    return phone;
+}
 @end
 
 

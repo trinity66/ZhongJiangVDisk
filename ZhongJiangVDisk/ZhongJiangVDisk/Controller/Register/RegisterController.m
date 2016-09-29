@@ -196,7 +196,7 @@ __weak RegisterController *registerSelf;
     }
     //注册操作，登录成功@[@"交易密码", @"真实姓名", @"身份证号码", @"手机号码", @"验证码"]
     LCoreCurrent.isLogin = YES;
-    NSDictionary *userInfo = @{@"createTime":[NSString stringWithFormat:@"%@",[NSDate date]],
+    NSDictionary *userInfo = @{@"createTime":[NSString strWithObj:[NSDate date]],
                                @"phone":_phoneTF.text,
                                @"dealPassword":_dealPswdTF.text,
                                @"realName":_nameTF.text,
